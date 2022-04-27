@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Smart BIMS.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>armv7</string>
+				<string>arm64</string>
+			</array>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>7EC6C6684C17AD0D387E039F63EA0D9992424EB1</string>
+				<key>dateExpires</key>
+				<string>2018. 3. 5.</string>
+				<key>type</key>
+				<string>iOS Distribution</string>
+			</dict>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>8MJ5VDG926.net.bloodinfo.SmartBIMS</string>
+				<key>com.apple.developer.team-identifier</key>
+				<string>8MJ5VDG926</string>
+				<key>get-task-allow</key>
+				<false/>
+				<key>keychain-access-groups</key>
+				<array>
+					<string>8MJ5VDG926.net.bloodinfo.SmartBIMS</string>
+				</array>
+			</dict>
+			<key>name</key>
+			<string>SmartBIMS.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>f081008d-dafc-4a70-acd9-ba4bb3e08402</string>
+				<key>name</key>
+				<string>SBDist_20170316</string>
+			</dict>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>8MJ5VDG926</string>
+				<key>name</key>
+				<string>The Republic of Korea National Red Cross Blood Services</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
