@@ -142,6 +142,67 @@
                             <rect key="frame" x="0.0" y="0.0" width="1200" height="720"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="93">
+                                    <rect key="frame" x="10" y="13" width="83" height="83"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <state key="normal" image="action_viewmag1.png">
+                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <state key="highlighted">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="goMatching1View:" destination="-1" eventType="touchUpInside" id="108"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95">
+                                    <rect key="frame" x="108" y="12" width="83" height="83"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <state key="normal" image="app_kbounce.png">
+                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <state key="highlighted">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="goMatching2View:" destination="-1" eventType="touchUpInside" id="103"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="94">
+                                    <rect key="frame" x="206" y="8" width="83" height="83"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="5" maxX="0.0" maxY="0.0"/>
+                                    <state key="normal" image="app_clock.png">
+                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <state key="highlighted">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="goEndtimeView:" destination="-1" eventType="touchUpInside" id="106"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="88">
+                                    <rect key="frame" x="10" y="125" width="83" height="83"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                    <state key="normal" image="device_pda_blue.png">
+                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <state key="highlighted">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="goPcResultView:" destination="-1" eventType="touchUpInside" id="89"/>
+                                    </connections>
+                                </button>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OEe-ni-W7o">
                                     <rect key="frame" x="108" y="125" width="83" height="83"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -168,43 +229,6 @@
                                         <action selector="goTakeOverView:" destination="-1" eventType="touchUpInside" id="QEx-rM-otH"/>
                                     </connections>
                                 </button>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="채혈내역통계" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="uxq-U4-yrL">
-                                    <rect key="frame" x="505" y="46" width="91" height="39"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0l1-Ih-miK">
-                                    <rect key="frame" x="509" y="10" width="83" height="83"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                    <state key="normal" image="action_view_multicolumn.png">
-                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </state>
-                                    <state key="highlighted">
-                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="goEtcSrchStaView:" destination="-1" eventType="touchUpInside" id="mSb-e8-kuJ"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="113">
-                                    <rect key="frame" x="505" y="125" width="83" height="83"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                    <state key="normal" image="logout.png">
-                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </state>
-                                    <state key="highlighted">
-                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="logout:" destination="-1" eventType="touchUpInside" id="114"/>
-                                    </connections>
-                                </button>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="110">
                                     <rect key="frame" x="310" y="9" width="83" height="83"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -220,75 +244,11 @@
                                         <action selector="goMgrInfoView:" destination="-1" eventType="touchUpInside" id="8ea-4g-Upp"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="88">
-                                    <rect key="frame" x="408" y="125" width="83" height="83"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                    <state key="normal" image="device_pda_blue.png">
-                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </state>
-                                    <state key="highlighted">
-                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="goPcResultView:" destination="-1" eventType="touchUpInside" id="89"/>
-                                    </connections>
-                                </button>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="로그아웃" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="115">
-                                    <rect key="frame" x="505" y="176" width="91" height="39"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="채혈내역조회" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="109">
-                                    <rect key="frame" x="404" y="46" width="91" height="39"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="2차 일치검사" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="101">
-                                    <rect key="frame" x="104" y="57" width="91" height="39"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="헌혈적격여부  조회" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="99">
-                                    <rect key="frame" x="300" y="176" width="99" height="39"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="채혈종료시간  입력" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="98">
-                                    <rect key="frame" x="4" y="176" width="99" height="39"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="인계혈액등록" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="wJb-jA-zxB">
-                                    <rect key="frame" x="106" y="176" width="90" height="39"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="성분채혈결과  입력" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="97">
-                                    <rect key="frame" x="402" y="176" width="99" height="39"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="94">
-                                    <rect key="frame" x="10" y="125" width="83" height="83"/>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="102">
+                                    <rect key="frame" x="408" y="10" width="83" height="83"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                    <state key="normal" image="app_clock.png">
+                                    <state key="normal" image="action_view_text.png">
                                         <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
@@ -296,14 +256,14 @@
                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <connections>
-                                        <action selector="goEndtimeView:" destination="-1" eventType="touchUpInside" id="106"/>
+                                        <action selector="goNotificationView:" destination="-1" eventType="touchUpInside" id="107"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="93">
-                                    <rect key="frame" x="10" y="13" width="83" height="83"/>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0l1-Ih-miK">
+                                    <rect key="frame" x="509" y="10" width="83" height="83"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                    <state key="normal" image="action_viewmag1.png">
+                                    <state key="normal" image="action_view_multicolumn.png">
                                         <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
@@ -311,7 +271,7 @@
                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <connections>
-                                        <action selector="goMatching1View:" destination="-1" eventType="touchUpInside" id="108"/>
+                                        <action selector="goEtcSrchStaView:" destination="-1" eventType="touchUpInside" id="mSb-e8-kuJ"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="92">
@@ -329,25 +289,11 @@
                                         <action selector="goFitnessCheckView:" destination="-1" eventType="touchUpInside" id="105"/>
                                     </connections>
                                 </button>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="운영반편성표" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="111">
-                                    <rect key="frame" x="306" y="46" width="91" height="39"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="채혈전 확인사항" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="100">
-                                    <rect key="frame" x="25" y="57" width="54" height="39"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95">
-                                    <rect key="frame" x="108" y="12" width="83" height="83"/>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="113">
+                                    <rect key="frame" x="505" y="125" width="83" height="83"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                    <state key="normal" image="app_kbounce.png">
+                                    <state key="normal" image="logout.png">
                                         <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
@@ -355,40 +301,117 @@
                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <connections>
-                                        <action selector="goMatching2View:" destination="-1" eventType="touchUpInside" id="103"/>
+                                        <action selector="logout:" destination="-1" eventType="touchUpInside" id="114"/>
                                     </connections>
                                 </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ko0-3z-CZO">
+                                    <rect key="frame" x="614" y="15" width="63" height="51"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                    <state key="normal" image="Crystal_Clear_app_kfouleggs.png">
+                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <state key="highlighted">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="goTakeOverInfoView:" destination="-1" eventType="touchUpInside" id="PFL-9c-Fmv"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="채혈전 확인사항 및 1차 일치검사" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="100">
+                                    <rect key="frame" x="13" y="66" width="77" height="54"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="2차 일치검사" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="101">
+                                    <rect key="frame" x="104" y="66" width="91" height="18"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="채혈종료시간  입력" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="98">
+                                    <rect key="frame" x="198" y="66" width="99" height="36"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="성분채혈결과  입력" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="97">
+                                    <rect key="frame" x="2" y="182" width="99" height="36"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="인계혈액등록" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="wJb-jA-zxB">
+                                    <rect key="frame" x="106" y="182" width="90" height="18"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="혈액 인계" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="T5z-qA-iIc">
-                                    <rect key="frame" x="202" y="176" width="90" height="39"/>
+                                    <rect key="frame" x="202" y="182" width="90" height="18"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="102">
-                                    <rect key="frame" x="408" y="10" width="83" height="83"/>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="채혈내역통계" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="uxq-U4-yrL">
+                                    <rect key="frame" x="505" y="66" width="91" height="18"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                    <state key="normal" image="action_view_text.png">
-                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </state>
-                                    <state key="highlighted">
-                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="goNotificationView:" destination="-1" eventType="touchUpInside" id="107"/>
-                                    </connections>
-                                </button>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="로그아웃" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="115">
+                                    <rect key="frame" x="505" y="182" width="91" height="18"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="채혈내역조회" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="109">
+                                    <rect key="frame" x="404" y="66" width="91" height="18"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="헌혈적격여부  조회" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="99">
+                                    <rect key="frame" x="300" y="182" width="99" height="36"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="운영반편성표" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="111">
+                                    <rect key="frame" x="306" y="66" width="91" height="18"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="혈액인계정보 조회" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="dyR-ZL-AyV">
-                                    <rect key="frame" x="198" y="66" width="99" height="39"/>
+                                    <rect key="frame" x="402" y="182" width="99" height="36"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="수거자등록" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="QxV-fe-he1">
+                                    <rect key="frame" x="606" y="66" width="77" height="18"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="saK-3j-iJb">
-                                    <rect key="frame" x="214" y="15" width="63" height="51"/>
+                                    <rect key="frame" x="420" y="125" width="63" height="51"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                     <state key="normal" image="Crystal_Clear_app_kfouleggs.png">
@@ -519,7 +542,7 @@
             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
             <color key="textColor" red="1" green="0.062817991709872678" blue="0.042737801844935142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <nil key="highlightedColor"/>
-            <point key="canvasLocation" x="750" y="-312"/>
+            <point key="canvasLocation" x="750" y="-312.14788732394368"/>
         </label>
     </objects>
     <resources>

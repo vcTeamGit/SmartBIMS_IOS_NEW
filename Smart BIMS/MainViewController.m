@@ -583,7 +583,13 @@
     }else if(self.m_pageControl.currentPage == 1){
         CGPoint point = CGPointMake(300, 0);
         [m_scrollView setContentOffset:point animated:YES];
-    }else{
+    }
+    // 2022.04.27 ADD HMWOO Scroll Page Add
+    else if(self.m_pageControl.currentPage == 2){
+        CGPoint point = CGPointMake(600, 0);
+        [m_scrollView setContentOffset:point animated:YES];
+    }
+    else{
         
     }
 }
@@ -854,7 +860,8 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
 	CGFloat pageWidth = m_scrollView.frame.size.width;
-	int page = (int) ((m_scrollView.contentOffset.x + pageWidth/2) / pageWidth);
+    // 2022.04.27 ADD HMWOO ScrollView pageWidth Change
+	int page = (int) ((m_scrollView.contentOffset.x + pageWidth/3) / pageWidth);
     
     TRACE(@"scrollView pageWidth = [%f], pageHeight = [%f]", pageWidth, m_scrollView.frame.size.height);
 	
@@ -1031,7 +1038,9 @@
     size.width = self.m_btnContainerView.frame.size.width;
     
     size.height = 240;
-    size.width = 600;
+    
+    // 2022.04.27 MOD HMWOO ScrollView Size Change
+    size.width = 900;
 	
 	TRACE(@"width : %f, height : %f", size.width, size.height); 
 	
@@ -1040,7 +1049,7 @@
     [self.view addSubview:m_scrollView];
     [m_scrollView addSubview:m_btnContainerView];
     
-    m_pageControl.numberOfPages = 2;
+    m_pageControl.numberOfPages = 3;
 }
 
 
