@@ -37,6 +37,8 @@
     NSMutableString* m_strBarcodeBloodNo;
     UILabel* m_juminLabel;
     UILabel* m_nameLabel;
+    // 2022.04.28 ADD HMWOO 헌혈자 헌혈 횟수 추가
+    UILabel* m_bloodCntLabel;
     
     UIImageView* m_registerImageView;
     UIImageView* m_marrmstImageView;
@@ -92,6 +94,8 @@
 
 @property (nonatomic, retain) IBOutlet UILabel* m_juminLabel;
 @property (nonatomic, retain) IBOutlet UILabel* m_nameLabel;
+// 2022.04.28 ADD HMWOO 헌혈자 헌혈 횟수 추가
+@property (nonatomic, retain) IBOutlet UILabel* m_bloodCntLabel;
 
 @property (nonatomic, retain) IBOutlet UIImageView* m_registerImageView;
 @property (nonatomic, retain) IBOutlet UIImageView* m_marrmstImageView;

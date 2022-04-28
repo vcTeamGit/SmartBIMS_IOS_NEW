@@ -36,6 +36,8 @@
 
 @synthesize m_juminLabel;
 @synthesize m_nameLabel;
+// 2022.04.28 ADD HMWOO 헌혈자 헌혈 횟수 추가
+@synthesize m_bloodCntLabel;
 
 @synthesize m_registerImageView;
 @synthesize m_marrmstImageView;
@@ -92,6 +94,8 @@
     
     self.m_juminLabel.text = @"";
     self.m_nameLabel.text = @"";
+    // 2022.04.28 ADD HMWOO 헌혈자 헌혈 횟수 추가
+    self.m_bloodCntLabel.text = @"";
     
     self.m_registerImageView.hidden = YES;
     self.m_marrmstImageView.hidden = YES;
@@ -305,6 +309,8 @@
         
         self.m_juminLabel.text = [NSString stringWithFormat:@"%@-%@", m_SBBloodnoInfoVO.jumin1, m_SBBloodnoInfoVO.jumin2];
         self.m_nameLabel.text = m_SBBloodnoInfoVO.name;
+        // 2022.04.28 ADD HMWOO 헌혈자 헌혈 횟수 추가
+        self.m_bloodCntLabel.text = [NSString stringWithFormat:@"%@회", m_SBBloodnoInfoVO.bloodcnt];
         
         if([m_SBBloodnoInfoVO.registeryn isEqualToString:@"Y"]){
             self.m_registerImageView.hidden = NO;
@@ -1028,6 +1034,8 @@ replacementString:(NSString*)string
     
     self.m_juminLabel = nil;
     self.m_nameLabel = nil;
+    // 2022.04.28 ADD HMWOO 헌혈자 헌혈 횟수 추가
+    self.m_bloodCntLabel = nil;
     
     self.m_registerImageView = nil;
     self.m_marrmstImageView = nil;
@@ -1085,6 +1093,8 @@ replacementString:(NSString*)string
     
     [m_juminLabel release];
     [m_nameLabel release];
+    // 2022.04.28 ADD HMWOO 헌혈자 헌혈 횟수 추가
+    [m_bloodCntLabel release];
     
     [m_registerImageView release];
     [m_marrmstImageView release];
