@@ -1418,25 +1418,34 @@ replacementString:(NSString*)string
                 strAlertMsg = @"헌혈자바코드길이가 올바르지 않습니다.";
                 break;
             }else if(strLength == 12){
-                // 1:정상, -1:형식틀림, -2:중복
-                int nRetVal = [self bloodNoDuplicationCheck:strInput];
                 
-                if(nRetVal == -1){
-                    strAlertMsg = @"헌혈자바코드의 입력 값이 정확하지 않습니다.";
-                    textField.text = @"";
-                }else if(nRetVal == 1){
-                    [self requestIsMatchingSecondStepCompleted:strInput];
-                }else if(nRetVal == -2){
-                    // 첫 입력값에서 중복이 나오는 경우는 아래 Array에 데이터가 남아있는 오류로 판단하여 초기화한 후 다시 시도
-                    [self.m_bloodNoDuplicationCheckMutableArray removeAllObjects];
-                    
-                    nRetVal = [self bloodNoDuplicationCheck:strInput];
+                if([strInput isEqualToString:self.m_SBBloodNoInfoVO.bloodno] == YES)
+                {
+                    // 1:정상, -1:형식틀림, -2:중복
+                    int nRetVal = [self bloodNoDuplicationCheck:strInput];
+                
                     if(nRetVal == -1){
                         strAlertMsg = @"헌혈자바코드의 입력 값이 정확하지 않습니다.";
                         textField.text = @"";
                     }else if(nRetVal == 1){
                         [self requestIsMatchingSecondStepCompleted:strInput];
+                    }else if(nRetVal == -2){
+                        // 첫 입력값에서 중복이 나오는 경우는 아래 Array에 데이터가 남아있는 오류로 판단하여 초기화한 후 다시 시도
+                        [self.m_bloodNoDuplicationCheckMutableArray removeAllObjects];
+                        
+                        nRetVal = [self bloodNoDuplicationCheck:strInput];
+                        if(nRetVal == -1){
+                            strAlertMsg = @"헌혈자바코드의 입력 값이 정확하지 않습니다.";
+                            textField.text = @"";
+                        }else if(nRetVal == 1){
+                            [self requestIsMatchingSecondStepCompleted:strInput];
+                        }
                     }
+                }
+                else
+                {
+                    strAlertMsg = @"헌혈자바코드 정보가 조회한 정보와 다릅니다.";
+                    textField.text = @"";
                 }
             }
             break;
