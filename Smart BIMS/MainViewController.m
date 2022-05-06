@@ -701,7 +701,7 @@
     
     TRACE(@"%@, %@", strId, strOrgCode);
 
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBNoticeWithConfirmInfoDAO.jsp";
+    NSString* url = URL_NOTICE_CNT;
 	NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:
                                 @"beNewList", @"reqId",
                                 strId, @"idno",
@@ -805,7 +805,7 @@
     
     tempUserId = [NSString stringWithString:m_SBUserInfoVO.szBimsId];
     
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBBoardDAO.jsp";
+    NSString* url = URL_NOT_CONFIRM_NOTICE_CNT;
     NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:
                                 tempReqId, @"reqId",
                                 tempOrgCode, @"orgcode",

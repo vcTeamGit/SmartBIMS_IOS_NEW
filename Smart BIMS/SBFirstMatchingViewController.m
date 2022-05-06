@@ -531,7 +531,7 @@
     
     TRACE(@"%@", strBloodNo);
     
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBMatchingCommonDAOTest.jsp";
+    NSString* url = URL_CHECK_FIRST_MATCHING_COMPLETE;
 //    NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:@"matchingFirstStepNew", @"reqId",
 //                                strBloodNo, @"bloodno", nil];
     NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:@"matchingFirstStepWithSideEffects", @"reqId",
@@ -678,23 +678,8 @@
     
 //    CGPoint point = CGPointMake(0, 0);
 //    [m_scrollView setContentOffset:point animated:YES];
-    
-//    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBMatchingFirstStepTR.jsp";
-//    NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:m_SBBloodnoInfoVO.bloodno, @"strBloodNo",
-//                                m_SBBloodnoInfoVO.m_selectedBldProc1, @"strBldProcCode",
-//                                strBagQty, @"strBagQty",
-//                                strBldProcInterface, @"strBldProcInterface",
-//                                @"", @"strBandBloodNo",
-//                                m_strBarcodeBloodNo, @"strBarcodeBloodNo",
-//                                m_strBarcodeABOType, @"strBarcodeABOType",
-//                                m_strBarcodeBag, @"strBarcodeBag",
-//                                m_strBarcodeMalaria, @"strBarcodeMalaria",
-//                                m_strBarcodeBldBagcode, @"strBarcodeBldBagcode",
-//                                strBSD, @"strBSD",
-//                                strIdName, @"strIdName",
-//                                nil];
-    
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBMatchingFirstStepWithUdiTR.jsp";
+        
+    NSString* url = URL_FIRST_MATCHING_TEST;
     NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:m_SBBloodnoInfoVO.bloodno, @"strBloodNo",
                                 m_SBBloodnoInfoVO.m_selectedBldProc1, @"strBldProcCode",
                                 strBagQty, @"strBagQty",

@@ -175,8 +175,7 @@
     
     [self backgroundTab:nil];
     
-//    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBMatchingBloodInfoWithSideEffectsInfoDAO.jsp";
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBMatchingBloodInfoDAO.jsp";
+    NSString* url = URL_INQUIRE_USER_BARCODE;
 
     NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:strBloodno, @"bloodNoBarcode", nil];
     
@@ -437,7 +436,7 @@
         if(m_isBusy) return;
         else m_isBusy = YES;
         
-        NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBCheckBldProcAndBagCode.jsp";
+        NSString* url = URL_GET_BLOOD_PACK_NO;
         NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:strTempBldProc1, @"strBldProc1", 
                                     strTempBldProc2, @"strBldProc2", strTempRealBldProcValue, @"strBldProc3", nil];
         
@@ -583,7 +582,7 @@
         if(m_isBusy) return;
         else m_isBusy = YES;
         
-        NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBCheckBldProcAndBagCode.jsp";
+        NSString* url = URL_GET_BLOOD_PACK_NO;
         NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:strTempBldProc1, @"strBldProc1", 
                                     strTempBldProc2, @"strBldProc2", strTempRealBldProcValue, @"strBldProc3", nil];
         

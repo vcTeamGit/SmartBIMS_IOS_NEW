@@ -388,7 +388,7 @@
     if(m_isBusy) return;
     else m_isBusy = YES;
     
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBMatchingCommonDAO.jsp";
+    NSString* url = URL_CHECK_MATCHING_COMPLETE;
     NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:@"matchingSecondStep", @"reqId",
                                 strBloodNo, @"bloodno", 
                                 nil];
@@ -597,7 +597,7 @@
     
     [self backgroundTab:nil];
     
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBMatchingBloodInfoDAO.jsp";
+    NSString* url = URL_INQUIRE_USER_BARCODE;
     NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:strBloodNo, @"bloodNoBarcode", nil];
     
 //    TRACE(@"m_strBarcodeBloodNo 00041 := [%@]", strBloodNo);
@@ -736,7 +736,7 @@
             if(m_isBusy) return;
             else m_isBusy = YES;
             
-            NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBCheckBldProcAndBagCode.jsp";
+            NSString* url = URL_GET_BLOOD_PACK_NO;
             NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:strTempBldProc1, @"strBldProc1", 
                                         strTempBldProc2, @"strBldProc2", 
                                         strTempRealBldProcValue, @"strBldProc3", 
@@ -891,8 +891,7 @@
     
     TRACE(@"requestMatchingSecondStep's strBloodNo := [%@]", strBloodNo);
     
-//    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBMatchingSecondStepTR.jsp";
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBMatchingSecondStepWithEhTR.jsp";
+    NSString* url = URL_SECOND_MATCHING_TEST;
     NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:strBloodNo, @"strBloodNo",
                                 strBarcodeBloodNo, @"strBarcodeBloodNo",
                                 strBarcodeABOType, @"strBarcodeABOType",
@@ -1021,11 +1020,7 @@
         strBldProcCode = [NSString stringWithString:m_SBBloodNoInfoVO.bldproccode];
     }
     
-    //    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBAssetNoInfoCheck.jsp";
-    //    NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:strAssetNo, @"strAssetNo",
-    //                                strOrgCode, @"strOrgCode",
-    //                                nil];
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBAssetNoInfoWithBldChkDAO.jsp";
+    NSString* url = URL_GET_BLD_ASSET_INFO;
     NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:strAssetNo, @"strAssetNo",
                                 strOrgCode, @"strOrgCode",
 //                                strOrgCode, @"001",

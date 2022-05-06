@@ -73,16 +73,8 @@
     
     [self backgroundTab:nil];
     
-
-#ifdef WIRELINE_AUTO_LOGIN_MODE
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBLoginProc.jsp";
-#else
-//    NSString* url = @"http://211.57.231.32:59999/mbims/appservice/SBLoginProc.jsp";
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBLoginProc.jsp";
-#endif
-
-//    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBLoginProc.jsp";
-////    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBLoginProc.jsp";
+    NSString* url = URL_IDPW_LOGIN;
+    
     NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:
                                 strId, @"strUserId",
                                 strPassword, @"strPassword",
@@ -450,6 +442,8 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if(alertView.tag == 1){
+        
+        // 2022.05.04 ADD HMWOO 죽은 소스로 확인됨 더이상 사용되지 않고 해당 was 서버 내 아래와 같은 페이지도 존재하지 않음
         NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/pages/appstore/SBIndex.jsp";
         NSString* command = [[NSString stringWithString:url] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:command]];

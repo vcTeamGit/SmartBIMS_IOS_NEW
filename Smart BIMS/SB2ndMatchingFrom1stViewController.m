@@ -396,7 +396,7 @@
     if(m_isBusy) return;
     else m_isBusy = YES;
     
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBMatchingCommonDAO.jsp";
+    NSString* url = URL_CHECK_MATCHING_COMPLETE;
     NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:@"matchingSecondStep", @"reqId",
                                 strBloodNo, @"bloodno",
                                 nil];
@@ -606,7 +606,7 @@
     
     [self backgroundTab:nil];
     
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBMatchingBloodInfoDAO.jsp";
+    NSString* url = URL_INQUIRE_USER_BARCODE;
     NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:strBloodNo, @"bloodNoBarcode", nil];
     
     //    TRACE(@"m_strBarcodeBloodNo 00041 := [%@]", strBloodNo);
@@ -745,7 +745,7 @@
             if(m_isBusy) return;
             else m_isBusy = YES;
             
-            NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBCheckBldProcAndBagCode.jsp";
+            NSString* url = URL_GET_BLOOD_PACK_NO;
             NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:strTempBldProc1, @"strBldProc1",
                                         strTempBldProc2, @"strBldProc2",
                                         strTempRealBldProcValue, @"strBldProc3",
@@ -897,9 +897,8 @@
     strIdName = [NSString stringWithString:m_SBUserInfoVO.szBimsName];
     
     TRACE(@"requestMatchingSecondStep's strBloodNo := [%@]", strBloodNo);
-    
-//    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBMatchingSecondStepTR.jsp";
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBMatchingSecondStepWithEhTR.jsp";
+
+    NSString* url = URL_SECOND_MATCHING_TEST;
     NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:strBloodNo, @"strBloodNo",
                                 strBarcodeBloodNo, @"strBarcodeBloodNo",
                                 strBarcodeABOType, @"strBarcodeABOType",
@@ -1026,12 +1025,8 @@
     }else{
         strBldProcCode = [NSString stringWithString:m_SBBloodNoInfoVO.bldproccode];
     }
-    
-    //    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBAssetNoInfoCheck.jsp";
-    //    NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:strAssetNo, @"strAssetNo",
-    //                                strOrgCode, @"strOrgCode",
-    //                                nil];
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBAssetNoInfoWithBldChkDAO.jsp";
+
+    NSString* url = URL_GET_BLD_ASSET_INFO;
     NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:strAssetNo, @"strAssetNo",
                                 strOrgCode, @"strOrgCode",
                                 strBldProcCode, @"strBldProcCode",
@@ -1200,165 +1195,6 @@
     [m_barcodeSample1 becomeFirstResponder];
     [strData release];
 }
-
-
-//- (void)requestAssetNoCheck:(NSString*)AssetNo
-//{
-//    TRACE(@"requestAssetNoCheck start");
-//    if(m_isBusy) return;
-//    
-//    NSString* strOrgCode;
-//    NSString* strBldProcCode;
-//    
-//    long nAssetNo = [AssetNo longLongValue];
-//    NSString* strAssetNo;
-//    
-//    if(nAssetNo == 0){
-//        strAssetNo = @"";
-//        [m_strAssetChkFlag setString: @"2"];
-//    }else{
-//        strAssetNo = [NSString stringWithFormat:@"%ld", nAssetNo];
-//    }
-//    
-//    if(m_SBUserInfoVO.szBimsOrgcode == nil || [m_SBUserInfoVO.szBimsOrgcode isEqualToString:@""]
-//       || [m_SBUserInfoVO.szBimsOrgcode isEqualToString:@"(null)"]){
-//        strOrgCode = @"";
-//    }else{
-//        strOrgCode = [NSString stringWithString:m_SBUserInfoVO.szBimsOrgcode];
-//    }
-//    
-//    if(m_SBBloodNoInfoVO.bldproccode == nil || [m_SBBloodNoInfoVO.bldproccode isEqualToString:@""]
-//       || [m_SBBloodNoInfoVO.bldproccode isEqualToString:@"(null)"]){
-//        strBldProcCode = @"";
-//    }else{
-//        strBldProcCode = [NSString stringWithString:m_SBBloodNoInfoVO.bldproccode];
-//    }
-//    
-//    //    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBAssetNoInfoCheck.jsp";
-//    //    NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:strAssetNo, @"strAssetNo",
-//    //                                strOrgCode, @"strOrgCode",
-//    //                                nil];
-//    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBAssetNoInfoWithBldChkDAO.jsp";
-//    NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:strAssetNo, @"strAssetNo",
-//                                strOrgCode, @"strOrgCode",
-//                                strBldProcCode, @"strBldProcCode",
-//                                nil];
-//
-//    
-//    //    m_httpRequest = [[HttpRequest alloc] init];
-//    [m_httpRequest setDelegate:self
-//                      selector:@selector(didReceiveAssetNoInfo:)];
-//    [m_httpRequest requestURL:url
-//                   bodyObject:bodyObject];
-//    
-//    m_isBusy = YES;
-//    
-//    [self.m_activityIndicatorView startAnimating];
-//}
-//
-//
-//- (void)didReceiveAssetNoInfo:(id)result
-//{
-//    NSString* strAlertMsg;
-//    NSString* strData;
-//    NSString* strAssetNo;
-//    NSString* strOrgCode;
-//    NSString* strAssetClsName;
-//    NSString* strModel;
-//    NSString* strChk;
-//    
-//    [self.m_activityIndicatorView stopAnimating];
-//    
-//    strData = [[NSString alloc] initWithString:[(NSString*)result stringByReplacingOccurrencesOfString:@"\r\n"
-//                                                                                            withString:@""]];
-//    
-//    TRACE(@"didReceiveAssetNoInfo strData: %@", strData);
-//    
-//    // 응답값 확인
-//    if([strData isEqualToString:kREQUEST_TIMEOUT_TYPE] == YES){
-//        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"[알 림]"
-//                                                            message:kREQUEST_TIMEOUT_MSG
-//                                                           delegate:self
-//                                                  cancelButtonTitle:@"확인"
-//                                                  otherButtonTitles: nil];
-//        
-//        
-//        [alertView show];
-//        [alertView release];
-//        
-//        return;
-//    }
-//    
-//    SBJsonParser* jsonParser = [SBJsonParser new];
-//    NSDictionary* dictionary = nil;
-//    
-//    // JSON 문자열을 객체로 변환
-//    dictionary = [jsonParser objectWithString:strData];
-//    
-//    strAssetNo = [dictionary valueForKey:@"assetno"];
-//    strOrgCode = [dictionary valueForKey:@"orgcode"];
-//    strAssetClsName = [dictionary valueForKey:@"assetclsname"];
-//    strModel = [dictionary valueForKey:@"model"];
-//    strChk = [dictionary valueForKey:@"chk"];
-//    
-//    TRACE(@"strChk1:[%@]", strChk);
-//    
-//    if([strChk isEqualToString:@"T"] == YES){
-//        self.m_AssetClsNameLabel.text = strAssetClsName;
-//    }else if([strChk isEqualToString:@"1"] == YES){
-//        self.m_AssetClsNameLabel.text = @"기관불일치";
-//        strAlertMsg = @"기관정보가 일치하지 않습니다.";
-//        
-//        [SBUtils playAlertSystemSoundWithSoundType:SOUND_ALERT_1];
-//        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"알림"
-//                                                            message:strAlertMsg
-//                                                           delegate:self
-//                                                  cancelButtonTitle:@"확인"
-//                                                  otherButtonTitles: nil];
-//        
-//        [alertView show];
-//        [alertView release];
-//    }else if([strChk isEqualToString:@"2"] == YES){
-//        self.m_AssetClsNameLabel.text = @"확인불가";
-//        strAlertMsg = @"존재하지 않는 장비ID 또는 기타사유로 확인이 불가합니다.";
-//        
-//        [SBUtils playAlertSystemSoundWithSoundType:SOUND_ALERT_1];
-//        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"알림"
-//                                                            message:strAlertMsg
-//                                                           delegate:self
-//                                                  cancelButtonTitle:@"확인"
-//                                                  otherButtonTitles: nil];
-//        
-//        [alertView show];
-//        [alertView release];
-//    }else if([strChk isEqualToString:@"3"] == YES){
-//        self.m_AssetClsNameLabel.text = @"장비상태이상";
-//        strAlertMsg = @"장비가 매각처분 또는 폐기(반납)등의 정상적이지 않은 상태입니다.";
-//        
-//        [SBUtils playAlertSystemSoundWithSoundType:SOUND_ALERT_1];
-//        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"알림"
-//                                                            message:strAlertMsg
-//                                                           delegate:self
-//                                                  cancelButtonTitle:@"확인"
-//                                                  otherButtonTitles: nil];
-//        
-//        [alertView show];
-//        [alertView release];
-//    }
-//    
-//    TRACE(@"strChk:[%@]", strChk);
-//    
-//    [m_strAssetChkFlag setString:[NSString stringWithString:strChk]];
-//    
-//    m_isBusy = NO;
-//    
-////    m_barcodeAssetNo.enabled = NO;
-////    m_barcodeSample1.enabled = YES;
-//    [m_barcodeSample1 becomeFirstResponder];
-//    [strData release];
-//}
-
-
 
 - (void)onToHomeViewFromSubView
 {

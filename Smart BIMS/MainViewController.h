@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SBServerURLContent.h"
 
 #define kLogoutActionSheetTag   -9999
 

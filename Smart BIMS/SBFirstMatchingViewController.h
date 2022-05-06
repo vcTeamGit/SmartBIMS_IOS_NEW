@@ -11,6 +11,7 @@
  */
 
 #import <UIKit/UIKit.h>
+#import "SBServerURLContent.h"
 
 #define kBarcodeBloodNoTextField    1
 #define kBarcodeABOTypeTextField    2

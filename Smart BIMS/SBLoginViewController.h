@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SBServerURLContent.h"
 
 #define kIdTextFieldTagIndex 1
 #define kPwTextFieldTagIndex 2
