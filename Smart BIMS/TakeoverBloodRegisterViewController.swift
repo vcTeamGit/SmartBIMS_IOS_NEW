@@ -55,7 +55,7 @@ class TakeoverBloodRegisterViewController: UIViewController {
     
     @IBAction func bloodButtonTapped(_ sender: Any) {
         guard let bloodNum = bloodNum, bloodNum == 0 else {
-            showOkButtonAlert(str: "저장 된 혈액이 없을 경우에만 차수를 넘어갈 수 있습니다.",
+            showOkButtonErrorAlert(str: "저장 된 혈액이 없을 경우에만 차수를 넘어갈 수 있습니다.",
                               delegate: self)
             return
         }
@@ -99,7 +99,7 @@ class TakeoverBloodRegisterViewController: UIViewController {
             guard let m_SBUserInfoVO = self.m_SBUserInfoVO else { return }
             
             if self.takeoverData?.count == 0 {
-                showOkButtonAlert(str: "삭제할 혈액이 존재하지 않습니다", delegate: self)
+                showOkButtonErrorAlert(str: "삭제할 혈액이 존재하지 않습니다", delegate: self)
                 return
             }
             
@@ -319,7 +319,7 @@ extension TakeoverBloodRegisterViewController {
         
         guard let result = json["result"] as? String else {
             print("Error: ", json)
-            showOkButtonAlert(str: resultMsg, delegate: self)
+            showOkButtonErrorAlert(str: resultMsg, delegate: self)
             return
         }
         
@@ -373,16 +373,16 @@ extension TakeoverBloodRegisterViewController {
                                                  from: data)
 
         if insertResult?.isNotExist == "Y" {
-            showOkButtonAlert(str: "존재하지 않는 혈액번호 입니다.",
+            showOkButtonErrorAlert(str: "존재하지 않는 혈액번호 입니다.",
                               delegate: self)
         } else if insertResult?.isTerminated == "Y" {
-            showOkButtonAlert(str: "현재 차수가 종료되었습니다. 새로고침 버튼을 눌러주세요.",
+            showOkButtonErrorAlert(str: "현재 차수가 종료되었습니다. 새로고침 버튼을 눌러주세요.",
                               delegate: self)
         } else if insertResult?.isEnd == "N" {
-            showOkButtonAlert(str: "종료시간 미입력 혈액입니다.",
+            showOkButtonErrorAlert(str: "종료시간 미입력 혈액입니다.",
                               delegate: self)
         } else if insertResult?.isExistInTakeOver == "Y" {
-            showOkButtonAlert(str: "다른 차수 혹은 이미 저장된 혈액입니다. 혈액번호를 확인 바랍니다.",
+            showOkButtonErrorAlert(str: "다른 차수 혹은 이미 저장된 혈액입니다. 혈액번호를 확인 바랍니다.",
                               delegate: self)
         } else if insertResult?.isMulti == "N" {
             // 2022.05.09 DEL HMWOO 인계혈액 저장 시 저장되었다는 알림이 업무 효율성에 방해되어 제거
@@ -465,7 +465,7 @@ extension TakeoverBloodRegisterViewController {
         // 2022.05.09 DEL HMWOO 인계혈액 저장 시 저장되었다는 알림이 업무 효율성에 방해되어 제거
         if isNotExist == "Y" || result != "Y"
         {
-            showOkButtonAlert(str: returnStr, delegate: self) { [weak self] _ in
+            showOkButtonErrorAlert(str: returnStr, delegate: self) { [weak self] _ in
                 self?.becomeBarcodeTextFieldFirstResponder()
             }
         }
@@ -479,7 +479,7 @@ extension TakeoverBloodRegisterViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == bloodBarcodeTextField {
             guard let bloodNo = bloodBarcodeTextField.text, bloodNo.count == bloodNoMaxLength else {
-                showOkButtonAlert(str: "잘못된 혈액번호 입니다.", delegate: self)
+                showOkButtonErrorAlert(str: "잘못된 혈액번호 입니다.", delegate: self)
                 bloodBarcodeTextField.text = ""
                 return true
             }
@@ -490,7 +490,7 @@ extension TakeoverBloodRegisterViewController: UITextFieldDelegate {
                 self?.bloodBarcodeTextField.resignFirstResponder()
                 guard let result = self?.insertResult else {
                     self?.bloodBarcodeTextField.text = ""
-                    showOkButtonAlert(str: "오류가 발생하였습니다. 오류가 지속시 담당자에게 연락 부탁드립니다.",
+                    showOkButtonErrorAlert(str: "오류가 발생하였습니다. 오류가 지속시 담당자에게 연락 부탁드립니다.",
                                       delegate: self!)
                     return
                 }
@@ -507,7 +507,7 @@ extension TakeoverBloodRegisterViewController: UITextFieldDelegate {
         } else if textField == bldProccodeBarcodeTextField {
             guard let bldProccode = bldProccodeBarcodeTextField.text,
                   bldProccode.count == bldCodeMaxLength else {
-                showOkButtonAlert(str: "잘못된 제제바코드 입니다. 다시 스캔하여 주시기 바랍니다.",
+                showOkButtonErrorAlert(str: "잘못된 제제바코드 입니다. 다시 스캔하여 주시기 바랍니다.",
                                   delegate: self)
                 bldProccodeBarcodeTextField.text = ""
                 bldProccodeBarcodeTextField.becomeFirstResponder()
@@ -516,7 +516,7 @@ extension TakeoverBloodRegisterViewController: UITextFieldDelegate {
             
             guard let bloodNo = bloodBarcodeTextField.text,
                     bloodNo.count == bloodNoMaxLength else {
-                showOkButtonAlert(str: "잘못된 혈액번호 입니다. 혈액번호부터 다시 스캔하여 주시기 바랍니다.",
+                showOkButtonErrorAlert(str: "잘못된 혈액번호 입니다. 혈액번호부터 다시 스캔하여 주시기 바랍니다.",
                                   delegate: self)
                 bloodBarcodeTextField.text = ""
                 bldProccodeBarcodeTextField.text = ""

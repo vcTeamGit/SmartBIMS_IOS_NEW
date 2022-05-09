@@ -17,6 +17,18 @@ func showOkButtonAlert(str: String, delegate: UIViewController, _ action: ((UIAl
     delegate.present(alert, animated: true, completion: nil)
 }
 
+func showOkButtonErrorAlert(str: String, delegate: UIViewController, _ action: ((UIAlertAction) -> Void)? = nil) {
+    let alert = UIAlertController(title: "알림",
+                                  message: str,
+                                  preferredStyle: .alert)
+    
+    let okBtn = UIAlertAction(title: "확인", style: .default, handler: action)
+    alert.addAction(okBtn)
+    delegate.present(alert, animated: true, completion: nil)
+    
+    SBUtils.playAlertSystemSound(withSoundType: 1)
+}
+
 func getCurrentDate() -> String {
     let formatter = DateFormatter()
     let currentDate = Date()
