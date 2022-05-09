@@ -121,7 +121,7 @@
         NSRange range = NSMakeRange(0, 10);
         NSString* strBloodNo = [strTemp2BloodNo substringWithRange:range];
         
-        NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBMatchingCommonDAO.jsp";
+        NSString* url = URL_CHECK_MATCHING_COMPLETE;
         NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:@"matchingSecondStep", @"reqId",
                                     strBloodNo, @"bloodno", 
                                     nil];
@@ -328,7 +328,7 @@
     
     TRACE(@"strBloodNo = [%@]", strBloodNo);
     
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBBloodEndTimeTR.jsp";
+    NSString* url = URL_SAVE_END_TIME;
     NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:strCurrentTime, @"strCurrentTime", 
                                 strBloodNo, @"strBloodNo", 
                                 strIdName, @"strIdName",

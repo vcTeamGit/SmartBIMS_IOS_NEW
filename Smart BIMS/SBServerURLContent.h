@@ -24,7 +24,7 @@
 // 수행 시 INSERT, UPDATE 처리 수행되므로 주의
 #define URL_FIRST_MATCHING_TEST [NSString stringWithFormat:@"%@%@%@%@", @"http://", BLOOD_SERVER, SERVER_TARGET, @"/SBMatchingFirstStepWithUdiTR.jsp"]
 
-// 2차 일치 검사 → 헌혈자 바코드 조회 시 1차, 2차, BSD여부, 채혈종료시간입력 여부 확인 => [ SBSecondMatchingViewController.m | SB2ndMatchingFrom1stViewController ]
+// 2차 일치 검사 → 헌혈자 바코드 조회 시 1차, 2차, BSD여부, 채혈종료시간입력 여부 확인 => [ SBSecondMatchingViewController.m | SB2ndMatchingFrom1stViewController | SBBloodEndTimeViewController.m ]
 #define URL_CHECK_MATCHING_COMPLETE [NSString stringWithFormat:@"%@%@%@%@", @"http://", BLOOD_SERVER, SERVER_TARGET, @"/SBMatchingCommonDAO.jsp"]
 
 // 2차 일치 검사 => [ SBSecondMatchingViewController.m ]
@@ -34,10 +34,19 @@
 // 2차 일치 검사 → 채혈장비 정보 취득 => [ SBSecondMatchingViewController.m ]
 #define URL_GET_BLD_ASSET_INFO [NSString stringWithFormat:@"%@%@%@%@", @"http://", BLOOD_SERVER, SERVER_TARGET, @"/SBAssetNoInfoWithBldChkDAO.jsp"]
 
+// 채혈 종료시간 입력 → 저장 => [ SBBloodEndTimeViewController.m ]
+#define URL_SAVE_END_TIME [NSString stringWithFormat:@"%@%@%@%@", @"http://", BLOOD_SERVER, SERVER_TARGET, @"/SBBloodEndTimeTR.jsp"]
+
 @interface SBServerURLContent : NSObject
 
 extern NSString *BLOOD_SERVER;
 
 extern NSString *SERVER_TARGET;
+
+// 인계 혈액 등록화면에서 혈액등록, 등록혈액삭제 등을 관리하는 URL
+extern NSString *URL_MANAGE_TAKEOVER_BLOOD;
+
+// 혈액 인계 정보 조회 화면에서 인계 혈액 정보를 취득하는 URL
+extern NSString *URL_GET_TAKEOVER_BLOOD_INFO;
 
 @end

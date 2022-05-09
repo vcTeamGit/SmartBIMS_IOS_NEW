@@ -12,4 +12,7 @@
 #import "HttpRequest.h"
 #import "SBTakeOverInfoViewController.h"
 
+// 2022.05.09 ADD HMWOO 스위프트에서 사용하는 URL도 Objective-C로 작성된 하나의 URL 관리 파일에서 사용하기 위해 추가
+#import "SBServerURLContent.h"
+
 #endif /* SmartBIMS_Bridging_Header_h */

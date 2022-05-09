@@ -10,7 +10,8 @@ import Foundation
 // MARK: - BloodRegisterURLInfo
 struct BloodRegisterURLInfo {
     
-    static let baseURL = "http://mbims.bloodinfo.net:59999/mbims/appservice/Swift_SBTakeOverBloodRegister3.jsp"
+    // 2022.05.09 ADD HMWOO URL을 하나의 파일로 관리하기 위해 기존에 고정적으로 박혀져 있던 URL 변경
+    static let baseURL = URL_MANAGE_TAKEOVER_BLOOD
     
     // MARK: Request Into
     static let initialRequest = "takeOverBloodInfoWithSeq"
@@ -38,7 +39,8 @@ struct TakeOverRegisterSegueInfo {
 // MARK: - BloodRegisterURLInfo
 struct TakeOverChangeLevelInfoURL {
     
-    static let baseURL = "http://mbims.bloodinfo.net:59999/mbims/appservice/Swift_SBTakeOverChangeBloodLevelInfo.jsp"
+    // 2022.05.09 ADD HMWOO URL을 하나의 파일로 관리하기 위해 기존에 고정적으로 박혀져 있던 URL 변경
+    static let baseURL = URL_GET_TAKEOVER_BLOOD_INFO
     
     // MARK: Request Into
     static let initialRequest = "initialRequest"
