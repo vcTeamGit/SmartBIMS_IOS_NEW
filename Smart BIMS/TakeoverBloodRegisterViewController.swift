@@ -385,8 +385,8 @@ extension TakeoverBloodRegisterViewController {
             showOkButtonAlert(str: "다른 차수 혹은 이미 저장된 혈액입니다. 혈액번호를 확인 바랍니다.",
                               delegate: self)
         } else if insertResult?.isMulti == "N" {
-            showOkButtonAlert(str: "정상적으로 저장이 완료되었습니다.",
-                              delegate: self)
+            // 2022.05.09 DEL HMWOO 인계혈액 저장 시 저장되었다는 알림이 업무 효율성에 방해되어 제거
+            // showOkButtonAlert(str: "정상적으로 저장이 완료되었습니다.", delegate: self)
             self.setInitialInfo()
             becomeBarcodeTextFieldFirstResponder()
         }
@@ -449,7 +449,8 @@ extension TakeoverBloodRegisterViewController {
             returnStr = "제제바코드가 유효하지 않습니다. 다시 스캔하여 주시기 바랍니다."
         } else {
             if result == "Y" {
-                returnStr = "입력하신 혈액 저장이 완료되었습니다."
+                // 2022.05.09 DEL HMWOO 인계혈액 저장 시 저장되었다는 알림이 업무 효율성에 방해되어 제거
+                //returnStr = "입력하신 혈액 저장이 완료되었습니다."
                 self.setInitialInfo()
                 
             } else if result == "E"{
@@ -460,8 +461,13 @@ extension TakeoverBloodRegisterViewController {
                 returnStr = "해당 혈액 등록에 실패하였습니다. 오류가 지속될 경우 담당자에게 문의 부탁 드립니다."
             }
         }
-        showOkButtonAlert(str: returnStr, delegate: self) { [weak self] _ in
-            self?.becomeBarcodeTextFieldFirstResponder()
+        
+        // 2022.05.09 DEL HMWOO 인계혈액 저장 시 저장되었다는 알림이 업무 효율성에 방해되어 제거
+        if isNotExist == "Y" || result != "Y"
+        {
+            showOkButtonAlert(str: returnStr, delegate: self) { [weak self] _ in
+                self?.becomeBarcodeTextFieldFirstResponder()
+            }
         }
         
         dpGroup.leave()
