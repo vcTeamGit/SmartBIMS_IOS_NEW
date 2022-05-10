@@ -541,7 +541,9 @@
     
     TRACE(@"onSearch tempUserId [%@]", tempUserId);
     //경로 수정
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/Swift_SBTakeOverBloodRegister.jsp";
+    
+    // 2022.05.10 MOD HMWOO URL 관리 파일에서 URL 관리하도록 수정
+    NSString* url = URL_GET_TAKEOVER_BLOOD_CNT;
     NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:
                                 tempReqId,   @"reqId",
                                 tempOrgCode, @"orgcode",
@@ -755,7 +757,9 @@
     
     //m_mal1Label2.text = [NSString stringWithFormat:@"%d",[m_mal1Label2.text intValue] + [m_mal1Label2_NotWB.text intValue]];
     //경로수정
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBTakeOverBloodDAONew_TEST1.jsp";
+    
+    // 2022.05.10 MOD HMWOO URL 관리 파일에서 URL 관리하도록 수정
+    NSString* url = URL_MANAGE_TAKEOVER_INFO;
     NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:
                                 tempReqId, @"reqId",
                                 tempOrgCode, @"orgcode",
@@ -926,7 +930,7 @@
         NSString* tempReqId = @"gettemporarydata";
         NSString* tempTakerUserIdNo = m_SBUserInfoVO.szBimsId;
         
-        NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBTakeOverBloodTemporarySave.jsp";
+        NSString* url = URL_MANAGE_TEMP_TAKEOVER_INFO;
         NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:
                                     tempReqId,         @"reqId",
                                     tempTakerUserIdNo, @"userid",
@@ -1185,7 +1189,9 @@
     
     TRACE(@"doTakerCertify tempTakerUserIdNo [%@]", tempTakerUserIdNo);
     //경로 수정
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBTakeOverBloodDAONew_TEST1.jsp";
+    
+    // 2022.05.10 MOD HMWOO URL 관리 파일에서 URL 관리하도록 수정
+    NSString* url = URL_MANAGE_TAKEOVER_INFO;
     NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:
                                 tempReqId, @"reqId",
                                 tempOrgCode, @"orgcode",
@@ -1636,7 +1642,7 @@ replacementString:(NSString*)string
     NSString* remarks        = [NSString stringWithString:m_remarksTextView.text];
 
     //경로 수정
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBTakeOverBloodTemporarySave.jsp";
+    NSString* url = URL_MANAGE_TEMP_TAKEOVER_INFO;
     NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:
                                 tempReqId,         @"reqId",
                                 tempTakerUserIdNo, @"takerUserIdNo",

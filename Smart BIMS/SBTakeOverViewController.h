@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SBServerURLContent.h"
 
 #define kSpcSampleTextFieldTag          1
 #define kEtcSampleTextFieldTag          2
