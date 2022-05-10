@@ -971,18 +971,21 @@
         [comp1 appendString:@")"];
     }
     
-    NSString* strTempMsg2 = [NSString stringWithFormat:@"혈액[%@]\n 헌혈검체[%@]\n 아이스팩[%@]\n PCM냉매제[%@]\n 혈액박스[%@]\n ---------------\n 안전성검사[%@건 %@개]\n 지정헌혈[%@]\n 조혈모세포[%@]\n 특검[%@건 %@개]\n 말라리아[전혈:%@, 혈장%@]\n를 입력하셨습니다. 저장할까요?", comp1, self.m_bloodSampleTextField2.text,  [self.m_icepackTextField.text isEqualToString:@""] == YES ? @"0" : self.m_icepackTextField.text, [self.m_coolantTextField.text isEqualToString:@""] == YES ? @"0" : self.m_coolantTextField.text,  [self.m_bldBoxCntTextField.text isEqualToString:@""] == YES ? @"0" : self.m_bldBoxCntTextField.text,
-    
+    // 2022.05.10 MOD 우희명 [알 림] 기타 검체 수량 표시 추가 요청이 있어 대응
+    NSString* strTempMsg2 =
+    [NSString stringWithFormat:@"혈액[%@]\n 헌혈검체[%@]\n 기타검체[%@]\n 아이스팩[%@]\n PCM냉매제[%@]\n 혈액박스[%@]\n ---------------\n 안전성검사[%@건 %@개]\n 지정헌혈[%@]\n 조혈모세포[%@]\n 특검[%@건 %@개]\n 말라리아[전혈:%@, 혈장%@]\n를 입력하셨습니다. 저장할까요?",
+    comp1,
+    self.m_bloodSampleTextField2.text,
+    [self.m_etcSampleTextField.text isEqualToString:@""] == YES ? @"0" : self.m_etcSampleTextField.text,
+    [self.m_icepackTextField.text isEqualToString:@""] == YES ? @"0" : self.m_icepackTextField.text,
+    [self.m_coolantTextField.text isEqualToString:@""] == YES ? @"0" : self.m_coolantTextField.text,
+    [self.m_bldBoxCntTextField.text isEqualToString:@""] == YES ? @"0" : self.m_bldBoxCntTextField.text,
     [self.m_hrgSampleTextField2.text isEqualToString:@""] == YES ? @"0" : self.m_hrgSampleTextField2.text,
     [self.m_hrgSampleTextField.text isEqualToString:@""] == YES ? @"0" : self.m_hrgSampleTextField.text,
-                             
     [self.m_assignedBloodCntLabel2.text isEqualToString:@""] == YES ? @"0" : self.m_assignedBloodCntLabel2.text,
-                             
     [self.m_marSampleTextField.text isEqualToString:@""] == YES ? @"0" : self.m_marSampleTextField.text,
-                             
     [self.m_spcSampleTextField2.text isEqualToString:@""] == YES ? @"0" : self.m_spcSampleTextField2.text,
     [self.m_spcSampleTextField.text isEqualToString:@""] == YES ? @"0" : self.m_spcSampleTextField.text,
-                             
     [self.m_mal1Label2.text isEqualToString:@""] == YES ? @"0" : self.m_mal1Label2.text,
     [self.m_mal1Label2_NotWB.text isEqualToString:@""] == YES ? @"0" : self.m_mal1Label2_NotWB.text];
     
