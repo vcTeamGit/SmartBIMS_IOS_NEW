@@ -23,6 +23,11 @@
 @synthesize appearedSoundFileURLRef;
 @synthesize appearedSoundFileObject;
 
+NSString *const VenderCodeName[VENDER_COUNT] = {
+    [AMICUS] = @"6000",
+    [MCS_PLUS] = @"2747",
+    [TRIMA] = @"9999"
+};
 
 + (NSString*)formatBloodNo:(NSString*)bloodNo
 {
@@ -398,6 +403,25 @@
     }
     
     return self;
+}
+
+// 2022.05.13 ADD HMWOO UDI 제조사 별 로트 정보 유효성 검사 추가
++ (BOOL) checkVenderLOT:(NSString *)vcode
+{
+    if([vcode isEqualToString:VenderCodeName[AMICUS]])
+    {
+        // 알파벳(2), 숫자(2), 알파벳(1), 숫자(5)
+    }
+    else if([vcode isEqualToString:VenderCodeName[MCS_PLUS]])
+    {
+        // 숫자(7)
+    }
+    else if([vcode isEqualToString:VenderCodeName[TRIMA]])
+    {
+        // 숫자(10)
+    }
+    
+    return false;
 }
 
 @end

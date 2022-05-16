@@ -678,7 +678,8 @@
     
 //    CGPoint point = CGPointMake(0, 0);
 //    [m_scrollView setContentOffset:point animated:YES];
-        
+    
+    /*
     NSString* url = URL_FIRST_MATCHING_TEST;
     NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:m_SBBloodnoInfoVO.bloodno, @"strBloodNo",
                                 m_SBBloodnoInfoVO.m_selectedBldProc1, @"strBldProcCode",
@@ -696,6 +697,23 @@
                                 m_strMCode, @"strMCode",
                                 m_strVCode, @"strVCode",
                                 m_strLCode, @"strLCode",
+                                nil];
+    */
+    // 2022.05.13 MOD HMWOO 제조사 별 로트번호를 길이별 변경하여 삽입하는 로직이 적용되어 있지 않아 로직이 추가되어있는 URL로 변경
+    NSString* url = URL_MULTI_FIRST_MATCHING_TEST;
+    NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:m_SBBloodnoInfoVO.bloodno, @"strBloodNo",
+                                m_SBBloodnoInfoVO.m_selectedBldProc1, @"strBldProcCode",
+                                strBagQty, @"strBagQty",
+                                strBldProcInterface, @"strBldProcInterface",
+                                @"", @"strBandBloodNo",
+                                m_strBarcodeBloodNo, @"strBarcodeBloodNo",
+                                m_strBarcodeABOType, @"strBarcodeABOType",
+                                m_strBarcodeBag, @"strBarcodeBag",
+                                m_strBarcodeBldBagcode, @"strBarcodeBldBagcode",
+                                m_strBarcodeMalaria, @"strBarcodeMalaria",
+                                m_strBarcodeUDI, @"strUDICode",
+                                @"Y", @"strBSD",
+                                strIdName, @"strIdName",
                                 nil];
     
 //    m_httpRequest = [[HttpRequest alloc] init];
@@ -1233,7 +1251,9 @@
                     {
                         NSRange rangeLCode = NSMakeRange(26, 10);
                         self.m_strLCode = [strInput substringWithRange:rangeLCode];
-                    } else if( [self.m_strMCode isEqualToString:@"9358"] == YES || strLength > 29 )
+                    }
+                    // 2022.05.12 MOD HMWOO 혈소판성분채혈 시 에크미메디컬 제조사 정보 요청 대응 ( 9358 -> 2747 )
+                    else if( [self.m_strMCode isEqualToString:@"2747"] == YES || strLength > 29 )
                     {
                         NSRange rangeLCode = NSMakeRange(26, 7);
                         self.m_strLCode = [strInput substringWithRange:rangeLCode];

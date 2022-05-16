@@ -32,6 +32,16 @@ enum SOUNDTYPE{
     SOUND_APPEARED = 90
 };
 
+// 2022.05.13 ADD HMWOO 제조사 코드 관리 추가
+typedef enum
+{
+    AMICUS,
+    MCS_PLUS,
+    TRIMA,
+    
+    VENDER_COUNT
+} VENDERCODE;
+
 
 @interface SBUtils : NSObject
 {
@@ -61,6 +71,8 @@ enum SOUNDTYPE{
 @property (readonly)    SystemSoundID   appearedSoundFileObject;
 @property (readwrite)   CFURLRef        firstDonorSoundFileURLRef;
 @property (readonly)    SystemSoundID   firstDonorSoundFileObject;
+
+extern NSString *const VenderCodeName[VENDER_COUNT];
 
 - (void)playBeef01AlertSound;
 - (void)playBeef02AlertSound;
@@ -96,5 +108,7 @@ enum SOUNDTYPE{
 
 + (NSInteger)compareDateByStringWithToday:(NSDate*)tdate;
 
+// 2022.05.13 ADD HMWOO UDI 제조사 별 로트 정보 유효성 검사 추가
++ (BOOL) checkVenderLOT:(NSString *)vcode;
 
 @end

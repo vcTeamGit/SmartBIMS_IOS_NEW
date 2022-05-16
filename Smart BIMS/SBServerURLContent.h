@@ -21,9 +21,18 @@
 // 채혈전 확인사항 → 1차 일치 검사 → 헌혈자 바코드 조회(1차 일치 검사가 완료되었는지 확인) => [ SBFirstMatchingViewController.m ]
 #define URL_CHECK_FIRST_MATCHING_COMPLETE [NSString stringWithFormat:@"%@%@%@%@", @"http://", BLOOD_SERVER, SERVER_TARGET, @"/SBMatchingCommonDAOTest.jsp"]
 
+// 채혈전 확인사항(다종) → 1차 일치 검사 → 확인  => [ SBMultiFirstMatchingViewController.m ]
+// 수행 시 INSERT, UPDATE 처리 수행되므로 주의
+#define URL_MULTI_FIRST_MATCHING_TEST [NSString stringWithFormat:@"%@%@%@%@", @"http://", BLOOD_SERVER, SERVER_TARGET, @"/SBMatchingFirstStepTR.jsp"]
+
 // 채혈전 확인사항 → 1차 일치 검사 → 확인  => [ SBFirstMatchingViewController.m ]
 // 수행 시 INSERT, UPDATE 처리 수행되므로 주의
 #define URL_FIRST_MATCHING_TEST [NSString stringWithFormat:@"%@%@%@%@", @"http://", BLOOD_SERVER, SERVER_TARGET, @"/SBMatchingFirstStepWithUdiTR.jsp"]
+
+// 채혈전 확인사항(다종성분) → 확인 → 확인(다종성분 1차 일치검사 UDI 기기 추가)
+// 신규 추가 항목(다종 성분 대응으로 만들었지만 기존 URL_FIRST_MATCHING_TEST 내 로직이 LOT넘버 길이별 자르는 기능이 포함되어 있지 않아
+// 해당 내역 추가하여 일반 성분도 대응하도록 작성
+#define URL_MULTI_FIRST_MATCHING_TEST [NSString stringWithFormat:@"%@%@%@%@", @"http://", BLOOD_SERVER, SERVER_TARGET, @"/SBMultiMatchingFirstStepWithUdiTR.jsp"]
 
 // 2차 일치 검사 → 헌혈자 바코드 조회 시 1차, 2차, BSD여부, 채혈종료시간입력 여부 확인 => [ SBSecondMatchingViewController.m | SB2ndMatchingFrom1stViewController | SBBloodEndTimeViewController.m ]
 #define URL_CHECK_MATCHING_COMPLETE [NSString stringWithFormat:@"%@%@%@%@", @"http://", BLOOD_SERVER, SERVER_TARGET, @"/SBMatchingCommonDAO.jsp"]

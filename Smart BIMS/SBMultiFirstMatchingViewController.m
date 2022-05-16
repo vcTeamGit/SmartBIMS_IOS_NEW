@@ -35,12 +35,16 @@
 @synthesize m_barcodeBag;
 @synthesize m_barcodeMalaria;
 @synthesize m_barcodeBldBagcode;
+// 2022.05.10 ADD HMWOO 혈소판혈장성분 채혈 시 UDI 바코드 일치 검사를 위한 UDI 바코드 내역 추가
+@synthesize m_barcodeUDI;
 
 @synthesize m_strBarcodeBloodNo;
 @synthesize m_strBarcodeABOType;
 @synthesize m_strBarcodeBag;
 @synthesize m_strBarcodeMalaria;
 @synthesize m_strBarcodeBldBagcode;
+// 2022.05.10 ADD HMWOO 혈소판혈장성분 채혈 시 UDI 바코드 일치 검사를 위한 UDI 바코드 내역 추가
+@synthesize m_strBarcodeUDI;
 
 @synthesize m_BldBagLabel;
 @synthesize m_ABOTypeNameLabel;
@@ -138,11 +142,20 @@
         self.m_strBarcodeBldBagcode = [[NSMutableString alloc] initWithCapacity:7];
     }
     
+    // 2022.05.10 ADD HMWOO 혈소판혈장성분 채혈 시 UDI 바코드 일치 검사를 위한 UDI 바코드 내역 추가
+    if(self.m_strBarcodeUDI != nil)
+    {
+        [m_strBarcodeUDI release];
+        
+        self.m_strBarcodeUDI = [[NSMutableString alloc] initWithCapacity:50];
+    }
     self.m_barcodeBloodNo.text = @"";
     self.m_barcodeABOType.text = @"";
     self.m_barcodeBag.text = @"";
     self.m_barcodeMalaria.text = @"";
     self.m_barcodeBldBagcode.text = @"";
+    // 2022.05.10 ADD HMWOO 혈소판혈장성분 채혈 시 UDI 바코드 일치 검사를 위한 UDI 바코드 내역 추가
+    self.m_barcodeUDI.text = @"";
     
     self.m_ABOTypeNameLabel.text = nil;
     self.m_ABOTypeNameLabel.textColor = [UIColor blackColor];   // UILabel.textColor is non-nil value.
@@ -153,6 +166,8 @@
     self.m_barcodeBag.enabled = NO;
     self.m_barcodeMalaria.enabled = NO;
     self.m_barcodeBldBagcode.enabled = NO;
+    // 2022.05.10 ADD HMWOO 혈소판혈장성분 채혈 시 UDI 바코드 일치 검사를 위한 UDI 바코드 내역 추가
+    self.m_barcodeUDI.enabled = NO;
     
     self.m_BloodCntLabel.text = @"";
     
@@ -276,7 +291,75 @@
         [mstrAlertMsg setString:@"백종류바코드를 입력하세요."];
         self.m_barcodeBldBagcode.enabled = YES;
         [self.m_barcodeBldBagcode becomeFirstResponder];
-    }else{
+    }
+    // 2022.05.10 ADD HMWOO 혈소판혈장성분 채혈 시 UDI 바코드 일치 검사를 위한 UDI 바코드 내역 추가
+    else if ([m_SBBloodnoInfoVO.bldproccode isEqualToString:@"82"] == YES && (m_strBarcodeUDI.length == 0 || [m_strBarcodeUDI isEqualToString:@""]))
+    {
+        NSString* strTitleMsg = @"혈소판혈장 UDI코드가 입력되지 않았습니다.\nUDI 바코드 스캔 없이 진행하시겠습니까?";
+        [SBUtils playAlertSystemSoundWithSoundType:SOUND_ALERT_1];
+        
+        if([[UIDevice currentDevice].systemVersion floatValue] < 7)
+        {
+            UIActionSheet* actionSheet = [[UIActionSheet alloc] initWithTitle:strTitleMsg
+                                                                     delegate:self
+                                                            cancelButtonTitle:@"아니오"
+                                                       destructiveButtonTitle:@"예"
+                                                            otherButtonTitles:nil];
+            actionSheet.tag = kMatchingSecondViewShowUDIActionSheetTag;
+            [actionSheet showInView:self.view];
+            [actionSheet release];
+            
+        }
+        else{
+            UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"[확 인]"
+                                                                message:strTitleMsg
+                                                               delegate:self
+                                                      cancelButtonTitle:@"아니오"
+                                                      otherButtonTitles:@"예", nil];
+            alertView.tag = kMatchingSecondViewShowUDIActionSheetTag;
+            [alertView show];
+            [alertView release];
+        }
+        
+        [mstrAlertMsg release];
+        return;
+    }
+    else if([m_SBBloodnoInfoVO.bldproccode isEqualToString:@"82"] == YES && (m_strBarcodeUDI.length < 31) && (m_strBarcodeUDI.length > 1))
+    {
+        [mstrAlertMsg setString:@"UDI 코드 길이가 짧습니다. 다시 입력하세요."];
+        self.m_barcodeUDI.enabled = YES;
+        [self.m_barcodeUDI becomeFirstResponder];
+    }
+    else if([m_SBBloodnoInfoVO.bldproccode isEqualToString:@"82"] == YES && (m_strBarcodeUDI.length > 1) &&
+        [m_strBarcodeUDI rangeOfString:@"[~!@#$%^&*()_+|<>?:{}]" options:NSRegularExpressionSearch].location != NSNotFound )
+    {
+        [mstrAlertMsg setString:@"특수문자는 허용되지 않습니다. 다시 입력하세요."];
+        self.m_barcodeUDI.enabled = YES;
+        [self.m_barcodeUDI becomeFirstResponder];
+    }
+    
+    else if([m_SBBloodnoInfoVO.bldproccode isEqualToString:@"82"] == YES && (m_strBarcodeUDI.length > 1) &&
+        [m_strBarcodeUDI rangeOfString:@"[a-z]" options:NSRegularExpressionSearch].location != NSNotFound)
+    {
+        [mstrAlertMsg setString:@"소문자는 허용되지않습니다. 다시 입력하세요."];
+        self.m_barcodeUDI.enabled = YES;
+        [self.m_barcodeUDI becomeFirstResponder];
+    }
+    else if([m_SBBloodnoInfoVO.bldproccode isEqualToString:@"82"] == YES && (m_strBarcodeUDI.length > 1) &&
+        [m_strBarcodeUDI rangeOfString:@"[\\s]" options:NSRegularExpressionSearch].location != NSNotFound)
+    {
+        [mstrAlertMsg setString:@"띄어쓰기는 허용되지않습니다. 다시 입력하세요."];
+        self.m_barcodeUDI.enabled = YES;
+        [self.m_barcodeUDI becomeFirstResponder];
+    }
+    else if([m_SBBloodnoInfoVO.bldproccode isEqualToString:@"82"] == YES && (m_strBarcodeUDI.length > 1) &&
+        [m_strBarcodeUDI rangeOfString:@"[ㄱ-ㅎ|ㅏ-ㅣ|가-히]" options:NSRegularExpressionSearch].location != NSNotFound)
+    {
+        [mstrAlertMsg setString:@"한글은 허용되지않습니다. 다시 입력하세요."];
+        self.m_barcodeUDI.enabled = YES;
+        [self.m_barcodeUDI becomeFirstResponder];
+    }
+    else{
         // P 1차 일치검사 화면으로 전환
         [self pageReset2:nil];
         
@@ -441,6 +524,8 @@
     [self.m_barcodeBag resignFirstResponder];
     [self.m_barcodeMalaria resignFirstResponder];
     [self.m_barcodeBldBagcode resignFirstResponder];
+    // 2022.05.10 ADD HMWOO 혈소판혈장성분 채혈 시 UDI 바코드 일치 검사를 위한 UDI 바코드 내역 추가
+    [self.m_barcodeUDI resignFirstResponder];
     
 //    CGPoint point = CGPointMake(0, 0);
 //    [m_scrollView setContentOffset:point animated:YES];
@@ -466,8 +551,9 @@
 
 // 1차 일치검사 완료여부 확인.
 - (void)requestIsMatchingFirstStepCompleted:(NSString*)strBloodNo
-{    
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBMatchingCommonDAOTest.jsp";
+{
+    // 2022.05.16 ADD HMWOO 1차 일치검사 완료 여부 확인 URL을 URL 관리 소스에서 관리하도록 수정
+    NSString* url = URL_CHECK_FIRST_MATCHING_COMPLETE;
     NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:@"matchingFirstStepNew", @"reqId", 
                                 strBloodNo, @"bloodno", nil];
     
@@ -588,18 +674,19 @@
     
 //    CGPoint point = CGPointMake(0, 0);
 //    [m_scrollView setContentOffset:point animated:YES];
-    
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBMatchingFirstStepTR.jsp";
+    // 2022.05.10 MOD HMWOO UDI 포함 일치검사 진행 요청 추가(없을 시 기존대로 진행)
+    NSString* url = URL_MULTI_FIRST_MATCHING_TEST;
     NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:m_SBBloodnoInfoVO.bloodno, @"strBloodNo", 
                                 m_SBBloodnoInfoVO.m_selectedBldProc1, @"strBldProcCode",
                                 strBagQty, @"strBagQty",
                                 strBldProcInterface, @"strBldProcInterface",
                                 @"", @"strBandBloodNo",
                                 m_strBarcodeBloodNo, @"strBarcodeBloodNo",
-                                m_strBarcodeABOType, @"strBarcodeABOType",
                                 m_strBarcodeBag, @"strBarcodeBag",
-                                m_strBarcodeMalaria, @"strBarcodeMalaria",
+                                m_strBarcodeABOType, @"strBarcodeABOType",
                                 strBarcodeBldBagcode, @"strBarcodeBldBagcode",
+                                m_strBarcodeMalaria, @"strBarcodeMalaria",
+                                m_strBarcodeUDI, @"strUDICode",
                                 @"Y", @"strBSD",
                                 strIdName, @"strIdName",
                                 nil];
@@ -733,6 +820,35 @@
         }else{
             [self onBack2:nil];
             [self pageReset:nil];
+        }
+    }
+    // 2022.05.11 ADD HMWOO 혈소판혈장성분 채혈 시 UDI 바코드 일치 검사를 위한 UDI 바코드 내역 추가
+    else if(alertView.tag == kMatchingSecondViewShowUDIActionSheetTag)
+    {
+        // UDI 바코드가 없더라도 1차 일치검사를 수행할 것인지 확인하는 ActionSheet
+        if(buttonIndex != [alertView cancelButtonIndex])
+        {
+            [self pageReset2:nil];
+            
+            CGRect frame = CGRectMake(0, 0, viewWidth, viewHeight);
+            m_secondView.frame = frame;
+            
+            [UIView beginAnimations:nil context:nil];
+            
+            [UIView setAnimationDuration:1.0];
+            [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+            [UIView setAnimationTransition:UIViewAnimationTransitionCurlDown
+                                   forView:self.view
+                                     cache:YES];
+            
+            [self.view addSubview:m_secondView];
+            
+            [UIView commitAnimations];
+        }
+        else
+        {
+            self.m_barcodeUDI.enabled = YES;
+            [self.m_barcodeUDI becomeFirstResponder];
         }
     }
 }
@@ -982,11 +1098,84 @@ replacementString:(NSString*)string
                     self.m_barcodeBldBagcode.enabled = NO;
                     [self.m_barcodeBldBagcode resignFirstResponder];
                     
-                    [self onOK:nil];
+                    // 2022.05.11 ADD HMWOO 혈소판혈장성분 채혈 시 UDI 바코드 일치 검사를 위한 UDI 바코드 내역 추가
+                    if([m_SBBloodnoInfoVO.bldproccode isEqualToString:@"82"] == YES)
+                    {
+                        self.m_barcodeUDI.enabled = YES;
+                        [self.m_barcodeUDI becomeFirstResponder];
+                    }
+                    else
+                    {
+                        [self onOK:nil];
+                    }
                 }
                 
                 [strTempBldBagCode1 release];
             }
+            break;
+        // 2022.05.12 ADD HMWOO 혈소판혈장성분 채혈 시 UDI 바코드 일치 검사를 위한 UDI 바코드 내역 추가
+        case kBarcodeUDITextField :
+            if(strLength <= 0)
+            {
+                self.m_barcodeUDI.text = strInput;
+                [self.m_strBarcodeUDI setString:strInput];
+                self.m_barcodeUDI.enabled = YES;
+                
+                [self onOK:nil];
+                
+            }
+            else if((strLength > 0 && strLength < 30) || strLength > 40)
+            {
+                strAlertMsg = @"UDI바코드의 길이가 비정상입니다.";
+                textField.text = @"";
+            }
+            else
+            {
+                NSRange rangeMCode = NSMakeRange(6, 4);
+                NSRange rangeVCode = NSMakeRange(18, 6);
+                
+                NSString* MCode = [strInput substringWithRange:rangeMCode];
+                NSString* VCode = [strInput substringWithRange:rangeVCode];
+                
+                NSDateFormatter* df = [[NSDateFormatter alloc] init];
+                [df setDateFormat:@"yyMMdd"];
+                NSDate *expireDate = [df dateFromString:VCode];
+                
+                TRACE(@"혈액백 유효기간 경과여부 = [%ld]", (long)[SBUtils compareDateWithToday:expireDate]);
+                 
+                if([SBUtils compareDateWithToday:expireDate] < 0)
+                {
+                    strAlertMsg = @"혈액백 유효기간이 경과하였습니다.";
+                    textField.text = @"";
+                    
+                    if(self.m_strBarcodeUDI != nil){
+                        [m_strBarcodeUDI release];
+                        self.m_strBarcodeUDI = [[NSMutableString alloc] initWithCapacity:50];
+                    }
+                }
+                // 2022.05.13 ADD HMWOO 현재 제조사 코드 유효성 검사 대응하지 않음(대응 필요시 활성화 및 checkVenderLOT 메소드 작업)
+                /*
+                else if([SBUtils checkVenderLOT:MCode])
+                {
+                    strAlertMsg = @"혈액백 제조사 코드가 유효하지 않습니다.";
+                    textField.text = @"";
+                    
+                    if(self.m_strBarcodeUDI != nil){
+                        [m_strBarcodeUDI release];
+                        self.m_strBarcodeUDI = [[NSMutableString alloc] initWithCapacity:50];
+                    }
+                }
+                */
+                else
+                {
+                    self.m_barcodeUDI.text = strInput;
+                    [self.m_strBarcodeUDI setString:strInput];
+                    self.m_barcodeUDI.enabled = NO;
+                    
+                    [self onOK:nil];
+                }
+            }
+            
             break;
         /* secondView */
         case kBarcodeBloodNoTextField2 :
@@ -1248,12 +1437,17 @@ replacementString:(NSString*)string
     self.m_strBarcodeBag = [[NSMutableString alloc] initWithCapacity:16];
     self.m_strBarcodeMalaria = [[NSMutableString alloc] initWithCapacity:6];
     self.m_strBarcodeBldBagcode = [[NSMutableString alloc] initWithCapacity:7];
+    // 2022.05.11 ADD HMWOO 혈소판혈장성분 채혈 시 UDI 바코드 일치 검사를 위한 UDI 바코드 내역 추가
+    self.m_strBarcodeUDI = [[NSMutableString alloc] initWithCapacity:50];
     
     self.m_barcodeBloodNo.enabled = YES;
     self.m_barcodeABOType.enabled = NO;
     self.m_barcodeBag.enabled = NO;
     self.m_barcodeMalaria.enabled = NO;
     self.m_barcodeBldBagcode.enabled = NO;
+    
+    // 2022.05.11 ADD HMWOO 혈소판혈장성분 채혈 시 UDI 바코드 일치 검사를 위한 UDI 바코드 내역 추가
+    self.m_barcodeUDI.enabled = NO;
     
     self.m_ABOTypeNameLabel.text = @"";
     
@@ -1311,11 +1505,17 @@ replacementString:(NSString*)string
     self.m_barcodeMalaria = nil;
     self.m_barcodeBldBagcode = nil;
     
+    // 2022.05.11 ADD HMWOO 혈소판혈장성분 채혈 시 UDI 바코드 일치 검사를 위한 UDI 바코드 내역 추가
+    self.m_barcodeUDI = nil;
+    
     self.m_strBarcodeBloodNo = nil;
     self.m_strBarcodeABOType = nil;
     self.m_strBarcodeBag = nil;
     self.m_strBarcodeMalaria = nil;
     self.m_strBarcodeBldBagcode = nil;
+    
+    // 2022.05.11 ADD HMWOO 혈소판혈장성분 채혈 시 UDI 바코드 일치 검사를 위한 UDI 바코드 내역 추가
+    self.m_strBarcodeUDI = nil;
     
     self.m_BldBagLabel = nil;
     self.m_ABOTypeNameLabel = nil;
@@ -1375,12 +1575,16 @@ replacementString:(NSString*)string
     [m_barcodeBag release];
     [m_barcodeMalaria release];
     [m_barcodeBldBagcode release];
+    // 2022.05.11 ADD HMWOO 혈소판혈장성분 채혈 시 UDI 바코드 일치 검사를 위한 UDI 바코드 내역 추가
+    [m_barcodeUDI release];
     
     [m_strBarcodeBloodNo release];
     [m_strBarcodeABOType release];
     [m_strBarcodeBag release];
     [m_strBarcodeMalaria release];
     [m_strBarcodeBldBagcode release];
+    // 2022.05.11 ADD HMWOO 혈소판혈장성분 채혈 시 UDI 바코드 일치 검사를 위한 UDI 바코드 내역 추가
+    [m_strBarcodeUDI release];
     
     [m_BldBagLabel release];
     [m_ABOTypeNameLabel release];

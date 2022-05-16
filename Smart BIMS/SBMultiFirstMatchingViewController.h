@@ -11,12 +11,15 @@
  */
 
 #import <UIKit/UIKit.h>
+#import "SBServerURLContent.h"
+#import "SBUtils.h"
 
 #define kBarcodeBloodNoTextField    1
 #define kBarcodeABOTypeTextField    2
 #define kBarcodeBagTextField        3
 #define kBarcodeMalariaTextField    4
 #define kBarcodeBldBagcodeTextField 5
+#define kBarcodeUDITextField        6
 
 #define kBarcodeBloodNoTextField2    11
 #define kBarcodeABOTypeTextField2    12
@@ -24,10 +27,11 @@
 #define kBarcodeMalariaTextField2    14
 #define kBarcodeBldBagcodeTextField2 15
 
-#define kIsMatchingFirstStepCompletedActionSheetTag 101
-#define kMatchingFirstStepConfirmActionSheetTag 102
+#define kIsMatchingFirstStepCompletedActionSheetTag     101
+#define kMatchingFirstStepConfirmActionSheetTag         102
 
-
+// 2022.05.11 ADD HMWOO 혈소판혈장성분 채혈 시 UDI 바코드 일치 검사를 위한 UDI 바코드 내역 추가
+#define kMatchingSecondViewShowUDIActionSheetTag        103
 
 @class HttpRequest;
 @class SBBloodnoInfoVO;
@@ -55,11 +59,17 @@
     UITextField* m_barcodeMalaria;
     UITextField* m_barcodeBldBagcode;
     
+    // 2022.05.10 ADD HMWOO 혈소판혈장성분 채혈 시 UDI 바코드 일치 검사를 위한 UDI 바코드 내역 추가
+    UITextField* m_barcodeUDI;
+    
     NSMutableString* m_strBarcodeBloodNo;
     NSMutableString* m_strBarcodeABOType;
     NSMutableString* m_strBarcodeBag;
     NSMutableString* m_strBarcodeMalaria;
     NSMutableString* m_strBarcodeBldBagcode;
+
+    // 2022.05.10 ADD HMWOO 혈소판혈장성분 채혈 시 UDI 바코드 일치 검사를 위한 UDI 바코드 내역 추가
+    NSMutableString* m_strBarcodeUDI;
     
     UILabel* m_BldBagLabel;
     UILabel* m_ABOTypeNameLabel;
@@ -120,6 +130,12 @@
 @property (nonatomic, retain) IBOutlet UITextField* m_barcodeBag;
 @property (nonatomic, retain) IBOutlet UITextField* m_barcodeMalaria;
 @property (nonatomic, retain) IBOutlet UITextField* m_barcodeBldBagcode;
+
+// 2022.05.11 ADD HMWOO 혈소판혈장성분 채혈 시 UDI 바코드 일치 검사를 위한 UDI 바코드 내역 추가
+@property (nonatomic, retain) NSMutableString* m_strBarcodeUDI;
+
+// 2022.05.10 ADD HMWOO 혈소판혈장성분 채혈 시 UDI 바코드 일치 검사를 위한 UDI 바코드 내역 추가
+@property (nonatomic, retain) IBOutlet UITextField* m_barcodeUDI;
 
 @property (nonatomic, retain) NSMutableString* m_strBarcodeBloodNo;
 @property (nonatomic, retain) NSMutableString* m_strBarcodeABOType;
