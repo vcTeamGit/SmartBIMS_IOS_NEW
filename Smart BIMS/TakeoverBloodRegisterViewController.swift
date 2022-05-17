@@ -110,6 +110,9 @@ class TakeoverBloodRegisterViewController: UIViewController {
                                                       "takeoverseq": self.maxBloodLevel.titleLabel!.text!,
                                                       "deleteid": m_SBUserInfoVO.szBimsId!])
             
+            // 2022.05.16 ADD HMWOO 로딩 인디케이터 추가
+            LoadingIndicator.showLoading()
+            
             TakeOverRegisterAPI
                 .shared
                 .getDataFromURLWithSelector(url: BloodRegisterURLInfo.baseURL,
@@ -237,6 +240,9 @@ extension TakeoverBloodRegisterViewController {
                                                   "carcode": m_SBUserInfoVO.szBimsCarcode ?? "-1",
                                                   "userid" : m_SBUserInfoVO.szBimsId!])
         
+        // 2022.05.16 ADD HMWOO 로딩 인디케이터 추가
+        LoadingIndicator.showLoading()
+        
         TakeOverRegisterAPI
             .shared
             .getDataFromURLWithSelector(url: BloodRegisterURLInfo.baseURL,
@@ -268,10 +274,17 @@ extension TakeoverBloodRegisterViewController {
     
     @objc
     func getInitaialData(result: Any) {
+        
+        // 2022.05.16 ADD HMWOO 로딩 인디케이터 추가
+        LoadingIndicator.hideLoading()
+        
         let json = TakeOverRegisterAPI.shared.getDictionaryFromResult(result)
         
         guard let maxLevel = json["nexttakeoverseq"] as? String, maxLevel != "" else {
             print("Error: ", json)
+            // 2022.05.17 ADD HMWOO 오류 발생 메시지 발생 메시지 추가
+            showOkButtonErrorAlert(str: "초기 데이터 조회를 실패하였습니다. 오류가 지속될 경우 담당자에게 문의 부탁 드립니다.",
+                              delegate: self)
             return
         }
 
@@ -314,6 +327,9 @@ extension TakeoverBloodRegisterViewController {
     
     @objc
     func removeAllData(result: Any) {
+        
+        LoadingIndicator.hideLoading()
+        
         let json = TakeOverRegisterAPI.shared.getDictionaryFromResult(result)
         var resultMsg = "혈액 삭제에 실패하였습니다."
         
@@ -351,6 +367,9 @@ extension TakeoverBloodRegisterViewController {
                                                   "isrh": isRh,
                                                   "userid" : m_SBUserInfoVO.szBimsId!])
         
+        // 2022.05.16 ADD HMWOO 로딩 인디케이터 추가
+        LoadingIndicator.showLoading()
+        
         TakeOverRegisterAPI
             .shared
             .getDataFromURLWithSelector(url: BloodRegisterURLInfo.baseURL,
@@ -361,10 +380,17 @@ extension TakeoverBloodRegisterViewController {
     
     @objc
     func checkIsValidAndSaveBloodNoSelector(result: Any) {
+        
+        // 2022.05.16 ADD HMWOO 로딩 인디케이터 추가
+        LoadingIndicator.hideLoading()
+        
         let json = TakeOverRegisterAPI.shared.getDictionaryFromResult(result)
 
         guard let data = try? JSONSerialization.data(withJSONObject: json,
                                                      options: .prettyPrinted) else {
+            // 2022.05.17 ADD HMWOO 오류 발생 메시지 발생 메시지 추가
+            showOkButtonErrorAlert(str: "혈액 번호 조회를 실패하였습니다.",
+                              delegate: self)
             dpGroup.leave()
             return
         }
@@ -419,6 +445,9 @@ extension TakeoverBloodRegisterViewController {
                                                   "isrh": isRh,
                                                   "bldproccode": bldProcCode,
                                                   "userid" : m_SBUserInfoVO.szBimsId!])
+                
+        // 2022.05.16 ADD HMWOO 로딩 인디케이터 추가
+        LoadingIndicator.showLoading()
         
         TakeOverRegisterAPI
             .shared
@@ -430,17 +459,31 @@ extension TakeoverBloodRegisterViewController {
     
     @objc
     func checkIsValidAndSaveMultiBloodNoWithBldProcCodeSelector(result: Any) {
+        
+        // 2022.05.16 ADD HMWOO 로딩 인디케이터 추가
+        LoadingIndicator.hideLoading()
+        
         let json = TakeOverRegisterAPI.shared.getDictionaryFromResult(result)
         var returnStr = ""
         
         guard let isNotExist = json["isNotExist"] as? String, isNotExist != "" else {
             print("Error: ", json)
+            // 2022.05.17 ADD HMWOO 오류 발생 메시지 발생 메시지 추가
+            returnStr = "해당 혈액 등록에 실패하였습니다. 오류가 지속될 경우 담당자에게 문의 부탁 드립니다."
+            showOkButtonErrorAlert(str: returnStr, delegate: self) { [weak self] _ in
+                self?.becomeBarcodeTextFieldFirstResponder()
+            }
             dpGroup.leave()
             return
         }
         
         guard let result = json["result"] as? String, result != "" else {
             print("Error: ", json)
+            // 2022.05.17 ADD HMWOO 오류 발생 메시지 발생 메시지 추가
+            returnStr = "해당 혈액 등록에 실패하였습니다. 오류가 지속될 경우 담당자에게 문의 부탁 드립니다."
+            showOkButtonErrorAlert(str: returnStr, delegate: self) { [weak self] _ in
+                self?.becomeBarcodeTextFieldFirstResponder()
+            }
             dpGroup.leave()
             return
         }

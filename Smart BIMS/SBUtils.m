@@ -424,4 +424,62 @@ NSString *const VenderCodeName[VENDER_COUNT] = {
     return false;
 }
 
+// 2022.05.17 ADD HMWOO 로딩 인디케이터 추가
++ (void) showLoading
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+    
+        UIWindow *window = UIApplication.sharedApplication.windows.lastObject;
+        
+        if(window == nil)
+        {
+            return;
+        }
+        
+        UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 32, 32)];
+        
+        if([window.subviews.firstObject isKindOfClass:[UIActivityIndicatorView class]])
+        {
+            activityIndicator = window.subviews.firstObject;
+        }
+        else
+        {
+            activityIndicator = [UIActivityIndicatorView new];
+            if (@available(iOS 13.0, *)) {
+                activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleLarge;
+            } else {
+                activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
+            }
+            activityIndicator.frame = window.frame;
+            activityIndicator.color = UIColor.grayColor;
+            
+            [window addSubview:activityIndicator];
+        }
+        
+        [activityIndicator startAnimating];
+    });
+}
+
+// 2022.05.17 ADD HMWOO 로딩 인디케이터 추가
++ (void) hideLoading
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        UIWindow *window = UIApplication.sharedApplication.windows.lastObject;
+        
+        if(window == nil)
+        {
+            return;
+        }
+        
+        for (UIView *v in window.subviews)
+        {
+            if([v isKindOfClass:[UIActivityIndicatorView class]])
+            {
+                [v removeFromSuperview];
+            }
+        }
+    });
+}
+
 @end

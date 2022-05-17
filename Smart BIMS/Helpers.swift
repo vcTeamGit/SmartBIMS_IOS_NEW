@@ -7,6 +7,43 @@
 
 import UIKit
 
+// 2022.05.16 ADD HMWOO 로딩 인디케이터 추가
+class LoadingIndicator {
+    
+    static var isLoading = false
+    
+    static func showLoading() {
+        
+        DispatchQueue.main.async {
+            guard let window = UIApplication.shared.windows.last else { return }
+
+            let loadingIndicatorView: UIActivityIndicatorView
+            if let existedView = window.subviews.first(where: { $0 is UIActivityIndicatorView } ) as? UIActivityIndicatorView {
+                loadingIndicatorView = existedView
+            } else {
+                if #available(iOS 13.0, *) {
+                    loadingIndicatorView = UIActivityIndicatorView(style: .large)
+                } else {
+                    loadingIndicatorView = UIActivityIndicatorView(style: .whiteLarge)
+                }
+                loadingIndicatorView.frame = window.frame
+                loadingIndicatorView.color = .gray
+                window.addSubview(loadingIndicatorView)
+            }
+
+            loadingIndicatorView.startAnimating()
+        }
+    }
+
+    static func hideLoading() {
+        
+        DispatchQueue.main.async {
+            guard let window = UIApplication.shared.windows.last else { return }
+            window.subviews.filter({ $0 is UIActivityIndicatorView }).forEach { $0.removeFromSuperview() }
+        }
+    }
+}
+
 func showOkButtonAlert(str: String, delegate: UIViewController, _ action: ((UIAlertAction) -> Void)? = nil) {
     let alert = UIAlertController(title: "알림",
                                   message: str,

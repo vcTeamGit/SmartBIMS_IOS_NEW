@@ -111,4 +111,10 @@ extern NSString *const VenderCodeName[VENDER_COUNT];
 // 2022.05.13 ADD HMWOO UDI 제조사 별 로트 정보 유효성 검사 추가
 + (BOOL) checkVenderLOT:(NSString *)vcode;
 
+// 2022.05.17 ADD HMWOO 로딩 인디케이터 추가
++ (void) showLoading;
+
+// 2022.05.17 ADD HMWOO 로딩 인디케이터 추가
++ (void) hideLoading;
+
 @end

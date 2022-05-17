@@ -551,6 +551,9 @@
                                 tempUserId,  @"userId",
                                 nil];
     
+    // 2022.05.17 ADD HMWOO 로딩 인디게이터 추가
+    [SBUtils showLoading];
+    
     [m_httpRequest setDelegate:self
                       selector:@selector(didReceiveTakeOverInfo:)];
     [m_httpRequest requestURL:url
@@ -562,6 +565,9 @@
 
 - (void)didReceiveTakeOverInfo:(id)result
 {
+    // 2022.05.17 ADD HMWOO 로딩 인디게이터 추가
+    [SBUtils hideLoading];
+    
     NSString* strData;
     NSString* strRowCnt;
     
@@ -802,6 +808,9 @@
                                 tempUserId, @"userIdNo",
                                 nil];
 
+    // 2022.05.17 ADD HMWOO 로딩 인디게이터 추가
+    [SBUtils showLoading];
+    
     [m_httpRequest setDelegate:self
                       selector:@selector(didReceiveTakeOverInfoSave:)];
     [m_httpRequest requestURL:url
@@ -935,6 +944,9 @@
                                     tempReqId,         @"reqId",
                                     tempTakerUserIdNo, @"userid",
                                     nil];
+    
+        // 2022.05.17 ADD HMWOO 로딩 인디게이터 추가
+        [SBUtils showLoading];
         
         [m_httpRequest setDelegate:self
                           selector:@selector(showTempSaveData:)];
@@ -1011,6 +1023,9 @@
 
 - (void)didReceiveTakeOverInfoSave:(id)result
 {
+    // 2022.05.17 ADD HMWOO 로딩 인디게이터 추가
+    [SBUtils hideLoading];
+    
     NSString* strData;
     NSString* strRetVal;
     NSString* strResultMsg;
@@ -1204,6 +1219,9 @@
                                 tempTakerPassword, @"takerPassword",
                                 nil];
     
+    // 2022.05.17 ADD HMWOO 로딩 인디게이터 추가
+    [SBUtils showLoading];
+    
     [m_httpRequest setDelegate:self
                       selector:@selector(didReceiveDoTakerCertify:)];
     [m_httpRequest requestURL:url
@@ -1216,6 +1234,9 @@
 
 - (void)didReceiveDoTakerCertify:(id)result
 {
+    // 2022.05.17 ADD HMWOO 로딩 인디게이터 추가
+    [SBUtils hideLoading];
+    
     NSString* strData;
     NSString* strResult;
     NSString* strIdName;
@@ -1545,6 +1566,7 @@ replacementString:(NSString*)string
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view from its nib.
     Smart_BIMSAppDelegate* delegate = [[UIApplication sharedApplication] delegate];
     viewWidth = [delegate.g_viewWidth intValue];
@@ -1666,6 +1688,9 @@ replacementString:(NSString*)string
                                 remarks,        @"remarks",
                                 nil];
     
+    // 2022.05.17 ADD HMWOO 로딩 인디게이터 추가
+    [SBUtils showLoading];
+    
     [m_httpRequest setDelegate:self
                       selector:@selector(didReceiveTempSave:)];
     [m_httpRequest requestURL:url
@@ -1678,6 +1703,9 @@ replacementString:(NSString*)string
 
 - (void)didReceiveTempSave:(id)result
 {
+    // 2022.05.17 ADD HMWOO 로딩 인디게이터 추가
+    [SBUtils hideLoading];
+    
     NSString* strData;
     NSString* strResult;
     strData = [(NSString*)result stringByReplacingOccurrencesOfString:@"\r\n" withString:@""];
@@ -1763,6 +1791,9 @@ replacementString:(NSString*)string
 }
 
 - (void)showTempSaveData:(id)result{
+    
+    // 2022.05.17 ADD HMWOO 로딩 인디게이터 추가
+    [SBUtils hideLoading];
     
     NSString* strData;
     
