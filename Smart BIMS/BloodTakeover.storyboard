@@ -130,7 +130,6 @@
                                 <segments>
                                     <segment title=""/>
                                     <segment title=""/>
-                                    <segment title=""/>
                                 </segments>
                                 <connections>
                                     <action selector="bloodTypeSegmentChanged:" destination="Y6W-OH-hqX" eventType="valueChanged" id="IxB-A7-i6F"/>

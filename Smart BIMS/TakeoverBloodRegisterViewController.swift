@@ -64,7 +64,9 @@ class TakeoverBloodRegisterViewController: UIViewController {
     }
     @IBAction func bloodTypeSegmentChanged(_ sender: UISegmentedControl) {
         let allCase = BloodType.allCases
-        let currentValue = allCase[sender.selectedSegmentIndex]
+        
+        // 2022.05.16 MOD HMWOO 지정헌혈 화면 내 표시 제거 대응
+        let currentValue = allCase[sender.selectedSegmentIndex+1]
         currentBloodType = currentValue
     }
     
@@ -205,8 +207,8 @@ extension TakeoverBloodRegisterViewController {
     func setBloodTypeSegmentation() {
         let allCase = BloodType.allCases
         
-        for i in 0..<allCase.count {
-            bloodTypeSegmentation.setTitle(allCase[i].description, forSegmentAt: i)
+        for i in 1..<allCase.count {
+            bloodTypeSegmentation.setTitle(allCase[i].description, forSegmentAt: i-1)
         }
     }
     
@@ -233,7 +235,7 @@ extension TakeoverBloodRegisterViewController {
             m_SBUserInfoVO.szBimsSitename = tempSiteName
         }
         
-        bloodTypeSegmentation.selectedSegmentIndex = 1
+        bloodTypeSegmentation.selectedSegmentIndex = 0
         currentBloodType = .normal
         let parameter = NSDictionary(dictionary: ["reqId": BloodRegisterURLInfo.initialRequest,
                                                   "orgcode": m_SBUserInfoVO.szBimsOrgcode!,
@@ -354,16 +356,17 @@ extension TakeoverBloodRegisterViewController {
             return
         }
         
-        let (isAssigned, isRh) = BloodType.getBloodTypeInfoByTuple(data: bloodType)
+        // 2022.05.16 ADD HMWOO 지정 및 일반 헌혈 대응 기존 지정 헌혈 파라메터 제거
+        let (_, isRh) = BloodType.getBloodTypeInfoByTuple(data: bloodType)
         insertResult = nil
         
+        // 2022.05.16 ADD HMWOO 지정 및 일반 헌혈 대응 기존 지정 헌혈 파라메터 제거
         let parameter = NSDictionary(dictionary: ["reqId": BloodRegisterURLInfo.checkIsValidAndSaveBloodNo,
                                                   "orgcode": m_SBUserInfoVO.szBimsOrgcode!,
                                                   "carcode": m_SBUserInfoVO.szBimsCarcode!,
                                                   "takeoverdate": getCurrentDate(),
                                                   "takeoverseq": bloodLevel,
                                                   "bloodno": bloodNo,
-                                                  "isassigned": isAssigned,
                                                   "isrh": isRh,
                                                   "userid" : m_SBUserInfoVO.szBimsId!])
         
@@ -415,6 +418,12 @@ extension TakeoverBloodRegisterViewController {
             // showOkButtonAlert(str: "정상적으로 저장이 완료되었습니다.", delegate: self)
             self.setInitialInfo()
             becomeBarcodeTextFieldFirstResponder()
+        }
+        
+        // 2022.05.16 ADD HMWOO 지정 및 일반헌혈 화면 대응
+        if bloodTypeSegmentation.selectedSegmentIndex != 1 && insertResult?.isAssigned != "Y"
+        {
+            currentBloodType = BloodType.allCases[1]
         }
         
         dpGroup.leave()
@@ -541,6 +550,20 @@ extension TakeoverBloodRegisterViewController: UITextFieldDelegate {
                 if result.isMulti == "Y" {
                     self?.bloodBarcodeTextField.resignFirstResponder()
                     self?.bldProccodeBarcodeTextField.becomeFirstResponder()
+                    
+                    if self?.bloodTypeSegmentation.selectedSegmentIndex != 1
+                    {
+                        // 2022.05.16 ADD HMWOO 지정 및 일반 헌혈 대응
+                        if result.isAssigned == "Y"
+                        {
+                            self?.currentBloodType = BloodType.allCases[0]
+                        }
+                        else
+                        {
+                            self?.currentBloodType = BloodType.allCases[1]
+                        }
+                    }
+                    
                 } else {
                     self?.bloodBarcodeTextField.text = ""
                     self?.insertResult = nil

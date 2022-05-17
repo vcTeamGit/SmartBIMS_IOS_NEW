@@ -60,6 +60,8 @@ struct TakeoverBloodInsertResult: Decodable {
     var isMal: String
     var isMulti: String
     var isTerminated: String
+    // 2022.05.16 ADD HMWOO 지정 헌혈 및 일반 헌혈 구분 값 추가
+    var isAssigned: String
     
     var result: String
 }
