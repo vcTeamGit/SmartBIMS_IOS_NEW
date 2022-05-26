@@ -641,12 +641,6 @@
             return;
         }
         
-        //차수 화면에 표시
-        //[NSString stringWithFormat:@"%ld/%d", m_pageControl.currentPage + 1,[[dictionary valueForKey:@"maxtakeoverseq"] intValue]];
-        
-        //인계한 총 혈액 수
-        //self.m_totalTakeOverBloodCntLabel.text = [dictionary valueForKey:@"bldcnt"];
-        
         if(self.takeOverInfoMap != nil)
         {
             self.takeOverInfoMap = nil;
@@ -1316,28 +1310,341 @@
     
     // 2022.04.27 MOD HMWOO ScrollView Size Change
     size.width = 900;
-	
-	TRACE(@"width : %f, height : %f", size.width, size.height); 
-	
-	self.m_scrollView.contentSize = size;
+    
+    TRACE(@"width : %f, height : %f", size.width, size.height);
+    
+    self.m_scrollView.contentSize = size;
     
     [self.view addSubview:m_scrollView];
     [m_scrollView addSubview:m_btnContainerView];
     
     m_pageControl.numberOfPages = 3;
+    
+    // 2022.04.28 ADD HMWOO 수거자 등록 다이얼 로그 추가
+    self.layout_dialog_back.frame = CGRectMake(0, 0, viewWidth, viewHeight);
+    self.dialog_reg_collector.frame = CGRectMake(8, winHeight, 304, 220);
+    
+    [self.view addSubview:layout_dialog_back];
+    [self.view addSubview:dialog_reg_collector];
 }
 
+- (IBAction)listener_dialog_back:(id)sender
+{
+    if(self.layout_dialog_back.alpha > 0)
+    {
+        CGFloat alpha = 0;
+        [self.layout_dialog_back setAlpha:alpha];
+        
+        if(self.dialog_reg_collector.frame.origin.y < 60)
+        {
+            [self.et_collector_id resignFirstResponder];
+            [self.et_collector_pw resignFirstResponder];
+            
+            [UIView beginAnimations:nil context:nil];
+            [UIView setAnimationDuration:0.5];
+            
+            self.dialog_reg_collector.frame = CGRectMake(8, winHeight, 304, 220);
+                        
+            [UIView commitAnimations];
+        }
+    }
+}
+
+- (IBAction)listener_change_takeover_seq:(id)sender
+{
+    self.sp_takeover_seq.hidden = NO;
+}
+
+- (IBAction)listener_direct_takeover:(id)sender
+{
+    [self vailidationRegistCollector:@"Y"];
+}
+
+// 2022.05.19 ADD HMWOO 수거자 등록 버튼 리스너 추가
+- (IBAction)listener_reg_collector:(id)sender
+{
+    [self vailidationRegistCollector:@""];
+}
+
+- (void)vailidationRegistCollector:(NSString *)directFlag
+{
+    @try
+    {
+        if([directFlag isEqualToString:@"Y"] == false)
+        {
+            if(self.et_collector_id.text.length <= 4)
+            {
+                UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"[알 림]"
+                                                                    message:@"수거자 아이디가 부정확합니다"
+                                                                   delegate:self
+                                                          cancelButtonTitle:@"확인"
+                                                          otherButtonTitles: nil];
+                
+                
+                [alertView show];
+                [alertView release];
+                
+                return;
+            }
+            else if(self.et_collector_pw.text.length <= 4)
+            {
+                UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"[알 림]"
+                                                                    message:@"수거자 비밀번호가 부정확합니다"
+                                                                   delegate:self
+                                                          cancelButtonTitle:@"확인"
+                                                          otherButtonTitles: nil];
+                
+                
+                [alertView show];
+                [alertView release];
+                
+                return;
+            }
+        }
+        
+        NSString *takeoverseq = btn_takeover_seq.titleLabel.text;
+        
+        SBTakeOverInfoVO *takeOverInfoVO = [self.takeOverInfoMap valueForKey:takeoverseq];
+        
+        if(takeOverInfoVO.takername != nil)
+        {
+            UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"[알 림]"
+                                                                message:[NSString stringWithFormat:@"수거자[%@]가 이미 등록되어 있습니다.\n수거자를 변경하시곘습니까?", takeOverInfoVO.takername]
+                                                               delegate:self
+                                                      cancelButtonTitle:@"아니오"
+                                                      otherButtonTitles:@"예", nil];
+            if([directFlag isEqualToString:@"Y"])
+            {
+                alertView.tag = kDirectConfirmCollectorChange;
+            }
+            else
+            {
+                alertView.tag = kConfirmCollectorChange;
+            }
+            
+            
+            [alertView show];
+            [alertView release];
+            
+            return;
+        }
+        
+        [self confirmRegistCollector:directFlag];
+    }
+    @catch(NSException* ex)
+    {
+        TRACE(@"%@%@", [ex name], [ex reason]);
+        
+        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"[알 림]"
+                                                            message:@"수거자 등록을 실패하였습니다.\n오류가 지속될 경우 담당자에게\n문의 부탁 드립니다."
+                                                           delegate:self
+                                                  cancelButtonTitle:@"확인"
+                                                  otherButtonTitles: nil];
+        
+        [alertView show];
+        [alertView release];
+    }
+}
+
+- (void)confirmRegistCollector:(NSString *)directFlag
+{
+    @try
+    {
+        
+        NSString *takeoverseq = btn_takeover_seq.titleLabel.text;
+        
+        SBTakeOverInfoVO *takeOverInfoVO = [self.takeOverInfoMap valueForKey:takeoverseq];
+        
+        NSMutableString* comp1 = [NSMutableString stringWithString:(takeOverInfoVO.bloodcnt)];
+        
+        NSString* comp2 = takeOverInfoVO.bloodcnt2;
+        if([comp1 isEqualToString:comp2] == NO)
+        {
+            [comp1 appendString:@"("];
+            [comp1 appendString:comp2];
+            [comp1 appendString:@")"];
+        }
+        
+        NSString* strTempMsg =
+        [NSString stringWithFormat:
+         @"혈액[%@]\n 헌혈검체[%@]\n 기타검체[%@]\n 아이스팩[%@]\n PCM냉매제[%@]\n 혈액박스[%@]\n---------------\n 안전성검사[%@건 %@개]\n 지정헌혈[%@]\n 조혈모세포[%@]\n 특검[%@건 %@개]\n 말라리아[전혈:%@, 혈장:%@]\n에 대한 수거자 등록을 진행하시겠습니까?",
+         comp1,
+         takeOverInfoVO.bloodsamplecnt,
+         takeOverInfoVO.etcsamplecnt,
+         takeOverInfoVO.icepackcnt,
+         takeOverInfoVO.coolantcnt,
+         takeOverInfoVO.bloodboxcnt,
+         takeOverInfoVO.hrgsamplecnt2,
+         takeOverInfoVO.hrgsamplecnt,
+         takeOverInfoVO.assignedcnt,
+         takeOverInfoVO.marsamplecnt,
+         takeOverInfoVO.spcsamplecnt2,
+         takeOverInfoVO.spcsamplecnt,
+         takeOverInfoVO.gbmal1cnt,
+         takeOverInfoVO.gbmal2cnt
+        ];
+        
+        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"[알 림]"
+                                                            message:strTempMsg
+                                                           delegate:self
+                                                  cancelButtonTitle:@"아니오"
+                                                  otherButtonTitles:@"예", nil];
+        
+        if([directFlag isEqualToString:@"Y"])
+        {
+            alertView.tag = kDirectRegistCollectorTag;
+        }
+        else
+        {
+            alertView.tag = kRegistCollectorTag;
+        }
+        
+        [alertView show];
+        [alertView release];
+    }
+    @catch(NSException* ex)
+    {
+        TRACE(@"%@%@", [ex name], [ex reason]);
+        
+        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"[알 림]"
+                                                            message:@"수거자 등록을 실패하였습니다.\n오류가 지속될 경우 담당자에게\n문의 부탁 드립니다."
+                                                           delegate:self
+                                                  cancelButtonTitle:@"확인"
+                                                  otherButtonTitles: nil];
+        
+        [alertView show];
+        [alertView release];
+    }
+}
+
+// 2022.05.25 ADD HMWOO 수거자 등록 기능 추가
+- (void)registTakerOverCollector:(NSString *)directlFlag
+{
+    @try
+    {
+        NSString* tempReqId = @"registCollectorInfo";
+        NSString* tempTakeOverSeq = btn_takeover_seq.titleLabel.text;
+        NSString* tempOrgCode = [NSString stringWithString:m_SBUserInfoVO.szBimsOrgcode];
+        NSString* tempCarCode = [NSString stringWithString:m_SBUserInfoVO.szBimsCarcode];
+        
+        NSString* tempTakerUserIdNo;
+        NSString* tempTakerPassword;
+        
+        
+        if([directlFlag isEqualToString:@"Y"])
+        {
+            tempTakerUserIdNo = m_SBUserInfoVO.szBimsId;
+            tempTakerPassword = @"";
+
+        }
+        else
+        {
+            tempTakerUserIdNo = [NSString stringWithString:et_collector_id.text];
+            tempTakerPassword = [NSString stringWithString:et_collector_pw.text];
+        }
+        
+        // 수거자 인증요청
+        NSString* url = URL_MANAGE_TAKEOVER_INFO;
+        
+        NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:
+                                    tempReqId, @"reqId",
+                                    tempTakeOverSeq, @"takeoverseq",
+                                    tempOrgCode, @"orgcode",
+                                    tempCarCode, @"carcode",
+                                    tempTakerUserIdNo, @"takerUserIdNo",
+                                    tempTakerPassword, @"takerPassword",
+                                    directlFlag, @"directFlag",
+                                    nil];
+        
+        [SBUtils showLoading];
+        
+        [m_httpRequest setDelegate:self
+                          selector:@selector(didReceiveRegistCollector:)];
+        
+        [m_httpRequest requestURL:url
+                       bodyObject:bodyObject];
+    }
+    @catch(NSException *ex)
+    {
+        TRACE(@"%@%@", [ex name], [ex reason]);
+        
+        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"[알 림]"
+                                                            message:@"수거자 등록을 실패하였습니다.\n오류가 지속될 경우 담당자에게\n문의 부탁 드립니다."
+                                                           delegate:self
+                                                  cancelButtonTitle:@"확인"
+                                                  otherButtonTitles: nil];
+        
+        [alertView show];
+        [alertView release];
+    }
+}
+
+- (void)didReceiveRegistCollector:(id)result
+{
+    [SBUtils hideLoading];
+    
+    NSString* strData;
+    NSString* strResult;
+    NSString* strResultMsg;
+    
+    strData = [(NSString*)result stringByReplacingOccurrencesOfString:@"\r\n" withString:@""];
+    
+    TRACE(@"strData := [%@]", strData);
+        
+    // 응답값 확인
+    if([strData isEqualToString:kREQUEST_TIMEOUT_TYPE] == YES)
+    {
+        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"[알 림]"
+                                                            message:kREQUEST_TIMEOUT_MSG
+                                                           delegate:self
+                                                  cancelButtonTitle:@"확인"
+                                                  otherButtonTitles: nil];
+        
+        
+        [alertView show];
+        [alertView release];
+        
+        return;
+    }
+    
+    SBJsonParser* jsonParser = [SBJsonParser new];
+    NSDictionary* dictionary = nil;
+    
+    // JSON 문자열을 객체로 변환
+    dictionary = [jsonParser objectWithString:strData];
+    
+    strResult = [dictionary valueForKey:@"result"];
+    strResultMsg = [dictionary valueForKey:@"resultmsg"];
+    
+    
+    
+    UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"[알 림]"
+                                                        message:strResultMsg
+                                                       delegate:self
+                                              cancelButtonTitle:@"확인"
+                                              otherButtonTitles: nil];
+    
+    // 정상등록이 되면 'Y' 값 리턴
+    if([strResult isEqualToString:@"Y"])
+    {
+        [alertView setTag:kTakerDialogClearTag];
+    }
+    
+    [alertView show];
+    [alertView release];
+    
+}
 
 //- (void)makeTrafficForVPN
 //{
 //    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/index.jsp";
-//	NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:nil];
-//	[m_httpRequest setDelegate:self
-////					  selector:@selector(didReceiveResponse:)];
+//    NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:nil];
+//    [m_httpRequest setDelegate:self
+////                      selector:@selector(didReceiveResponse:)];
 //                      selector:nil];
-//	[m_httpRequest requestURL:url
-//				   bodyObject:bodyObject];
-//    
+//    [m_httpRequest requestURL:url
+//                   bodyObject:bodyObject];
+//
 //    TRACE(@"***************** makeTrafficForVPN *****************");
 //}
 
