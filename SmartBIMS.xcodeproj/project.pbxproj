@@ -26,6 +26,9 @@
 		57FEEF17268C35DA001EABB9 /* TakeOverBloodRegisterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEEF15268C35DA001EABB9 /* TakeOverBloodRegisterTableViewCell.swift */; };
 		57FEEF18268C35DA001EABB9 /* TakeOverBloodRegisterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57FEEF16268C35DA001EABB9 /* TakeOverBloodRegisterTableViewCell.xib */; };
 		610C8C5E272153C9006BA492 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 610C8C5D272153C9006BA492 /* InfoPlist.strings */; };
+		880F48FF283B248A00968A57 /* action_collector_reg.png in Resources */ = {isa = PBXBuildFile; fileRef = 880F48FE283B248900968A57 /* action_collector_reg.png */; };
+		88A84CFB28220092003EEE84 /* SBServerURLContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A84CFA28220092003EEE84 /* SBServerURLContent.m */; };
+		88DC6E922836118900D2E0A4 /* SBTakeOverInfoVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DC6E912836118900D2E0A4 /* SBTakeOverInfoVO.m */; };
 		92063348197F6DB40049FBAD /* first_donation2.png in Resources */ = {isa = PBXBuildFile; fileRef = 92063346197F6DB40049FBAD /* first_donation2.png */; };
 		9206334C197F719E0049FBAD /* first_donation.png in Resources */ = {isa = PBXBuildFile; fileRef = 9206334B197F719E0049FBAD /* first_donation.png */; };
 		920D5E851547E19B009ED883 /* PictureLibViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 920D5E831547E19B009ED883 /* PictureLibViewController.m */; };
@@ -466,6 +469,11 @@
 		57FEEF15268C35DA001EABB9 /* TakeOverBloodRegisterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeOverBloodRegisterTableViewCell.swift; sourceTree = "<group>"; };
 		57FEEF16268C35DA001EABB9 /* TakeOverBloodRegisterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TakeOverBloodRegisterTableViewCell.xib; sourceTree = "<group>"; };
 		610C8C5D272153C9006BA492 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = SOURCE_ROOT; };
+		880F48FE283B248900968A57 /* action_collector_reg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = action_collector_reg.png; sourceTree = "<group>"; };
+		88A84CF928220006003EEE84 /* SBServerURLContent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBServerURLContent.h; sourceTree = "<group>"; };
+		88A84CFA28220092003EEE84 /* SBServerURLContent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBServerURLContent.m; sourceTree = "<group>"; };
+		88DC6E90283610E900D2E0A4 /* SBTakeOverInfoVO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTakeOverInfoVO.h; sourceTree = "<group>"; };
+		88DC6E912836118900D2E0A4 /* SBTakeOverInfoVO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTakeOverInfoVO.m; sourceTree = "<group>"; };
 		92063346197F6DB40049FBAD /* first_donation2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first_donation2.png; sourceTree = "<group>"; };
 		9206334B197F719E0049FBAD /* first_donation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first_donation.png; sourceTree = "<group>"; };
 		920D5E821547E19B009ED883 /* PictureLibViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureLibViewController.h; sourceTree = "<group>"; };
@@ -1260,6 +1268,8 @@
 				9211B5BD14CFA83200F6A927 /* SBLoginMgrListViewCell.h */,
 				9211B5BE14CFA83200F6A927 /* SBLoginMgrListViewCell.m */,
 				924F26B314CFB9BC000A96CD /* SBLoginMgrListViewCell.xib */,
+				88A84CF928220006003EEE84 /* SBServerURLContent.h */,
+				88A84CFA28220092003EEE84 /* SBServerURLContent.m */,
 			);
 			name = main;
 			sourceTree = "<group>";
@@ -1677,6 +1687,7 @@
 				929A649614681322001F74D7 /* action_view_multicolumn.png */,
 				929A649714681322001F74D7 /* app_kteatime.png */,
 				929A643E14680D13001F74D7 /* action_viewmag1.png */,
+				880F48FE283B248900968A57 /* action_collector_reg.png */,
 				929A643F14680D13001F74D7 /* app_kbounce.png */,
 				929A644014680D13001F74D7 /* app_xeyes.png */,
 				929A644114680D13001F74D7 /* app_kdict.png */,
@@ -1784,6 +1795,8 @@
 				92CC252113EB88F3003B56C0 /* SBUserInfoVO.m */,
 				92EE363713EFE4C6006BA738 /* SBBloodnoInfoVO.h */,
 				92EE363813EFE4C6006BA738 /* SBBloodnoInfoVO.m */,
+				88DC6E90283610E900D2E0A4 /* SBTakeOverInfoVO.h */,
+				88DC6E912836118900D2E0A4 /* SBTakeOverInfoVO.m */,
 			);
 			name = vo;
 			sourceTree = "<group>";
@@ -1989,6 +2002,7 @@
 				929A648A14680D14001F74D7 /* build.png in Resources */,
 				921FF8B01F46590200E3B94B /* Crystal_Clear_app_aim_2.png in Resources */,
 				929A648B14680D14001F74D7 /* bookmark_Silver.png in Resources */,
+				880F48FF283B248A00968A57 /* action_collector_reg.png in Resources */,
 				929A648C14680D14001F74D7 /* bookmark.png in Resources */,
 				921FF8AA1F4658FA00E3B94B /* Crystal_Clear_app_kfouleggs.png in Resources */,
 				929A648D14680D14001F74D7 /* back.png in Resources */,
@@ -2253,6 +2267,7 @@
 				9296320113FBA068009E3312 /* SBBloodInfoViewController.m in Sources */,
 				9296320D13FCDE97009E3312 /* SBFirstMatchingViewController.m in Sources */,
 				929341141404FC4A00670269 /* SBSecondMatchingViewController.m in Sources */,
+				88A84CFB28220092003EEE84 /* SBServerURLContent.m in Sources */,
 				57FEEF17268C35DA001EABB9 /* TakeOverBloodRegisterTableViewCell.swift in Sources */,
 				572F66A426D373A2008657C4 /* TakeOverChangeBloodLevelInfoTableViewController.swift in Sources */,
 				928CE6541406107E00B90A83 /* SBUtils.m in Sources */,
@@ -2298,6 +2313,7 @@
 				92929B2D18FE6CB10010F7DC /* SBEtcSrchStaTableViewCell.m in Sources */,
 				57D0B5F526831E3900FF7ACA /* TakeoverBloodRegisterViewController.swift in Sources */,
 				920D5E851547E19B009ED883 /* PictureLibViewController.m in Sources */,
+				88DC6E922836118900D2E0A4 /* SBTakeOverInfoVO.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

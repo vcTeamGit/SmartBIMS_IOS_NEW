@@ -7,6 +7,8 @@
 //
 
 #import "MainViewController.h"
+// 2022.05.19 ADD HMWOO 수거자 등록 대응 VO 파일 추가
+#import "SBTakeOverInfoVO.h"
 #import "SBUserInfoVO.h"
 #import "HttpRequest.h"
 #import "JSON.h"
@@ -37,6 +39,15 @@
 
 @synthesize m_SBUserInfoVO;
 @synthesize m_httpRequest;
+
+// 2022.05.24 ADD HMWOO 수거자 등록 다이얼 로그 추가
+@synthesize layout_dialog_back;
+@synthesize dialog_reg_collector;
+@synthesize btn_takeover_seq;
+@synthesize sp_takeover_seq;
+@synthesize et_collector_id;
+@synthesize et_collector_pw;
+@synthesize takeOverInfoMap;
 
 @synthesize m_orgNameLabel;
 @synthesize m_userNameLabel;
@@ -571,7 +582,235 @@
     [UIView commitAnimations];
 }
 
+// 2022.04.28 ADD HMWOO 수거자 등록 다이얼 로그 추가
+- (IBAction)listener_call_reg_collector_dialog:(id)sender
+{
+    // 2022.05.18 ADD HMWOO 인계정보 조회 URL을 호출하여 수거자가 인계 정보를 확인할 수 있도록 함
+    NSString* url = URL_MANAGE_TAKEOVER_INFO;
+    NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:@"getTakeOverInfo", @"reqId",
+                                m_SBUserInfoVO.szBimsOrgcode, @"orgcode",
+                                m_SBUserInfoVO.szBimsCarcode, @"carcode",
+                                nil];
 
+    [SBUtils showLoading];
+    
+    [m_httpRequest setDelegate:self
+                      selector:@selector(didReceiveTakeOverInfo:)];
+    
+    [m_httpRequest requestURL:url
+                   bodyObject:bodyObject];
+}
+
+- (void)didReceiveTakeOverInfo:(id)result
+{
+    @try
+    {
+        NSString* strData = [(NSString*)result stringByReplacingOccurrencesOfString:@"\r\n" withString:@""];
+        
+        // 응답값 확인
+        if([strData isEqualToString:kREQUEST_TIMEOUT_TYPE] == YES){
+            UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"[알 림]"
+                                                                message:kREQUEST_TIMEOUT_MSG
+                                                               delegate:self
+                                                      cancelButtonTitle:@"확인"
+                                                      otherButtonTitles: nil];
+            
+            [alertView show];
+            [alertView release];
+            
+            return;
+        }
+        
+        SBJsonParser* jsonParser = [SBJsonParser new];
+        NSDictionary* dictionary = nil;
+        
+        dictionary = [jsonParser objectWithString:strData error:nil];
+        
+        // 인계혈액이 존재하는지 여부 체크
+        if([[dictionary valueForKey:@"rowcnt"] intValue] <= 0)
+        {
+            UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"[알 림]"
+                                                                message:@"등록된 인계혈액이 존재하지 않습니다."
+                                                               delegate:self
+                                                      cancelButtonTitle:@"확인"
+                                                      otherButtonTitles: nil];
+            
+            [alertView show];
+            [alertView release];
+            
+            return;
+        }
+        
+        //차수 화면에 표시
+        //[NSString stringWithFormat:@"%ld/%d", m_pageControl.currentPage + 1,[[dictionary valueForKey:@"maxtakeoverseq"] intValue]];
+        
+        //인계한 총 혈액 수
+        //self.m_totalTakeOverBloodCntLabel.text = [dictionary valueForKey:@"bldcnt"];
+        
+        if(self.takeOverInfoMap != nil)
+        {
+            self.takeOverInfoMap = nil;
+            [self.takeOverInfoMap release];
+        }
+        
+        self.takeOverInfoMap = [NSMutableDictionary dictionary];
+        
+        SBTakeOverInfoVO *tempSBTakeOverInfoVO;
+
+        NSMutableArray *tmpTakeOverInfo = [dictionary valueForKey:@"result"];
+        
+        for(int i = 0; i < [tmpTakeOverInfo count]; i++)
+        {
+            NSDictionary *data = [tmpTakeOverInfo objectAtIndex:i];
+            
+            NSString *seq = [data objectForKey:@"takeoverseq"];
+            
+            if(seq != nil && [seq isEqualToString:@""] == false)
+            {
+                tempSBTakeOverInfoVO = [SBTakeOverInfoVO new];
+                
+                [tempSBTakeOverInfoVO setBloodcnt:[[tmpTakeOverInfo objectAtIndex:i] objectForKey:@"bloodcnt"]];
+                [tempSBTakeOverInfoVO setBloodcnt2:[[tmpTakeOverInfo objectAtIndex:i] objectForKey:@"bloodcnt2"]];
+                [tempSBTakeOverInfoVO setBloodsamplecnt:[[tmpTakeOverInfo objectAtIndex:i] objectForKey:@"bloodsamplecnt"]];
+                [tempSBTakeOverInfoVO setEtcsamplecnt:[[tmpTakeOverInfo objectAtIndex:i] objectForKey:@"etcsamplecnt"]];
+                [tempSBTakeOverInfoVO setIcepackcnt:[[tmpTakeOverInfo objectAtIndex:i] objectForKey:@"icepackcnt"]];
+                [tempSBTakeOverInfoVO setCoolantcnt:[[tmpTakeOverInfo objectAtIndex:i] objectForKey:@"coolantcnt"]];
+                [tempSBTakeOverInfoVO setBloodboxcnt:[[tmpTakeOverInfo objectAtIndex:i] objectForKey:@"bloodboxcnt"]];
+                [tempSBTakeOverInfoVO setHrgsamplecnt:[[tmpTakeOverInfo objectAtIndex:i] objectForKey:@"hrgsamplecnt"]];
+                [tempSBTakeOverInfoVO setHrgsamplecnt2:[[tmpTakeOverInfo objectAtIndex:i] objectForKey:@"hrgsamplecnt2"]];
+                [tempSBTakeOverInfoVO setAssignedcnt:[[tmpTakeOverInfo objectAtIndex:i] objectForKey:@"assignedcnt"]];
+                [tempSBTakeOverInfoVO setMarsamplecnt:[[tmpTakeOverInfo objectAtIndex:i] objectForKey:@"marsamplecnt"]];
+                [tempSBTakeOverInfoVO setSpcsamplecnt:[[tmpTakeOverInfo objectAtIndex:i] objectForKey:@"spcsamplecnt"]];
+                [tempSBTakeOverInfoVO setSpcsamplecnt2:[[tmpTakeOverInfo objectAtIndex:i] objectForKey:@"spcsamplecnt2"]];
+                [tempSBTakeOverInfoVO setGbmal1cnt:[[tmpTakeOverInfo objectAtIndex:i] objectForKey:@"gbmal1cnt"]];
+                [tempSBTakeOverInfoVO setGbmal2cnt:[[tmpTakeOverInfo objectAtIndex:i] objectForKey:@"gbmal2cnt"]];
+                [tempSBTakeOverInfoVO setTakername:[[tmpTakeOverInfo objectAtIndex:i] objectForKey:@"takername"]];
+                
+                [self.takeOverInfoMap setObject:tempSBTakeOverInfoVO forKey:seq];
+            }
+        }
+        
+        self.sp_takeover_seq.delegate = self;
+        self.sp_takeover_seq.dataSource = self;
+        self.sp_takeover_seq.rowHeight = 34;
+        self.sp_takeover_seq.hidden = YES;
+        
+        int spinner_height = [tmpTakeOverInfo count] * self.sp_takeover_seq.rowHeight;
+        
+        if([tmpTakeOverInfo count] > 3)
+        {
+            spinner_height = self.sp_takeover_seq.rowHeight * 3;
+        }
+        
+        self.sp_takeover_seq.frame = CGRectMake
+        (
+            self.sp_takeover_seq.frame.origin.x, self.sp_takeover_seq.frame.origin.y,
+            self.sp_takeover_seq.frame.size.width, spinner_height
+         );
+        
+        [self.sp_takeover_seq reloadData];
+        
+        NSInteger *lastIndex = [tmpTakeOverInfo count] - 1;
+        NSIndexPath *lastItemIndex = [NSIndexPath indexPathForRow:lastIndex inSection:0];
+        
+        //self.btn_takeover_seq.titleLabel.text = [[self.takeOverInfoMap allKeys] objectAtIndex:lastIndex];
+        //self.btn_takeover_seq.titleLabel.textAlignment = NSTextAlignmentCenter;
+        
+        [self.btn_takeover_seq setTitle:[[self.takeOverInfoMap allKeys] objectAtIndex:lastIndex] forState:UIControlStateNormal];
+        [self.sp_takeover_seq selectRowAtIndexPath:lastItemIndex animated:NO scrollPosition:UITableViewScrollPositionTop];
+                
+        [UIView beginAnimations:nil context:nil];
+        [UIView setAnimationDuration:0.5];
+                
+        self.dialog_reg_collector.frame = CGRectMake(8, 51, 304, 220);
+        
+        CGFloat alpha = 0.5;
+        [self.layout_dialog_back setAlpha:alpha];
+    
+        self.et_collector_id.text = @"";
+        self.et_collector_pw.text = @"";
+            
+        [self.et_collector_id becomeFirstResponder];
+        
+        [UIView commitAnimations];
+    }
+    @catch(NSException *ex)
+    {
+        TRACE(@"%@%@", [ex name], [ex reason]);
+        
+        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"[알 림]"
+                                                            message:@"수거자 등록 데이터 조회를 실패하였습니다.\n오류가 지속될 경우 담당자에게\n문의 부탁 드립니다."
+                                                           delegate:self
+                                                  cancelButtonTitle:@"확인"
+                                                  otherButtonTitles: nil];
+        
+        [alertView show];
+        [alertView release];
+    }
+    @finally
+    {
+        [SBUtils hideLoading];
+    }
+}
+
+
+#pragma mark -
+#pragma mark UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    NSInteger nTag = textField.tag;
+    NSUInteger strLength = textField.text.length;
+    
+    switch(nTag){
+        case kTakerUserIdNoTextFieldTag :
+            if(strLength < 4)
+            {
+                et_collector_id.text = @"";
+                
+                [SBUtils playAlertSystemSoundWithSoundType:SOUND_ALERT_1];
+                UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"입력오류"
+                                                                    message:@"입력하신 수거자아이디가 너무 짧습니다"
+                                                                   delegate:self
+                                                          cancelButtonTitle:@"확인"
+                                                          otherButtonTitles: nil];
+                
+                [alertView show];
+                [alertView release];
+                
+                return NO;
+            }
+            else
+            {
+                self.et_collector_id.text = [textField.text uppercaseString];
+                [et_collector_pw becomeFirstResponder];
+            }
+            break;
+        case kTakerPasswordTextFieldTag :
+            if(strLength < 4){
+                et_collector_pw.text = @"";
+                
+                [SBUtils playAlertSystemSoundWithSoundType:SOUND_ALERT_1];
+                UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"입력오류"
+                                                                    message:@"입력하신 비밀번호가 너무 짧습니다"
+                                                                   delegate:self
+                                                          cancelButtonTitle:@"확인"
+                                                          otherButtonTitles: nil];
+                
+                [alertView show];
+                [alertView release];
+                
+                return NO;
+            }else{
+                [self listener_reg_collector:nil];
+            }
+            break;
+        default:
+            return YES;
+    }
+ 
+    return YES;
+}
 
 - (IBAction)pageControllerValueChanged:(id)sender
 {
@@ -875,6 +1114,8 @@
         if(buttonIndex != [alertView cancelButtonIndex]){
             //        TRACE(@"YES");
             self.m_SBUserInfoVO = nil;
+            // 2022.05.25 ADD HMWOO 수거자 등록 대응
+            self.takeOverInfoMap = nil;
             CGRect frame = CGRectMake(0, 0, viewWidth, viewHeight);
             self.view.frame = frame;
             
@@ -894,7 +1135,39 @@
         }else{
             //        TRACE(@"cancel");
         }
-
+    }
+    // 2022.05.25 ADD HMWOO 수거자 등록 대응
+    else if(alertView.tag == kDirectConfirmCollectorChange)
+    {
+        if(buttonIndex != [alertView cancelButtonIndex])
+        {
+            [self confirmRegistCollector:@"Y"];
+        }
+    }
+    else if(alertView.tag == kConfirmCollectorChange)
+    {
+        if(buttonIndex != [alertView cancelButtonIndex])
+        {
+            [self confirmRegistCollector:@""];
+        }
+    }
+    else if(alertView.tag == kDirectRegistCollectorTag)
+    {
+        if(buttonIndex != [alertView cancelButtonIndex])
+        {
+            [self registTakerOverCollector:@"Y"];
+        }
+    }
+    else if(alertView.tag == kRegistCollectorTag)
+    {
+        if(buttonIndex != [alertView cancelButtonIndex])
+        {
+            [self registTakerOverCollector:@""];
+        }
+    }
+    else if(alertView.tag == kTakerDialogClearTag)
+    {
+        [self listener_dialog_back:nil];
     }
 }
 
@@ -906,6 +1179,8 @@
         if(buttonIndex != [actionSheet cancelButtonIndex]){
             //        TRACE(@"YES");
             self.m_SBUserInfoVO = nil;
+            // 2022.05.19 ADD HMWOO 수거자 등록 대응
+            self.takeOverInfoMap = nil;
             CGRect frame = CGRectMake(0, 0, viewWidth, viewHeight);
             self.view.frame = frame;
             
@@ -1104,6 +1379,11 @@
     self.m_testButton = nil;
     self.m_pairingBarcodeButton = nil;
     self.m_pictureLibViewController = nil;
+    
+    // 2022.05.19 ADD HMWOO 수거자 등록 다이얼 로그 추가 대응
+    self.sp_takeover_seq = nil;
+    self.btn_takeover_seq = nil;
+    self.takeOverInfoMap = nil;
 }
 
 - (void)dealloc
@@ -1134,6 +1414,11 @@
     [m_testButton release];
     [m_pairingBarcodeButton release];
     [m_pictureLibViewController release];
+    
+    // 2022.05.24 ADD HMWOO 수거자 등록 다이얼 로그 추가 대응
+    [sp_takeover_seq release];
+    [btn_takeover_seq release];
+    [takeOverInfoMap release];
 
     [btnOrgTalk release];
     [super dealloc];
@@ -1143,6 +1428,46 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+// 2022.05.24 ADD HMWOO 수거자 등록 다이얼 로그 추가 대응
+#pragma mark -
+#pragma mark UITableViewDelegate
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // 데이터 선택시 선택한 데이터를 버튼 표시 텍스트로 설정
+    UITableViewCell *cell = [self.sp_takeover_seq cellForRowAtIndexPath:indexPath];
+    [self.btn_takeover_seq setTitle:cell.textLabel.text forState:UIControlStateNormal];
+    
+    // 데이터 선택시 셀렉트 박스 비활성화
+    self.sp_takeover_seq.hidden = YES;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.takeOverInfoMap count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *identifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+
+    if (cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    }
+    
+    //cell.textLabel.text = [[self.takeOverInfoMap allKeys] objectAtIndex:indexPath.row];
+    cell.textLabel.text = [[NSNumber numberWithInt:(int)indexPath.row + 1] stringValue];
+    cell.textLabel.textAlignment = NSTextAlignmentCenter;
+    
+    return cell;
 }
 
 @end

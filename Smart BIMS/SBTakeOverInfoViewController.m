@@ -124,7 +124,8 @@
         tempUserId = [NSString stringWithString:m_SBUserInfoVO.szBimsId];
     }
     
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBTakeOverBloodDAONew.jsp";
+    // 2022.05.18 MOD HMWOO 인계정보 조회 URL을 URL 관리 페이지에서 조회하도록 수정
+    NSString* url = URL_QUERY_TAKEOVER_INFO;
     NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:@"takeOverInfoList", @"reqId",
                                 tempOrgCode, @"orgcode",
                                 tempCarCode, @"carcode",

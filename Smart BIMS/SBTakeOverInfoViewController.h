@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "SBServerURLContent.h"
 
 #define kIsNoTakeOverInfoTag         101
 

@@ -1,3 +1,11 @@
+/**
+ * 프로젝트 내 URL을 개발 및 검수 용으로
+ * 호출할 수 있도록 대응 (Swift 에서 호출하는 URL)
+ *
+ * @author HMWOO
+ * @version 1.0
+ */
+
 #import "SBServerURLContent.h"
 
 @implementation SBServerURLContent

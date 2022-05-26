@@ -27,14 +27,17 @@
 #define kbloodBoxCntTextFieldTag        21
 #define kspcCntTextFieldTag             22
 
-#define kTakerUserIdNoTextFieldTag      31
-#define kTakerPasswordTextFieldTag      32
+// 2022.05.19 DEL HMWOO 수거자 정보 메인 화면 관리로 인한 제거
+// #define kTakerUserIdNoTextFieldTag      31
+// #define kTakerPasswordTextFieldTag      32
 
 #define kTakeOverInfoSaveCompletedTag       101
 #define kTakeOverInfoSaveFailTag            102
 #define kIsNoBloodNoAtNewTakeOverSeqTag     104
 #define kSaveActionValidationTag            105
-#define kSaveActionValidationTakerTag       106
+
+// 2022.05.19 DEL HMWOO 수거자 정보 메인 화면 관리로 인한 제거
+// #define kSaveActionValidationTakerTag       106
 #define kSaveActionValidationValueTag       107
 
 @class HttpRequest;
@@ -101,12 +104,13 @@
     NSMutableArray* m_mDataArray;
     
     // 수거자 인증
-    UIView* m_takerCertView;
-    UITextField* m_takerUserIdNoTextField;
-    UITextField* m_takerPasswordTextField;
-    UIActivityIndicatorView* m_takerActivityIndicatorView;
-    UILabel* m_takerInfoLabel;
-    UILabel* m_takerIdNoLabel;
+    // 2022.05.19 DEL HMWOO 수거자 정보 메인 화면 관리로 인한 제거
+    //    UIView* m_takerCertView;
+    //    UITextField* m_takerUserIdNoTextField;
+    //    UITextField* m_takerPasswordTextField;
+    //    UIActivityIndicatorView* m_takerActivityIndicatorView;
+    //    UILabel* m_takerInfoLabel;
+    //    UILabel* m_takerIdNoLabel;
     
     // 특이사항 입력
     UIView* m_remarksView;
@@ -196,12 +200,13 @@
 @property (nonatomic, retain) NSMutableArray* m_mDataArray;
 
 // 수거자 인증
-@property (nonatomic, retain) IBOutlet UIView* m_takerCertView;
-@property (nonatomic, retain) IBOutlet UITextField* m_takerUserIdNoTextField;
-@property (nonatomic, retain) IBOutlet UITextField* m_takerPasswordTextField;
-@property (nonatomic, retain) IBOutlet UIActivityIndicatorView* m_takerActivityIndicatorView;
-@property (nonatomic, retain) IBOutlet UILabel* m_takerInfoLabel;
-@property (nonatomic, retain) IBOutlet UILabel* m_takerIdNoLabel;
+// 2022.05.19 DEL HMWOO 수거자 정보 메인 화면 관리로 인한 제거
+//@property (nonatomic, retain) IBOutlet UIView* m_takerCertView;
+//@property (nonatomic, retain) IBOutlet UITextField* m_takerUserIdNoTextField;
+//@property (nonatomic, retain) IBOutlet UITextField* m_takerPasswordTextField;
+//@property (nonatomic, retain) IBOutlet UIActivityIndicatorView* m_takerActivityIndicatorView;
+//@property (nonatomic, retain) IBOutlet UILabel* m_takerInfoLabel;
+//@property (nonatomic, retain) IBOutlet UILabel* m_takerIdNoLabel;
 
 // 특이사항
 @property (nonatomic, retain) IBOutlet UIView* m_remarksView;
@@ -241,8 +246,9 @@
 
 - (IBAction)backgroundTab2:(id)sender;
 
-- (IBAction)openTakerCertiView:(id)sender;
-- (IBAction)doTakerCertify:(id)sender;
+// 2022.05.19 DEL HMWOO 수거자 정보 메인 화면 관리로 인한 제거
+//- (IBAction)openTakerCertiView:(id)sender;
+//- (IBAction)doTakerCertify:(id)sender;
 
 - (IBAction)openRemarksView:(id)sender;
 - (IBAction)closeRemarksView:(id)sender;

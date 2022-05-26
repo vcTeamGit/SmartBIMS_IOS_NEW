@@ -1,3 +1,10 @@
+/**
+ * 프로젝트 내 URL을 개발 및 검수 용으로
+ * 호출할 수 있도록 대응 (Objective C 에서 호출하는 URL)
+ *
+ * @author HMWOO
+ * @version 1.0
+ */
 
 // 로그인 처리 URL => [ SBLoginViewController.m ]
 #define URL_IDPW_LOGIN [NSString stringWithFormat:@"%@%@%@%@", @"http://", BLOOD_SERVER, SERVER_TARGET, @"/SBLoginProc.jsp"]
@@ -8,7 +15,10 @@
 // 확인 안된 공지사항 갯수 확인 => [ MainViewController.m ]
 #define URL_NOT_CONFIRM_NOTICE_CNT [NSString stringWithFormat:@"%@%@%@%@", @"http://", BLOOD_SERVER, SERVER_TARGET, @"/SBBoardDAO.jsp"]
 
-// 수거자 인증, 인계 정보 저장 => [ MainViewController.m | SBTakeOverViewController.m ]
+// 인계 정보 조회 => [ SBTakeOverInfoViewController.m ]
+#define URL_QUERY_TAKEOVER_INFO [NSString stringWithFormat:@"%@%@%@%@", @"http://", BLOOD_SERVER, SERVER_TARGET, @"/SBTakeOverBloodDAONew.jsp"]
+
+// 수거자 인증, 수거자 등록 전 인계 정보 조회, 인계 정보 저장 => [ MainViewController.m | SBTakeOverViewController.m ]
 // 수행 시 INSERT, UPDATE 처리 수행되므로 주의
 #define URL_MANAGE_TAKEOVER_INFO [NSString stringWithFormat:@"%@%@%@%@", @"http://", BLOOD_SERVER, SERVER_TARGET, @"/SBTakeOverBloodDAONew_TEST1.jsp"]
 

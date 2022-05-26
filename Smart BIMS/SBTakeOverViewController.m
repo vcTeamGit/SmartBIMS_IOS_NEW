@@ -70,13 +70,13 @@
 @synthesize m_mDataArray;
 
 // 수거자 인증
-@synthesize m_takerCertView;
-@synthesize m_takerUserIdNoTextField;
-@synthesize m_takerPasswordTextField;
-@synthesize m_takerActivityIndicatorView;
-@synthesize m_takerInfoLabel;
-
-@synthesize m_takerIdNoLabel;
+// 2022.05.19 DEL HMWOO 수거자 정보 메인 화면 관리로 인한 제거
+//@synthesize m_takerCertView;
+//@synthesize m_takerUserIdNoTextField;
+//@synthesize m_takerPasswordTextField;
+//@synthesize m_takerActivityIndicatorView;
+//@synthesize m_takerInfoLabel;
+//@synthesize m_takerIdNoLabel;
 
 @synthesize m_remarksView;
 @synthesize m_remarksTextView;
@@ -190,23 +190,24 @@
         CGFloat alpha = 1.0;
         [self.m_contentView2 setAlpha:alpha];
         
-        [self.m_takerUserIdNoTextField resignFirstResponder];
-        [self.m_takerPasswordTextField resignFirstResponder];
+        // 2022.05.19 DEL HMWOO 수거자 정보 메인 화면 관리로 인한 제거
+//        [self.m_takerUserIdNoTextField resignFirstResponder];
+//        [self.m_takerPasswordTextField resignFirstResponder];
         
-        CGRect frame = CGRectMake(8, 51, 304, 172);
-        
-        self.m_takerCertView.frame = frame;
-        
-        [UIView beginAnimations:nil context:nil];
-        [UIView setAnimationDuration:0.5];
-        
-        self.m_takerCertView.frame = CGRectMake(8, winHeight, 304, 172);
-        
-        [UIView commitAnimations];
+//        CGRect frame = CGRectMake(8, 51, 304, 172);
+//
+//        self.m_takerCertView.frame = frame;
+//
+//        [UIView beginAnimations:nil context:nil];
+//        [UIView setAnimationDuration:0.5];
+//
+//        self.m_takerCertView.frame = CGRectMake(8, winHeight, 304, 172);
+//
+//        [UIView commitAnimations];
         
         [self.m_remarksTextView resignFirstResponder];
         
-        frame = CGRectMake(8, 51, 304, 172);
+        CGRect frame = CGRectMake(8, 51, 304, 172);
         
         self.m_remarksView.frame = frame;
         
@@ -331,23 +332,24 @@
         CGFloat alpha = 1.0;
         [self.m_contentView2 setAlpha:alpha];
         
-        TRACE(@"takerCertView origin.y: %f", self.m_takerCertView.frame.origin.y);
-        
-        if(self.m_takerCertView.frame.origin.y < 60){
-            [self.m_takerUserIdNoTextField resignFirstResponder];
-            [self.m_takerPasswordTextField resignFirstResponder];
-            
-            CGRect frame = CGRectMake(8, 51, 304, 172);
-            
-            self.m_takerCertView.frame = frame;
-            
-            [UIView beginAnimations:nil context:nil];
-            [UIView setAnimationDuration:0.5];
-            
-            self.m_takerCertView.frame = CGRectMake(8, winHeight, 304, 172);
-            
-            [UIView commitAnimations];
-        }
+        // 2022.05.19 DEL HMWOO 수거자 정보 메인 화면 관리로 인한 제거
+//        TRACE(@"takerCertView origin.y: %f", self.m_takerCertView.frame.origin.y);
+//
+//        if(self.m_takerCertView.frame.origin.y < 60){
+//            [self.m_takerUserIdNoTextField resignFirstResponder];
+//            [self.m_takerPasswordTextField resignFirstResponder];
+//
+//            CGRect frame = CGRectMake(8, 51, 304, 172);
+//
+//            self.m_takerCertView.frame = frame;
+//
+//            [UIView beginAnimations:nil context:nil];
+//            [UIView setAnimationDuration:0.5];
+//
+//            self.m_takerCertView.frame = CGRectMake(8, winHeight, 304, 172);
+//
+//            [UIView commitAnimations];
+//        }
         
         if(self.m_remarksView.frame.origin.y < 60){
             // 특이사항 초기화(데이터는 남겨둡시다)
@@ -503,7 +505,8 @@
     // sumOfMal
     self.m_sumOfMal.text = [NSString stringWithFormat:@"%d",[m_mal1Label2.text intValue] + [m_mal1Label2_NotWB.text intValue]];
     
-    self.m_takerCertView.frame = CGRectMake(8, winHeight, 304, 172);
+    // 2022.05.19 DEL HMWOO 수거자 정보 메인 화면 관리로 인한 제거
+    // self.m_takerCertView.frame = CGRectMake(8, winHeight, 304, 172);
     self.m_remarksView.frame = CGRectMake(8, winHeight, 304, 172);
     
     CGRect frame = CGRectMake(viewWidth, 0, viewWidth, viewHeight);
@@ -571,8 +574,9 @@
     NSString* strData;
     NSString* strRowCnt;
     
-    self.m_takerInfoLabel.text = @"미확인";
-    self.m_takerIdNoLabel.text = @"";
+    // 2022.05.19 DEL HMWOO 수거자 정보 메인 화면 관리로 인한 제거
+    // self.m_takerInfoLabel.text = @"미확인";
+    // self.m_takerIdNoLabel.text = @"";
     
     strData = [(NSString*)result stringByReplacingOccurrencesOfString:@"\r\n" withString:@""];
     
@@ -801,8 +805,11 @@
 //                                m_mal3Label2.text, @"mal3Cnt",
                                 m_bloodBoxCntTextField2.text, @"bloodBoxCnt",
                                 
-                                m_takerInfoLabel.text, @"takerInfo",
-                                m_takerIdNoLabel.text, @"takerIdNo",
+                                // 2022.05.19 MOD HMWOO 수거자 정보 메인 화면 관리로 인한 제거
+                                // m_takerInfoLabel.text, @"takerInfo",
+                                // m_takerIdNoLabel.text, @"takerIdNo",
+                                @"", @"takerInfo",
+                                @"", @"takerIdNo",
                                 m_remarksTextView.text, @"remarks",
                                 
                                 tempUserId, @"userIdNo",
@@ -850,7 +857,9 @@
         return;
         
     }else{
-        [self saveActionValidationTaker];
+        // 2022.05.19 DEL HMWOO 수거자 정보 메인 화면 관리로 인한 제거
+        // [self saveActionValidationTaker];
+        [self saveActionValidationValue];
     }
     
 //    if([m_takerInfoLabel.text isEqualToString:@""] || [m_takerIdNoLabel.text isEqualToString:@""]){
@@ -913,26 +922,26 @@
 //    }
 }
 
-
-- (void)saveActionValidationTaker
-{
-    if([m_takerInfoLabel.text isEqualToString:@"미확인"] || [m_takerIdNoLabel.text isEqualToString:@""]){
-        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"[알 림]"
-                                                            message:@"수거자정보가 없습니다. 계속 진행하시겠습니까?"
-                                                           delegate:self
-                                                  cancelButtonTitle:@"아니오"
-                                                  otherButtonTitles:@"예", nil];
-        
-        alertView.tag = kSaveActionValidationTakerTag;
-        
-        [alertView show];
-        [alertView release];
-        
-        return;
-    }else{
-        [self saveActionValidationValue];
-    }
-}
+// 2022.05.19 DEL HMWOO 수거자 정보 메인 화면 관리로 인한 제거
+//- (void)saveActionValidationTaker
+//{
+//    if([m_takerInfoLabel.text isEqualToString:@"미확인"] || [m_takerIdNoLabel.text isEqualToString:@""]){
+//        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"[알 림]"
+//                                                            message:@"수거자정보가 없습니다. 계속 진행하시겠습니까?"
+//                                                           delegate:self
+//                                                  cancelButtonTitle:@"아니오"
+//                                                  otherButtonTitles:@"예", nil];
+//
+//        alertView.tag = kSaveActionValidationTakerTag;
+//
+//        [alertView show];
+//        [alertView release];
+//
+//        return;
+//    }else{
+//        [self saveActionValidationValue];
+//    }
+//}
 
 - (IBAction)getTempSaveData:(UIButton *)sender {
     //  NSInteger intValue = [[NSUserDefaults standardUserDefaults] integerForKey:@"chkTakeOverIsSaved"];
@@ -953,7 +962,8 @@
         [m_httpRequest requestURL:url
                        bodyObject:bodyObject];
         
-        [self.m_takerActivityIndicatorView startAnimating];
+        // 2022.05.19 DEL HMWOO 수거자 정보 메인 화면 관리로 인한 제거
+        //[self.m_takerActivityIndicatorView startAnimating];
 }
 
 - (void)saveActionValidationValue
@@ -985,7 +995,7 @@
     
     // 2022.05.10 MOD 우희명 [알 림] 기타 검체 수량 표시 추가 요청이 있어 대응
     NSString* strTempMsg2 =
-    [NSString stringWithFormat:@"혈액[%@]\n 헌혈검체[%@]\n 기타검체[%@]\n 아이스팩[%@]\n PCM냉매제[%@]\n 혈액박스[%@]\n ---------------\n 안전성검사[%@건 %@개]\n 지정헌혈[%@]\n 조혈모세포[%@]\n 특검[%@건 %@개]\n 말라리아[전혈:%@, 혈장%@]\n를 입력하셨습니다. 저장할까요?",
+    [NSString stringWithFormat:@"혈액[%@]\n 헌혈검체[%@]\n 기타검체[%@]\n 아이스팩[%@]\n PCM냉매제[%@]\n 혈액박스[%@]\n ---------------\n 안전성검사[%@건 %@개]\n 지정헌혈[%@]\n 조혈모세포[%@]\n 특검[%@건 %@개]\n 말라리아[전혈:%@, 혈장:%@]\n를 입력하셨습니다. 저장할까요?",
     comp1,
     self.m_bloodSampleTextField2.text,
     [self.m_etcSampleTextField.text isEqualToString:@""] == YES ? @"0" : self.m_etcSampleTextField.text,
@@ -1107,201 +1117,195 @@
 
 
 
+// 2022.05.19 DEL HMWOO 수거자 정보 메인 화면 관리로 인한 제거
+//#pragma mark -
+//#pragma mark TakerCertiView
+//- (IBAction)openTakerCertiView:(id)sender
+//{
+//    CGRect frame = CGRectMake(8, winHeight, 304, 172);
+//
+//    self.m_takerCertView.frame = frame;
+//
+//    [UIView beginAnimations:nil context:nil];
+//    [UIView setAnimationDuration:0.5];
+//
+//    self.m_takerCertView.frame = CGRectMake(8, 51, 304, 172);
+//
+//    [UIView commitAnimations];
+//
+//    CGFloat alpha = 0.5;
+//    [self.m_contentView2 setAlpha:alpha];
+//
+//    [self setFocusTakerUserIdNoTextFieldWithTimer];
+//}
 
-#pragma mark -
-#pragma mark TakerCertiView
-- (IBAction)openTakerCertiView:(id)sender
-{
-    CGRect frame = CGRectMake(8, winHeight, 304, 172);
-    
-    self.m_takerCertView.frame = frame;
-    
-    [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:0.5];
-    
-    self.m_takerCertView.frame = CGRectMake(8, 51, 304, 172);
-    
-    [UIView commitAnimations];
-    
-    CGFloat alpha = 0.5;
-    [self.m_contentView2 setAlpha:alpha];
-    
-    [self setFocusTakerUserIdNoTextFieldWithTimer];
-}
+//- (void)setFocusTakerUserIdNoTextFieldWithTimer
+//{
+//    [NSTimer scheduledTimerWithTimeInterval:0.5
+//                                     target:self
+//                                   selector:@selector(setFocusTakerUserIdNoTextField)
+//                                   userInfo:nil
+//                                    repeats:NO];
+//}
 
-- (void)setFocusTakerUserIdNoTextFieldWithTimer
-{
-    [NSTimer scheduledTimerWithTimeInterval:0.5
-                                     target:self
-                                   selector:@selector(setFocusTakerUserIdNoTextField)
-                                   userInfo:nil
-                                    repeats:NO];
-}
-
-- (void)setFocusTakerUserIdNoTextField
-{
-    self.m_takerUserIdNoTextField.text = @"";
-    self.m_takerPasswordTextField.text = @"";
-    
-    [self.m_takerUserIdNoTextField becomeFirstResponder];
-}
-
-- (IBAction)doDirectTakerCertify:(UIButton *)sender {
-    
-    self.m_takerInfoLabel.text = m_SBUserInfoVO.szBimsName;
-    self.m_takerIdNoLabel.text = m_SBUserInfoVO.szBimsId;
-    [self backgroundTab2:nil];
-}
-
-
-- (IBAction)doTakerCertify:(id)sender
-{
-    // 수거자 인증요청
-    NSString* tempOrgCode = nil;
-    NSString* tempCarCode = nil;
-    NSString* tempUserId = nil;
-    NSString* tempReqId = @"takerCertify";
-    
-    TRACE(@"doTakerCertify Occurred!");
-    
-    if(self.m_takerUserIdNoTextField.text.length <= 4){
-        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"[알 림]"
-                                                            message:@"수거자 아이디가 부정확합니다"
-                                                           delegate:self
-                                                  cancelButtonTitle:@"확인"
-                                                  otherButtonTitles: nil];
-        
-        
-        [alertView show];
-        [alertView release];
-        
-        return;
-    }
-    
-    if(self.m_takerPasswordTextField.text.length <= 4){
-        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"[알 림]"
-                                                            message:@"수거자 비밀번호가 부정확합니다"
-                                                           delegate:self
-                                                  cancelButtonTitle:@"확인"
-                                                  otherButtonTitles: nil];
-        
-        
-        [alertView show];
-        [alertView release];
-        
-        return;
-    }
-    
-    NSString* tempTakerUserIdNo = [NSString stringWithString:m_takerUserIdNoTextField.text];
-    NSString* tempTakerPassword = [NSString stringWithString:m_takerPasswordTextField.text];
-    
-    if([m_SBUserInfoVO.szBimsId isEqualToString:@"R2011202"] || [m_SBUserInfoVO.szBimsId isEqualToString:@"R2011202"]|| [m_SBUserInfoVO.szBimsId isEqualToString:@"R2020045"]){
-        tempOrgCode = @"005";
-        tempCarCode = @"55";
-    }else{
-        tempOrgCode = [NSString stringWithString:m_SBUserInfoVO.szBimsOrgcode];
-        tempCarCode = [NSString stringWithString:m_SBUserInfoVO.szBimsCarcode];
-    }
-    
-    tempUserId = [NSString stringWithString:m_SBUserInfoVO.szBimsId];
-    
-    TRACE(@"doTakerCertify tempTakerUserIdNo [%@]", tempTakerUserIdNo);
-    //경로 수정
-    
-    // 2022.05.10 MOD HMWOO URL 관리 파일에서 URL 관리하도록 수정
-    NSString* url = URL_MANAGE_TAKEOVER_INFO;
-    NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:
-                                tempReqId, @"reqId",
-                                tempOrgCode, @"orgcode",
-                                tempCarCode, @"carcode",
-                                tempUserId, @"userId",
-                                tempTakerUserIdNo, @"takerUserIdNo",
-                                tempTakerPassword, @"takerPassword",
-                                nil];
-    
-    // 2022.05.17 ADD HMWOO 로딩 인디게이터 추가
-    [SBUtils showLoading];
-    
-    [m_httpRequest setDelegate:self
-                      selector:@selector(didReceiveDoTakerCertify:)];
-    [m_httpRequest requestURL:url
-                   bodyObject:bodyObject];
-    
-    
-    [self.m_takerActivityIndicatorView startAnimating];
-}
-
-
-- (void)didReceiveDoTakerCertify:(id)result
-{
-    // 2022.05.17 ADD HMWOO 로딩 인디게이터 추가
-    [SBUtils hideLoading];
-    
-    NSString* strData;
-    NSString* strResult;
-    NSString* strIdName;
-    NSString* strResultMsg;
-    
-    strData = [(NSString*)result stringByReplacingOccurrencesOfString:@"\r\n" withString:@""];
-    
-    TRACE(@"strData := [%@]", strData);
-    
-    [self.m_takerActivityIndicatorView stopAnimating];
-    
-    // 응답값 확인
-    if([strData isEqualToString:kREQUEST_TIMEOUT_TYPE] == YES){
-        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"[알 림]"
-                                                            message:kREQUEST_TIMEOUT_MSG
-                                                           delegate:self
-                                                  cancelButtonTitle:@"확인"
-                                                  otherButtonTitles: nil];
-        
-        
-        [alertView show];
-        [alertView release];
-        
-        return;
-    }
-    
-    SBJsonParser* jsonParser = [SBJsonParser new];
-    NSDictionary* dictionary = nil;
-    
-    // JSON 문자열을 객체로 변환
-    dictionary = [jsonParser objectWithString:strData];
-    
-    strResult = [dictionary valueForKey:@"result"];
-    strIdName = [dictionary valueForKey:@"idname"];
-    strResultMsg = [dictionary valueForKey:@"resultmsg"];
-    
-    // 정상인증이 되면 id가 넘어오고 아니면 'N'
-    if([strResult isEqualToString:@"N"]){
-        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"[알 림]"
-                                                            message:strResultMsg
-                                                           delegate:self
-                                                  cancelButtonTitle:@"확인"
-                                                  otherButtonTitles: nil];
-        
-        
-        [alertView show];
-        [alertView release];
-    }else{
-        TRACE(@"idno:%@", [dictionary valueForKey:@"idno"]);
-        self.m_takerInfoLabel.text = [dictionary valueForKey:@"idname"];
-        self.m_takerIdNoLabel.text = [dictionary valueForKey:@"idno"];
-        
-        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"[알 림]"
-                                                            message:strResultMsg
-                                                           delegate:self
-                                                  cancelButtonTitle:@"확인"
-                                                  otherButtonTitles: nil];
-        
-        
-        [alertView show];
-        [alertView release];
-    }
-    
-    [self backgroundTab2:nil];
-}
+//- (void)setFocusTakerUserIdNoTextField
+//{
+//    self.m_takerUserIdNoTextField.text = @"";
+//    self.m_takerPasswordTextField.text = @"";
+//
+//    [self.m_takerUserIdNoTextField becomeFirstResponder];
+//}
+//
+//- (IBAction)doDirectTakerCertify:(UIButton *)sender {
+//
+//    self.m_takerInfoLabel.text = m_SBUserInfoVO.szBimsName;
+//    self.m_takerIdNoLabel.text = m_SBUserInfoVO.szBimsId;
+//    [self backgroundTab2:nil];
+//}
+//
+//
+//- (IBAction)doTakerCertify:(id)sender
+//{
+//    // 수거자 인증요청
+//    NSString* tempOrgCode = nil;
+//    NSString* tempCarCode = nil;
+//    NSString* tempUserId = nil;
+//    NSString* tempReqId = @"takerCertify";
+//
+//    TRACE(@"doTakerCertify Occurred!");
+//
+//    if(self.m_takerUserIdNoTextField.text.length <= 4){
+//        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"[알 림]"
+//                                                            message:@"수거자 아이디가 부정확합니다"
+//                                                           delegate:self
+//                                                  cancelButtonTitle:@"확인"
+//                                                  otherButtonTitles: nil];
+//
+//
+//        [alertView show];
+//        [alertView release];
+//
+//        return;
+//    }
+//
+//    if(self.m_takerPasswordTextField.text.length <= 4){
+//        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"[알 림]"
+//                                                            message:@"수거자 비밀번호가 부정확합니다"
+//                                                           delegate:self
+//                                                  cancelButtonTitle:@"확인"
+//                                                  otherButtonTitles: nil];
+//
+//
+//        [alertView show];
+//        [alertView release];
+//
+//        return;
+//    }
+//
+//    NSString* tempTakerUserIdNo = [NSString stringWithString:m_takerUserIdNoTextField.text];
+//    NSString* tempTakerPassword = [NSString stringWithString:m_takerPasswordTextField.text];
+//
+//    if([m_SBUserInfoVO.szBimsId isEqualToString:@"R2011202"] || [m_SBUserInfoVO.szBimsId isEqualToString:@"R2011202"]|| [m_SBUserInfoVO.szBimsId isEqualToString:@"R2020045"]){
+//        tempOrgCode = @"005";
+//        tempCarCode = @"55";
+//    }else{
+//        tempOrgCode = [NSString stringWithString:m_SBUserInfoVO.szBimsOrgcode];
+//        tempCarCode = [NSString stringWithString:m_SBUserInfoVO.szBimsCarcode];
+//    }
+//
+//    tempUserId = [NSString stringWithString:m_SBUserInfoVO.szBimsId];
+//
+//    TRACE(@"doTakerCertify tempTakerUserIdNo [%@]", tempTakerUserIdNo);
+//    //경로 수정
+//
+//    // 2022.05.10 MOD HMWOO URL 관리 파일에서 URL 관리하도록 수정
+//    NSString* url = URL_MANAGE_TAKEOVER_INFO;
+//    NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:
+//                                tempReqId, @"reqId",
+//                                tempOrgCode, @"orgcode",
+//                                tempCarCode, @"carcode",
+//                                tempUserId, @"userId",
+//                                tempTakerUserIdNo, @"takerUserIdNo",
+//                                tempTakerPassword, @"takerPassword",
+//                                nil];
+//
+//    [m_httpRequest setDelegate:self
+//                      selector:@selector(didReceiveDoTakerCertify:)];
+//    [m_httpRequest requestURL:url
+//                   bodyObject:bodyObject];
+//
+//
+//    [self.m_takerActivityIndicatorView startAnimating];
+//}
+//
+//
+//- (void)didReceiveDoTakerCertify:(id)result
+//{
+//    NSString* strData;
+//    NSString* strResult;
+//    NSString* strIdName;
+//    NSString* strResultMsg;
+//
+//    strData = [(NSString*)result stringByReplacingOccurrencesOfString:@"\r\n" withString:@""];
+//
+//    TRACE(@"strData := [%@]", strData);
+//
+//    [self.m_takerActivityIndicatorView stopAnimating];
+//
+//    // 응답값 확인
+//    if([strData isEqualToString:kREQUEST_TIMEOUT_TYPE] == YES){
+//        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"[알 림]"
+//                                                            message:kREQUEST_TIMEOUT_MSG
+//                                                           delegate:self
+//                                                  cancelButtonTitle:@"확인"
+//                                                  otherButtonTitles: nil];
+//
+//
+//        [alertView show];
+//        [alertView release];
+//
+//        return;
+//    }
+//
+//    SBJsonParser* jsonParser = [SBJsonParser new];
+//    NSDictionary* dictionary = nil;
+//
+//    // JSON 문자열을 객체로 변환
+//    dictionary = [jsonParser objectWithString:strData];
+//
+//    strResult = [dictionary valueForKey:@"result"];
+//    strIdName = [dictionary valueForKey:@"idname"];
+//    strResultMsg = [dictionary valueForKey:@"resultmsg"];
+//
+//    // 정상인증이 되면 id가 넘어오고 아니면 'N'
+//    if([strResult isEqualToString:@"N"]){
+//        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"[알 림]"
+//                                                            message:strResultMsg
+//                                                           delegate:self
+//                                                  cancelButtonTitle:@"확인"
+//                                                  otherButtonTitles: nil];
+//
+//
+//        [alertView show];
+//        [alertView release];
+//    }else{
+//        TRACE(@"idno:%@", [dictionary valueForKey:@"idno"]);
+//        self.m_takerInfoLabel.text = [dictionary valueForKey:@"idname"];
+//        self.m_takerIdNoLabel.text = [dictionary valueForKey:@"idno"];
+//
+//        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"[알 림]"
+//                                                            message:strResultMsg
+//                                                           delegate:self
+//                                                  cancelButtonTitle:@"확인"
+//                                                  otherButtonTitles: nil];
+//
+//
+//        [alertView show];
+//        [alertView release];
+//    }
+//
+//    [self backgroundTab2:nil];
+//}
 
 
 
@@ -1367,53 +1371,54 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    NSInteger nTag = textField.tag;
-    //    NSString* strInput = textField.text;
-    NSUInteger strLength = textField.text.length;
-    
-    switch(nTag){
-        case kTakerUserIdNoTextFieldTag :
-            if(strLength < 4){
-                m_takerUserIdNoTextField.text = @"";
-                
-                [SBUtils playAlertSystemSoundWithSoundType:SOUND_ALERT_1];
-                UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"입력오류"
-                                                                    message:@"입력하신 수거자아이디가 너무 짧습니다"
-                                                                   delegate:self
-                                                          cancelButtonTitle:@"확인"
-                                                          otherButtonTitles: nil];
-                
-                [alertView show];
-                [alertView release];
-                
-                return NO;
-            }else{
-                self.m_takerUserIdNoTextField.text = [textField.text uppercaseString];
-                [m_takerPasswordTextField becomeFirstResponder];
-            }
-            break;
-        case kTakerPasswordTextFieldTag :
-            if(strLength < 4){
-                m_takerPasswordTextField.text = @"";
-                
-                [SBUtils playAlertSystemSoundWithSoundType:SOUND_ALERT_1];
-                UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"입력오류"
-                                                                    message:@"입력하신 비밀번호가 너무 짧습니다"
-                                                                   delegate:self
-                                                          cancelButtonTitle:@"확인"
-                                                          otherButtonTitles: nil];
-                
-                [alertView show];
-                [alertView release];
-                
-                return NO;
-            }else{
-                [self doTakerCertify:nil];
-            }
-            break;
-        default:
-            return YES;
-    }
+// 2022.05.19 DEL HMWOO 수거자 정보 메인 화면 관리로 인한 제거
+//    NSInteger nTag = textField.tag;
+//    //    NSString* strInput = textField.text;
+//    NSUInteger strLength = textField.text.length;
+//
+//    switch(nTag){
+//        case kTakerUserIdNoTextFieldTag :
+//            if(strLength < 4){
+//                m_takerUserIdNoTextField.text = @"";
+//
+//                [SBUtils playAlertSystemSoundWithSoundType:SOUND_ALERT_1];
+//                UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"입력오류"
+//                                                                    message:@"입력하신 수거자아이디가 너무 짧습니다"
+//                                                                   delegate:self
+//                                                          cancelButtonTitle:@"확인"
+//                                                          otherButtonTitles: nil];
+//
+//                [alertView show];
+//                [alertView release];
+//
+//                return NO;
+//            }else{
+//                self.m_takerUserIdNoTextField.text = [textField.text uppercaseString];
+//                [m_takerPasswordTextField becomeFirstResponder];
+//            }
+//            break;
+//        case kTakerPasswordTextFieldTag :
+//            if(strLength < 4){
+//                m_takerPasswordTextField.text = @"";
+//
+//                [SBUtils playAlertSystemSoundWithSoundType:SOUND_ALERT_1];
+//                UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"입력오류"
+//                                                                    message:@"입력하신 비밀번호가 너무 짧습니다"
+//                                                                   delegate:self
+//                                                          cancelButtonTitle:@"확인"
+//                                                          otherButtonTitles: nil];
+//
+//                [alertView show];
+//                [alertView release];
+//
+//                return NO;
+//            }else{
+//                [self doTakerCertify:nil];
+//            }
+//            break;
+//        default:
+//            return YES;
+//    }
  
     return YES;
 }
@@ -1427,21 +1432,22 @@ replacementString:(NSString*)string
 //
 //    strInput = [textField.text stringByReplacingCharactersInRange:range
 //                                                       withString:string];
-    
-    if(textField != self.m_takerUserIdNoTextField && textField != self.m_takerPasswordTextField){
-        if (textField.text.length < 3 || string.length == 0){
-            
-            if([textField.text isEqualToString:@"0"] && range.location > 0)
-            {
-                return NO;
-            }
-            
-            return YES;
-        }
-        else{
-            return NO;
-        }
-    }
+
+// 2022.05.19 DEL HMWOO 수거자 정보 메인 화면 관리로 인한 제거
+//    if(textField != self.m_takerUserIdNoTextField && textField != self.m_takerPasswordTextField){
+//        if (textField.text.length < 3 || string.length == 0){
+//
+//            if([textField.text isEqualToString:@"0"] && range.location > 0)
+//            {
+//                return NO;
+//            }
+//
+//            return YES;
+//        }
+//        else{
+//            return NO;
+//        }
+//    }
     
     //    TRACE(@"%@'s length is [%d]", strInput, strInput.length);
     
@@ -1540,15 +1546,18 @@ replacementString:(NSString*)string
         }
     }else if(alertView.tag == kTakeOverInfoSaveFailTag){
         
-    }else if(alertView.tag == kSaveActionValidationTakerTag){
-        if(buttonIndex != [alertView cancelButtonIndex]){
-            // TO DO...
-//            [self onSave:nil];
-            [self saveActionValidationValue];
-        }else{
-            
-        }
-    }else if(alertView.tag == kSaveActionValidationValueTag){
+    }
+    // 2022.05.19 DEL HMWOO 수거자 정보 메인 화면 관리로 인한 제거
+//    else if(alertView.tag == kSaveActionValidationTakerTag){
+//        if(buttonIndex != [alertView cancelButtonIndex]){
+//            // TO DO...
+////            [self onSave:nil];
+//            [self saveActionValidationValue];
+//        }else{
+//
+//        }
+//    }
+    else if(alertView.tag == kSaveActionValidationValueTag){
         if(buttonIndex != [alertView cancelButtonIndex]){
             // TO DO...
             [self onSave:nil];
@@ -1581,7 +1590,7 @@ replacementString:(NSString*)string
     size.height = self.m_contentView.frame.size.height;
     size.width = self.m_contentView.frame.size.width;
     
-    size.height = 726;
+    size.height = 700;
     size.width = 320;
     
     TRACE(@"width : %f, height : %f", size.width, size.height);
@@ -1603,6 +1612,9 @@ replacementString:(NSString*)string
     CGRect frame = CGRectMake(viewWidth, 0, viewWidth, viewHeight);
     self.m_secondView.frame = frame;
     
+    // 2022.05.26 ADD HMWOO 혈액인계화면에서 수거자 등록 제거로 인한 화면크기 변경 추가
+    size.height = 560;
+    
     self.m_scrollView2.contentSize = size;
     [self.m_secondView addSubview:m_scrollView2];
     [m_scrollView2 addSubview:m_contentView2];
@@ -1610,11 +1622,13 @@ replacementString:(NSString*)string
     [m_scrollView2 scrollRectToVisible:bounds animated:YES];
     
     // taker View
-    [self.view addSubview:m_takerCertView];
+    // 2022.05.19 DEL HMWOO 수거자 정보 메인 화면 관리로 인한 제거
+    // [self.view addSubview:m_takerCertView];
     [self.view addSubview:m_remarksView];
     
-    CGRect framet = CGRectMake(8, winHeight, 304, 172);
-    self.m_takerCertView.frame = framet;
+    // 2022.05.19 DEL HMWOO 수거자 정보 메인 화면 관리로 인한 제거
+    //    CGRect framet = CGRectMake(8, winHeight, 304, 172);
+    //    self.m_takerCertView.frame = framet;
     
     CGRect framer = CGRectMake(8, winHeight, 304, 197);
     self.m_remarksView.frame = framer;
@@ -1696,7 +1710,8 @@ replacementString:(NSString*)string
     [m_httpRequest requestURL:url
                    bodyObject:bodyObject];
     
-    [self.m_takerActivityIndicatorView startAnimating];
+    // 2022.05.19 DEL HMWOO 수거자 정보 메인 화면 관리로 인한 제거
+    // [self.m_takerActivityIndicatorView startAnimating];
 
     return;
 }
@@ -1712,7 +1727,8 @@ replacementString:(NSString*)string
     
     NSLog(@"strData := [%@]", strData);
     
-    [self.m_takerActivityIndicatorView stopAnimating];
+    // 2022.05.19 DEL HMWOO 수거자 정보 메인 화면 관리로 인한 제거
+    // [self.m_takerActivityIndicatorView stopAnimating];
     
     // 응답값 확인
     if([strData isEqualToString:kREQUEST_TIMEOUT_TYPE] == YES){

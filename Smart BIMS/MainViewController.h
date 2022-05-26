@@ -11,8 +11,19 @@
 
 #define kLogoutActionSheetTag   -9999
 
+// 2022.05.19 ADD HMWOO 수거자 등록 대응 택스트 필드 태그 추가
+#define kTakerUserIdNoTextFieldTag      31
+#define kTakerPasswordTextFieldTag      32
+#define kDirectConfirmCollectorChange   33
+#define kConfirmCollectorChange         34
+#define kDirectRegistCollectorTag       35
+#define kRegistCollectorTag             36
+#define kTakerDialogClearTag            37
+
 @class HttpRequest;
 @class SBUserInfoVO;
+// 2022.05.19 ADD HMWOO 수거자 등록 대응 VO 파일 추가
+@class SBTakeOverInfoVO;
 //@class SBMatching1ViewController;
 @class SBBloodInfoViewController;
 @class SBSecondMatchingViewController;
@@ -32,11 +43,19 @@
 // For module Test
 @class PictureLibViewController;
 
-@interface MainViewController : UIViewController <UIActionSheetDelegate, UIAlertViewDelegate, UIScrollViewDelegate>
+@interface MainViewController : UIViewController <UIActionSheetDelegate, UIAlertViewDelegate, UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate>
 {
     SBUserInfoVO* m_SBUserInfoVO;
     
     HttpRequest* m_httpRequest;
+    
+    // 2022.05.24 ADD HMWOO 수거자 등록 다이얼 로그 추가
+    UIView* layout_dialog_back;
+    UIView* dialog_reg_collector;
+    UITextField* et_collector_id;
+    UIButton* btn_takeover_seq;
+    UITextField* et_collector_pw;
+    UITableView *sp_takeover_seq;
     
     UILabel* m_orgNameLabel;
     UILabel* m_userNameLabel;
@@ -103,10 +122,22 @@
     
     // 신규 공지글 표시용
     NSTimer* m_timer;
+    
+    // 2022.05.23 ADD HMWOO 수거자 등록 대응 혈액 인계 정보 맵 추가
+    NSMutableDictionary *takeOverInfoMap;
 }
 
 @property (nonatomic, retain) SBUserInfoVO* m_SBUserInfoVO;
 @property (nonatomic, retain) HttpRequest* m_httpRequest;
+
+// 2022.05.24 ADD HMWOO 수거자 등록 다이얼 로그 추가
+@property (nonatomic, retain) IBOutlet UIView* layout_dialog_back;
+@property (nonatomic, retain) IBOutlet UIView* dialog_reg_collector;
+@property (nonatomic, retain) IBOutlet UIButton* btn_takeover_seq;
+@property (nonatomic, retain) IBOutlet UITextField* et_collector_id;
+@property (nonatomic, retain) IBOutlet UITextField* et_collector_pw;
+@property (nonatomic, retain) IBOutlet UITableView *sp_takeover_seq;
+@property (nonatomic, retain) NSMutableDictionary *takeOverInfoMap;;
 
 @property (nonatomic, retain) IBOutlet UILabel* m_orgNameLabel;
 @property (nonatomic, retain) IBOutlet UILabel* m_userNameLabel;
@@ -181,6 +212,21 @@
 - (IBAction)goTakeOverActionView:(id)sender;
 - (IBAction)goTakeOverView:(id)sender;
 - (IBAction)goTakeOverInfoView:(id)sender;
+
+// 2022.05.19 ADD HMWOO 수거자 등록 다이얼 로그 호출 리스너 추가
+- (IBAction)listener_call_reg_collector_dialog:(id)sender;
+
+// 2022.05.19 ADD HMWOO 수거자 등록 버튼 리스너 추가
+- (IBAction)listener_reg_collector:(id)sender;
+
+// 2022.05.19 ADD HMWOO 수거자 직접 수거 버튼 리스너 추가
+- (IBAction)listener_direct_takeover:(id)sender;
+
+// 2022.05.19 ADD HMWOO 수거자 등록 대응 다이얼 로그 외부 영역 터치시 호출 리스너 추가
+- (IBAction)listener_dialog_back:(id)sender;
+
+// 2022.05.24 ADD HMWOO 수거자 등록 대응 차수 변경 클릭 리스너 추가
+- (IBAction)listener_change_takeover_seq:(id)sender;
 
 - (IBAction)logout:(id)sender;
 
