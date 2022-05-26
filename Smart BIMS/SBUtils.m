@@ -465,18 +465,23 @@ NSString *const VenderCodeName[VENDER_COUNT] = {
 {
     dispatch_async(dispatch_get_main_queue(), ^{
         
-        UIWindow *window = UIApplication.sharedApplication.windows.lastObject;
+        NSArray *array = UIApplication.sharedApplication.windows;
         
-        if(window == nil)
+        for(int i = 0; i < [array count]; i++)
         {
-            return;
-        }
-        
-        for (UIView *v in window.subviews)
-        {
-            if([v isKindOfClass:[UIActivityIndicatorView class]])
+            UIWindow *window = UIApplication.sharedApplication.windows[i];
+            
+            if(window == nil)
             {
-                [v removeFromSuperview];
+                return;
+            }
+            
+            for (UIView *v in window.subviews)
+            {
+                if([v isKindOfClass:[UIActivityIndicatorView class]])
+                {
+                    [v removeFromSuperview];
+                }
             }
         }
     });
