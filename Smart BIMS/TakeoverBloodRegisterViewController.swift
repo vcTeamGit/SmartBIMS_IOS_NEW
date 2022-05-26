@@ -285,7 +285,7 @@ extension TakeoverBloodRegisterViewController {
         guard let maxLevel = json["nexttakeoverseq"] as? String, maxLevel != "" else {
             print("Error: ", json)
             // 2022.05.17 ADD HMWOO 오류 발생 메시지 발생 메시지 추가
-            showOkButtonErrorAlert(str: "초기 데이터 조회를 실패하였습니다. 오류가 지속될 경우 담당자에게 문의 부탁 드립니다.",
+            showOkButtonErrorAlert(str: "초기 데이터 조회를 실패하였습니다.\n오류가 지속될 경우 담당자에게\n문의부탁드립니다.",
                               delegate: self)
             return
         }
@@ -478,7 +478,7 @@ extension TakeoverBloodRegisterViewController {
         guard let isNotExist = json["isNotExist"] as? String, isNotExist != "" else {
             print("Error: ", json)
             // 2022.05.17 ADD HMWOO 오류 발생 메시지 발생 메시지 추가
-            returnStr = "해당 혈액 등록에 실패하였습니다. 오류가 지속될 경우 담당자에게 문의 부탁 드립니다."
+            returnStr = "해당 혈액 등록에 실패하였습니다.\n오류가 지속될 경우 담당자에게\n문의부탁드립니다."
             showOkButtonErrorAlert(str: returnStr, delegate: self) { [weak self] _ in
                 self?.becomeBarcodeTextFieldFirstResponder()
             }
@@ -489,7 +489,7 @@ extension TakeoverBloodRegisterViewController {
         guard let result = json["result"] as? String, result != "" else {
             print("Error: ", json)
             // 2022.05.17 ADD HMWOO 오류 발생 메시지 발생 메시지 추가
-            returnStr = "해당 혈액 등록에 실패하였습니다. 오류가 지속될 경우 담당자에게 문의 부탁 드립니다."
+            returnStr = "해당 혈액 등록에 실패하였습니다.\n오류가 지속될 경우 담당자에게\n문의부탁드립니다."
             showOkButtonErrorAlert(str: returnStr, delegate: self) { [weak self] _ in
                 self?.becomeBarcodeTextFieldFirstResponder()
             }
@@ -510,7 +510,7 @@ extension TakeoverBloodRegisterViewController {
             } else if result == "W"{
                 returnStr = "제제 바코드가 혈액번호와 맞는지 확인 바랍니다."
             } else {
-                returnStr = "해당 혈액 등록에 실패하였습니다. 오류가 지속될 경우 담당자에게 문의 부탁 드립니다."
+                returnStr = "해당 혈액 등록에 실패하였습니다.\n오류가 지속될 경우 담당자에게\n문의부탁드립니다."
             }
         }
         
