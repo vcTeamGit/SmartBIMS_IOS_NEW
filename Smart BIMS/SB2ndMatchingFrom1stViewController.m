@@ -245,7 +245,8 @@
 {
     m_idNameLabel.text = m_SBUserInfoVO.szBimsName;
     
-    m_SBBloodNoInfoVO = nil;
+    // 2022.06.02 DEL HMWOO 1차 헌혈자 바코드 정보를 유지하고 있을 필요가 있어 주석처리
+    // m_SBBloodNoInfoVO = nil;
     
     m_bloodNoLabel.text = @"";
     m_ABOTypeNameLabel.text = @"";
