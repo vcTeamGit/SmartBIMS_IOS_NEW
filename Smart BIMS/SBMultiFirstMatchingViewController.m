@@ -49,7 +49,8 @@
 @synthesize m_BldBagLabel;
 @synthesize m_ABOTypeNameLabel;
 
-@synthesize m_BloodCntLabel;
+// 2022.06.03 HMWOO DEL 1차 일치검사 시 헌혈횟수 제거 요청 대응
+// @synthesize m_BloodCntLabel;
 
 @synthesize m_btnOK;
 @synthesize m_btnCancel;
@@ -74,7 +75,8 @@
 @synthesize m_BldBagLabel2;
 @synthesize m_ABOTypeNameLabel2;
 
-@synthesize m_BloodCntLabel2;
+// 2022.06.03 HMWOO DEL 1차 일치검사 시 헌혈횟수 제거 요청 대응
+// @synthesize m_BloodCntLabel2;
 
 @synthesize m_btnOK2;
 @synthesize m_btnCancel2;
@@ -169,7 +171,8 @@
     // 2022.05.10 ADD HMWOO 혈소판혈장성분 채혈 시 UDI 바코드 일치 검사를 위한 UDI 바코드 내역 추가
     self.m_barcodeUDI.enabled = NO;
     
-    self.m_BloodCntLabel.text = @"";
+    // 2022.06.03 HMWOO DEL 1차 일치검사 시 헌혈횟수 제거 요청 대응
+    // self.m_BloodCntLabel.text = @"";
     
     self.m_firstDonationImageView.hidden = YES;
     
@@ -653,8 +656,9 @@
         self.m_barcodeBloodNo.enabled = NO;
         self.m_barcodeABOType.enabled = YES;
         
-        self.m_BloodCntLabel.text = m_SBBloodnoInfoVO.bloodcnt;
-        self.m_BloodCntLabel2.text = m_SBBloodnoInfoVO.bloodcnt;
+        // 2022.06.03 HMWOO DEL 1차 일치검사 시 헌혈횟수 제거 요청 대응
+        // self.m_BloodCntLabel.text = m_SBBloodnoInfoVO.bloodcnt;
+        // self.m_BloodCntLabel2.text = m_SBBloodnoInfoVO.bloodcnt;
         
         [self.m_barcodeABOType becomeFirstResponder];
     }
@@ -1520,7 +1524,8 @@ replacementString:(NSString*)string
     self.m_BldBagLabel = nil;
     self.m_ABOTypeNameLabel = nil;
     
-    self.m_BloodCntLabel = nil;
+    // 2022.06.03 HMWOO DEL 1차 일치검사 시 헌혈횟수 제거 요청 대응
+    // self.m_BloodCntLabel = nil;
     
     self.m_btnOK = nil;
     self.m_btnCancel = nil;
@@ -1544,7 +1549,8 @@ replacementString:(NSString*)string
     self.m_BldBagLabel2 = nil;
     self.m_ABOTypeNameLabel2 = nil;
     
-    self.m_BloodCntLabel2 = nil;
+    // 2022.06.03 HMWOO DEL 1차 일치검사 시 헌혈횟수 제거 요청 대응
+    // self.m_BloodCntLabel2 = nil;
     
     self.m_btnOK2 = nil;
     self.m_btnCancel2 = nil;
@@ -1594,7 +1600,8 @@ replacementString:(NSString*)string
     
     [m_firstDonationImageView release];
     
-    [m_BloodCntLabel release];
+    // 2022.06.03 HMWOO DEL 1차 일치검사 시 헌혈횟수 제거 요청 대응
+    // [m_BloodCntLabel release];
     
     /* secondView */
     [m_barcodeBloodNo2 release];
@@ -1615,7 +1622,8 @@ replacementString:(NSString*)string
     [m_btnCancel2 release];
     [m_activityIndicatorView2 release];
     
-    [m_BloodCntLabel2 release];
+    // 2022.06.03 HMWOO DEL 1차 일치검사 시 헌혈횟수 제거 요청 대응
+    // [m_BloodCntLabel2 release];
     
     /* commons */
     [m_target release];

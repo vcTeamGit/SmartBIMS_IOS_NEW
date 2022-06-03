@@ -74,7 +74,8 @@
     UILabel* m_BldBagLabel;
     UILabel* m_ABOTypeNameLabel;
     
-    UILabel* m_BloodCntLabel;
+    // 2022.06.03 HMWOO DEL 1차 일치검사 시 헌혈횟수 제거 요청 대응
+    // UILabel* m_BloodCntLabel;
     
     UIButton* m_btnOK;
     UIButton* m_btnCancel;
@@ -99,7 +100,8 @@
     UILabel* m_BldBagLabel2;
     UILabel* m_ABOTypeNameLabel2;
     
-    UILabel* m_BloodCntLabel2;
+    // 2022.06.03 HMWOO DEL 1차 일치검사 시 헌혈횟수 제거 요청 대응
+    // UILabel* m_BloodCntLabel2;
     
     UIActivityIndicatorView* m_activityIndicatorView2;
     
@@ -146,7 +148,8 @@
 @property (nonatomic, retain) IBOutlet UILabel* m_BldBagLabel;
 @property (nonatomic, retain) IBOutlet UILabel* m_ABOTypeNameLabel;
 
-@property (nonatomic, retain) IBOutlet UILabel* m_BloodCntLabel;
+// 2022.06.03 HMWOO DEL 1차 일치검사 시 헌혈횟수 제거 요청 대응
+// @property (nonatomic, retain) IBOutlet UILabel* m_BloodCntLabel;
 
 @property (nonatomic, retain) IBOutlet UIButton* m_btnOK;
 @property (nonatomic, retain) IBOutlet UIButton* m_btnCancel;
@@ -171,7 +174,8 @@
 @property (nonatomic, retain) IBOutlet UILabel* m_BldBagLabel2;
 @property (nonatomic, retain) IBOutlet UILabel* m_ABOTypeNameLabel2;
 
-@property (nonatomic, retain) IBOutlet UILabel* m_BloodCntLabel2;
+// 2022.06.03 HMWOO DEL 1차 일치검사 시 헌혈횟수 제거 요청 대응
+// @property (nonatomic, retain) IBOutlet UILabel* m_BloodCntLabel2;
 
 @property (nonatomic, retain) IBOutlet UIButton* m_btnOK2;
 @property (nonatomic, retain) IBOutlet UIButton* m_btnCancel2;

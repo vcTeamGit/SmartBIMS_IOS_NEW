@@ -50,7 +50,8 @@
 @synthesize m_BldBagLabel;
 @synthesize m_ABOTypeNameLabel;
 
-@synthesize m_BloodCntLabel;
+// 2022.06.03 HMWOO DEL 1차 일치검사 시 헌혈횟수 제거 요청 대응
+// @synthesize m_BloodCntLabel;
 
 @synthesize m_btnOK;
 @synthesize m_btnCancel;
@@ -139,7 +140,8 @@
     self.m_barcodeBldBagcode.text = @"";
     self.m_barcodeUDI.text = @"";
     
-    self.m_BloodCntLabel.text = @"";
+    // 2022.06.03 HMWOO DEL 1차 일치검사 시 헌혈횟수 제거 요청 대응
+    // self.m_BloodCntLabel.text = @"";
     
     self.m_ABOTypeNameLabel.text = nil;
     self.m_ABOTypeNameLabel.textColor = [UIColor blackColor];   // UILabel.textColor is non-nil value.
@@ -651,7 +653,8 @@
 //        }
         
         // 2014.02.21 추가
-        self.m_BloodCntLabel.text = m_SBBloodnoInfoVO.bloodcnt;
+        // 2022.06.03 HMWOO DEL 1차 일치검사 시 헌혈횟수 제거 요청 대응
+        // self.m_BloodCntLabel.text = m_SBBloodnoInfoVO.bloodcnt;
         
         [self.m_barcodeABOType becomeFirstResponder];
     }
@@ -1423,7 +1426,8 @@
     self.m_BldBagLabel = nil;
     self.m_ABOTypeNameLabel = nil;
     
-    self.m_BloodCntLabel = nil;
+    // 2022.06.03 HMWOO DEL 1차 일치검사 시 헌혈횟수 제거 요청 대응
+    // self.m_BloodCntLabel = nil;
     
     self.m_btnOK = nil;
     self.m_btnCancel = nil;
