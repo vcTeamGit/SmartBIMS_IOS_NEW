@@ -39,7 +39,8 @@ class TakeoverBloodRegisterViewController: UIViewController {
     
     // TextField
     @IBOutlet var bloodBarcodeTextField: UITextField!
-    @IBOutlet var bldProccodeBarcodeTextField: UITextField!
+    // 2022.06.03 HMWOO DEL 제제바 코드 자동 등록 대응 기존 로직 제거
+    // @IBOutlet var bldProccodeBarcodeTextField: UITextField!
     
     // TableView
     @IBOutlet var tableView: UITableView!
@@ -72,7 +73,8 @@ class TakeoverBloodRegisterViewController: UIViewController {
     
     @IBAction func addBloodButtonTapped(_ sender: UIBarButtonItem) {
         bloodBarcodeTextField.text = ""
-        bldProccodeBarcodeTextField.text = ""
+        // 2022.06.03 HMWOO DEL 제제바 코드 자동 등록 대응 기존 로직 제거
+        // bldProccodeBarcodeTextField.text = ""
         
         bloodBarcodeTextField.becomeFirstResponder()
     }
@@ -194,7 +196,8 @@ extension TakeoverBloodRegisterViewController {
     
     func becomeBarcodeTextFieldFirstResponder() {
         bloodBarcodeTextField.text = ""
-        bldProccodeBarcodeTextField.text = ""
+        // 2022.06.03 HMWOO DEL 제제바 코드 자동 등록 대응 기존 로직 제거
+        // bldProccodeBarcodeTextField.text = ""
         
         view.endEditing(false)
         bloodBarcodeTextField.becomeFirstResponder()
@@ -222,7 +225,8 @@ extension TakeoverBloodRegisterViewController {
 
     func setKeyboardSetting() {
         bloodBarcodeTextField.delegate = self
-        bldProccodeBarcodeTextField.delegate = self
+        // 2022.06.03 HMWOO DEL 제제바 코드 자동 등록 대응 기존 로직 제거
+        // bldProccodeBarcodeTextField.delegate = self
     }
     
     func setInitialInfo() {
@@ -413,117 +417,124 @@ extension TakeoverBloodRegisterViewController {
         } else if insertResult?.isExistInTakeOver == "Y" {
             showOkButtonErrorAlert(str: "다른 차수 혹은 이미 저장된 혈액입니다. 혈액번호를 확인 바랍니다.",
                               delegate: self)
-        } else if insertResult?.isMulti == "N" {
-            // 2022.05.09 DEL HMWOO 인계혈액 저장 시 저장되었다는 알림이 업무 효율성에 방해되어 제거
-            // showOkButtonAlert(str: "정상적으로 저장이 완료되었습니다.", delegate: self)
-            self.setInitialInfo()
-            becomeBarcodeTextFieldFirstResponder()
         }
+        // 2022.06.03 HMWOO DEL 제제바 코드 자동 등록 대응 기존 로직 제거
+//        else if insertResult?.isMulti == "N" {
+//            // 2022.05.09 DEL HMWOO 인계혈액 저장 시 저장되었다는 알림이 업무 효율성에 방해되어 제거
+//            // showOkButtonAlert(str: "정상적으로 저장이 완료되었습니다.", delegate: self)
+//            self.setInitialInfo()
+//            becomeBarcodeTextFieldFirstResponder()
+//        }
+        
+        self.setInitialInfo()
+        becomeBarcodeTextFieldFirstResponder()
         
         // 2022.05.16 ADD HMWOO 지정 및 일반헌혈 화면 대응
-        if bloodTypeSegmentation.selectedSegmentIndex != 1 && insertResult?.isAssigned != "Y"
-        {
-            currentBloodType = BloodType.allCases[1]
-        }
+//        if bloodTypeSegmentation.selectedSegmentIndex != 1 && insertResult?.isAssigned != "Y"
+//        {
+//            currentBloodType = BloodType.allCases[1]
+//        }
         
         dpGroup.leave()
     }
     
-    func checkIsValidAndSaveMultiBloodNoWithBldProcCode(bloodNo: String, bldProcCode: String) {
-        
-        guard let m_SBUserInfoVO = m_SBUserInfoVO,
-              let bloodType = currentBloodType,
-              let bloodLevel = maxBloodLevel.titleLabel?.text else {
-                  dpGroup.leave()
-                  return
-              }
-        
-        print("BLDPROCCODE: \(bldProcCode)")
-        
-        let changedBloodNo = removeBloodNoCheckBitAndReturnNewBloodNo(bloodNo: bloodNo)
-        let (isAssigned, isRh) = BloodType.getBloodTypeInfoByTuple(data: bloodType)
-        
-        let parameter = NSDictionary(dictionary: ["reqId": BloodRegisterURLInfo
-                                                            .checkIsValidAndSaveMultiBloodNoWithBldProcCode,
-                                                  "orgcode": m_SBUserInfoVO.szBimsOrgcode!,
-                                                  "carcode": m_SBUserInfoVO.szBimsCarcode!,
-                                                  "takeoverdate": getCurrentDate(),
-                                                  "takeoverseq": bloodLevel,
-                                                  "bloodno": changedBloodNo,
-                                                  "isassigned": isAssigned,
-                                                  "isrh": isRh,
-                                                  "bldproccode": bldProcCode,
-                                                  "userid" : m_SBUserInfoVO.szBimsId!])
-                
-        // 2022.05.16 ADD HMWOO 로딩 인디케이터 추가
-        LoadingIndicator.showLoading()
-        
-        TakeOverRegisterAPI
-            .shared
-            .getDataFromURLWithSelector(url: BloodRegisterURLInfo.baseURL,
-                                        selector: #selector(checkIsValidAndSaveMultiBloodNoWithBldProcCodeSelector),
-                                        parameter: parameter,
-                                        delegate: self)
-    }
+    // 2022.06.03 HMWOO DEL 제제바 코드 자동 등록 대응 기존 로직 제거
+//    func checkIsValidAndSaveMultiBloodNoWithBldProcCode(bloodNo: String, bldProcCode: String) {
+//
+//        guard let m_SBUserInfoVO = m_SBUserInfoVO,
+//              let bloodType = currentBloodType,
+//              let bloodLevel = maxBloodLevel.titleLabel?.text else {
+//                  dpGroup.leave()
+//                  return
+//              }
+//
+//        print("BLDPROCCODE: \(bldProcCode)")
+//
+//        let changedBloodNo = removeBloodNoCheckBitAndReturnNewBloodNo(bloodNo: bloodNo)
+//        let (isAssigned, isRh) = BloodType.getBloodTypeInfoByTuple(data: bloodType)
+//
+//        let parameter = NSDictionary(dictionary: ["reqId": BloodRegisterURLInfo
+//                                                            .checkIsValidAndSaveMultiBloodNoWithBldProcCode,
+//                                                  "orgcode": m_SBUserInfoVO.szBimsOrgcode!,
+//                                                  "carcode": m_SBUserInfoVO.szBimsCarcode!,
+//                                                  "takeoverdate": getCurrentDate(),
+//                                                  "takeoverseq": bloodLevel,
+//                                                  "bloodno": changedBloodNo,
+//                                                  "isassigned": isAssigned,
+//                                                  "isrh": isRh,
+//                                                  "bldproccode": bldProcCode,
+//                                                  "userid" : m_SBUserInfoVO.szBimsId!])
+//
+//        // 2022.05.16 ADD HMWOO 로딩 인디케이터 추가
+//        LoadingIndicator.showLoading()
+//
+//        TakeOverRegisterAPI
+//            .shared
+//            .getDataFromURLWithSelector(url: BloodRegisterURLInfo.baseURL,
+//                                        selector: #selector(checkIsValidAndSaveMultiBloodNoWithBldProcCodeSelector),
+//                                        parameter: parameter,
+//                                        delegate: self)
+//    }
     
-    @objc
-    func checkIsValidAndSaveMultiBloodNoWithBldProcCodeSelector(result: Any) {
-        
-        // 2022.05.16 ADD HMWOO 로딩 인디케이터 추가
-        LoadingIndicator.hideLoading()
-        
-        let json = TakeOverRegisterAPI.shared.getDictionaryFromResult(result)
-        var returnStr = ""
-        
-        guard let isNotExist = json["isNotExist"] as? String, isNotExist != "" else {
-            print("Error: ", json)
-            // 2022.05.17 ADD HMWOO 오류 발생 메시지 발생 메시지 추가
-            returnStr = "해당 혈액 등록에 실패하였습니다.\n오류가 지속될 경우 담당자에게\n문의부탁드립니다."
-            showOkButtonErrorAlert(str: returnStr, delegate: self) { [weak self] _ in
-                self?.becomeBarcodeTextFieldFirstResponder()
-            }
-            dpGroup.leave()
-            return
-        }
-        
-        guard let result = json["result"] as? String, result != "" else {
-            print("Error: ", json)
-            // 2022.05.17 ADD HMWOO 오류 발생 메시지 발생 메시지 추가
-            returnStr = "해당 혈액 등록에 실패하였습니다.\n오류가 지속될 경우 담당자에게\n문의부탁드립니다."
-            showOkButtonErrorAlert(str: returnStr, delegate: self) { [weak self] _ in
-                self?.becomeBarcodeTextFieldFirstResponder()
-            }
-            dpGroup.leave()
-            return
-        }
-        
-        if isNotExist == "Y" {
-            returnStr = "제제바코드가 유효하지 않습니다. 다시 스캔하여 주시기 바랍니다."
-        } else {
-            if result == "Y" {
-                // 2022.05.09 DEL HMWOO 인계혈액 저장 시 저장되었다는 알림이 업무 효율성에 방해되어 제거
-                //returnStr = "입력하신 혈액 저장이 완료되었습니다."
-                self.setInitialInfo()
-                
-            } else if result == "E"{
-                returnStr = "이미 저장된 혈액 제제 바코드 입니다."
-            } else if result == "W"{
-                returnStr = "제제 바코드가 혈액번호와 맞는지 확인 바랍니다."
-            } else {
-                returnStr = "해당 혈액 등록에 실패하였습니다.\n오류가 지속될 경우 담당자에게\n문의부탁드립니다."
-            }
-        }
-        
-        // 2022.05.09 DEL HMWOO 인계혈액 저장 시 저장되었다는 알림이 업무 효율성에 방해되어 제거
-        if isNotExist == "Y" || result != "Y"
-        {
-            showOkButtonErrorAlert(str: returnStr, delegate: self) { [weak self] _ in
-                self?.becomeBarcodeTextFieldFirstResponder()
-            }
-        }
-        
-        dpGroup.leave()
-    }
+    // 2022.06.03 HMWOO DEL 제제바 코드 자동 등록 대응 기존 로직 제거
+//    @objc
+//    func checkIsValidAndSaveMultiBloodNoWithBldProcCodeSelector(result: Any) {
+//
+//        // 2022.05.16 ADD HMWOO 로딩 인디케이터 추가
+//        LoadingIndicator.hideLoading()
+//
+//        let json = TakeOverRegisterAPI.shared.getDictionaryFromResult(result)
+//        var returnStr = ""
+//
+//        guard let isNotExist = json["isNotExist"] as? String, isNotExist != "" else {
+//            print("Error: ", json)
+//            // 2022.05.17 ADD HMWOO 오류 발생 메시지 발생 메시지 추가
+//            returnStr = "해당 혈액 등록에 실패하였습니다.\n오류가 지속될 경우 담당자에게\n문의부탁드립니다."
+//            showOkButtonErrorAlert(str: returnStr, delegate: self) { [weak self] _ in
+//                self?.becomeBarcodeTextFieldFirstResponder()
+//            }
+//            dpGroup.leave()
+//            return
+//        }
+//
+//        guard let result = json["result"] as? String, result != "" else {
+//            print("Error: ", json)
+//            // 2022.05.17 ADD HMWOO 오류 발생 메시지 발생 메시지 추가
+//            returnStr = "해당 혈액 등록에 실패하였습니다.\n오류가 지속될 경우 담당자에게\n문의부탁드립니다."
+//            showOkButtonErrorAlert(str: returnStr, delegate: self) { [weak self] _ in
+//                self?.becomeBarcodeTextFieldFirstResponder()
+//            }
+//            dpGroup.leave()
+//            return
+//        }
+//
+//        if isNotExist == "Y" {
+//            returnStr = "제제바코드가 유효하지 않습니다. 다시 스캔하여 주시기 바랍니다."
+//        } else {
+//            if result == "Y" {
+//                // 2022.05.09 DEL HMWOO 인계혈액 저장 시 저장되었다는 알림이 업무 효율성에 방해되어 제거
+//                //returnStr = "입력하신 혈액 저장이 완료되었습니다."
+//                self.setInitialInfo()
+//
+//            } else if result == "E"{
+//                returnStr = "이미 저장된 혈액 제제 바코드 입니다."
+//            } else if result == "W"{
+//                returnStr = "제제 바코드가 혈액번호와 맞는지 확인 바랍니다."
+//            } else {
+//                returnStr = "해당 혈액 등록에 실패하였습니다.\n오류가 지속될 경우 담당자에게\n문의부탁드립니다."
+//            }
+//        }
+//
+//        // 2022.05.09 DEL HMWOO 인계혈액 저장 시 저장되었다는 알림이 업무 효율성에 방해되어 제거
+//        if isNotExist == "Y" || result != "Y"
+//        {
+//            showOkButtonErrorAlert(str: returnStr, delegate: self) { [weak self] _ in
+//                self?.becomeBarcodeTextFieldFirstResponder()
+//            }
+//        }
+//
+//        dpGroup.leave()
+//    }
 }
 
 // MARK: - UITextField
@@ -540,65 +551,73 @@ extension TakeoverBloodRegisterViewController: UITextFieldDelegate {
             checkIsValidAndSaveBloodNo(bloodNo: removeBloodNoCheckBitAndReturnNewBloodNo(bloodNo: bloodNo))
             dpGroup.notify(queue: .main) { [weak self] in
                 self?.bloodBarcodeTextField.resignFirstResponder()
-                guard let result = self?.insertResult else {
+                guard (self?.insertResult) != nil else {
                     self?.bloodBarcodeTextField.text = ""
                     showOkButtonErrorAlert(str: "오류가 발생하였습니다. 오류가 지속시 담당자에게 연락 부탁드립니다.",
                                       delegate: self!)
                     return
                 }
-                
-                if result.isMulti == "Y" {
-                    self?.bloodBarcodeTextField.resignFirstResponder()
-                    self?.bldProccodeBarcodeTextField.becomeFirstResponder()
-                    
-                    if self?.bloodTypeSegmentation.selectedSegmentIndex != 1
-                    {
-                        // 2022.05.16 ADD HMWOO 지정 및 일반 헌혈 대응
-                        if result.isAssigned == "Y"
-                        {
-                            self?.currentBloodType = BloodType.allCases[0]
-                        }
-                        else
-                        {
-                            self?.currentBloodType = BloodType.allCases[1]
-                        }
-                    }
-                    
-                } else {
-                    self?.bloodBarcodeTextField.text = ""
-                    self?.insertResult = nil
-                    return
-                }
-            }
-        } else if textField == bldProccodeBarcodeTextField {
-            guard let bldProccode = bldProccodeBarcodeTextField.text,
-                  bldProccode.count == bldCodeMaxLength else {
-                showOkButtonErrorAlert(str: "잘못된 제제바코드 입니다. 다시 스캔하여 주시기 바랍니다.",
-                                  delegate: self)
-                bldProccodeBarcodeTextField.text = ""
-                bldProccodeBarcodeTextField.becomeFirstResponder()
-                return true
-            }
-            
-            guard let bloodNo = bloodBarcodeTextField.text,
-                    bloodNo.count == bloodNoMaxLength else {
-                showOkButtonErrorAlert(str: "잘못된 혈액번호 입니다. 혈액번호부터 다시 스캔하여 주시기 바랍니다.",
-                                  delegate: self)
-                bloodBarcodeTextField.text = ""
-                bldProccodeBarcodeTextField.text = ""
-                bldProccodeBarcodeTextField.resignFirstResponder()
-                return true
-            }
-            
-            dpGroup.enter()
-            checkIsValidAndSaveMultiBloodNoWithBldProcCode(bloodNo: bloodNo,
-                                                           bldProcCode: bldProccode)
-            dpGroup.notify(queue: .main) { [weak self] in
+                                
+                // 2022.06.03 HMWOO DEL 제제바 코드 자동 등록 대응 기존 로직 제거
+//                if result.isMulti == "Y" {
+//                    self?.bloodBarcodeTextField.resignFirstResponder()
+//
+//                    // 2022.06.03 HMWOO DEL 제제바 코드 자동 등록 대응 기존 로직 제거
+//                    // self?.bldProccodeBarcodeTextField.becomeFirstResponder()
+//
+//                    if self?.bloodTypeSegmentation.selectedSegmentIndex != 1
+//                    {
+//                        // 2022.05.16 ADD HMWOO 지정 및 일반 헌혈 대응
+//                        if result.isAssigned == "Y"
+//                        {
+//                            self?.currentBloodType = BloodType.allCases[0]
+//                        }
+//                        else
+//                        {
+//                            self?.currentBloodType = BloodType.allCases[1]
+//                        }
+//                    }
+//
+//                } else {
+//                    self?.bloodBarcodeTextField.text = ""
+//                    self?.insertResult = nil
+//                    return
+//                }
                 self?.bloodBarcodeTextField.text = ""
-                self?.bldProccodeBarcodeTextField.text = ""
-                self?.bldProccodeBarcodeTextField.resignFirstResponder()
+                self?.insertResult = nil
+                return
             }
         }
+        // 2022.06.03 HMWOO DEL 제제바 코드 자동 등록 대응 기존 로직 제거
+        //        else if textField == bldProccodeBarcodeTextField {
+        //            guard let bldProccode = bldProccodeBarcodeTextField.text,
+        //                  bldProccode.count == bldCodeMaxLength else {
+        //                showOkButtonErrorAlert(str: "잘못된 제제바코드 입니다. 다시 스캔하여 주시기 바랍니다.",
+        //                                  delegate: self)
+        //                bldProccodeBarcodeTextField.text = ""
+        //                bldProccodeBarcodeTextField.becomeFirstResponder()
+        //                return true
+        //            }
+        //
+        //            guard let bloodNo = bloodBarcodeTextField.text,
+        //                    bloodNo.count == bloodNoMaxLength else {
+        //                showOkButtonErrorAlert(str: "잘못된 혈액번호 입니다. 혈액번호부터 다시 스캔하여 주시기 바랍니다.",
+        //                                  delegate: self)
+        //                bloodBarcodeTextField.text = ""
+        //                bldProccodeBarcodeTextField.text = ""
+        //                bldProccodeBarcodeTextField.resignFirstResponder()
+        //                return true
+        //            }
+        //
+        //            dpGroup.enter()
+        //            checkIsValidAndSaveMultiBloodNoWithBldProcCode(bloodNo: bloodNo,
+        //                                                           bldProcCode: bldProccode)
+        //            dpGroup.notify(queue: .main) { [weak self] in
+        //                self?.bloodBarcodeTextField.text = ""
+        //                self?.bldProccodeBarcodeTextField.text = ""
+        //                self?.bldProccodeBarcodeTextField.resignFirstResponder()
+        //            }
+        //        }
 
         return true
     }
@@ -609,12 +628,14 @@ extension TakeoverBloodRegisterViewController: UITextFieldDelegate {
             let maxLength = bloodNoMaxLength
             let newLength = text.count + (string.count - range.length)
             return newLength <= maxLength
-        } else if textField == bldProccodeBarcodeTextField {
-            guard let text = textField.text else { return true }
-            let maxLength = bldCodeMaxLength
-            let newLength = text.count + (string.count - range.length)
-            return newLength <= maxLength
         }
+        // 2022.06.03 HMWOO DEL 제제바 코드 자동 등록 대응 기존 로직 제거
+        //        else if textField == bldProccodeBarcodeTextField {
+        //            guard let text = textField.text else { return true }
+        //            let maxLength = bldCodeMaxLength
+        //            let newLength = text.count + (string.count - range.length)
+        //            return newLength <= maxLength
+        //        }
         
         return false
     }
