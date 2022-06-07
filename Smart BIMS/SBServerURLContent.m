@@ -18,9 +18,9 @@ NSString const *BLOOD_SERVER = @"mbims.bloodinfo.net:59999/mbims";
 // 개발 DB 접근 시 TARGET을 DEV로 설정
 // 상용 DB 접근 시 TARGET을 PROD로 설정
 // DEV : 개발, PROD : 상용
-#define TARGET DEV
+#define TARGET PROD
 
-#if TARGET==PROD
+#if TARGET==DEV
     NSString const *SERVER_TARGET = @"/testservice";
     NSString const *URL_MANAGE_TAKEOVER_BLOOD = @"http://mbims.bloodinfo.net:59999/mbims/testservice/Swift_SBTakeOverBloodRegister3.jsp";
     NSString const *URL_GET_TAKEOVER_BLOOD_INFO = @"http://mbims.bloodinfo.net:59999/mbims/testservice/Swift_SBTakeOverChangeBloodLevelInfo.jsp";
