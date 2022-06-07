@@ -1482,6 +1482,9 @@ replacementString:(NSString*)string
 //    [self.view addSubview:m_scrollView];
 //    [m_scrollView addSubview:m_contentsView];
     
+    // 2022.06.07 ADD HMWOO 사용자가 기존 표시되지 않는 버그 수정
+    m_idNameLabel.text = m_SBUserInfoVO.szBimsName;
+    
     [m_barcodeBloodNo becomeFirstResponder];
 }
 
