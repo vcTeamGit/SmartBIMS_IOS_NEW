@@ -118,10 +118,11 @@
     
     // json parsing section end.
     
-    if([strRetVal isEqualToString: @"1"]){
+	    if([strRetVal isEqualToString: @"1"]){
         
         NSString* strVersion = (NSString*)[dictionary valueForKey:@"version"];
-        NSString* tempVersion = [NSString stringWithFormat:@"%@", kProgramVersionInfo];
+        // 2022.06.09 빌드한 앱의 버전으로 체크하도록 수정
+        NSString* tempVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
         NSString* strDeptCode = (NSString*)[dictionary valueForKey:@"bims_deptcode"];
         
         // 버전체크.
