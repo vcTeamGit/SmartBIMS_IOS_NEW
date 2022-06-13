@@ -41,6 +41,15 @@
     NSString* strId = m_textFieldId.text;
     NSString* strPassword = m_textFieldPassword.text;
     
+    // 2022.06.08 ADD HMWOO 테스트 대응 바코드 생성 URL 실행
+    #if TARGET==DEV
+        if([m_textFieldId.text isEqualToString:@"Z999999Z"])
+        {
+            NSURL* url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@%@%@%@", @"http://", BLOOD_SERVER, SERVER_TARGET, @"/SBCreateTestBarCode.jsp"]];
+            [[UIApplication sharedApplication] openURL:url];
+        }
+    #endif
+    
     if(strId == nil || [strId isEqualToString:@""]){
         UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"[알 림]"
                                                             message:@"아이디를 입력하세요"
@@ -575,6 +584,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // 2022.06.07 ADD HMWOO 테스트 대응 아이디 비밀번호
+    #if TARGET==DEV
+        self.m_textFieldId.text = @"Z9999999";
+        self.m_textFieldPassword.text = @"P@ssw0rd!";
+    #endif
+    
     // Do any additional setup after loading the view from its nib.
     Smart_BIMSAppDelegate* delegate = [[UIApplication sharedApplication] delegate];
     viewWidth = [delegate.g_viewWidth intValue];
