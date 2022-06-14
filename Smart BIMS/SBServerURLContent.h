@@ -6,6 +6,14 @@
  * @version 1.0
  */
 
+#define DEV 0
+#define PROD 1
+
+// 개발 DB 접근 시 TARGET을 DEV로 설정
+// 상용 DB 접근 시 TARGET을 PROD로 설정
+// DEV : 개발, PROD : 상용
+#define TARGET PROD
+
 // 로그인 처리 URL => [ SBLoginViewController.m ]
 #define URL_IDPW_LOGIN [NSString stringWithFormat:@"%@%@%@%@", @"http://", BLOOD_SERVER, SERVER_TARGET, @"/SBLoginProc.jsp"]
 
@@ -30,10 +38,6 @@
 
 // 채혈전 확인사항 → 1차 일치 검사 → 헌혈자 바코드 조회(1차 일치 검사가 완료되었는지 확인) => [ SBFirstMatchingViewController.m ]
 #define URL_CHECK_FIRST_MATCHING_COMPLETE [NSString stringWithFormat:@"%@%@%@%@", @"http://", BLOOD_SERVER, SERVER_TARGET, @"/SBMatchingCommonDAOTest.jsp"]
-
-// 채혈전 확인사항(다종) → 1차 일치 검사 → 확인  => [ SBMultiFirstMatchingViewController.m ]
-// 수행 시 INSERT, UPDATE 처리 수행되므로 주의
-#define URL_MULTI_FIRST_MATCHING_TEST [NSString stringWithFormat:@"%@%@%@%@", @"http://", BLOOD_SERVER, SERVER_TARGET, @"/SBMatchingFirstStepTR.jsp"]
 
 // 채혈전 확인사항 → 1차 일치 검사 → 확인  => [ SBFirstMatchingViewController.m ]
 // 수행 시 INSERT, UPDATE 처리 수행되므로 주의
