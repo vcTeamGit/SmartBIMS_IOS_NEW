@@ -58,8 +58,10 @@ struct TakeoverBloodInsertResult: Decodable {
     var isEnd: String
     var isExistInTakeOver: String
     var isMal: String
-    // 2022.06.03 HMWOO DEL 제제바 코드 자동 등록 대응 기존 로직 제거
-    // var isMulti: String
+    var isMulti: String
     var isTerminated: String
+    // 2022.05.16 ADD HMWOO 지정 헌혈 및 일반 헌혈 구분 값 추가
+    var isAssigned: String
+    
     var result: String
 }
