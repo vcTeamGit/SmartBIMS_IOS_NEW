@@ -683,7 +683,7 @@
                 [self.takeOverInfoMap setObject:tempSBTakeOverInfoVO forKey:seq];
             }
         }
-        
+                
         self.sp_takeover_seq.delegate = self;
         self.sp_takeover_seq.dataSource = self;
         self.sp_takeover_seq.rowHeight = 34;
@@ -707,10 +707,7 @@
         NSInteger *lastIndex = [tmpTakeOverInfo count] - 1;
         NSIndexPath *lastItemIndex = [NSIndexPath indexPathForRow:lastIndex inSection:0];
         
-        //self.btn_takeover_seq.titleLabel.text = [[self.takeOverInfoMap allKeys] objectAtIndex:lastIndex];
-        //self.btn_takeover_seq.titleLabel.textAlignment = NSTextAlignmentCenter;
-        
-        [self.btn_takeover_seq setTitle:[[self.takeOverInfoMap allKeys] objectAtIndex:lastIndex] forState:UIControlStateNormal];
+        [self.btn_takeover_seq setTitle:[[[takeOverInfoMap allKeys] sortedArrayUsingSelector:@selector(compare:)] objectAtIndex:lastIndex] forState:UIControlStateNormal];
         [self.sp_takeover_seq selectRowAtIndexPath:lastItemIndex animated:NO scrollPosition:UITableViewScrollPositionTop];
                 
         [UIView beginAnimations:nil context:nil];
