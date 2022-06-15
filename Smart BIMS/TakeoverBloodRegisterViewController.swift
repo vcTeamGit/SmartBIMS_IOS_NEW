@@ -566,6 +566,8 @@ extension TakeoverBloodRegisterViewController: UITextFieldDelegate {
                     
                 } else {
                     self?.bloodBarcodeTextField.text = ""
+                    // 2022.06.15 ADD HMWOO 데이터 등록시 자동으로 채혈백 바코드 이어서 등록할 수 있도록 수정
+                    self?.bloodBarcodeTextField.becomeFirstResponder()
                     self?.insertResult = nil
                     return
                 }
@@ -597,6 +599,8 @@ extension TakeoverBloodRegisterViewController: UITextFieldDelegate {
                 self?.bloodBarcodeTextField.text = ""
                 self?.bldProccodeBarcodeTextField.text = ""
                 self?.bldProccodeBarcodeTextField.resignFirstResponder()
+                // 2022.06.15 ADD HMWOO 데이터 등록시 자동으로 채혈백 바코드 이어서 등록할 수 있도록 수정
+                self?.bloodBarcodeTextField.becomeFirstResponder()
             }
         }
 
