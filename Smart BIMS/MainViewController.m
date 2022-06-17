@@ -1549,6 +1549,7 @@
                                     tempOrgCode, @"orgcode",
                                     tempCarCode, @"carcode",
                                     tempTakerUserIdNo, @"takerUserIdNo",
+                                    m_SBUserInfoVO.szBimsId, @"strTurnUserIdNo",
                                     tempTakerPassword, @"takerPassword",
                                     directlFlag, @"directFlag",
                                     nil];
