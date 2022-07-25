@@ -406,6 +406,9 @@
 {
     NSString* strAlertMsg = @"";
     
+    // 2022.07.21 ADD HMWOO 다음 화면 클릭 시 로그 저장 추가
+    [self OnLogSave];
+    
 //    if([self.m_totalbldSampleTextField.text isEqualToString:@""]){
 //        strAlertMsg = @"헌혈검체수량을 입력하세요.";}
 //    else if([self.m_spcSampleTextField.text isEqualToString:@""]){
@@ -1647,6 +1650,80 @@ replacementString:(NSString*)string
     // Dispose of any resources that can be recreated.
 }
 
+// 2022.07.21 ADD HMWOO 다음 화면 클릭 시 로그 저장 추가
+- (void) OnLogSave
+{
+    @try
+    {
+        NSString* tempReqId = @"saveTakeOverLog";
+        NSString* tempTakerUserIdNo = m_SBUserInfoVO.szBimsId;
+        
+        NSString* bldSample      = [NSString stringWithString:m_totalbldSampleTextField.text];
+        
+        NSString* spcSample2     = [NSString stringWithString:m_spcSampleTextField2.text];
+        NSString* spcSample1     = [NSString stringWithString:m_spcSampleTextField.text];
+        NSString* enrSample      = [NSString stringWithString:m_enrSampleTextField.text];
+        
+        NSString* etcSample      = [NSString stringWithString:m_etcSampleTextField.text];
+        NSString* hrgSample2     = [NSString stringWithString:m_hrgSampleTextField2.text];
+        NSString* hrgSample1     = [NSString stringWithString:m_hrgSampleTextField.text];
+        NSString* labSample      = [NSString stringWithString:m_hbvSampleTextField.text];
+        NSString* hscsSample     = [NSString stringWithString:m_marSampleTextField.text];
+        NSString* rhSample       = [NSString stringWithString:m_rhnEmergencySampleTextField.text];
+        
+        NSString* ebldPaperCnt    = [NSString stringWithString:m_e_bldPaperCntTextField.text];
+        NSString* unfitPaperCnt  = [NSString stringWithString:m_unfitPaperCntTextField.text];
+        NSString* eunfitPaperCnt = [NSString stringWithString:m_e_unfitPaperCntTextField.text];
+        NSString* icePack        = [NSString stringWithString:m_icepackTextField.text];
+        NSString* PCM            = [NSString stringWithString:m_coolantTextField.text];
+        
+        NSString* bloodBox       = [NSString stringWithString:m_bldBoxCntTextField.text];
+        NSString* remarks        = [NSString stringWithString:m_remarksTextView.text];
+
+        //경로 수정
+        NSString* url = URL_SAVE_LOG_INFO;
+        NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:
+                                    tempReqId,         @"reqId",
+                                    tempTakerUserIdNo, @"takerUserIdNo",
+                                    bldSample,        @"bldSample",
+                                    spcSample2,        @"spcSample2",
+                                    spcSample1,        @"spcSample1",
+                                    enrSample,         @"enrSample",
+                                    etcSample,         @"etcSample",
+                                    hrgSample2,        @"hrgSample2",
+                                    hrgSample1,        @"hrgSample1",
+                                    labSample,         @"labSample",
+                                    hscsSample,        @"hscsSample",
+                                    rhSample,          @"rhSample",
+                                    ebldPaperCnt,      @"ebldPaperCnt",
+                                    unfitPaperCnt,     @"unfitPaperCnt",
+                                    eunfitPaperCnt,    @"enunfitPaperCnt",
+                                    icePack,           @"icePack",
+                                    PCM,               @"PCM",
+                                    bloodBox,          @"bloodBox",
+                                    remarks,        @"remarks",
+                                    nil];
+        
+        [m_httpRequest setDelegate:self
+           selector:@selector(didReceiveLogSave:)];
+        [m_httpRequest requestURL:url
+                       bodyObject:bodyObject];
+    }
+    @catch (NSException *ex)
+    {
+        TRACE(@"%@%@", [ex name], [ex reason]);
+    }
+    
+    return;
+}
+
+- (void)didReceiveLogSave:(id)result
+{
+    NSString* strData;
+    strData = [(NSString*)result stringByReplacingOccurrencesOfString:@"\r\n" withString:@""];
+    
+    NSLog(@"strData := [%@]", strData);
+}
 /*
 #pragma mark - Navigation
 
