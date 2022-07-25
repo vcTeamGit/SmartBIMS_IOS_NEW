@@ -68,6 +68,9 @@
 // 혈액 인계 화면 → 임시저장 or 임시저장 불러오기 => [ SBTakeOverViewController.m ]
 #define URL_MANAGE_TEMP_TAKEOVER_INFO [NSString stringWithFormat:@"%@%@%@%@", @"http://", BLOOD_SERVER, SERVER_TARGET, @"/SBTakeOverBloodTemporarySave.jsp"]
 
+// 혈액 인계 화면 → 다음 버튼 클릭시 로그 작성
+#define URL_SAVE_LOG_INFO [NSString stringWithFormat:@"%@%@%@%@", @"http://", BLOOD_SERVER, SERVER_TARGET, @"/SBLogSave.jsp"]
+
 @interface SBServerURLContent : NSObject
 
 extern NSString *BLOOD_SERVER;
