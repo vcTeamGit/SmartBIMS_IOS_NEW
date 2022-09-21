@@ -35,11 +35,23 @@
 
 //@synthesize m_dictionary;
 
+-(NSString*)sha256HashForText:(NSString*)text
+{
+    const char* utf8chars = [text UTF8String];
+    unsigned char result[CC_SHA256_DIGEST_LENGTH];
+    CC_SHA256(utf8chars, (CC_LONG)strlen(utf8chars), result);
+
+    NSMutableString *ret = [NSMutableString stringWithCapacity:CC_SHA256_DIGEST_LENGTH*2];
+    for(int i = 0; i<CC_SHA256_DIGEST_LENGTH; i++) {
+        [ret appendFormat:@"%02x",result[i]];
+    }
+    return ret;
+}
 
 - (IBAction)loginButtonPressed:(id)sender
 {
     NSString* strId = m_textFieldId.text;
-    NSString* strPassword = m_textFieldPassword.text;
+    NSString* strPassword = [self sha256HashForText:m_textFieldPassword.text];
     
     // 2022.06.08 ADD HMWOO 테스트 대응 바코드 생성 URL 실행
     #if TARGET==DEV
