@@ -78,17 +78,6 @@
 //                                @"R2009036", @"idNo",
                                 nil];
     
-    
-//    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBTest.jsp";
-//    NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:
-//                                @"mgrInfo", @"reqId",
-//                                strMgrDate, @"mgrdate",
-//                                tempUserId, @"idNo",
-//                                //                                @"2011-11-01", @"mgrdate",
-//                                //                                @"R2009036", @"idNo",
-//                                nil];
-
-    
     [m_httpRequest setDelegate:self
                       selector:@selector(didReceiveMgrInfo:)];
     [m_httpRequest requestURL:url

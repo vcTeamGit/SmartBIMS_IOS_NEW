@@ -60,23 +60,6 @@
 //}
 
 
-//- (IBAction)testPushNotification:(id)sender
-//{
-//    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBSendAPN.jsp";
-//    NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:
-//                                @"2", @"noticeSeq",
-//                                nil];
-//    
-//    [m_httpRequest setDelegate:self
-//                      selector:@selector(didReceivePushAPN:)];
-//    [m_httpRequest requestURL:url
-//                   bodyObject:bodyObject];
-//}
-//
-//- (void)didReceivePushAPN:(id)result
-//{
-//
-//}
 
 
 - (IBAction)onSearch:(id)sender

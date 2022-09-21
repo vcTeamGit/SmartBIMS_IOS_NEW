@@ -63,22 +63,6 @@
     TRACE(@"strDeviceToken := [%@]", strDeviceToken);
     
     self.g_strDeviceToken = [NSString stringWithString:strDeviceToken];
-    
-	/*
-	 여기에 당신의 서버와 통신하는 부분을 만들것.
-	 푸시를 누구에게 보낼지를 결정하는 것이 바로 deviceToken 값이다.
-	 내가 운영할 서버에 deviceToken 를 보내서 보관하자.
-	 */
-//    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBDeviceConfirmService.jsp";
-//	NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:@"deviceTokenInput", @"reqId",
-//                                @"01022567493", @"strPhoneNo",
-//                                g_strDeviceToken, @"deviceToken",
-//                                nil];
-//    
-//	[m_httpRequest setDelegate:self
-//					  selector:@selector(didReceiveResponse:)];
-//	[m_httpRequest requestURL:url
-//				   bodyObject:bodyObject];
 }
 
 
@@ -284,19 +268,6 @@
 //        bgTask = UIBackgroundTaskInvalid;
 //    });
 }
-
-//- (void)makeTrafficForVPN
-//{
-//    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/index.jsp";
-//	NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:nil];
-//	[m_httpRequest setDelegate:self
-//     //					  selector:@selector(didReceiveResponse:)];
-//                      selector:nil];
-//	[m_httpRequest requestURL:url
-//				   bodyObject:bodyObject];
-//    
-//    TRACE(@"***************** makeTrafficForVPN On Background *****************");
-//}
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
