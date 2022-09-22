@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MediaPlayer/MediaPlayer.h>
+#import "SBServerURLContent.h"
 
 @interface PictureLibViewController : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 {

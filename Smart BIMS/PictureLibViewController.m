@@ -33,7 +33,8 @@ static UIImage* shrinkImage(UIImage* original, CGSize size);
 
 #pragma mark upload 
 - (IBAction)uploadContent:(id)sender;{
-    NSString *url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBFileUploadTest.jsp";
+    // 2022.09.22 MOD URL을 검수 및 상용으로 나누어 관리할 수 있도록 변경
+    NSString *url = URL_FILE_UPLOAD;
     
     NSData *imageData = UIImageJPEGRepresentation(imageView.image, 0.9);
     //UIImageJPEGRepresentation(UIViewImage.image,퀄리티);

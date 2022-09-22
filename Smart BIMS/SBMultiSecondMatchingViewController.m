@@ -627,7 +627,8 @@
     NSRange range = NSMakeRange(0, 10);
     strBloodNo = [strBloodNo substringWithRange:range];
     
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBMatchingCommonDAO.jsp";
+    // 2022.09.22 MOD URL을 검수 및 상용으로 나누어 관리할 수 있도록 변경
+    NSString* url = URL_CHECK_MATCHING_COMPLETE;
     NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:@"matchingSecondStep", @"reqId",
                                 strBloodNo, @"bloodno", 
                                 nil];
@@ -784,7 +785,8 @@
     
     [self backgroundTab:nil];
     
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBMatchingBloodInfoDAO.jsp";
+    // 2022.09.22 MOD URL을 검수 및 상용으로 나누어 관리할 수 있도록 변경
+    NSString* url = URL_INQUIRE_USER_BARCODE;
     NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:strBloodNo, @"bloodNoBarcode", nil];
     
     [m_httpRequest setDelegate:self
@@ -919,7 +921,8 @@
             NSString* strTempBldProc2 = m_SBBloodNoInfoVO.m_selectedBldProc2;
             NSString* strTempRealBldProcValue = m_SBBloodNoInfoVO.m_bagInterface;
             
-            NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBCheckBldProcAndBagCode.jsp";
+            // 2022.09.22 MOD URL을 검수 및 상용으로 나누어 관리할 수 있도록 변경
+            NSString* url = URL_GET_BLOOD_PACK_NO;
             NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:strTempBldProc1, @"strBldProc1", 
                                         strTempBldProc2, @"strBldProc2", 
                                         strTempRealBldProcValue, @"strBldProc3", 
@@ -1066,7 +1069,8 @@
     
     TRACE(@"requestMatchingSecondStep's strBloodNo := [%@]", strBloodNo);
     
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBMatchingSecondStepWithEhTR.jsp";
+    // 2022.09.22 MOD URL을 검수 및 상용으로 나누어 관리할 수 있도록 변경
+    NSString* url = URL_SECOND_MATCHING_TEST;
     NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:strBloodNo, @"strBloodNo", 
                                 strBarcodeBloodNo, @"strBarcodeBloodNo",
                                 strBarcodeABOType, @"strBarcodeABOType",
@@ -1159,53 +1163,6 @@
 }
 
 
-//- (void)requestAssetNoCheck:(NSString*)AssetNo
-//{
-//    TRACE(@"requestAssetNoCheck start");
-//    if(m_isBusy) return;
-//    
-//    NSString* strOrgCode;
-//    NSString* strBldProcCode;
-//    
-//    NSRange r = NSMakeRange(4, [AssetNo length]-4);
-//    NSString* strAssetNo = [AssetNo substringWithRange:r];
-//    
-//    if(m_SBUserInfoVO.szBimsOrgcode == nil || [m_SBUserInfoVO.szBimsOrgcode isEqualToString:@""]
-//       || [m_SBUserInfoVO.szBimsOrgcode isEqualToString:@"(null)"]){
-//        strOrgCode = @"";
-//    }else{
-//        strOrgCode = [NSString stringWithString:m_SBUserInfoVO.szBimsOrgcode];
-//    }
-//    
-//    if(m_SBBloodNoInfoVO.bldproccode == nil || [m_SBBloodNoInfoVO.bldproccode isEqualToString:@""]
-//       || [m_SBBloodNoInfoVO.bldproccode isEqualToString:@"(null)"]){
-//        strBldProcCode = @"";
-//    }else{
-//        strBldProcCode = [NSString stringWithString:m_SBBloodNoInfoVO.bldproccode];
-//    }
-//    
-////    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBAssetNoInfoCheck.jsp";
-////    NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:strAssetNo, @"strAssetNo",
-////                                strOrgCode, @"strOrgCode",
-////                                nil];
-//    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBAssetNoInfoWithBldChkDAO.jsp";
-//    NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:strAssetNo, @"strAssetNo",
-//                                strOrgCode, @"strOrgCode",
-//                                strBldProcCode, @"strBldProcCode",
-//                                nil];
-//    
-//    //    m_httpRequest = [[HttpRequest alloc] init];
-//    [m_httpRequest setDelegate:self
-//                      selector:@selector(didReceiveAssetNoInfo:)];
-//    [m_httpRequest requestURL:url
-//                   bodyObject:bodyObject];
-//    
-//    m_isBusy = YES;
-//    
-//    [self.m_activityIndicatorView startAnimating];
-//}
-//
-//
 //- (void)didReceiveAssetNoInfo:(id)result
 //{
 //    NSString* strAlertMsg;
@@ -1341,12 +1298,8 @@
         strBldProcCode = [NSString stringWithString:m_SBBloodNoInfoVO.bldproccode];
     }
     
-    //    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBAssetNoInfoCheck.jsp";
-    //    NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:strAssetNo, @"strAssetNo",
-    //                                strOrgCode, @"strOrgCode",
-    //                                nil];
-    
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBAssetNoInfoWithBldChkDAO.jsp";
+    // 2022.09.22 MOD URL을 검수 및 상용으로 나누어 관리할 수 있도록 변경
+    NSString* url = URL_GET_BLD_ASSET_INFO;
     NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:strAssetNo, @"strAssetNo",
                                 strOrgCode, @"strOrgCode",
                                 strBldProcCode, @"strBldProcCode",

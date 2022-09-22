@@ -64,7 +64,7 @@
         m_httpRequest = [[HttpRequest alloc] init];
     }
     
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBDonorFitnessCheckDetailCommonDAO.jsp";
+    NSString* url = URL_SPECIAL_DETAIL;
     NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:@"bissNurInv", @"reqId", 
                                 m_strJumin1, @"strJumin1",
                                 m_strJumin2, @"strJumin2",
@@ -161,7 +161,7 @@
                       
 - (void)requestPreUnFitnessInfo:(NSString*)pageNum
 {    
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBDonorFitnessCheckDetailCommonDAO.jsp";
+    NSString* url = URL_SPECIAL_DETAIL;
     NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:pageNum, @"strPageNum", 
                                 m_strJumin1, @"strJumin1",
                                 m_strJumin2, @"strJumin2",

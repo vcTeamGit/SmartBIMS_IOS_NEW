@@ -38,7 +38,7 @@
     
     [self backgroundTab:nil];
     
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBDeviceConfirmService.jsp";
+    NSString* url = URL_DEVICE_CONFIRM;
 	NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:
                                 @"confirmNoRequest", @"reqId",
                                 m_SBUserInfoVO.szBimsId, @"strUserId",
@@ -130,7 +130,7 @@
     
     [self backgroundTab:nil];
     
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBDeviceConfirmService.jsp";
+    NSString* url = URL_DEVICE_CONFIRM;
 	NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:
                                 @"confirmDevice", @"reqId",
                                 m_SBUserInfoVO.szBimsId, @"strUserId",
@@ -190,7 +190,8 @@
         
         TRACE(@"delegate.g_strDeviceToken = [%@]", delegate.g_strDeviceToken);
         
-        NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBDeviceConfirmService.jsp";
+        // 2022.09.22 MOD URL을 검수 및 상용으로 나누어 관리할 수 있도록 변경
+        NSString* url = URL_DEVICE_CONFIRM;
         NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:@"deviceTokenInput", @"reqId",
                                     delegate.g_strPhoneNo, @"strPhoneNo",
                                     delegate.g_strDeviceToken, @"deviceToken",

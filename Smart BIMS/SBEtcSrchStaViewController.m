@@ -223,7 +223,8 @@
     TRACE(@"onSearch tempUserId [%@]", tempUserId);
     
     if(m_tabbar.selectedItem.tag == 0){
-        NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBNurEtcSearchStaDAO.jsp";
+        // 2022.09.22 MOD URL을 검수 및 상용으로 나누어 관리할 수 있도록 변경
+        NSString* url = URL_STAT_BLOOD_COLLECTION;
         NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:
                                     tempReqId, @"reqId",
                                     tempOrgCode, @"orgcode",
@@ -236,7 +237,8 @@
         [m_httpRequest requestURL:url
                        bodyObject:bodyObject];
     }else{
-        NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBNurEtcSearchStaDAO.jsp";
+        // 2022.09.22 MOD URL을 검수 및 상용으로 나누어 관리할 수 있도록 변경
+        NSString* url = URL_STAT_BLOOD_COLLECTION;
         NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:
                                     tempReqId, @"reqId",
                                     tempOrgCode, @"orgcode",

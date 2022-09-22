@@ -85,7 +85,9 @@
 - (void)onSearch:(id)sender
 {
     TRACE(@"sideEffectsListViewController onSearch=[%@]", m_strBloodNo);
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBSideEffectsInfoDAO.jsp";
+    
+    // 2022.09.22 MOD URL을 검수 및 상용으로 나누어 관리할 수 있도록 변경
+    NSString* url = URL_SYMPTOM_BLOOD_INFO;
     NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:
                                 @"sideEffectsByBloodNo", @"reqId",
                                 self.m_strBloodNo, @"bloodno",

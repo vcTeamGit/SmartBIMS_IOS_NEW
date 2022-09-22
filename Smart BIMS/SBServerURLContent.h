@@ -17,8 +17,8 @@
 // 로그인 처리 URL => [ SBLoginViewController.m ]
 #define URL_IDPW_LOGIN [NSString stringWithFormat:@"%@%@%@%@", @"http://", BLOOD_SERVER, SERVER_TARGET, @"/SBLoginProc.jsp"]
 
-// 모든 공지사항 갯수 확인 => [ MainViewController.m ]
-#define URL_NOTICE_CNT [NSString stringWithFormat:@"%@%@%@%@", @"http://", BLOOD_SERVER, SERVER_TARGET, @"/SBNoticeWithConfirmInfoDAO.jsp"]
+// 공지사항 정보 => [ MainViewController.m, SBBoardViewController.m, SBBoardContentViewController.m ]
+#define URL_NOTICE_INFO [NSString stringWithFormat:@"%@%@%@%@", @"http://", BLOOD_SERVER, SERVER_TARGET, @"/SBNoticeWithConfirmInfoDAO.jsp"]
 
 // 확인 안된 공지사항 갯수 확인 => [ MainViewController.m ]
 #define URL_NOT_CONFIRM_NOTICE_CNT [NSString stringWithFormat:@"%@%@%@%@", @"http://", BLOOD_SERVER, SERVER_TARGET, @"/SBBoardDAO.jsp"]
@@ -26,7 +26,7 @@
 // 인계 정보 조회 => [ SBTakeOverInfoViewController.m ]
 #define URL_QUERY_TAKEOVER_INFO [NSString stringWithFormat:@"%@%@%@%@", @"http://", BLOOD_SERVER, SERVER_TARGET, @"/SBTakeOverBloodDAONew.jsp"]
 
-// 수거자 인증, 수거자 등록 전 인계 정보 조회, 인계 정보 저장 => [ MainViewController.m | SBTakeOverViewController.m ]
+// 수거자 인증, 수거자 등록 전 인계 정보 조회, 인계 정보 저장 => [ MainViewController.m | SBTakeOverViewController.m | SBTakeOverActionViewController.m ]
 // 수행 시 INSERT, UPDATE 처리 수행되므로 주의
 #define URL_MANAGE_TAKEOVER_INFO [NSString stringWithFormat:@"%@%@%@%@", @"http://", BLOOD_SERVER, SERVER_TARGET, @"/SBTakeOverBloodDAONew_TEST1.jsp"]
 
@@ -48,7 +48,7 @@
 // 해당 내역 추가하여 일반 성분도 대응하도록 작성
 #define URL_MULTI_FIRST_MATCHING_TEST [NSString stringWithFormat:@"%@%@%@%@", @"http://", BLOOD_SERVER, SERVER_TARGET, @"/SBMultiMatchingFirstStepWithUdiTR.jsp"]
 
-// 2차 일치 검사 → 헌혈자 바코드 조회 시 1차, 2차, BSD여부, 채혈종료시간입력 여부 확인 => [ SBSecondMatchingViewController.m | SB2ndMatchingFrom1stViewController | SBBloodEndTimeViewController.m ]
+// 2차 일치 검사 → 헌혈자 바코드 조회 시 1차, 2차, BSD여부, 채혈종료시간입력 여부 확인 => [ SBSecondMatchingViewController.m | SB2ndMatchingFrom1stViewController | SBBloodEndTimeViewController.m | SBMultiSecondMatchingViewController ]
 #define URL_CHECK_MATCHING_COMPLETE [NSString stringWithFormat:@"%@%@%@%@", @"http://", BLOOD_SERVER, SERVER_TARGET, @"/SBMatchingCommonDAO.jsp"]
 
 // 2차 일치 검사 => [ SBSecondMatchingViewController.m ]
@@ -70,6 +70,39 @@
 
 // 혈액 인계 화면 → 다음 버튼 클릭시 로그 작성
 #define URL_SAVE_LOG_INFO [NSString stringWithFormat:@"%@%@%@%@", @"http://", BLOOD_SERVER, SERVER_TARGET, @"/SBLogSave.jsp"]
+
+// 파일 업로드
+#define URL_FILE_UPLOAD [NSString stringWithFormat:@"%@%@%@%@", @"http://", BLOOD_SERVER, SERVER_TARGET, @"/SBFileUploadTest.jsp"]
+
+// 채혈내역조회화면 → [ SBBloodGatheringListViewController.m ]
+#define URL_SEARCH_BLOOD_COLLECTION [NSString stringWithFormat:@"%@%@%@%@", @"http://", BLOOD_SERVER, SERVER_TARGET, @"/SBBloodGatheringInfoDAO_New_TEST1.jsp"]
+
+// 디바이스인증화면 → [ SBDeviceConfirmViewController.m ]
+#define URL_DEVICE_CONFIRM [NSString stringWithFormat:@"%@%@%@%@", @"http://", BLOOD_SERVER, SERVER_TARGET, @"/SBDeviceConfirmService.jsp"]
+
+// 채혈내역통계화면 → [ SBEtcSrchStaViewController.m ]
+#define URL_STAT_BLOOD_COLLECTION [NSString stringWithFormat:@"%@%@%@%@", @"http://", BLOOD_SERVER, SERVER_TARGET, @"/SBNurEtcSearchStaDAO.jsp"]
+
+// 특이사항화면, 헌혈적격여부조회화면 → [ SBSpecialDetailViewController.m | SBSideEffectCheckViewController.m | SBPreUnfitnessDetailViewController.m | SBFitnessCheckViewController.m ]
+#define URL_SPECIAL_DETAIL [NSString stringWithFormat:@"%@%@%@%@", @"http://", BLOOD_SERVER, SERVER_TARGET, @"/SBDonorFitnessCheckDetailCommonDAO.jsp"]
+
+// 헌혈관련증상화면 → [ SBSideEffectsListViewController.m ]
+#define URL_SYMPTOM_BLOOD_INFO [NSString stringWithFormat:@"%@%@%@%@", @"http://", BLOOD_SERVER, SERVER_TARGET, @"/SBSideEffectsInfoDAO.jsp"]
+
+// 운영반편성정보화면 → [ SBMgrInfoViewController.m ]
+#define URL_OPERATE_INFO [NSString stringWithFormat:@"%@%@%@%@", @"http://", BLOOD_SERVER, SERVER_TARGET, @"/SBMgrInfoDAO.jsp"]
+
+// 헌혈적격여부조회화면 → [ SBFitnessCheckViewController.m ]
+#define URL_SEARCH_SPECIAL_LOG [NSString stringWithFormat:@"%@%@%@%@", @"http://", BLOOD_SERVER, SERVER_TARGET, @"/SBCommonViewLogTR.jsp"]
+
+// 헌혈적격여부조회화면 체크 → [ SBFitnessCheckViewController.m ]
+#define URL_CHECK_SPECIAL [NSString stringWithFormat:@"%@%@%@%@", @"http://", BLOOD_SERVER, SERVER_TARGET, @"/SBDonorFitnessCheckDAO.jsp"]
+
+// 성분채혈결과입력화면 → [ SBPcResultViewController.m ]
+#define URL_PCR_RESULT [NSString stringWithFormat:@"%@%@%@%@", @"http://", BLOOD_SERVER, SERVER_TARGET, @"/SBPcResultBloodInfoDAO.jsp"]
+
+// 성분채혈결과입력화면 → [ SBPcResultViewController.m ]
+#define URL_SAVE_PCR_INFO [NSString stringWithFormat:@"%@%@%@%@", @"http://", BLOOD_SERVER, SERVER_TARGET, @"/SBPcResultSaveTR.jsp"]
 
 @interface SBServerURLContent : NSObject
 

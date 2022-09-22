@@ -316,7 +316,8 @@
     
     [self backgroundTab:nil];
     
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBPcResultBloodInfoDAO.jsp";
+    // 2022.09.22 MOD URL을 검수 및 상용으로 나누어 관리할 수 있도록 변경
+    NSString* url = URL_PCR_RESULT;
     
     TRACE(@"1111");
     
@@ -597,7 +598,8 @@
     
     [self backgroundTab:nil];
     
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBPcResultSaveTR.jsp";
+    // 2022.09.22 MOD URL을 검수 및 상용으로 나누어 관리할 수 있도록 변경
+    NSString* url = URL_SAVE_PCR_INFO;
 
 #ifdef WIRELINE_AUTO_LOGIN_MODE
     NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:

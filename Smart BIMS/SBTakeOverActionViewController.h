@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SBServerURLContent.h"
 
 #define kBloodNoTextField               1
 #define kAssignedBloodNoTextField       2

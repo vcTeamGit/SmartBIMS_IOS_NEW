@@ -152,7 +152,7 @@
 
     NSString* tempReqId = @"getBloodNoInfo";
     
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBTakeOverBloodDAONew_TEST1.jsp";
+    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/testservice/SBTakeOverBloodDAONew_TEST1.jsp";
     NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:
                                 tempReqId, @"reqId",
                                 strBloodNo, @"bloodno",
@@ -331,7 +331,8 @@
     
     NSString* tempReqId = @"chkBldProcBarCode";
     
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBTakeOverBloodDAONew_TEST1.jsp";
+    // 2022.09.22 MOD URL을 검수 및 상용으로 나누어 관리할 수 있도록 변경
+    NSString* url = URL_MANAGE_TAKEOVER_INFO;
     NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:
                                 tempReqId, @"reqId",
                                 strBloodNo, @"bloodno",
@@ -623,7 +624,8 @@
     
     TRACE(@"getTakeOverBloodInfoWithSeq tempUserId [%@]", tempUserId);
     
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBTakeOverBloodDAONew_TEST1.jsp";
+    // 2022.09.22 MOD URL을 검수 및 상용으로 나누어 관리할 수 있도록 변경
+    NSString* url = URL_MANAGE_TAKEOVER_INFO;
     NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:
                                 tempReqId, @"reqId",
                                 tempOrgCode, @"orgcode",
@@ -906,7 +908,8 @@
     TRACE(@"strBloodNo = [%@]", strBloodNo);
     TRACE(@"strBldProcBarCode = [%@]", strBldProcBarCode);
     
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBTakeOverBloodDAONew_TEST1.jsp";
+    // 2022.09.22 MOD URL을 검수 및 상용으로 나누어 관리할 수 있도록 변경
+    NSString* url = URL_MANAGE_TAKEOVER_INFO;
     NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:
                                 tempReqId, @"reqId",
                                 strBloodNo, @"bloodno",
@@ -1054,7 +1057,8 @@
     
     [jsonWriter release];
     
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBTakeOverBloodDAONew_TEST1.jsp";
+    // 2022.09.22 MOD URL을 검수 및 상용으로 나누어 관리할 수 있도록 변경
+    NSString* url = URL_MANAGE_TAKEOVER_INFO;
     NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:
                                 tempReqId, @"reqId",
                                 tempOrgCode, @"orgcode",

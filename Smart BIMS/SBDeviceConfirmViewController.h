@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SBServerURLContent.h"
 
 #define kPhoneNoTextFieldTag    1
 #define kConfirmNoTextFieldTag  2

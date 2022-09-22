@@ -71,7 +71,8 @@
     
     TRACE(@"onSearch tempUserId [%@]", tempUserId);
     
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBBoardDAO.jsp";
+    // 2022.09.22 MOD URL을 검수 및 상용으로 나누어 관리할 수 있도록 변경
+    NSString* url = URL_NOTICE_INFO;
     NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:
                                 tempReqId, @"reqId",
                                 tempOrgCode, @"orgcode",

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "AudioToolbox/AudioToolbox.h"
+#import "SBServerURLContent.h"
 
 #define kJumin1TextFieldTag 1
 #define kJumin2TextFieldTag 2

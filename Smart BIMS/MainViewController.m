@@ -931,7 +931,7 @@
     
     TRACE(@"%@, %@", strId, strOrgCode);
 
-    NSString* url = URL_NOTICE_CNT;
+    NSString* url = URL_NOTICE_INFO;
 	NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:
                                 @"beNewList", @"reqId",
                                 strId, @"idno",

@@ -84,7 +84,7 @@
     
     TRACE(@"strJumin1:%@, strJumin2:%@", m_strJumin1, m_strJumin2);
     
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBDonorFitnessCheckDetailCommonDAO.jsp";
+    NSString* url = URL_SPECIAL_DETAIL;
     NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:@"bissNurErr", @"reqId", 
                                 m_strJumin1, @"strJumin1",
                                 m_strJumin2, @"strJumin2",

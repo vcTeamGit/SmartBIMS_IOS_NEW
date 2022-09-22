@@ -67,7 +67,8 @@
     NSString* tempOrgCode = [NSString stringWithString:m_SBUserInfoVO.szBimsOrgcode];
     NSString* tempIdNo = [NSString stringWithString:m_SBUserInfoVO.szBimsId];
     
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBNoticeWithConfirmInfoDAO.jsp";
+    // 2022.09.22 MOD URL을 검수 및 상용으로 나누어 관리할 수 있도록 변경
+    NSString* url = URL_NOTICE_INFO;
     NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:
                                 @"notice_list", @"reqId",
                                 tempOrgCode, @"orgcode",
@@ -184,7 +185,8 @@
     
     NSString* tempIdNo = [NSString stringWithString:m_SBUserInfoVO.szBimsId];
     
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBNoticeWithConfirmInfoDAO.jsp";
+    // 2022.09.22 MOD URL을 검수 및 상용으로 나누어 관리할 수 있도록 변경
+    NSString* url = URL_NOTICE_INFO;
     NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:
                                 @"notice_body", @"reqId",
                                 (NSString*)seqObj, @"notice_seq",
@@ -298,7 +300,7 @@
     NSString* strSeq = [[m_mDataArray objectAtIndex:indexPath.row] objectForKey:@"notice_seq"];
     NSString* tempIdNo = [NSString stringWithString:m_SBUserInfoVO.szBimsId];
     
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBNoticeWithConfirmInfoDAO.jsp";
+    NSString* url = URL_NOTICE_INFO;
     NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:
                                 @"notice_body", @"reqId",
                                 strSeq, @"notice_seq",
@@ -374,23 +376,6 @@
 }
 
 
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    NSString* strSeq = [[m_mDataArray objectAtIndex:indexPath.row] objectForKey:@"notice_seq"];
-//    
-//    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBNoticeDAO.jsp";
-//    NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:
-//                                @"notice_body", @"reqId",
-//                                strSeq, @"notice_seq",
-//                                nil];
-//    
-//    [m_httpRequest setDelegate:self
-//                      selector:@selector(didReceiveNoticeBody:)];
-//    [m_httpRequest requestURL:url
-//                   bodyObject:bodyObject];
-//    
-//    [self.m_activityIndicatorView startAnimating];
-//}
 
 
 
@@ -399,7 +384,8 @@
     NSString* strSeq = [[m_mDataArray objectAtIndex:indexPath.row] objectForKey:@"notice_seq"];
     NSString* tempIdNo = [NSString stringWithString:m_SBUserInfoVO.szBimsId];
     
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBNoticeWithConfirmInfoDAO.jsp";
+    // 2022.09.22 MOD URL을 검수 및 상용으로 나누어 관리할 수 있도록 변경
+    NSString* url = URL_NOTICE_INFO;
     NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:
                                 @"notice_body", @"reqId",
                                 strSeq, @"notice_seq",

@@ -291,7 +291,8 @@
     NSString* strJumin1 = m_jumin1TextField.text;
     NSString* strJumin2 = m_jumin2TextField.text;
     
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBCommonViewLogTR.jsp";
+    // 2022.09.22 MOD URL을 검수 및 상용으로 나누어 관리할 수 있도록 변경
+    NSString* url = URL_SEARCH_SPECIAL_LOG;
     NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:@"indivisualInfo", @"strPart",
                                 strJumin1, @"strJumin1", 
                                 strJumin2, @"strJumin2",
@@ -365,7 +366,8 @@
     NSString* strJumin1 = m_jumin1TextField.text;
     NSString* strJumin2 = m_jumin2TextField.text;
     
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBCommonViewLogTR.jsp";
+    // 2022.09.22 MOD URL을 검수 및 상용으로 나누어 관리할 수 있도록 변경
+    NSString* url = URL_SEARCH_SPECIAL_LOG;
     NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:@"holdingInfo", @"strPart",
                                 strJumin1, @"strJumin1", 
                                 strJumin2, @"strJumin2",
@@ -482,7 +484,8 @@
 //    [m_strDateBefore setString:[dateFormatter stringFromDate:[NSDate date]]];
     // For Time Test End.
     
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBDonorFitnessCheckDAO.jsp";
+    // 2022.09.22 MOD URL을 검수 및 상용으로 나누어 관리할 수 있도록 변경
+    NSString* url = URL_CHECK_SPECIAL;
     NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:strJumin1, @"strJumin1", 
                                 strJumin2, @"strJumin2",
                                 m_SBUserInfoVO.szBimsOrgcode, @"strOrgcode",
@@ -981,7 +984,8 @@
         m_httpRequest = [[HttpRequest alloc] init];
     }
     
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBDonorFitnessCheckDetailCommonDAO.jsp";
+    // 2022.09.22 MOD URL을 검수 및 상용으로 나누어 관리할 수 있도록 변경
+    NSString* url = URL_SPECIAL_DETAIL;
     NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:@"bissDDRHis", @"reqId", 
                                 m_jumin1TextField.text, @"strJumin1",
                                 m_jumin2TextField.text, @"strJumin2",

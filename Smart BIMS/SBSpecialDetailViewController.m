@@ -84,7 +84,8 @@
         m_httpRequest = [[HttpRequest alloc] init];
     }
     
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBDonorFitnessCheckDetailCommonDAO.jsp";
+    // 2022.09.22 MOD URL을 검수 및 상용으로 나누어 관리할 수 있도록 변경
+    NSString* url = URL_SPECIAL_DETAIL;
     NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:@"bissNurSpec", @"reqId", 
                                 m_strJumin1, @"strJumin1",
                                 m_strJumin2, @"strJumin2",

@@ -69,7 +69,8 @@
         tempUserId = [NSString stringWithString:m_SBUserInfoVO.szBimsId];
     }
     
-    NSString* url = @"http://mbims.bloodinfo.net:59999/mbims/appservice/SBMgrInfoDAO.jsp";
+    // 2022.09.22 MOD URL을 검수 및 상용으로 나누어 관리할 수 있도록 변경
+    NSString* url = URL_OPERATE_INFO;
     NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:
                                 @"mgrInfo", @"reqId",
                                 strMgrDate, @"mgrdate",
