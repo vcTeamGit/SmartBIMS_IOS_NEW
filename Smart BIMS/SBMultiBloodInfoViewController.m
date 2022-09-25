@@ -14,6 +14,7 @@
 #import "SBUserInfoVO.h"
 #import "SBUtils.h"
 #import "SBBldProcPickerViewController.h"
+#import "SBSideEffectsListViewController.h"
 #import "SBMultiFirstMatchingViewController.h"
 
 #import "Smart_BIMSAppDelegate.h"
@@ -36,6 +37,8 @@
 
 @synthesize m_registerImageView;
 @synthesize m_marrmstImageView;
+// 2022.09.22 ADD HMWOO 지정헌혈 여부 확인 뷰 추가
+@synthesize m_assignImageView;
 
 @synthesize m_heightLabel;
 @synthesize m_weightLabel;
@@ -49,9 +52,13 @@
 @synthesize m_hematoLabel;
 @synthesize m_plateletLabel;
 
+// 2022.09.22 ADD HMWOO 헌혈관련증상 버튼 추가
+@synthesize m_btnToSideEffectsView;
 @synthesize m_cancelButton;
 @synthesize m_toFirstMatchingViewButton;
 @synthesize m_multiFirstMatchingViewController;
+// 2022.09.22 ADD HMWOO 헌혈관련증상 컨트롤러 추가
+@synthesize m_SBSideEffectsListViewController;
 
 /* commons */
 @synthesize m_target;
@@ -75,6 +82,20 @@
         self.m_marrmstImageView.hidden = NO;
     }else{
         self.m_marrmstImageView.hidden = YES;
+    }
+    
+    // 2022.09.22 ADD HMWOO 헌혈관련증상 버튼 추가
+    if([m_SBBloodnoInfoVO.sideeffectsyn isEqualToString:@"Y"]){
+        self.m_btnToSideEffectsView.hidden = NO;
+    }else{
+        self.m_btnToSideEffectsView.hidden = YES;
+    }
+    
+    // 2022.09.22 ADD HMWOO 지정헌혈 버튼 추가
+    if([m_SBBloodnoInfoVO.assignyn isEqualToString:@"Y"]){
+        self.m_assignImageView.hidden = NO;
+    }else{
+        self.m_assignImageView.hidden = YES;
     }
     
     self.m_heightLabel.text = m_SBBloodnoInfoVO.height;
@@ -152,7 +173,38 @@
     [UIView commitAnimations];
 }
 
-
+// 2022.09.23 ADD HMWOO 헌혈관련증상 조회 기능 추가
+- (IBAction)onToSideEffectsView:(id)sender
+{
+    if(m_SBSideEffectsListViewController == nil){
+        if(winHeight == kWINDOW_HEIGHT){
+            m_SBSideEffectsListViewController = [[SBSideEffectsListViewController alloc] initWithNibName:@"SBSideEffectsListViewController"
+                                                                                                  bundle:nil];
+        }else{
+            m_SBSideEffectsListViewController = [[SBSideEffectsListViewController alloc] initWithNibName:@"SBSideEffectsListViewController3"
+                                                                                                  bundle:nil];
+        }
+    }
+    
+    [self backgroundTab:nil];
+    
+    [m_SBSideEffectsListViewController setValuesWithBloodNo:self.m_strBarcodeBloodNo];
+    //    [m_SBSideEffectsListViewController pageReset];
+    [m_SBSideEffectsListViewController setDelegate:self
+                                          selector:nil];
+    
+    CGRect frame = CGRectMake(viewWidth, 0, viewWidth, viewHeight);
+    m_SBSideEffectsListViewController.view.frame = frame;
+    
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.5];
+    
+    m_SBSideEffectsListViewController.view.frame = CGRectMake(0, 0, viewWidth, viewHeight);
+    
+    [self.view addSubview:m_SBSideEffectsListViewController.view];
+    
+    [UIView commitAnimations];
+}
 
 // 다종성분의 두 혈액번호바코드 비교
 - (void)chkBarcodeBloodNo
@@ -448,6 +500,8 @@ replacementString:(NSString*)string
     
     self.m_registerImageView = nil;
     self.m_marrmstImageView = nil;
+    // 2022.09.22 ADD HMWOO 지정헌혈 여부 확인 뷰 추가
+    self.m_assignImageView = nil;
     
     self.m_heightLabel = nil;
     self.m_weightLabel = nil;
@@ -461,6 +515,8 @@ replacementString:(NSString*)string
     self.m_hematoLabel = nil;
     self.m_plateletLabel = nil;
     
+    // 2022.09.23 ADD HMWOO 헌혈관련증상 버튼 추가
+    self.m_btnToSideEffectsView = nil;
     self.m_cancelButton = nil;
     self.m_toFirstMatchingViewButton = nil;
     
@@ -486,6 +542,8 @@ replacementString:(NSString*)string
     
     [m_registerImageView release];
     [m_marrmstImageView release];
+    // 2022.09.22 ADD HMWOO 지정헌혈 여부 확인 뷰 추가
+    [m_assignImageView release];
     
     [m_heightLabel release];
     [m_weightLabel release];
@@ -499,6 +557,8 @@ replacementString:(NSString*)string
     [m_hematoLabel release];
     [m_plateletLabel release];
     
+    // 2022.09.23 ADD HMWOO 헌혈관련증상 버튼 추가
+    [m_btnToSideEffectsView release];
     [m_cancelButton release];
     [m_toFirstMatchingViewButton release];
 

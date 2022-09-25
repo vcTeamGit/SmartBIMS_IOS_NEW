@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -11,8 +11,10 @@
             <connections>
                 <outlet property="m_aboNameLabel" destination="29" id="54"/>
                 <outlet property="m_absLabel" destination="30" id="55"/>
+                <outlet property="m_assignImageView" destination="iq9-bm-zha" id="49t-yu-wZe"/>
                 <outlet property="m_bldprocNames" destination="49" id="57"/>
                 <outlet property="m_bloodnoBarcodeTextField" destination="12" id="58"/>
+                <outlet property="m_btnToSideEffectsView" destination="CMv-wr-1EI" id="zDC-z2-o9Q"/>
                 <outlet property="m_cancelButton" destination="82" id="83"/>
                 <outlet property="m_heightLabel" destination="25" id="60"/>
                 <outlet property="m_hematoLabel" destination="34" id="61"/>
@@ -336,12 +338,12 @@
                     <rect key="frame" x="16" y="134" width="10" height="10"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="등록헌혈 회원_버튼.png" translatesAutoresizingMaskIntoConstraints="NO" id="51">
-                    <rect key="frame" x="24" y="159" width="130" height="28"/>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="등록헌혈.png" translatesAutoresizingMaskIntoConstraints="NO" id="51">
+                    <rect key="frame" x="87" y="159" width="70" height="28"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="조혈 모세포 기증_버튼.png" translatesAutoresizingMaskIntoConstraints="NO" id="52">
-                    <rect key="frame" x="168" y="159" width="130" height="28"/>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="조혈모세포.png" translatesAutoresizingMaskIntoConstraints="NO" id="52">
+                    <rect key="frame" x="164" y="159" width="70" height="28"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="82">
@@ -373,12 +375,28 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="지정헌혈.png" translatesAutoresizingMaskIntoConstraints="NO" id="iq9-bm-zha">
+                    <rect key="frame" x="241" y="159" width="70" height="28"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CMv-wr-1EI">
+                    <rect key="frame" x="10" y="159" width="70" height="28"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12.5"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="헌혈관련증상" image="헌혈관련증상.png">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </state>
+                    <connections>
+                        <action selector="onToSideEffectsView:" destination="-1" eventType="touchUpInside" id="MiE-Nv-MxF"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <connections>
                 <action selector="backgroundTab:" destination="-1" eventType="touchDown" id="71"/>
             </connections>
-            <point key="canvasLocation" x="439.13043478260875" y="181.47321428571428"/>
+            <point key="canvasLocation" x="438.75" y="180.63380281690141"/>
         </view>
     </objects>
     <resources>
@@ -389,7 +407,9 @@
         <image name="R-4p_텍스트_bg1.png" width="600" height="160"/>
         <image name="R-9p_1차일치검사_버튼_on.png" width="222" height="69"/>
         <image name="R-9p_취소_버튼_on.png" width="139" height="69"/>
-        <image name="등록헌혈 회원_버튼.png" width="215" height="51"/>
-        <image name="조혈 모세포 기증_버튼.png" width="230" height="51"/>
+        <image name="등록헌혈.png" width="250" height="100"/>
+        <image name="조혈모세포.png" width="250" height="100"/>
+        <image name="지정헌혈.png" width="250" height="100"/>
+        <image name="헌혈관련증상.png" width="250" height="100"/>
     </resources>
 </document>

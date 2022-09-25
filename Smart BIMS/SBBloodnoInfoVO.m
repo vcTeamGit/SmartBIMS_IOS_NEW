@@ -17,6 +17,8 @@
 @synthesize registeryn;
 @synthesize marrmstyn;
 @synthesize sideeffectsyn;
+// 2022.09.22 ADD HMWOO 지정헌혈 여부 확인 추가
+@synthesize assignyn;
 @synthesize name;
 @synthesize bloodcnt;
 @synthesize gbmal;
@@ -68,6 +70,8 @@
     [registeryn release];
     [marrmstyn release];
     [sideeffectsyn release];
+    // 2022.09.22 ADD HMWOO 지정헌혈 여부 확인 추가
+    [assignyn release];
     [name release];
     [gbmal release];
     [gbmal_color release];

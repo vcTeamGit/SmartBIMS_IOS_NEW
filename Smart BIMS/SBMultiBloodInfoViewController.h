@@ -15,6 +15,8 @@
 @class HttpRequest;
 @class SBBloodnoInfoVO;
 @class SBUserInfoVO;
+// 2022.09.23 ADD HMWOO 헌혈관련증상 조회 추가
+@class SBSideEffectsListViewController;
 @class SBMultiFirstMatchingViewController;
 
 
@@ -34,6 +36,8 @@
     
     UIImageView* m_registerImageView;
     UIImageView* m_marrmstImageView;
+    // 2022.09.22 ADD HMWOO 지정헌혈 여부 확인 뷰 추가
+    UIImageView* m_assignImageView;
     
     UILabel* m_heightLabel;
     UILabel* m_weightLabel;
@@ -47,6 +51,8 @@
     UILabel* m_hematoLabel;
     UILabel* m_plateletLabel;
 
+    // 2022.09.23 ADD HMWOO 헌혈관련증상버튼 추가
+    UIButton* m_btnToSideEffectsView;
     UIButton* m_cancelButton;
     UIButton* m_toFirstMatchingViewButton;
     
@@ -75,6 +81,8 @@
 
 @property (nonatomic, retain) IBOutlet UIImageView* m_registerImageView;
 @property (nonatomic, retain) IBOutlet UIImageView* m_marrmstImageView;
+// 2022.09.22 ADD HMWOO 지정헌혈 여부 확인 뷰 추가
+@property (nonatomic, retain) IBOutlet UIImageView* m_assignImageView;
 
 @property (nonatomic, retain) IBOutlet UILabel* m_heightLabel;
 @property (nonatomic, retain) IBOutlet UILabel* m_weightLabel;
@@ -88,9 +96,12 @@
 @property (nonatomic, retain) IBOutlet UILabel* m_hematoLabel;
 @property (nonatomic, retain) IBOutlet UILabel* m_plateletLabel;
 
+@property (nonatomic, retain) IBOutlet UIButton* m_btnToSideEffectsView;
 @property (nonatomic, retain) IBOutlet UIButton* m_cancelButton;
 @property (nonatomic, retain) IBOutlet UIButton* m_toFirstMatchingViewButton;
 
+// 2022.09.23 ADD HMWOO 헌혈관련증상 조회 추가
+@property (nonatomic, retain) IBOutlet SBSideEffectsListViewController* m_SBSideEffectsListViewController;
 @property (nonatomic, retain) IBOutlet SBMultiFirstMatchingViewController* m_multiFirstMatchingViewController;
 
 /* commons */
@@ -109,7 +120,8 @@
 //- (void)onToHomeViewFromMultiFirstMatchingViewControllerSelector;
 
 - (IBAction)onToFirstMatchingView:(id)sender;  // 다종성분 1차 일치검사로 이동
-
+// 2022.09.23 ADD HMWOO 헌혈관련증상 조회 추가
+- (IBAction)onToSideEffectsView:(id)sender;
 // 
 - (void)chkBarcodeBloodNo;  // 다종성분의 두 혈액번호 비교
 

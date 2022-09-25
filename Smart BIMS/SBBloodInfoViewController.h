@@ -43,6 +43,8 @@
     
     UIImageView* m_registerImageView;
     UIImageView* m_marrmstImageView;
+    // 2022.09.22 ADD HMWOO 지정헌혈 여부 확인 뷰 추가
+    UIImageView* m_assignImageView;
     
     UILabel* m_heightLabel;
     UILabel* m_weightLabel;
@@ -60,6 +62,7 @@
     UIButton* m_toFirstMatchingViewButton;
     UIButton* m_cancelButton;
     UIButton* m_btnToSideEffectsView;
+    
     
     UIButton* m_toMultiMatchingViewButton;
     
@@ -100,6 +103,8 @@
 
 @property (nonatomic, retain) IBOutlet UIImageView* m_registerImageView;
 @property (nonatomic, retain) IBOutlet UIImageView* m_marrmstImageView;
+// 2022.09.22 ADD HMWOO 지정헌혈 여부 확인 뷰 추가
+@property (nonatomic, retain) IBOutlet UIImageView* m_assignImageView;
 
 @property (nonatomic, retain) IBOutlet UILabel* m_heightLabel;
 @property (nonatomic, retain) IBOutlet UILabel* m_weightLabel;

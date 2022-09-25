@@ -13,6 +13,7 @@
                 <outlet property="m_aboNameLabel" destination="105" id="112"/>
                 <outlet property="m_absLabel" destination="108" id="113"/>
                 <outlet property="m_activityIndicatorView" destination="38" id="44"/>
+                <outlet property="m_assignImageView" destination="Q9O-YX-Fvq" id="dfQ-uW-bdf"/>
                 <outlet property="m_bldprocNames" destination="101" id="102"/>
                 <outlet property="m_bloodCntLabel" destination="8AB-St-FtY" id="AY6-6Y-SIm"/>
                 <outlet property="m_bloodnoBarcodeTextField" destination="17" id="47"/>
@@ -378,8 +379,8 @@
                     <rect key="frame" x="284" y="12" width="20" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </activityIndicatorView>
-                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="조혈 모세포 기증_버튼.png" translatesAutoresizingMaskIntoConstraints="NO" id="135">
-                    <rect key="frame" x="212" y="189" width="98" height="28"/>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="조혈모세포.png" translatesAutoresizingMaskIntoConstraints="NO" id="135">
+                    <rect key="frame" x="164" y="189" width="70" height="28"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="138">
@@ -398,15 +399,18 @@
                     </connections>
                 </button>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yg2-Iz-8nn">
-                    <rect key="frame" x="10" y="189" width="94" height="28"/>
+                    <rect key="frame" x="10" y="189" width="70" height="28"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" image="헌혈관련증상버튼.png"/>
+                    <fontDescription key="fontDescription" name="NanumMyeongjoExtraBold" family="Nanum Myeongjo" pointSize="12.5"/>
+                    <state key="normal" title="헌혈관련증상" image="헌혈관련증상.png">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </state>
                     <connections>
                         <action selector="onToSideEffectsView:" destination="-1" eventType="touchUpInside" id="Ptk-hL-kvd"/>
                     </connections>
                 </button>
-                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="등록헌혈 회원_버튼.png" translatesAutoresizingMaskIntoConstraints="NO" id="134">
-                    <rect key="frame" x="110" y="189" width="97" height="28"/>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="등록헌혈.png" translatesAutoresizingMaskIntoConstraints="NO" id="134">
+                    <rect key="frame" x="87" y="189" width="70" height="28"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="사용자:" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Atc-vd-ebv">
@@ -437,6 +441,10 @@
                     <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="지정헌혈.png" translatesAutoresizingMaskIntoConstraints="NO" id="Q9O-YX-Fvq">
+                    <rect key="frame" x="241" y="189" width="70" height="28"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <point key="canvasLocation" x="43.125" y="44.366197183098592"/>
@@ -453,9 +461,10 @@
         <image name="9p_1차일치검사_버튼_on.png" width="222" height="69"/>
         <image name="9p_취소_버튼_on.png" width="139" height="69"/>
         <image name="9p_헌혈종류_버튼_on.png" width="148" height="51"/>
-        <image name="등록헌혈 회원_버튼.png" width="215" height="51"/>
-        <image name="조혈 모세포 기증_버튼.png" width="230" height="51"/>
-        <image name="헌혈관련증상버튼.png" width="154" height="58"/>
+        <image name="등록헌혈.png" width="250" height="100"/>
+        <image name="조혈모세포.png" width="250" height="100"/>
+        <image name="지정헌혈.png" width="250" height="100"/>
+        <image name="헌혈관련증상.png" width="250" height="100"/>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

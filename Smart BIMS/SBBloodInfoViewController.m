@@ -41,6 +41,8 @@
 
 @synthesize m_registerImageView;
 @synthesize m_marrmstImageView;
+// 2022.09.22 ADD HMWOO 지정헌혈 여부 확인 뷰 추가
+@synthesize m_assignImageView;
 
 @synthesize m_heightLabel;
 @synthesize m_weightLabel;
@@ -99,6 +101,9 @@
     
     self.m_registerImageView.hidden = YES;
     self.m_marrmstImageView.hidden = YES;
+    // 2022.09.22 ADD HMWOO 지정헌혈 여부 확인 뷰 추가
+    self.m_assignImageView.hidden = YES;
+    
     self.m_gbMal.hidden = YES;
     
     self.m_heightLabel.text = @"";
@@ -241,6 +246,8 @@
         m_SBBloodnoInfoVO.jumin2 = [dictionary valueForKey:@"jumin2"];
         m_SBBloodnoInfoVO.registeryn = [dictionary valueForKey:@"registeryn"];
         m_SBBloodnoInfoVO.marrmstyn = [dictionary valueForKey:@"marrmstyn"];
+        // 2022.09.22 ADD HMWOO 지정헌혈 여부 확인 추가
+        m_SBBloodnoInfoVO.assignyn = [dictionary valueForKey:@"assignyn"];
         m_SBBloodnoInfoVO.name = [dictionary valueForKey:@"name"];
         
         // 2014.02.21 추가
@@ -323,6 +330,16 @@
             self.m_marrmstImageView.hidden = YES;
         }
         
+        // 2022.09.22 ADD HMWOO 지정헌혈 여부 확인 뷰 추가
+        if([m_SBBloodnoInfoVO.assignyn isEqualToString:@"Y"])
+        {
+            self.m_assignImageView.hidden = NO;
+        }
+        else
+        {
+            self.m_assignImageView.hidden = YES;
+        }
+
         self.m_heightLabel.text = m_SBBloodnoInfoVO.height;
         self.m_weightLabel.text = m_SBBloodnoInfoVO.weight;
         
@@ -1038,6 +1055,8 @@ replacementString:(NSString*)string
     
     self.m_registerImageView = nil;
     self.m_marrmstImageView = nil;
+    // 2022.09.22 ADD HMWOO 지정헌혈 여부 확인 뷰 추가
+    self.m_assignImageView = nil;
     
     self.m_heightLabel = nil;
     self.m_weightLabel = nil;
@@ -1097,6 +1116,8 @@ replacementString:(NSString*)string
     
     [m_registerImageView release];
     [m_marrmstImageView release];
+    // 2022.09.22 ADD HMWOO 지정헌혈 여부 확인 뷰 추가
+    [m_assignImageView release];
     
     [m_heightLabel release];
     [m_weightLabel release];

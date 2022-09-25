@@ -17,6 +17,8 @@
     NSString* registeryn;   // 등록헌혈자여부 (Y/N)
     NSString* marrmstyn;    // 골수기증자여부 (Y/N)
     NSString* sideeffectsyn;    // 헌혈관련증상여부 (Y/N)
+    // 2022.09.22 ADD HMWOO 지정헌혈 여부 확인 추가
+    NSString* assignyn;     // 지정헌혈여부 (Y/N)
     NSString* name;
     NSString* bloodcnt;
     NSString* gbmal;        // 0:정상, 1:제한, 2:고위험, 3:가능
@@ -57,6 +59,8 @@
 @property (nonatomic, retain) NSString* registeryn;
 @property (nonatomic, retain) NSString* marrmstyn;
 @property (nonatomic, retain) NSString* sideeffectsyn;
+// 2022.09.22 ADD HMWOO 지정헌혈 여부 확인 추가
+@property (nonatomic, retain) NSString* assignyn;
 @property (nonatomic, retain) NSString* name;
 @property (nonatomic, retain) NSString* bloodcnt;
 @property (nonatomic, retain) NSString* gbmal;

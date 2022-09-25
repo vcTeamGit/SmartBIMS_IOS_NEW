@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39A7708F28DC293A004D40F9 /* 등록헌혈.png in Resources */ = {isa = PBXBuildFile; fileRef = 39A7708E28DC293A004D40F9 /* 등록헌혈.png */; };
+		39A7709128DC2964004D40F9 /* 조혈모세포.png in Resources */ = {isa = PBXBuildFile; fileRef = 39A7709028DC2964004D40F9 /* 조혈모세포.png */; };
+		39A7709328DC29A8004D40F9 /* 지정헌혈.png in Resources */ = {isa = PBXBuildFile; fileRef = 39A7709228DC29A8004D40F9 /* 지정헌혈.png */; };
+		39A7709528DC29B9004D40F9 /* 헌혈관련증상.png in Resources */ = {isa = PBXBuildFile; fileRef = 39A7709428DC29B9004D40F9 /* 헌혈관련증상.png */; };
 		453040B724A43DFE00D2E22E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 929954141441C16B00CAF352 /* AudioToolbox.framework */; };
 		57121A42268C67D70067911D /* TakeoverTableViewCellInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57121A41268C67D70067911D /* TakeoverTableViewCellInfoViewController.swift */; };
 		572F669C26C4A543008657C4 /* TakeOverChangeBloodLevelInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 572F669B26C4A543008657C4 /* TakeOverChangeBloodLevelInfo.storyboard */; };
@@ -450,6 +454,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		39A7708E28DC293A004D40F9 /* 등록헌혈.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "등록헌혈.png"; sourceTree = "<group>"; };
+		39A7709028DC2964004D40F9 /* 조혈모세포.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "조혈모세포.png"; sourceTree = "<group>"; };
+		39A7709228DC29A8004D40F9 /* 지정헌혈.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "지정헌혈.png"; sourceTree = "<group>"; };
+		39A7709428DC29B9004D40F9 /* 헌혈관련증상.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "헌혈관련증상.png"; sourceTree = "<group>"; };
 		57121A41268C67D70067911D /* TakeoverTableViewCellInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeoverTableViewCellInfoViewController.swift; sourceTree = "<group>"; };
 		572F669B26C4A543008657C4 /* TakeOverChangeBloodLevelInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TakeOverChangeBloodLevelInfo.storyboard; sourceTree = "<group>"; };
 		572F669D26C4BADF008657C4 /* TakeOverChangeBloodLevelInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeOverChangeBloodLevelInfoViewController.swift; sourceTree = "<group>"; };
@@ -1436,6 +1444,10 @@
 		92888F961533EF2000CB6410 /* B-img */ = {
 			isa = PBXGroup;
 			children = (
+				39A7709428DC29B9004D40F9 /* 헌혈관련증상.png */,
+				39A7709028DC2964004D40F9 /* 조혈모세포.png */,
+				39A7708E28DC293A004D40F9 /* 등록헌혈.png */,
+				39A7709228DC29A8004D40F9 /* 지정헌혈.png */,
 				92F4FB17151B0E98005DDB6E /* btn_blue_default.png */,
 				92885B2C14E4E6A100D3D4DF /* bg.png */,
 				9291E9631439ACF0003167F5 /* 스크린샷 2011-10-03 오후 5.41.40.png */,
@@ -1934,6 +1946,7 @@
 				9291E95814398428003167F5 /* 10_홈_버튼_on.png in Resources */,
 				9291E95914398428003167F5 /* 11p_텍스트필드1.png in Resources */,
 				9291E95A14398428003167F5 /* 11p_텍스트필드2.png in Resources */,
+				39A7709528DC29B9004D40F9 /* 헌혈관련증상.png in Resources */,
 				9291E95B14398428003167F5 /* 11p_확인_버튼_on.png in Resources */,
 				9291E95C14398428003167F5 /* 12p_채혈시간 입력_버튼_on.png in Resources */,
 				9291E95D14398428003167F5 /* 12p_텍스트_bg.png in Resources */,
@@ -2042,6 +2055,7 @@
 				92390B961512DF5400E777E9 /* beef01.mp3 in Resources */,
 				92390B971512DF5400E777E9 /* beef02.mp3 in Resources */,
 				92CEF325190F97EA0095F62E /* es_bag.png in Resources */,
+				39A7708F28DC293A004D40F9 /* 등록헌혈.png in Resources */,
 				92390B981512DF5400E777E9 /* in_the_dream.wav in Resources */,
 				9270E7511AA91F4700616859 /* SB1.7_180.png in Resources */,
 				92390B991512DF5400E777E9 /* mistery.wav in Resources */,
@@ -2172,6 +2186,7 @@
 				927D42431537CEE9006C095F /* Y-9p_bsd_버튼_bg.png in Resources */,
 				927D42441537CEE9006C095F /* Y-9p_home_버튼_off.png in Resources */,
 				927D42451537CEE9006C095F /* Y-9p_home_버튼_on.png in Resources */,
+				39A7709128DC2964004D40F9 /* 조혈모세포.png in Resources */,
 				927D42461537CEE9006C095F /* Y-9p_검색_버튼_off.png in Resources */,
 				927D42471537CEE9006C095F /* Y-9p_검색_버튼_on.png in Resources */,
 				927D42481537CEE9006C095F /* Y-9p_취소_버튼_off.png in Resources */,
@@ -2189,6 +2204,7 @@
 				927D42511537CEE9006C095F /* Y-11p_텍스트필드1.png in Resources */,
 				927D42521537CEE9006C095F /* Y-11p_텍스트필드2.png in Resources */,
 				927D42531537CEE9006C095F /* Y-11p_확인_버튼_off.png in Resources */,
+				39A7709328DC29A8004D40F9 /* 지정헌혈.png in Resources */,
 				927D42541537CEE9006C095F /* Y-11p_확인_버튼_on.png in Resources */,
 				927D42551537CEE9006C095F /* Y-12p_채혈시간 입력_버튼_off.png in Resources */,
 				927D42561537CEE9006C095F /* Y-12p_채혈시간 입력_버튼_on.png in Resources */,
