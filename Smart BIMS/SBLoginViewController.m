@@ -169,9 +169,9 @@
         int nMgrCnt = [(NSString*)[dictionary valueForKey:@"nMgrCnt"] intValue];
         NSString* strMgrData = (NSString*)[dictionary valueForKey:@"strMgrData"];
         
-        if([strDeptCode isEqualToString:@"250"] == NO && [strDeptCode isEqualToString:@"251"] == NO && [strDeptCode isEqualToString:@"252"] == NO && [strDeptCode isEqualToString:@"210"] == NO && [(NSString*)[dictionary valueForKey:@"bims_id"] isEqualToString:@"R2011202"] == NO && [(NSString*)[dictionary valueForKey:@"bims_id"] isEqualToString:@"Z2019038"] == NO && [(NSString*)[dictionary valueForKey:@"bims_id"] isEqualToString:@"R2011202"] == NO && [(NSString*)[dictionary valueForKey:@"bims_id"] isEqualToString:@"R2020045"] == NO &&
+        if([strDeptCode isEqualToString:@"250"] == NO && [strDeptCode isEqualToString:@"251"] == NO && [strDeptCode isEqualToString:@"252"] == NO && [strDeptCode isEqualToString:@"210"] == NO && [(NSString*)[dictionary valueForKey:@"bims_id"] isEqualToString:@"R2011202"] == NO && [(NSString*)[dictionary valueForKey:@"bims_id"] isEqualToString:@"Z2019038"] == NO && [(NSString*)[dictionary valueForKey:@"bims_id"] isEqualToString:@"R2020045"] == NO &&
            [(NSString*)[dictionary valueForKey:@"bims_id"] isEqualToString:@"Z2022059"] == NO &&
-           [(NSString*)[dictionary valueForKey:@"bims_id"] isEqualToString:@"Z2022001"] == NO)
+           [(NSString*)[dictionary valueForKey:@"bims_id"] isEqualToString:@"Z2022001"] == NO && [(NSString*)[dictionary valueForKey:@"bims_id"] isEqualToString:@"R2022106"] == NO)
         {
             NSString* strMsg = [NSString stringWithFormat:@"SmartBIMS는 간호팀 또는 의무관리실(편성된) 직원이 이용 가능합니다."];
             
@@ -238,11 +238,11 @@
         else if(nMgrCnt == 0)
         {
 //            2013.05.23 교육을 위해 운영반편성표 체크 조건을 잠시 풀어둠. - 다시 막았어~~~ 시범실시 기간이 지났거든~~~
-            if([(NSString*)[dictionary valueForKey:@"bims_id"] isEqualToString:@"R2011202"] == YES || [(NSString*)[dictionary valueForKey:@"bims_id"] isEqualToString:@"Z2018133"] == YES || [(NSString*)[dictionary valueForKey:@"bims_id"] isEqualToString:@"R2011202"] == YES ||
+            if([(NSString*)[dictionary valueForKey:@"bims_id"] isEqualToString:@"R2011202"] == YES || [(NSString*)[dictionary valueForKey:@"bims_id"] isEqualToString:@"Z2018133"] == YES ||
                 [(NSString*)[dictionary valueForKey:@"bims_id"] isEqualToString:@"Z2019038"] == YES ||
                [(NSString*)[dictionary valueForKey:@"bims_id"] isEqualToString:@"Z2022001"] == YES ||
                [(NSString*)[dictionary valueForKey:@"bims_id"] isEqualToString:@"R2020045"] == YES ||
-               [(NSString*)[dictionary valueForKey:@"bims_id"] isEqualToString:@"Z2022059"] == YES
+               [(NSString*)[dictionary valueForKey:@"bims_id"] isEqualToString:@"Z2022059"] == YES || [(NSString*)[dictionary valueForKey:@"bims_id"] isEqualToString:@"R2022106"] == YES
                ){
                 
                 m_SBUserInfoVO.szBimsId = (NSString*)[dictionary valueForKey:@"bims_id"];

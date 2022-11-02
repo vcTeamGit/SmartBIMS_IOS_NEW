@@ -436,7 +436,7 @@
     
     m_mDataArray = [[NSMutableArray alloc] initWithCapacity:64];
     
-    if([m_SBUserInfoVO.szBimsId isEqualToString:@"R2011202"] == YES || [m_SBUserInfoVO.szBimsId isEqualToString:@"R2020045"] == YES){
+    if([m_SBUserInfoVO.szBimsId isEqualToString:@"R2011202"] == YES || [m_SBUserInfoVO.szBimsId isEqualToString:@"R2020045"] == YES || [m_SBUserInfoVO.szBimsId isEqualToString:@"R2022106"] == YES){
         m_createNoticeBtn.hidden = NO;
     }else{
         m_createNoticeBtn.hidden = YES;
