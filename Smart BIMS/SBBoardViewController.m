@@ -61,7 +61,7 @@
     
     TRACE(@"onSearch Occurred [%@]", m_SBUserInfoVO.szBimsId);
     
-    if([m_SBUserInfoVO.szBimsId isEqualToString:@"R2011202"] || [m_SBUserInfoVO.szBimsId isEqualToString:@"R2020045"]){
+    if([m_SBUserInfoVO.szBimsId isEqualToString:@"R2011202"] || [m_SBUserInfoVO.szBimsId isEqualToString:@"R2020045"] || [m_SBUserInfoVO.szBimsId isEqualToString:@"R2022106"]){
         tempOrgCode = @"002";
     }else{
         tempOrgCode = [NSString stringWithString:m_SBUserInfoVO.szBimsOrgcode];

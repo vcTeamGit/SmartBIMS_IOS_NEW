@@ -602,7 +602,7 @@
     
     TRACE(@"onSearch Occurred [%@]", m_SBUserInfoVO.szBimsId);
     
-    if([m_SBUserInfoVO.szBimsId isEqualToString:@"R2011202"] || [m_SBUserInfoVO.szBimsId isEqualToString:@"R2011202"]|| [m_SBUserInfoVO.szBimsId isEqualToString:@"R2020045"]){
+    if([m_SBUserInfoVO.szBimsId isEqualToString:@"R2011202"] || [m_SBUserInfoVO.szBimsId isEqualToString:@"R2020045"] || [m_SBUserInfoVO.szBimsId isEqualToString:@"R2022106"]){
         tempOrgCode = @"009";
         tempCarCode = @"55";
     }else{
@@ -615,7 +615,7 @@
     
     TRACE(@"getTakeOverBloodInfoWithSeq Occurred [%@]", m_SBUserInfoVO.szBimsId);
     
-    if([m_SBUserInfoVO.szBimsId isEqualToString:@"R2011202"] || [m_SBUserInfoVO.szBimsId isEqualToString:@"R2011202"] || [m_SBUserInfoVO.szBimsId isEqualToString:@"R2020045"]){
+    if([m_SBUserInfoVO.szBimsId isEqualToString:@"R2011202"] || [m_SBUserInfoVO.szBimsId isEqualToString:@"R2020045"] || [m_SBUserInfoVO.szBimsId isEqualToString:@"R2022106"]){
         tempUserId = @"R2019014";
     }else{
         tempUserId = [NSString stringWithString:m_SBUserInfoVO.szBimsId];
@@ -895,7 +895,7 @@
     
     TRACE(@"onDeleteSavedBloodNo Occurred [%@]", m_SBUserInfoVO.szBimsId);
     
-    if([m_SBUserInfoVO.szBimsId isEqualToString:@"R2011202"] || [m_SBUserInfoVO.szBimsId isEqualToString:@"R2011202"]|| [m_SBUserInfoVO.szBimsId isEqualToString:@"R2020045"]){
+    if([m_SBUserInfoVO.szBimsId isEqualToString:@"R2011202"] || [m_SBUserInfoVO.szBimsId isEqualToString:@"R2020045"] || [m_SBUserInfoVO.szBimsId isEqualToString:@"R2022106"]){
         tempOrgCode = @"001";
         tempCarCode = @"72";
         tempUserId = @"R2019014";
@@ -1037,7 +1037,7 @@
         return;
     }
     
-    if([m_SBUserInfoVO.szBimsId isEqualToString:@"R2011202"] || [m_SBUserInfoVO.szBimsId isEqualToString:@"R2011202"]|| [m_SBUserInfoVO.szBimsId isEqualToString:@"R2020045"]){
+    if([m_SBUserInfoVO.szBimsId isEqualToString:@"R2011202"] || [m_SBUserInfoVO.szBimsId isEqualToString:@"R2020045"] || [m_SBUserInfoVO.szBimsId isEqualToString:@"R2022106"]){
         tempOrgCode = @"001";
         tempCarCode = @"72";
         tempUserId = @"R2009129";

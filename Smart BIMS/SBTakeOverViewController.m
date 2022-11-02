@@ -535,7 +535,7 @@
     
     TRACE(@"onSearch Occurred [%@]", m_SBUserInfoVO.szBimsId);
     
-    if([m_SBUserInfoVO.szBimsId isEqualToString:@"R2011202"] || [m_SBUserInfoVO.szBimsId isEqualToString:@"R2011202"]|| [m_SBUserInfoVO.szBimsId isEqualToString:@"R2020045"]){
+    if([m_SBUserInfoVO.szBimsId isEqualToString:@"R2011202"] || [m_SBUserInfoVO.szBimsId isEqualToString:@"R2020045"] || [m_SBUserInfoVO.szBimsId isEqualToString:@"R2022106"]){
         tempOrgCode = @"009";
         tempCarCode = @"55";
         tempUserId = @"R2019014";
@@ -729,7 +729,7 @@
     NSString* tempUserId = nil;
     NSString* tempReqId = @"takeOverInfoSave";
     
-    if([m_SBUserInfoVO.szBimsId isEqualToString:@"R2011202"] || [m_SBUserInfoVO.szBimsId isEqualToString:@"R2011202"]|| [m_SBUserInfoVO.szBimsId isEqualToString:@"R2020045"]){
+    if([m_SBUserInfoVO.szBimsId isEqualToString:@"R2011202"] || [m_SBUserInfoVO.szBimsId isEqualToString:@"R2020045"] || [m_SBUserInfoVO.szBimsId isEqualToString:@"R2022106"]){
         tempOrgCode = @"005";
         tempCarCode = @"55";
     }else{
@@ -1116,201 +1116,6 @@
         [alertView release];
     }
 }
-
-
-
-
-// 2022.05.19 DEL HMWOO 수거자 정보 메인 화면 관리로 인한 제거
-//#pragma mark -
-//#pragma mark TakerCertiView
-//- (IBAction)openTakerCertiView:(id)sender
-//{
-//    CGRect frame = CGRectMake(8, winHeight, 304, 172);
-//
-//    self.m_takerCertView.frame = frame;
-//
-//    [UIView beginAnimations:nil context:nil];
-//    [UIView setAnimationDuration:0.5];
-//
-//    self.m_takerCertView.frame = CGRectMake(8, 51, 304, 172);
-//
-//    [UIView commitAnimations];
-//
-//    CGFloat alpha = 0.5;
-//    [self.m_contentView2 setAlpha:alpha];
-//
-//    [self setFocusTakerUserIdNoTextFieldWithTimer];
-//}
-
-//- (void)setFocusTakerUserIdNoTextFieldWithTimer
-//{
-//    [NSTimer scheduledTimerWithTimeInterval:0.5
-//                                     target:self
-//                                   selector:@selector(setFocusTakerUserIdNoTextField)
-//                                   userInfo:nil
-//                                    repeats:NO];
-//}
-
-//- (void)setFocusTakerUserIdNoTextField
-//{
-//    self.m_takerUserIdNoTextField.text = @"";
-//    self.m_takerPasswordTextField.text = @"";
-//
-//    [self.m_takerUserIdNoTextField becomeFirstResponder];
-//}
-//
-//- (IBAction)doDirectTakerCertify:(UIButton *)sender {
-//
-//    self.m_takerInfoLabel.text = m_SBUserInfoVO.szBimsName;
-//    self.m_takerIdNoLabel.text = m_SBUserInfoVO.szBimsId;
-//    [self backgroundTab2:nil];
-//}
-//
-//
-//- (IBAction)doTakerCertify:(id)sender
-//{
-//    // 수거자 인증요청
-//    NSString* tempOrgCode = nil;
-//    NSString* tempCarCode = nil;
-//    NSString* tempUserId = nil;
-//    NSString* tempReqId = @"takerCertify";
-//
-//    TRACE(@"doTakerCertify Occurred!");
-//
-//    if(self.m_takerUserIdNoTextField.text.length <= 4){
-//        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"[알 림]"
-//                                                            message:@"수거자 아이디가 부정확합니다"
-//                                                           delegate:self
-//                                                  cancelButtonTitle:@"확인"
-//                                                  otherButtonTitles: nil];
-//
-//
-//        [alertView show];
-//        [alertView release];
-//
-//        return;
-//    }
-//
-//    if(self.m_takerPasswordTextField.text.length <= 4){
-//        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"[알 림]"
-//                                                            message:@"수거자 비밀번호가 부정확합니다"
-//                                                           delegate:self
-//                                                  cancelButtonTitle:@"확인"
-//                                                  otherButtonTitles: nil];
-//
-//
-//        [alertView show];
-//        [alertView release];
-//
-//        return;
-//    }
-//
-//    NSString* tempTakerUserIdNo = [NSString stringWithString:m_takerUserIdNoTextField.text];
-//    NSString* tempTakerPassword = [NSString stringWithString:m_takerPasswordTextField.text];
-//
-//    if([m_SBUserInfoVO.szBimsId isEqualToString:@"R2011202"] || [m_SBUserInfoVO.szBimsId isEqualToString:@"R2011202"]|| [m_SBUserInfoVO.szBimsId isEqualToString:@"R2020045"]){
-//        tempOrgCode = @"005";
-//        tempCarCode = @"55";
-//    }else{
-//        tempOrgCode = [NSString stringWithString:m_SBUserInfoVO.szBimsOrgcode];
-//        tempCarCode = [NSString stringWithString:m_SBUserInfoVO.szBimsCarcode];
-//    }
-//
-//    tempUserId = [NSString stringWithString:m_SBUserInfoVO.szBimsId];
-//
-//    TRACE(@"doTakerCertify tempTakerUserIdNo [%@]", tempTakerUserIdNo);
-//    //경로 수정
-//
-//    // 2022.05.10 MOD HMWOO URL 관리 파일에서 URL 관리하도록 수정
-//    NSString* url = URL_MANAGE_TAKEOVER_INFO;
-//    NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:
-//                                tempReqId, @"reqId",
-//                                tempOrgCode, @"orgcode",
-//                                tempCarCode, @"carcode",
-//                                tempUserId, @"userId",
-//                                tempTakerUserIdNo, @"takerUserIdNo",
-//                                tempTakerPassword, @"takerPassword",
-//                                nil];
-//
-//    [m_httpRequest setDelegate:self
-//                      selector:@selector(didReceiveDoTakerCertify:)];
-//    [m_httpRequest requestURL:url
-//                   bodyObject:bodyObject];
-//
-//
-//    [self.m_takerActivityIndicatorView startAnimating];
-//}
-//
-//
-//- (void)didReceiveDoTakerCertify:(id)result
-//{
-//    NSString* strData;
-//    NSString* strResult;
-//    NSString* strIdName;
-//    NSString* strResultMsg;
-//
-//    strData = [(NSString*)result stringByReplacingOccurrencesOfString:@"\r\n" withString:@""];
-//
-//    TRACE(@"strData := [%@]", strData);
-//
-//    [self.m_takerActivityIndicatorView stopAnimating];
-//
-//    // 응답값 확인
-//    if([strData isEqualToString:kREQUEST_TIMEOUT_TYPE] == YES){
-//        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"[알 림]"
-//                                                            message:kREQUEST_TIMEOUT_MSG
-//                                                           delegate:self
-//                                                  cancelButtonTitle:@"확인"
-//                                                  otherButtonTitles: nil];
-//
-//
-//        [alertView show];
-//        [alertView release];
-//
-//        return;
-//    }
-//
-//    SBJsonParser* jsonParser = [SBJsonParser new];
-//    NSDictionary* dictionary = nil;
-//
-//    // JSON 문자열을 객체로 변환
-//    dictionary = [jsonParser objectWithString:strData];
-//
-//    strResult = [dictionary valueForKey:@"result"];
-//    strIdName = [dictionary valueForKey:@"idname"];
-//    strResultMsg = [dictionary valueForKey:@"resultmsg"];
-//
-//    // 정상인증이 되면 id가 넘어오고 아니면 'N'
-//    if([strResult isEqualToString:@"N"]){
-//        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"[알 림]"
-//                                                            message:strResultMsg
-//                                                           delegate:self
-//                                                  cancelButtonTitle:@"확인"
-//                                                  otherButtonTitles: nil];
-//
-//
-//        [alertView show];
-//        [alertView release];
-//    }else{
-//        TRACE(@"idno:%@", [dictionary valueForKey:@"idno"]);
-//        self.m_takerInfoLabel.text = [dictionary valueForKey:@"idname"];
-//        self.m_takerIdNoLabel.text = [dictionary valueForKey:@"idno"];
-//
-//        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"[알 림]"
-//                                                            message:strResultMsg
-//                                                           delegate:self
-//                                                  cancelButtonTitle:@"확인"
-//                                                  otherButtonTitles: nil];
-//
-//
-//        [alertView show];
-//        [alertView release];
-//    }
-//
-//    [self backgroundTab2:nil];
-//}
-
-
 
 #pragma mark -
 #pragma mark RemarksView

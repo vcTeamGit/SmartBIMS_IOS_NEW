@@ -63,7 +63,7 @@
     
     NSString* tempUserId = nil;
     
-    if([m_SBUserInfoVO.szBimsId isEqualToString:@"R2011202"]|| [m_SBUserInfoVO.szBimsId isEqualToString:@"R2020045"]){
+    if([m_SBUserInfoVO.szBimsId isEqualToString:@"R2011202"] || [m_SBUserInfoVO.szBimsId isEqualToString:@"R2020045"] || [m_SBUserInfoVO.szBimsId isEqualToString:@"R2022106"]){
         tempUserId = @"R2009004";
     }else{
         tempUserId = [NSString stringWithString:m_SBUserInfoVO.szBimsId];
