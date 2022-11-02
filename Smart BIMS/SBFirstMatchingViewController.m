@@ -256,7 +256,11 @@
         [mstrAlertMsg setString:@"백종류바코드를 입력하세요."];
         self.m_barcodeBldBagcode.enabled = YES;
         [self.m_barcodeBldBagcode becomeFirstResponder];
-    }else if(([m_SBBloodnoInfoVO.bldproccode isEqualToString:@"00"] == YES || [m_SBBloodnoInfoVO.bldproccode isEqualToString:@"50"] == YES) && (m_strBarcodeUDI.length == 0 || [m_strBarcodeUDI isEqualToString:@""])){
+    }
+    // 2022.10.13 MOD HMWOO 혈장, 혈소판, 혈소판혈장성분 채혈 시 UDI 바코드를 스캔하지 않을 경우 경고창 생성 및 저장 기능 차단대응
+    //else if(([m_SBBloodnoInfoVO.bldproccode isEqualToString:@"00"] == YES || [m_SBBloodnoInfoVO.bldproccode isEqualToString:@"50"] == YES) && (m_strBarcodeUDI.length == 0 || [m_strBarcodeUDI isEqualToString:@""]))
+    else if(([m_SBBloodnoInfoVO.bldproccode isEqualToString:@"00"] == YES || [m_SBBloodnoInfoVO.bldproccode isEqualToString:@"50"] == YES || [m_SBBloodnoInfoVO.bldproccode isEqualToString:@"71"] == YES || [m_SBBloodnoInfoVO.bldproccode isEqualToString:@"72"] == YES || [m_SBBloodnoInfoVO.bldproccode isEqualToString:@"75"] == YES || [m_SBBloodnoInfoVO.bldproccode isEqualToString:@"76"] == YES || [m_SBBloodnoInfoVO.bldproccode isEqualToString:@"82"] == YES) && (m_strBarcodeUDI.length == 0 || [m_strBarcodeUDI isEqualToString:@""]))
+    {
         [mstrAlertMsg setString:@"UDI코드를 입력하세요."];
         self.m_barcodeUDI.enabled = YES;
         [self.m_barcodeUDI becomeFirstResponder];
@@ -290,6 +294,8 @@
         self.m_barcodeUDI.enabled = YES;
         [self.m_barcodeUDI becomeFirstResponder];
     }
+    /*
+    // 2022.10.13 DEL HMWOO 혈장, 혈소판, 혈소판혈장성분 채혈 시 UDI 바코드를 스캔하지 않을 경우 경고창 생성 및 저장 기능 차단대응
     // 혈장 부분 로직 추가
     else if (([m_SBBloodnoInfoVO.bldproccode isEqualToString:@"71"] == YES || [m_SBBloodnoInfoVO.bldproccode isEqualToString:@"75"] == YES || [m_SBBloodnoInfoVO.bldproccode isEqualToString:@"82"] == YES) && (m_strBarcodeUDI.length == 0 || [m_strBarcodeUDI isEqualToString:@""])){
         
@@ -320,7 +326,7 @@
         [mstrAlertMsg release];
         return;
     }
-    
+    */
     else if(([m_SBBloodnoInfoVO.bldproccode isEqualToString:@"71"] == YES || [m_SBBloodnoInfoVO.bldproccode isEqualToString:@"75"] == YES || [m_SBBloodnoInfoVO.bldproccode isEqualToString:@"82"] == YES) && (m_strBarcodeUDI.length < 31) && (m_strBarcodeUDI.length > 1)){
         [mstrAlertMsg setString:@"UDI 코드 길이가 짧습니다. 다시 입력하세요."];
         self.m_barcodeUDI.enabled = YES;
@@ -350,6 +356,8 @@
         self.m_barcodeUDI.enabled = YES;
         [self.m_barcodeUDI becomeFirstResponder];
     }
+    /*
+    // 2022.10.13 DEL HMWOO 혈장, 혈소판, 혈소판혈장성분 채혈 시 UDI 바코드를 스캔하지 않을 경우 경고창 생성 및 저장 기능 차단대응
     else if (([m_SBBloodnoInfoVO.bldproccode isEqualToString:@"72"] == YES || [m_SBBloodnoInfoVO.bldproccode isEqualToString:@"76"] == YES ) && (m_strBarcodeUDI.length == 0 || [m_strBarcodeUDI isEqualToString:@""])){
         
         NSString* strTitleMsg = @"혈소판 UDI코드가 입력되지 않았습니다. \n 1차 일치검사를 진행하시겠습니까?";
@@ -379,7 +387,7 @@
         [mstrAlertMsg release];
         return;
     }
-    
+    */
     else if(([m_SBBloodnoInfoVO.bldproccode isEqualToString:@"72"] == YES || [m_SBBloodnoInfoVO.bldproccode isEqualToString:@"76"] == YES) && (m_strBarcodeUDI.length < 31) && (m_strBarcodeUDI.length > 1)){
         [mstrAlertMsg setString:@"UDI 코드 길이가 짧습니다. 다시 입력하세요."];
         self.m_barcodeUDI.enabled = YES;

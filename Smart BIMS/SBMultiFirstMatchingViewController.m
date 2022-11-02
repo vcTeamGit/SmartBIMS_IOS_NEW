@@ -298,6 +298,11 @@
     // 2022.05.10 ADD HMWOO 혈소판혈장성분 채혈 시 UDI 바코드 일치 검사를 위한 UDI 바코드 내역 추가
     else if ([m_SBBloodnoInfoVO.bldproccode isEqualToString:@"82"] == YES && (m_strBarcodeUDI.length == 0 || [m_strBarcodeUDI isEqualToString:@""]))
     {
+        // 2022.10.13 MOD HMWOO 혈장, 혈소판, 혈소판혈장성분 채혈 시 UDI 바코드를 스캔하지 않을 경우 경고창 생성 및 저장 기능 차단대응
+        [mstrAlertMsg setString:@"UDI코드를 입력하세요."];
+        self.m_barcodeUDI.enabled = YES;
+        [self.m_barcodeUDI becomeFirstResponder];
+        /*
         NSString* strTitleMsg = @"혈소판혈장 UDI코드가 입력되지 않았습니다.\nUDI 바코드 스캔 없이 진행하시겠습니까?";
         [SBUtils playAlertSystemSoundWithSoundType:SOUND_ALERT_1];
         
@@ -326,6 +331,7 @@
         
         [mstrAlertMsg release];
         return;
+        */
     }
     else if([m_SBBloodnoInfoVO.bldproccode isEqualToString:@"82"] == YES && (m_strBarcodeUDI.length < 31) && (m_strBarcodeUDI.length > 1))
     {
