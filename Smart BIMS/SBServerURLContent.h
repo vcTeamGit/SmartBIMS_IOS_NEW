@@ -12,7 +12,7 @@
 // 개발 DB 접근 시 TARGET을 DEV로 설정
 // 상용 DB 접근 시 TARGET을 PROD로 설정
 // DEV : 개발, PROD : 상용
-#define TARGET PROD
+#define TARGET DEV
 
 // 로그인 처리 URL => [ SBLoginViewController.m ]
 #define URL_IDPW_LOGIN [NSString stringWithFormat:@"%@%@%@%@", @"http://", BLOOD_SERVER, SERVER_TARGET, @"/SBLoginProc.jsp"]
