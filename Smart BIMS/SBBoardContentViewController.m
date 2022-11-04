@@ -46,7 +46,7 @@
     NSString* strTempIdName = m_SBUserInfoVO.szBimsName;
     
     // 2022.09.22 MOD URL을 검수 및 상용으로 나누어 관리할 수 있도록 변경
-    NSString* url = URL_NOTICE_INFO;
+    NSString* url = URL_NOT_CONFIRM_NOTICE_CNT;
     NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:
                                 @"read_check", @"reqId",
                                 strTempIdNo, @"idno",
