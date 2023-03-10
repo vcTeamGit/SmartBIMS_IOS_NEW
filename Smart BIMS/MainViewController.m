@@ -1537,9 +1537,9 @@
         else
         {
             tempTakerUserIdNo = [NSString stringWithString:et_collector_id.text];
-            tempTakerPassword = [NSString stringWithString:et_collector_pw.text];
+            tempTakerPassword = [[[NSString stringWithString:et_collector_pw.text]  dataUsingEncoding:NSUTF8StringEncoding] base64EncodedStringWithOptions:0];
         }
-        
+
         // 수거자 인증요청
         NSString* url = URL_MANAGE_TAKEOVER_INFO;
         
