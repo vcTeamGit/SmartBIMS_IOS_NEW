@@ -57,6 +57,8 @@
     UITextField* et_collector_pw;
     UITableView *sp_takeover_seq;
     
+    UILabel* m_versionLabel;
+    
     UILabel* m_orgNameLabel;
     UILabel* m_userNameLabel;
     UILabel* m_siteNameLabel;
@@ -138,6 +140,8 @@
 @property (nonatomic, retain) IBOutlet UITextField* et_collector_pw;
 @property (nonatomic, retain) IBOutlet UITableView *sp_takeover_seq;
 @property (nonatomic, retain) NSMutableDictionary *takeOverInfoMap;;
+
+@property (nonatomic, retain) IBOutlet UILabel* m_versionLabel;
 
 @property (nonatomic, retain) IBOutlet UILabel* m_orgNameLabel;
 @property (nonatomic, retain) IBOutlet UILabel* m_userNameLabel;

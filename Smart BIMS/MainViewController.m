@@ -49,6 +49,8 @@
 @synthesize et_collector_pw;
 @synthesize takeOverInfoMap;
 
+@synthesize m_versionLabel;
+
 @synthesize m_orgNameLabel;
 @synthesize m_userNameLabel;
 @synthesize m_siteNameLabel;
@@ -1291,7 +1293,8 @@
     isTimerON = NO;
     [self getNewNoticeInfo];
 //    [self getBoardListCnt];
-    
+
+    m_versionLabel.text = [NSString stringWithFormat:@"v%@", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]];
     m_orgNameLabel.text = m_SBUserInfoVO.szBimsOrgname;
     m_userNameLabel.text = m_SBUserInfoVO.szBimsName;
     m_siteNameLabel.text = m_SBUserInfoVO.szBimsSitename;
@@ -1654,6 +1657,8 @@
     self.m_SBUserInfoVO = nil;
     self.m_httpRequest = nil;
     
+    self.m_versionLabel = nil;
+    
     self.m_orgNameLabel = nil;
     self.m_userNameLabel = nil;
     self.m_siteNameLabel = nil;
@@ -1695,6 +1700,7 @@
 {
     [m_SBUserInfoVO release];
     [m_httpRequest release];
+    [m_versionLabel release];
     [m_orgNameLabel release];
     [m_userNameLabel release];
     [m_siteNameLabel release];

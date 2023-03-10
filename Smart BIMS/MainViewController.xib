@@ -30,6 +30,7 @@
                 <outlet property="m_validTermPLLabel" destination="Rg2-qt-9s6" id="SO8-j0-Ajw"/>
                 <outlet property="m_validTermPLTLabel" destination="82" id="86"/>
                 <outlet property="m_validTermWBLabel" destination="81" id="87"/>
+                <outlet property="m_versionLabel" destination="75" id="ZmI-IY-6TA"/>
                 <outlet property="sp_takeover_seq" destination="cZQ-fo-lfA" id="enM-c4-cOA"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
@@ -74,7 +75,7 @@
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="v2.5.2" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="75">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="v[version]" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="75">
                     <rect key="frame" x="66" y="6" width="244" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
