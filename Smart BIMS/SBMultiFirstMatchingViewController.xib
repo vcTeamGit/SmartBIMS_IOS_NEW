@@ -443,7 +443,7 @@
             <connections>
                 <action selector="backgroundTab2:" destination="-1" eventType="touchDown" id="120"/>
             </connections>
-            <point key="canvasLocation" x="699" y="128"/>
+            <point key="canvasLocation" x="878" y="0.0"/>
         </view>
     </objects>
     <resources>

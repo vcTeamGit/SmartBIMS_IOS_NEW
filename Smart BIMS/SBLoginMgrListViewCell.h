@@ -24,3 +24,5 @@
 @property (nonatomic, retain) IBOutlet UILabel* m_siteNameLabel;
 
 @end
+
+

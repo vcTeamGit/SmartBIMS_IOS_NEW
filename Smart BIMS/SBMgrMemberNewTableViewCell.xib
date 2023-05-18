@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="1zu-ZR-Oco">
+            <rect key="frame" x="0.0" y="0.0" width="322" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1zu-ZR-Oco" id="FoV-N1-2c5">
+                <rect key="frame" x="0.0" y="0.0" width="322" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="담당 간호사" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U5W-B8-8fg">
+                        <rect key="frame" x="0.0" y="9.5" width="100" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="K33-UF-FMF"/>
+                            <constraint firstAttribute="width" constant="100" id="SfY-wj-D92"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="김아무개" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nWn-nb-F37">
+                        <rect key="frame" x="111" y="9.5" width="100" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="4wq-pV-SYw"/>
+                            <constraint firstAttribute="width" constant="100" id="TqZ-Rn-1hG"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Z999999999" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Foc-EG-884">
+                        <rect key="frame" x="222" y="9.5" width="100" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="btB-TM-7VW"/>
+                            <constraint firstAttribute="width" constant="100" id="pvZ-mV-qYZ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Foc-EG-884" secondAttribute="trailing" id="Hec-a3-qdq"/>
+                    <constraint firstItem="nWn-nb-F37" firstAttribute="centerY" secondItem="FoV-N1-2c5" secondAttribute="centerY" id="NL4-pL-pwr"/>
+                    <constraint firstItem="nWn-nb-F37" firstAttribute="centerX" secondItem="FoV-N1-2c5" secondAttribute="centerX" id="UAt-Pl-gdL"/>
+                    <constraint firstItem="U5W-B8-8fg" firstAttribute="centerY" secondItem="FoV-N1-2c5" secondAttribute="centerY" id="bM4-wX-tN5"/>
+                    <constraint firstItem="U5W-B8-8fg" firstAttribute="leading" secondItem="FoV-N1-2c5" secondAttribute="leading" id="feg-bA-B3V"/>
+                    <constraint firstItem="Foc-EG-884" firstAttribute="centerY" secondItem="FoV-N1-2c5" secondAttribute="centerY" id="yHV-qp-3EF"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="142.5" y="134.1549295774648"/>
+        </tableViewCell>
+    </objects>
+</document>

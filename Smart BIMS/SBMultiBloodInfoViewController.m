@@ -64,6 +64,9 @@
 @synthesize m_target;
 @synthesize m_selector;
 
+@synthesize m_registerLabel;
+@synthesize m_marrmstLabel;
+@synthesize m_assignLabel;
 
 
 
@@ -74,14 +77,18 @@
     
     if([m_SBBloodnoInfoVO.registeryn isEqualToString:@"Y"]){
         self.m_registerImageView.hidden = NO;
+        self.m_registerLabel.hidden = NO;
     }else{
         self.m_registerImageView.hidden = YES;
+        self.m_registerLabel.hidden = YES;
     }
     
     if([m_SBBloodnoInfoVO.marrmstyn isEqualToString:@"Y"]){
         self.m_marrmstImageView.hidden = NO;
+        self.m_marrmstLabel.hidden = NO;
     }else{
         self.m_marrmstImageView.hidden = YES;
+        self.m_marrmstLabel.hidden = YES;
     }
     
     // 2022.09.22 ADD HMWOO 헌혈관련증상 버튼 추가
@@ -94,8 +101,10 @@
     // 2022.09.22 ADD HMWOO 지정헌혈 버튼 추가
     if([m_SBBloodnoInfoVO.assignyn isEqualToString:@"Y"]){
         self.m_assignImageView.hidden = NO;
+        self.m_assignLabel.hidden = NO;
     }else{
         self.m_assignImageView.hidden = YES;
+        self.m_assignLabel.hidden = YES;
     }
     
     self.m_heightLabel.text = m_SBBloodnoInfoVO.height;
@@ -499,9 +508,13 @@ replacementString:(NSString*)string
     self.m_nameLabel = nil;
     
     self.m_registerImageView = nil;
+    self.m_registerLabel = nil;
+    
     self.m_marrmstImageView = nil;
+    self.m_marrmstLabel = nil;
     // 2022.09.22 ADD HMWOO 지정헌혈 여부 확인 뷰 추가
     self.m_assignImageView = nil;
+    self.m_assignLabel = nil;
     
     self.m_heightLabel = nil;
     self.m_weightLabel = nil;
@@ -566,6 +579,9 @@ replacementString:(NSString*)string
     
     [m_target release];
     
+    [m_registerLabel release];
+    [m_marrmstLabel release];
+    [m_assignLabel release];
     [super dealloc];
 }
 

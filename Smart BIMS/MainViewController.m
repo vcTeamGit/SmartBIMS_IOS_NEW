@@ -26,6 +26,7 @@
 #import "SBTakeOverActionViewController.h"  // 인계혈액등록
 #import "SBTakeOverViewController.h"  // 혈액인계
 #import "SBTakeOverInfoViewController.h"  // 혈액인계정보조회
+#import "MainMenuOrderChangeViewController.h"
 
 #import "PictureLibViewController.h"
 #import "SBPairingBarcodeViewController.h"
@@ -90,6 +91,7 @@
 @synthesize m_SBTakeOverActionViewController;
 @synthesize m_SBTakeOverViewController;
 @synthesize m_SBTakeOverInfoViewController;
+@synthesize mainMenuOrderChangeViewController;
 
 @synthesize m_target;
 @synthesize m_selector;
@@ -105,6 +107,8 @@
 
 @synthesize m_timer;
 @synthesize btnOrgTalk;
+
+@synthesize noticeTitleLabel;
 
 - (IBAction)logout:(id)sender
 {    
@@ -142,6 +146,14 @@
 - (void)logoutAction
 {
 //    [m_target performSelector:m_selector withObject:dictionary];
+    
+    // 20230517 로그아웃 시, 자동 로그인 해제 및 데이터 삭제
+    NSUserDefaults *signDefaults = [NSUserDefaults standardUserDefaults];
+    [signDefaults setValue:@"" forKey:@"userIdt"];
+    [signDefaults setValue:@"" forKey:@"userPwt"];
+    [signDefaults removeObjectForKey:@"isKeepSign"];
+    [signDefaults synchronize];
+    
     [m_target performSelector:m_selector];
     [self.view removeFromSuperview];
 }
@@ -151,10 +163,10 @@
 {
     if(m_SBFitnessCheckViewController == nil){
         if(winHeight == kWINDOW_HEIGHT){
-            m_SBFitnessCheckViewController = [[SBFitnessCheckViewController alloc] initWithNibName:@"SBFitnessCheckViewController"
+            m_SBFitnessCheckViewController = [[SBFitnessCheckViewController alloc] initWithNibName:@"SBFitnessCheckNewViewController"
                                                                                             bundle:nil];
         }else{
-            m_SBFitnessCheckViewController = [[SBFitnessCheckViewController alloc] initWithNibName:@"SBFitnessCheckViewController3"
+            m_SBFitnessCheckViewController = [[SBFitnessCheckViewController alloc] initWithNibName:@"SBFitnessCheckNewViewController"
                                                                                             bundle:nil];
         }
     }
@@ -181,10 +193,10 @@
 {
     if(m_SBBloodInfoViewController == nil){
         if(winHeight == kWINDOW_HEIGHT){
-            m_SBBloodInfoViewController = [[SBBloodInfoViewController alloc] initWithNibName:@"SBBloodInfoViewController"
+            m_SBBloodInfoViewController = [[SBBloodInfoViewController alloc] initWithNibName:@"SBBloodInfoNewViewController"
                                                                                       bundle:nil];
         }else{
-            m_SBBloodInfoViewController = [[SBBloodInfoViewController alloc] initWithNibName:@"SBBloodInfoViewController3"
+            m_SBBloodInfoViewController = [[SBBloodInfoViewController alloc] initWithNibName:@"SBBloodInfoNewViewController"
                                                                                       bundle:nil];
         }
     }else{
@@ -192,10 +204,10 @@
         m_SBBloodInfoViewController = nil;
         
         if(winHeight == kWINDOW_HEIGHT){
-            m_SBBloodInfoViewController = [[SBBloodInfoViewController alloc] initWithNibName:@"SBBloodInfoViewController"
+            m_SBBloodInfoViewController = [[SBBloodInfoViewController alloc] initWithNibName:@"SBBloodInfoNewViewController"
                                                                                       bundle:nil];
         }else{
-            m_SBBloodInfoViewController = [[SBBloodInfoViewController alloc] initWithNibName:@"SBBloodInfoViewController3"
+            m_SBBloodInfoViewController = [[SBBloodInfoViewController alloc] initWithNibName:@"SBBloodInfoNewViewController"
                                                                                       bundle:nil];
         }
     }
@@ -210,7 +222,8 @@
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:0.5];
     
-    m_SBBloodInfoViewController.view.frame = CGRectMake(0, 0, viewWidth, viewHeight);
+    
+    m_SBBloodInfoViewController.view.frame = CGRectMake(0, self.view.safeAreaLayoutGuide.layoutFrame.origin.y, viewWidth, viewHeight + 40);
     [self.view addSubview:m_SBBloodInfoViewController.view];
     
     [m_SBBloodInfoViewController pageReset:nil];
@@ -223,10 +236,10 @@
 {
     if(m_SBSecondMatchingViewController == nil){
         if(winHeight == kWINDOW_HEIGHT){
-            m_SBSecondMatchingViewController = [[SBSecondMatchingViewController alloc] initWithNibName:@"SBSecondMatchingViewController"
+            m_SBSecondMatchingViewController = [[SBSecondMatchingViewController alloc] initWithNibName:@"SBSecondMatchingNewViewController"
                                                                                                 bundle:nil];
         }else{
-            m_SBSecondMatchingViewController = [[SBSecondMatchingViewController alloc] initWithNibName:@"SBSecondMatchingViewController3"
+            m_SBSecondMatchingViewController = [[SBSecondMatchingViewController alloc] initWithNibName:@"SBSecondMatchingNewViewController"
                                                                                                 bundle:nil];
         }
     }else{
@@ -234,10 +247,10 @@
         m_SBSecondMatchingViewController = nil;
         
         if(winHeight == kWINDOW_HEIGHT){
-            m_SBSecondMatchingViewController = [[SBSecondMatchingViewController alloc] initWithNibName:@"SBSecondMatchingViewController"
+            m_SBSecondMatchingViewController = [[SBSecondMatchingViewController alloc] initWithNibName:@"SBSecondMatchingNewViewController"
                                                                                                 bundle:nil];
         }else{
-            m_SBSecondMatchingViewController = [[SBSecondMatchingViewController alloc] initWithNibName:@"SBSecondMatchingViewController3"
+            m_SBSecondMatchingViewController = [[SBSecondMatchingViewController alloc] initWithNibName:@"SBSecondMatchingNewViewController"
                                                                                                 bundle:nil];
         }
     }
@@ -264,10 +277,10 @@
 {
     if(m_SBBloodEndTimeViewController == nil){
         if(winHeight == kWINDOW_HEIGHT){
-            m_SBBloodEndTimeViewController = [[SBBloodEndTimeViewController alloc] initWithNibName:@"SBBloodEndTimeViewController"
+            m_SBBloodEndTimeViewController = [[SBBloodEndTimeViewController alloc] initWithNibName:@"SBBloodEndTimeNewViewController"
                                                                                             bundle:nil];
         }else{
-            m_SBBloodEndTimeViewController = [[SBBloodEndTimeViewController alloc] initWithNibName:@"SBBloodEndTimeViewController3"
+            m_SBBloodEndTimeViewController = [[SBBloodEndTimeViewController alloc] initWithNibName:@"SBBloodEndTimeNewViewController"
                                                                                             bundle:nil];
         }
     }
@@ -295,10 +308,10 @@
 {
     if(m_SBMgrInfoViewController == nil){
         if(winHeight == kWINDOW_HEIGHT){
-            m_SBMgrInfoViewController = [[SBMgrInfoViewController alloc] initWithNibName:@"SBMgrInfoViewController"
+            m_SBMgrInfoViewController = [[SBMgrInfoViewController alloc] initWithNibName:@"SBMgrInfoNewViewController"
                                                                                   bundle:nil];
         }else{
-            m_SBMgrInfoViewController = [[SBMgrInfoViewController alloc] initWithNibName:@"SBMgrInfoViewController3"
+            m_SBMgrInfoViewController = [[SBMgrInfoViewController alloc] initWithNibName:@"SBMgrInfoNewViewController"
                                                                                   bundle:nil];
         }
     }
@@ -324,10 +337,10 @@
 {
     if(m_SBBloodGatheringListViewController == nil){
         if(winHeight == kWINDOW_HEIGHT){
-            m_SBBloodGatheringListViewController = [[SBBloodGatheringListViewController alloc] initWithNibName:@"SBBloodGatheringListViewController"
+            m_SBBloodGatheringListViewController = [[SBBloodGatheringListViewController alloc] initWithNibName:@"SBBloodGatheringListNewViewController"
                                                                                                         bundle:nil];
         }else{
-            m_SBBloodGatheringListViewController = [[SBBloodGatheringListViewController alloc] initWithNibName:@"SBBloodGatheringListViewController3"
+            m_SBBloodGatheringListViewController = [[SBBloodGatheringListViewController alloc] initWithNibName:@"SBBloodGatheringListNewViewController"
                                                                                                         bundle:nil];
         }
     }
@@ -394,10 +407,10 @@
 {
     if(m_SBPcResultViewController == nil){
         if(winHeight == kWINDOW_HEIGHT){
-            m_SBPcResultViewController = [[SBPcResultViewController alloc] initWithNibName:@"SBPcResultViewController"
+            m_SBPcResultViewController = [[SBPcResultViewController alloc] initWithNibName:@"SBPcResultNewViewController"
                                                                                     bundle:nil];
         }else{
-            m_SBPcResultViewController = [[SBPcResultViewController alloc] initWithNibName:@"SBPcResultViewController3"
+            m_SBPcResultViewController = [[SBPcResultViewController alloc] initWithNibName:@"SBPcResultNewViewController"
                                                                                     bundle:nil];
         }
     }
@@ -534,6 +547,29 @@
     
     m_SBTakeOverViewController.view.frame = CGRectMake(0, 0, viewWidth, viewHeight);
     [self.view addSubview:m_SBTakeOverViewController.view];
+    
+    [m_SBTakeOverViewController pageReset:nil];
+    [m_SBTakeOverViewController onSearch:nil];
+    
+    [UIView commitAnimations];
+}
+
+- (IBAction)menuOrderView:(UIButton *)sender {
+    if(winHeight == kWINDOW_HEIGHT){
+        mainMenuOrderChangeViewController = [[MainMenuOrderChangeViewController alloc] initWithNibName:@"MainMenuOrderChangeViewController" bundle:nil];
+    } else {
+        mainMenuOrderChangeViewController = [[MainMenuOrderChangeViewController alloc] initWithNibName:@"MainMenuOrderChangeViewController" bundle:nil];
+    }
+
+    
+    CGRect frame = CGRectMake(0, winHeight, viewWidth, viewHeight);
+    mainMenuOrderChangeViewController.view.frame = frame;
+    
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.5];
+    
+    mainMenuOrderChangeViewController.view.frame = CGRectMake(0, 0, viewWidth, viewHeight);
+    [self.view addSubview:mainMenuOrderChangeViewController.view];
     
     [m_SBTakeOverViewController pageReset:nil];
     [m_SBTakeOverViewController onSearch:nil];
@@ -744,6 +780,14 @@
     {
         [SBUtils hideLoading];
     }
+}
+
+#pragma mark - MENU ORDER
+// 2023-04-06
+// 하나의 기기를 여러 사용자가 사용할 수 있기 때문에 박성철 선생님 (모바일 담당자) 요청으로 메뉴 순서 데이터는 디비에 저장하여 사용
+
+-(void)getMenuOrderChange {
+    NSLog(@"----%@",m_SBUserInfoVO);
 }
 
 
@@ -1281,6 +1325,8 @@
 {
     [super viewDidLoad];
     
+    [self getMenuOrderChange];
+    
     Smart_BIMSAppDelegate* delegate = [[UIApplication sharedApplication] delegate];
     viewWidth = [delegate.g_viewWidth intValue];
     viewHeight = [delegate.g_viewHeight intValue];
@@ -1326,6 +1372,21 @@
     
     [self.view addSubview:layout_dialog_back];
     [self.view addSubview:dialog_reg_collector];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"MENU_LIST"];
+    if([[NSUserDefaults standardUserDefaults] objectForKey:@"MENU_LIST"] == nil) {
+        NSString *sourcePath = [[NSBundle mainBundle] pathForResource:@"main_menu" ofType:@"plist"];
+        NSMutableArray *contentArray = [NSMutableArray arrayWithContentsOfFile:sourcePath];
+        
+        NSLog(@"%@", contentArray);
+        
+        NSSortDescriptor * descriptor = [NSSortDescriptor sortDescriptorWithKey:@"idx" ascending:YES];
+        [contentArray sortUsingDescriptors:[NSArray arrayWithObject:descriptor]];
+        
+        NSLog(@"%@", contentArray);
+        
+        [[NSUserDefaults standardUserDefaults] setObject:contentArray forKey:@"MENU_LIST"];
+    }
+
 }
 
 - (IBAction)listener_dialog_back:(id)sender
@@ -1732,6 +1793,8 @@
     [takeOverInfoMap release];
 
     [btnOrgTalk release];
+    [_menuOrderBtn release];
+    [noticeTitleLabel release];
     [super dealloc];
 }
 
@@ -1780,5 +1843,8 @@
     
     return cell;
 }
+    
+    
+
 
 @end

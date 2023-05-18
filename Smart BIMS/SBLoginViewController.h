@@ -39,6 +39,7 @@
     SBLoginMgrListViewController* m_SBLoginMgrListViewController;
     
     NSString* m_strVersion;
+    UISwitch* keepSignSwitch;
     
 //    NSDictionary* m_dictionary;
     int viewWidth;
@@ -63,7 +64,7 @@
 @property (nonatomic, retain) NSString* m_strVersion;
 
 //@property (nonatomic, retain) NSDictionary* m_dictionary;
-
+@property (retain, nonatomic) IBOutlet UISwitch *keepSignSwitch;
 
 - (IBAction)loginButtonPressed:(id)sender;
 
@@ -75,5 +76,6 @@
 
 - (void)didSelectMgrSiteCode:(id)obj;
 
+- (IBAction)keepSignSwitchPressed:(id)sender;
 
 @end

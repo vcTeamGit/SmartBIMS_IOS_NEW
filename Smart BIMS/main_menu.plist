@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>image</key>
+		<string>1.png</string>
+		<key>idx</key>
+		<integer>0</integer>
+		<key>title</key>
+		<string>채혈전 확인사항 및 1차 일치검사</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>2.png</string>
+		<key>idx</key>
+		<integer>1</integer>
+		<key>title</key>
+		<string>2차 일치검사</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>3.png</string>
+		<key>idx</key>
+		<integer>2</integer>
+		<key>title</key>
+		<string>채혈종료시간 입력</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>4.png</string>
+		<key>idx</key>
+		<integer>3</integer>
+		<key>title</key>
+		<string>성분채혈결과 입력</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>5.png</string>
+		<key>idx</key>
+		<integer>4</integer>
+		<key>title</key>
+		<string>인계혈액 등록</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>6.png</string>
+		<key>idx</key>
+		<integer>5</integer>
+		<key>title</key>
+		<string>혈액인계</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>7.png</string>
+		<key>idx</key>
+		<integer>6</integer>
+		<key>title</key>
+		<string>운영반 편성표</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>8.png</string>
+		<key>idx</key>
+		<integer>7</integer>
+		<key>title</key>
+		<string>채혈내역 조회</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>9.png</string>
+		<key>idx</key>
+		<integer>8</integer>
+		<key>title</key>
+		<string>채혈내역 통계</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>10.png</string>
+		<key>idx</key>
+		<integer>9</integer>
+		<key>title</key>
+		<string>헌혈적격여부 조회</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>11.png</string>
+		<key>idx</key>
+		<integer>10</integer>
+		<key>title</key>
+		<string>헌혈인계정보 조회</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>12.png</string>
+		<key>idx</key>
+		<integer>11</integer>
+		<key>title</key>
+		<string>수거자 등록</string>
+	</dict>
+</array>
+</plist>

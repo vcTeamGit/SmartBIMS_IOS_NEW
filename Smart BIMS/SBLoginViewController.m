@@ -32,6 +32,7 @@
 @synthesize m_SBLoginMgrListViewController;
 
 @synthesize m_strVersion;
+@synthesize keepSignSwitch;
 
 //@synthesize m_dictionary;
 
@@ -50,6 +51,10 @@
 
 - (IBAction)loginButtonPressed:(id)sender
 {
+//    [m_textFieldId resignFirstResponder];
+//    [self goMainView];
+//
+//    return;
     NSString* strId = m_textFieldId.text;
     NSString* strPassword = [self sha256HashForText:m_textFieldPassword.text];
     
@@ -108,7 +113,21 @@
     [m_activityIndicatorView startAnimating];
 }
 
+// 20230517 로그인
+- (void) keepSignIn {
+    NSString* url = URL_IDPW_LOGIN;
+    NSUserDefaults *signDefaults = [NSUserDefaults standardUserDefaults];
+    NSDictionary* bodyObject = [NSDictionary dictionaryWithObjectsAndKeys:
+                                [signDefaults objectForKey:@"userIdt"], @"strUserId",
+                                [signDefaults objectForKey:@"userPwt"], @"strPassword",
+                                nil];
+    [m_httpRequest setDelegate:self
+                      selector:@selector(didReceiveResponse:)];
+    [m_httpRequest requestURL:url
+                   bodyObject:bodyObject];
 
+    [m_activityIndicatorView startAnimating];
+}
 
 - (void) didReceiveResponse:(id)result
 {
@@ -139,7 +158,7 @@
     
     // json parsing section end.
     
-	    if([strRetVal isEqualToString: @"1"]){
+    if([strRetVal isEqualToString: @"1"]){
         
         NSString* strVersion = (NSString*)[dictionary valueForKey:@"version"];
         // 2022.06.09 빌드한 앱의 버전으로 체크하도록 수정
@@ -338,15 +357,30 @@
 
 - (void) goMainView
 {
+    // 20230517 자동 로그인 체크에 따라 로그인 정보 저장
+    NSUserDefaults *signDefaults = [NSUserDefaults standardUserDefaults];
+    if ([keepSignSwitch isOn]) {
+        [signDefaults setValue:m_textFieldId.text forKey:@"userIdt"];
+        [signDefaults setValue:[self sha256HashForText:m_textFieldPassword.text] forKey:@"userPwt"];
+        [signDefaults setValue:@"keep" forKey:@"isKeepSign"];
+    } else {
+        [signDefaults setValue:@"" forKey:@"userIdt"];
+        [signDefaults setValue:@"" forKey:@"userPwt"];
+        [signDefaults removeObjectForKey:@"isKeepSign"];
+    }
+     
+    [signDefaults synchronize];
+
+//    return;
     if(m_SBDeviceConfirmViewController != nil){
         [m_SBDeviceConfirmViewController removeFromParentViewController];
     }
     
     if(winHeight == kWINDOW_HEIGHT){
-        m_MainViewController = [[MainViewController alloc] initWithNibName:@"MainViewController"
+        m_MainViewController = [[MainViewController alloc] initWithNibName:@"MainNewViewController"
                                                                     bundle:nil];
     }else{
-        m_MainViewController = [[MainViewController alloc] initWithNibName:@"MainViewController3"
+        m_MainViewController = [[MainViewController alloc] initWithNibName:@"MainNewViewController"
                                                                     bundle:nil];
     }
     
@@ -367,6 +401,10 @@
     [SBUtils playAlertSystemSoundWithSoundType:SOUND_APPEARED];
 }
 
+
+- (IBAction)keepSignSwitchPressed:(id)sender {
+    
+}
 
 - (void)didSelectMgrSiteCode:(id)obj
 {
@@ -596,6 +634,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    keepSignSwitch.transform = CGAffineTransformMakeScale(0.80, 0.80);
     
     // 2022.06.07 ADD HMWOO 테스트 대응 아이디 비밀번호
     #if TARGET==DEV
@@ -621,6 +660,13 @@
     //self.m_textFieldPassword.text = @"nk413#910";
     [self loginButtonPressed:nil];
 #endif
+    
+    // 20230517 로그인 화면 진입 시, 자동 로그인 상태일때 keepSignIn 기능으로 이동
+    NSUserDefaults *signDefaults = [NSUserDefaults standardUserDefaults];
+    if ([signDefaults objectForKey:@"isKeepSign"] != nil && [[signDefaults objectForKey:@"isKeepSign"] isEqual: @"keep"]){
+        [self keepSignIn];
+    }
+    
 }
 
 - (void)viewDidUnload
@@ -653,6 +699,7 @@
     [m_SBDeviceConfirmViewController release];
     [m_SBLoginMgrListViewController release];
     
+    [keepSignSwitch release];
     [super dealloc];
 }
 

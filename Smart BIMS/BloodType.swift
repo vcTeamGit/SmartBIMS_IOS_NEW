@@ -17,11 +17,14 @@ enum BloodType: Int, CaseIterable, CustomStringConvertible {
     var color: UIColor  {
         switch self {
         case .direct:
-            return UIColor(red: 75/255.0, green: 137/255.0, blue: 220/255.0, alpha: 1)
+//            return UIColor(red: 75/255.0, green: 137/255.0, blue: 220/255.0, alpha: 1)
+            return UIColor(red: 46/255.0, green: 108/255.0, blue: 164/255.0, alpha: 1)
         case .normal:
-            return UIColor(red: 0/255.0, green: 183/255.0, blue: 17/255.0, alpha: 1)
+//            return UIColor(red: 0/255.0, green: 183/255.0, blue: 17/255.0, alpha: 1)
+            return UIColor(red: 100/255.0, green: 151/255.0, blue: 49/255.0, alpha: 1)
         case .rh_minus:
-            return UIColor(red: 220/255.0, green: 75/255.0, blue: 78/255.0, alpha: 1)
+//            return UIColor(red: 220/255.0, green: 75/255.0, blue: 78/255.0, alpha: 1)
+            return UIColor(red: 170/255.0, green: 55/255.0, blue: 49/255.0, alpha: 1)
         }
     }
     

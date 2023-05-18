@@ -57,10 +57,14 @@
 	<string>MainWindow</string>
 	<key>UIApplicationExitsOnSuspend</key>
 	<false/>
+	<key>UILaunchStoryboardName</key>
+	<string>Launch Screen</string>
 	<key>UIPrerenderedIcon</key>
 	<true/>
-	<key>UIStatusBarHidden</key>
+	<key>UIRequiresFullScreen</key>
 	<false/>
+	<key>UIStatusBarHidden</key>
+	<true/>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleDefault</string>
 	<key>UISupportedInterfaceOrientations</key>

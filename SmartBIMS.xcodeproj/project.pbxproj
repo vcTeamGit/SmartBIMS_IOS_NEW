@@ -7,10 +7,89 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3909109729DC110400A0AA71 /* wide_ic.png in Resources */ = {isa = PBXBuildFile; fileRef = 3909109629DC110400A0AA71 /* wide_ic.png */; };
+		390ABBA129C8460E00EE41A8 /* SBLoginNewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390ABBA029C8460E00EE41A8 /* SBLoginNewViewController.xib */; };
+		390ABBA329C92F5000EE41A8 /* SBLoginMgrListNewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390ABBA229C92F5000EE41A8 /* SBLoginMgrListNewViewController.xib */; };
+		390ABBA529C9368F00EE41A8 /* SBLoginMgrListNewViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390ABBA429C9368F00EE41A8 /* SBLoginMgrListNewViewCell.xib */; };
+		390ABBA729C9396D00EE41A8 /* SBEtcSrchStaNewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390ABBA629C9396D00EE41A8 /* SBEtcSrchStaNewViewController.xib */; };
+		390ABBA929C93A1D00EE41A8 /* SBBoardNewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390ABBA829C93A1D00EE41A8 /* SBBoardNewViewController.xib */; };
+		390ABBAD29C942F600EE41A8 /* SBBoardContentNewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390ABBAC29C942F600EE41A8 /* SBBoardContentNewViewController.xib */; };
+		390ABBAF29C9476000EE41A8 /* SBPairingBarcodeNewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390ABBAE29C9476000EE41A8 /* SBPairingBarcodeNewViewController.xib */; };
+		390ABBB129C949F800EE41A8 /* SBInfoNewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390ABBB029C949F800EE41A8 /* SBInfoNewViewController.xib */; };
+		390ABBB429C94AEF00EE41A8 /* refresh-n.png in Resources */ = {isa = PBXBuildFile; fileRef = 390ABBB329C94AEF00EE41A8 /* refresh-n.png */; };
+		390ABBB829C94D7700EE41A8 /* SBNoticeBodyNewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390ABBB729C94D7700EE41A8 /* SBNoticeBodyNewViewController.xib */; };
+		390ABBBA29C9641A00EE41A8 /* SBBloodGatheringListNewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390ABBB929C9641A00EE41A8 /* SBBloodGatheringListNewViewController.xib */; };
+		390ABBBC29C9680600EE41A8 /* SBBloodGatheringTableNewViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390ABBBB29C9680600EE41A8 /* SBBloodGatheringTableNewViewCell.xib */; };
+		390ABBBE29C9772700EE41A8 /* SBMgrInfoNewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390ABBBD29C9772700EE41A8 /* SBMgrInfoNewViewController.xib */; };
+		390ABBC029C97F4000EE41A8 /* SBMgrDetailInfoNewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390ABBBF29C97F4000EE41A8 /* SBMgrDetailInfoNewViewController.xib */; };
+		390ABBC429C984EF00EE41A8 /* SBMgrMemberNewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390ABBC329C984EF00EE41A8 /* SBMgrMemberNewTableViewCell.xib */; };
+		390ABBC629C9885500EE41A8 /* SBPcResultNewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390ABBC529C9885500EE41A8 /* SBPcResultNewViewController.xib */; };
+		390ABBC829C994BC00EE41A8 /* SBTakeOverNewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390ABBC729C994BC00EE41A8 /* SBTakeOverNewViewController.xib */; };
+		390ABBCA29CACD2100EE41A8 /* SBTakeOverInfoNewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390ABBC929CACD2100EE41A8 /* SBTakeOverInfoNewViewController.xib */; };
+		390ABBCC29CAD64A00EE41A8 /* SBTakeOverInfoPageNewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390ABBCB29CAD64A00EE41A8 /* SBTakeOverInfoPageNewViewController.xib */; };
+		390ABC1329CAEC1200EE41A8 /* SBMultiBloodInfoNewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390ABC1229CAEC1200EE41A8 /* SBMultiBloodInfoNewViewController.xib */; };
+		390ABC1529CAF17200EE41A8 /* SBMultiFirstMatchingNewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390ABC1429CAF17200EE41A8 /* SBMultiFirstMatchingNewViewController.xib */; };
+		390ABC1729CAF70F00EE41A8 /* SBMultiSecondMatchingNewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390ABC1629CAF70F00EE41A8 /* SBMultiSecondMatchingNewViewController.xib */; };
+		390ABC1929CC09A900EE41A8 /* SBBloodInfoNewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390ABC1829CC09A900EE41A8 /* SBBloodInfoNewViewController.xib */; };
+		390ABC1B29CD213900EE41A8 /* logo_in_login.png in Resources */ = {isa = PBXBuildFile; fileRef = 390ABC1A29CD213900EE41A8 /* logo_in_login.png */; };
+		390ABC1D29CD222300EE41A8 /* SBFirstMatchingNewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390ABC1C29CD222300EE41A8 /* SBFirstMatchingNewViewController.xib */; };
+		390ABC1F29CD23D500EE41A8 /* SBSideEffectsListNewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390ABC1E29CD23D500EE41A8 /* SBSideEffectsListNewViewController.xib */; };
+		390ABC2329CD27D900EE41A8 /* SBSecondMatchingNewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390ABC2229CD27D900EE41A8 /* SBSecondMatchingNewViewController.xib */; };
+		390ABC2529CD2ACE00EE41A8 /* SBBloodEndTimeNewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390ABC2429CD2ACE00EE41A8 /* SBBloodEndTimeNewViewController.xib */; };
+		390ABC2729CD2F6200EE41A8 /* SB2ndMatchingFrom1stNewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390ABC2629CD2F6200EE41A8 /* SB2ndMatchingFrom1stNewViewController.xib */; };
+		390ABC2929CD30EA00EE41A8 /* SBUnfitnessHistoryNewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390ABC2829CD30EA00EE41A8 /* SBUnfitnessHistoryNewViewController.xib */; };
+		390ABC2D29CD327400EE41A8 /* SBSpecialDetailNewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390ABC2C29CD327400EE41A8 /* SBSpecialDetailNewViewController.xib */; };
+		390ABC2F29CD337700EE41A8 /* SBSpecialPageNewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390ABC2E29CD337700EE41A8 /* SBSpecialPageNewViewController.xib */; };
+		390ABC3129CD34FC00EE41A8 /* SBSideEffectCheckNewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390ABC3029CD34FC00EE41A8 /* SBSideEffectCheckNewViewController.xib */; };
+		390ABC3329CD352E00EE41A8 /* SBSideEffectPageNewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390ABC3229CD352E00EE41A8 /* SBSideEffectPageNewViewController.xib */; };
+		390ABC3529CD3B7400EE41A8 /* SBPreUnfitnessDetailNewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390ABC3429CD3B7400EE41A8 /* SBPreUnfitnessDetailNewViewController.xib */; };
+		390ABC3729CD3BB900EE41A8 /* SBPreUnfitnessPageNewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390ABC3629CD3BB900EE41A8 /* SBPreUnfitnessPageNewViewController.xib */; };
+		390ABC3929CD3D0D00EE41A8 /* SBFitnessCheckNewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390ABC3829CD3D0D00EE41A8 /* SBFitnessCheckNewViewController.xib */; };
+		390ABC4529D18EC000EE41A8 /* 2_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 390ABC3B29D18EC000EE41A8 /* 2_off.png */; };
+		390ABC4629D18EC000EE41A8 /* 2_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 390ABC3C29D18EC000EE41A8 /* 2_on.png */; };
+		390ABC4729D18EC000EE41A8 /* 4_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 390ABC3D29D18EC000EE41A8 /* 4_on.png */; };
+		390ABC4829D18EC000EE41A8 /* 4_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 390ABC3E29D18EC000EE41A8 /* 4_off.png */; };
+		390ABC4929D18EC000EE41A8 /* 3_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 390ABC3F29D18EC000EE41A8 /* 3_on.png */; };
+		390ABC4A29D18EC000EE41A8 /* 1_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 390ABC4029D18EC000EE41A8 /* 1_on.png */; };
+		390ABC4B29D18EC000EE41A8 /* 3_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 390ABC4129D18EC000EE41A8 /* 3_off.png */; };
+		390ABC4C29D18EC000EE41A8 /* 5_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 390ABC4229D18EC000EE41A8 /* 5_off.png */; };
+		390ABC4D29D18EC000EE41A8 /* 5_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 390ABC4329D18EC000EE41A8 /* 5_on.png */; };
+		390ABC4E29D18EC000EE41A8 /* 1_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 390ABC4429D18EC000EE41A8 /* 1_off.png */; };
+		390ABC5029D190C400EE41A8 /* SBEtcSrchStaNewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390ABC4F29D190C400EE41A8 /* SBEtcSrchStaNewTableViewCell.xib */; };
+		390ABC5229D2679100EE41A8 /* MainNewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390ABC5129D2679100EE41A8 /* MainNewViewController.xib */; };
+		390ABC5429D281AA00EE41A8 /* main_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 390ABC5329D281AA00EE41A8 /* main_bg.png */; };
+		390ABC5629D283F600EE41A8 /* SBTakeOverActionNewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390ABC5529D283F600EE41A8 /* SBTakeOverActionNewViewController.xib */; };
+		390ABC5829D2A61B00EE41A8 /* exclamation.png in Resources */ = {isa = PBXBuildFile; fileRef = 390ABC5729D2A61B00EE41A8 /* exclamation.png */; };
+		390ABC5B29D2B75700EE41A8 /* id.png in Resources */ = {isa = PBXBuildFile; fileRef = 390ABC5929D2B75700EE41A8 /* id.png */; };
+		390ABC5C29D2B75700EE41A8 /* pw.png in Resources */ = {isa = PBXBuildFile; fileRef = 390ABC5A29D2B75700EE41A8 /* pw.png */; };
+		390ABC6829D2BBE900EE41A8 /* MainMenuOrderChangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 390ABC6629D2BBE900EE41A8 /* MainMenuOrderChangeViewController.m */; };
+		390ABC6929D2BBE900EE41A8 /* MainMenuOrderChangeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390ABC6729D2BBE900EE41A8 /* MainMenuOrderChangeViewController.xib */; };
+		390ABCA829D66A7800EE41A8 /* main_menu.plist in Resources */ = {isa = PBXBuildFile; fileRef = 390ABCA729D66A7800EE41A8 /* main_menu.plist */; };
+		395F0BE729DAAA08008EBFA1 /* MenuOrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 395F0BE529DAAA08008EBFA1 /* MenuOrderTableViewCell.m */; };
+		395F0BE829DAAA08008EBFA1 /* MenuOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 395F0BE629DAAA08008EBFA1 /* MenuOrderTableViewCell.xib */; };
+		395F0C3D29DAB89D008EBFA1 /* main_10.png in Resources */ = {isa = PBXBuildFile; fileRef = 395F0C3129DAB89D008EBFA1 /* main_10.png */; };
+		395F0C3E29DAB89D008EBFA1 /* main_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 395F0C3229DAB89D008EBFA1 /* main_3.png */; };
+		395F0C3F29DAB89D008EBFA1 /* main_11.png in Resources */ = {isa = PBXBuildFile; fileRef = 395F0C3329DAB89D008EBFA1 /* main_11.png */; };
+		395F0C4029DAB89D008EBFA1 /* main_9.png in Resources */ = {isa = PBXBuildFile; fileRef = 395F0C3429DAB89D008EBFA1 /* main_9.png */; };
+		395F0C4129DAB89D008EBFA1 /* main_12.png in Resources */ = {isa = PBXBuildFile; fileRef = 395F0C3529DAB89D008EBFA1 /* main_12.png */; };
+		395F0C4229DAB89D008EBFA1 /* main_8.png in Resources */ = {isa = PBXBuildFile; fileRef = 395F0C3629DAB89D008EBFA1 /* main_8.png */; };
+		395F0C4329DAB89D008EBFA1 /* main_7.png in Resources */ = {isa = PBXBuildFile; fileRef = 395F0C3729DAB89D008EBFA1 /* main_7.png */; };
+		395F0C4429DAB89D008EBFA1 /* main_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 395F0C3829DAB89D008EBFA1 /* main_4.png */; };
+		395F0C4529DAB89D008EBFA1 /* main_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 395F0C3929DAB89D008EBFA1 /* main_1.png */; };
+		395F0C4629DAB89D008EBFA1 /* main_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 395F0C3A29DAB89D008EBFA1 /* main_2.png */; };
+		395F0C4729DAB89D008EBFA1 /* main_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 395F0C3B29DAB89D008EBFA1 /* main_5.png */; };
+		395F0C4829DAB89D008EBFA1 /* main_6.png in Resources */ = {isa = PBXBuildFile; fileRef = 395F0C3C29DAB89D008EBFA1 /* main_6.png */; };
+		397056592A15AF4A0048775B /* back_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 397056582A15AF4A0048775B /* back_btn.png */; };
+		3970565B2A15AFA10048775B /* back_btn70.png in Resources */ = {isa = PBXBuildFile; fileRef = 3970565A2A15AFA10048775B /* back_btn70.png */; };
+		3970565D2A15B4D20048775B /* home_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 3970565C2A15B4D20048775B /* home_btn.png */; };
+		3970565F2A15B7BE0048775B /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 3970565E2A15B7BE0048775B /* refresh.png */; };
 		39A7708F28DC293A004D40F9 /* 등록헌혈.png in Resources */ = {isa = PBXBuildFile; fileRef = 39A7708E28DC293A004D40F9 /* 등록헌혈.png */; };
 		39A7709128DC2964004D40F9 /* 조혈모세포.png in Resources */ = {isa = PBXBuildFile; fileRef = 39A7709028DC2964004D40F9 /* 조혈모세포.png */; };
 		39A7709328DC29A8004D40F9 /* 지정헌혈.png in Resources */ = {isa = PBXBuildFile; fileRef = 39A7709228DC29A8004D40F9 /* 지정헌혈.png */; };
 		39A7709528DC29B9004D40F9 /* 헌혈관련증상.png in Resources */ = {isa = PBXBuildFile; fileRef = 39A7709428DC29B9004D40F9 /* 헌혈관련증상.png */; };
+		39CADF6629F264F1002EC079 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39CADF6529F264F1002EC079 /* Launch Screen.storyboard */; };
+		39CADF6829FA5F4A002EC079 /* lunch_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 39CADF6729FA5F4A002EC079 /* lunch_logo.png */; };
+		39CADF6A2A135D8B002EC079 /* finger.png in Resources */ = {isa = PBXBuildFile; fileRef = 39CADF692A135D8B002EC079 /* finger.png */; };
 		453040B724A43DFE00D2E22E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 929954141441C16B00CAF352 /* AudioToolbox.framework */; };
 		57121A42268C67D70067911D /* TakeoverTableViewCellInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57121A41268C67D70067911D /* TakeoverTableViewCellInfoViewController.swift */; };
 		572F669C26C4A543008657C4 /* TakeOverChangeBloodLevelInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 572F669B26C4A543008657C4 /* TakeOverChangeBloodLevelInfo.storyboard */; };
@@ -454,10 +533,91 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3909109629DC110400A0AA71 /* wide_ic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wide_ic.png; sourceTree = "<group>"; };
+		390ABBA029C8460E00EE41A8 /* SBLoginNewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SBLoginNewViewController.xib; sourceTree = "<group>"; };
+		390ABBA229C92F5000EE41A8 /* SBLoginMgrListNewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SBLoginMgrListNewViewController.xib; sourceTree = "<group>"; };
+		390ABBA429C9368F00EE41A8 /* SBLoginMgrListNewViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SBLoginMgrListNewViewCell.xib; sourceTree = "<group>"; };
+		390ABBA629C9396D00EE41A8 /* SBEtcSrchStaNewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SBEtcSrchStaNewViewController.xib; sourceTree = "<group>"; };
+		390ABBA829C93A1D00EE41A8 /* SBBoardNewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SBBoardNewViewController.xib; sourceTree = "<group>"; };
+		390ABBAC29C942F600EE41A8 /* SBBoardContentNewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SBBoardContentNewViewController.xib; sourceTree = "<group>"; };
+		390ABBAE29C9476000EE41A8 /* SBPairingBarcodeNewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SBPairingBarcodeNewViewController.xib; sourceTree = "<group>"; };
+		390ABBB029C949F800EE41A8 /* SBInfoNewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SBInfoNewViewController.xib; sourceTree = "<group>"; };
+		390ABBB329C94AEF00EE41A8 /* refresh-n.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refresh-n.png"; sourceTree = "<group>"; };
+		390ABBB729C94D7700EE41A8 /* SBNoticeBodyNewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SBNoticeBodyNewViewController.xib; sourceTree = "<group>"; };
+		390ABBB929C9641A00EE41A8 /* SBBloodGatheringListNewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SBBloodGatheringListNewViewController.xib; sourceTree = "<group>"; };
+		390ABBBB29C9680600EE41A8 /* SBBloodGatheringTableNewViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SBBloodGatheringTableNewViewCell.xib; sourceTree = "<group>"; };
+		390ABBBD29C9772700EE41A8 /* SBMgrInfoNewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SBMgrInfoNewViewController.xib; sourceTree = "<group>"; };
+		390ABBBF29C97F4000EE41A8 /* SBMgrDetailInfoNewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SBMgrDetailInfoNewViewController.xib; sourceTree = "<group>"; };
+		390ABBC329C984EF00EE41A8 /* SBMgrMemberNewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SBMgrMemberNewTableViewCell.xib; sourceTree = "<group>"; };
+		390ABBC529C9885500EE41A8 /* SBPcResultNewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SBPcResultNewViewController.xib; sourceTree = "<group>"; };
+		390ABBC729C994BC00EE41A8 /* SBTakeOverNewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SBTakeOverNewViewController.xib; sourceTree = "<group>"; };
+		390ABBC929CACD2100EE41A8 /* SBTakeOverInfoNewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SBTakeOverInfoNewViewController.xib; sourceTree = "<group>"; };
+		390ABBCB29CAD64A00EE41A8 /* SBTakeOverInfoPageNewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SBTakeOverInfoPageNewViewController.xib; sourceTree = "<group>"; };
+		390ABC1229CAEC1200EE41A8 /* SBMultiBloodInfoNewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SBMultiBloodInfoNewViewController.xib; sourceTree = "<group>"; };
+		390ABC1429CAF17200EE41A8 /* SBMultiFirstMatchingNewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SBMultiFirstMatchingNewViewController.xib; sourceTree = "<group>"; };
+		390ABC1629CAF70F00EE41A8 /* SBMultiSecondMatchingNewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SBMultiSecondMatchingNewViewController.xib; sourceTree = "<group>"; };
+		390ABC1829CC09A900EE41A8 /* SBBloodInfoNewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SBBloodInfoNewViewController.xib; sourceTree = "<group>"; };
+		390ABC1A29CD213900EE41A8 /* logo_in_login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_in_login.png; sourceTree = "<group>"; };
+		390ABC1C29CD222300EE41A8 /* SBFirstMatchingNewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SBFirstMatchingNewViewController.xib; sourceTree = "<group>"; };
+		390ABC1E29CD23D500EE41A8 /* SBSideEffectsListNewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SBSideEffectsListNewViewController.xib; sourceTree = "<group>"; };
+		390ABC2229CD27D900EE41A8 /* SBSecondMatchingNewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SBSecondMatchingNewViewController.xib; sourceTree = "<group>"; };
+		390ABC2429CD2ACE00EE41A8 /* SBBloodEndTimeNewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SBBloodEndTimeNewViewController.xib; sourceTree = "<group>"; };
+		390ABC2629CD2F6200EE41A8 /* SB2ndMatchingFrom1stNewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SB2ndMatchingFrom1stNewViewController.xib; sourceTree = "<group>"; };
+		390ABC2829CD30EA00EE41A8 /* SBUnfitnessHistoryNewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SBUnfitnessHistoryNewViewController.xib; sourceTree = "<group>"; };
+		390ABC2C29CD327400EE41A8 /* SBSpecialDetailNewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SBSpecialDetailNewViewController.xib; sourceTree = "<group>"; };
+		390ABC2E29CD337700EE41A8 /* SBSpecialPageNewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SBSpecialPageNewViewController.xib; sourceTree = "<group>"; };
+		390ABC3029CD34FC00EE41A8 /* SBSideEffectCheckNewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SBSideEffectCheckNewViewController.xib; sourceTree = "<group>"; };
+		390ABC3229CD352E00EE41A8 /* SBSideEffectPageNewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SBSideEffectPageNewViewController.xib; sourceTree = "<group>"; };
+		390ABC3429CD3B7400EE41A8 /* SBPreUnfitnessDetailNewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SBPreUnfitnessDetailNewViewController.xib; sourceTree = "<group>"; };
+		390ABC3629CD3BB900EE41A8 /* SBPreUnfitnessPageNewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SBPreUnfitnessPageNewViewController.xib; sourceTree = "<group>"; };
+		390ABC3829CD3D0D00EE41A8 /* SBFitnessCheckNewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SBFitnessCheckNewViewController.xib; sourceTree = "<group>"; };
+		390ABC3B29D18EC000EE41A8 /* 2_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2_off.png; sourceTree = "<group>"; };
+		390ABC3C29D18EC000EE41A8 /* 2_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2_on.png; sourceTree = "<group>"; };
+		390ABC3D29D18EC000EE41A8 /* 4_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4_on.png; sourceTree = "<group>"; };
+		390ABC3E29D18EC000EE41A8 /* 4_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4_off.png; sourceTree = "<group>"; };
+		390ABC3F29D18EC000EE41A8 /* 3_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3_on.png; sourceTree = "<group>"; };
+		390ABC4029D18EC000EE41A8 /* 1_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1_on.png; sourceTree = "<group>"; };
+		390ABC4129D18EC000EE41A8 /* 3_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3_off.png; sourceTree = "<group>"; };
+		390ABC4229D18EC000EE41A8 /* 5_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5_off.png; sourceTree = "<group>"; };
+		390ABC4329D18EC000EE41A8 /* 5_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5_on.png; sourceTree = "<group>"; };
+		390ABC4429D18EC000EE41A8 /* 1_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1_off.png; sourceTree = "<group>"; };
+		390ABC4F29D190C400EE41A8 /* SBEtcSrchStaNewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SBEtcSrchStaNewTableViewCell.xib; sourceTree = "<group>"; };
+		390ABC5129D2679100EE41A8 /* MainNewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainNewViewController.xib; sourceTree = "<group>"; };
+		390ABC5329D281AA00EE41A8 /* main_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_bg.png; sourceTree = "<group>"; };
+		390ABC5529D283F600EE41A8 /* SBTakeOverActionNewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SBTakeOverActionNewViewController.xib; sourceTree = "<group>"; };
+		390ABC5729D2A61B00EE41A8 /* exclamation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exclamation.png; sourceTree = "<group>"; };
+		390ABC5929D2B75700EE41A8 /* id.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = id.png; sourceTree = "<group>"; };
+		390ABC5A29D2B75700EE41A8 /* pw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pw.png; sourceTree = "<group>"; };
+		390ABC6529D2BBE900EE41A8 /* MainMenuOrderChangeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainMenuOrderChangeViewController.h; sourceTree = "<group>"; };
+		390ABC6629D2BBE900EE41A8 /* MainMenuOrderChangeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainMenuOrderChangeViewController.m; sourceTree = "<group>"; };
+		390ABC6729D2BBE900EE41A8 /* MainMenuOrderChangeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenuOrderChangeViewController.xib; sourceTree = "<group>"; };
+		390ABCA729D66A7800EE41A8 /* main_menu.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = main_menu.plist; sourceTree = "<group>"; };
+		395F0BE429DAAA08008EBFA1 /* MenuOrderTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuOrderTableViewCell.h; sourceTree = "<group>"; };
+		395F0BE529DAAA08008EBFA1 /* MenuOrderTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuOrderTableViewCell.m; sourceTree = "<group>"; };
+		395F0BE629DAAA08008EBFA1 /* MenuOrderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuOrderTableViewCell.xib; sourceTree = "<group>"; };
+		395F0C3129DAB89D008EBFA1 /* main_10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_10.png; sourceTree = "<group>"; };
+		395F0C3229DAB89D008EBFA1 /* main_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_3.png; sourceTree = "<group>"; };
+		395F0C3329DAB89D008EBFA1 /* main_11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_11.png; sourceTree = "<group>"; };
+		395F0C3429DAB89D008EBFA1 /* main_9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_9.png; sourceTree = "<group>"; };
+		395F0C3529DAB89D008EBFA1 /* main_12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_12.png; sourceTree = "<group>"; };
+		395F0C3629DAB89D008EBFA1 /* main_8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_8.png; sourceTree = "<group>"; };
+		395F0C3729DAB89D008EBFA1 /* main_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_7.png; sourceTree = "<group>"; };
+		395F0C3829DAB89D008EBFA1 /* main_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_4.png; sourceTree = "<group>"; };
+		395F0C3929DAB89D008EBFA1 /* main_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_1.png; sourceTree = "<group>"; };
+		395F0C3A29DAB89D008EBFA1 /* main_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_2.png; sourceTree = "<group>"; };
+		395F0C3B29DAB89D008EBFA1 /* main_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_5.png; sourceTree = "<group>"; };
+		395F0C3C29DAB89D008EBFA1 /* main_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_6.png; sourceTree = "<group>"; };
+		397056582A15AF4A0048775B /* back_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_btn.png; sourceTree = "<group>"; };
+		3970565A2A15AFA10048775B /* back_btn70.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_btn70.png; sourceTree = "<group>"; };
+		3970565C2A15B4D20048775B /* home_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_btn.png; sourceTree = "<group>"; };
+		3970565E2A15B7BE0048775B /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
 		39A7708E28DC293A004D40F9 /* 등록헌혈.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "등록헌혈.png"; sourceTree = "<group>"; };
 		39A7709028DC2964004D40F9 /* 조혈모세포.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "조혈모세포.png"; sourceTree = "<group>"; };
 		39A7709228DC29A8004D40F9 /* 지정헌혈.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "지정헌혈.png"; sourceTree = "<group>"; };
 		39A7709428DC29B9004D40F9 /* 헌혈관련증상.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "헌혈관련증상.png"; sourceTree = "<group>"; };
+		39CADF6529F264F1002EC079 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		39CADF6729FA5F4A002EC079 /* lunch_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lunch_logo.png; sourceTree = "<group>"; };
+		39CADF692A135D8B002EC079 /* finger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = finger.png; sourceTree = "<group>"; };
 		57121A41268C67D70067911D /* TakeoverTableViewCellInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeoverTableViewCellInfoViewController.swift; sourceTree = "<group>"; };
 		572F669B26C4A543008657C4 /* TakeOverChangeBloodLevelInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TakeOverChangeBloodLevelInfo.storyboard; sourceTree = "<group>"; };
 		572F669D26C4BADF008657C4 /* TakeOverChangeBloodLevelInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeOverChangeBloodLevelInfoViewController.swift; sourceTree = "<group>"; };
@@ -985,6 +1145,64 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		390ABBB229C94AE300EE41A8 /* new */ = {
+			isa = PBXGroup;
+			children = (
+				3970565E2A15B7BE0048775B /* refresh.png */,
+				3970565C2A15B4D20048775B /* home_btn.png */,
+				397056582A15AF4A0048775B /* back_btn.png */,
+				3970565A2A15AFA10048775B /* back_btn70.png */,
+				39CADF692A135D8B002EC079 /* finger.png */,
+				39CADF6729FA5F4A002EC079 /* lunch_logo.png */,
+				390ABCA929D66B9000EE41A8 /* main */,
+				3909109629DC110400A0AA71 /* wide_ic.png */,
+				390ABC5929D2B75700EE41A8 /* id.png */,
+				390ABC5A29D2B75700EE41A8 /* pw.png */,
+				390ABC3A29D18EB400EE41A8 /* tab */,
+				390ABC1A29CD213900EE41A8 /* logo_in_login.png */,
+				390ABBB329C94AEF00EE41A8 /* refresh-n.png */,
+				390ABC5729D2A61B00EE41A8 /* exclamation.png */,
+			);
+			name = new;
+			sourceTree = "<group>";
+		};
+		390ABC3A29D18EB400EE41A8 /* tab */ = {
+			isa = PBXGroup;
+			children = (
+				390ABC5329D281AA00EE41A8 /* main_bg.png */,
+				390ABC4429D18EC000EE41A8 /* 1_off.png */,
+				390ABC4029D18EC000EE41A8 /* 1_on.png */,
+				390ABC3B29D18EC000EE41A8 /* 2_off.png */,
+				390ABC3C29D18EC000EE41A8 /* 2_on.png */,
+				390ABC4129D18EC000EE41A8 /* 3_off.png */,
+				390ABC3F29D18EC000EE41A8 /* 3_on.png */,
+				390ABC3E29D18EC000EE41A8 /* 4_off.png */,
+				390ABC3D29D18EC000EE41A8 /* 4_on.png */,
+				390ABC4229D18EC000EE41A8 /* 5_off.png */,
+				390ABC4329D18EC000EE41A8 /* 5_on.png */,
+			);
+			name = tab;
+			sourceTree = "<group>";
+		};
+		390ABCA929D66B9000EE41A8 /* main */ = {
+			isa = PBXGroup;
+			children = (
+				395F0C3929DAB89D008EBFA1 /* main_1.png */,
+				395F0C3A29DAB89D008EBFA1 /* main_2.png */,
+				395F0C3229DAB89D008EBFA1 /* main_3.png */,
+				395F0C3829DAB89D008EBFA1 /* main_4.png */,
+				395F0C3B29DAB89D008EBFA1 /* main_5.png */,
+				395F0C3C29DAB89D008EBFA1 /* main_6.png */,
+				395F0C3729DAB89D008EBFA1 /* main_7.png */,
+				395F0C3629DAB89D008EBFA1 /* main_8.png */,
+				395F0C3429DAB89D008EBFA1 /* main_9.png */,
+				395F0C3129DAB89D008EBFA1 /* main_10.png */,
+				395F0C3329DAB89D008EBFA1 /* main_11.png */,
+				395F0C3529DAB89D008EBFA1 /* main_12.png */,
+			);
+			name = main;
+			sourceTree = "<group>";
+		};
 		572F669526BA344E008657C4 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
@@ -1105,18 +1323,22 @@
 				921FF89A1F4552D200E3B94B /* SBTakeOverActionViewController.h */,
 				921FF89B1F4552D200E3B94B /* SBTakeOverActionViewController.m */,
 				921FF89C1F4552D200E3B94B /* SBTakeOverActionViewController.xib */,
+				390ABC5529D283F600EE41A8 /* SBTakeOverActionNewViewController.xib */,
 				921FF8A11F45766200E3B94B /* SBTakeOverActionTableViewCell.h */,
 				921FF8A21F45766200E3B94B /* SBTakeOverActionTableViewCell.m */,
 				921FF8A31F45766200E3B94B /* SBTakeOverActionTableViewCell.xib */,
 				922088641F4ECC2A00C902A8 /* SBTakeOverViewController.h */,
 				922088651F4ECC2A00C902A8 /* SBTakeOverViewController.m */,
 				922088661F4ECC2A00C902A8 /* SBTakeOverViewController.xib */,
+				390ABBC729C994BC00EE41A8 /* SBTakeOverNewViewController.xib */,
 				92CE69411F7A1A58002E46B2 /* SBTakeOverInfoViewController.h */,
 				92CE69421F7A1A58002E46B2 /* SBTakeOverInfoViewController.m */,
 				92CE69431F7A1A58002E46B2 /* SBTakeOverInfoViewController.xib */,
+				390ABBC929CACD2100EE41A8 /* SBTakeOverInfoNewViewController.xib */,
 				92E9EC0F1F971A9F00C2E207 /* SBTakeOverInfoPageViewController.h */,
 				92E9EC101F971A9F00C2E207 /* SBTakeOverInfoPageViewController.m */,
 				92E9EC111F971A9F00C2E207 /* SBTakeOverInfoPageViewController.xib */,
+				390ABBCB29CAD64A00EE41A8 /* SBTakeOverInfoPageNewViewController.xib */,
 			);
 			name = takeOver;
 			sourceTree = "<group>";
@@ -1128,6 +1350,7 @@
 				9225CFE918F78633005C451C /* SBBoardViewController.m */,
 				9225CFEA18F78633005C451C /* SBBoardViewController.xib */,
 				92EF5CB618FD0952006DEB8E /* SBBoardViewController3.xib */,
+				390ABBA829C93A1D00EE41A8 /* SBBoardNewViewController.xib */,
 				9225CFED18F78B48005C451C /* SBBoardTableViewCell.h */,
 				9225CFEE18F78B48005C451C /* SBBoardTableViewCell.m */,
 				9225CFEF18F78B48005C451C /* SBBoardTableViewCell.xib */,
@@ -1135,6 +1358,7 @@
 				92EF5CB218FCD0DF006DEB8E /* SBBoardContentViewController.m */,
 				92EF5CB318FCD0DF006DEB8E /* SBBoardContentViewController.xib */,
 				92EF5CB818FD0A54006DEB8E /* SBBoardContentViewController3.xib */,
+				390ABBAC29C942F600EE41A8 /* SBBoardContentNewViewController.xib */,
 			);
 			name = board;
 			sourceTree = "<group>";
@@ -1146,9 +1370,11 @@
 				92685E99146B76AD002A63CD /* SBBloodGatheringListViewController.m */,
 				92685E9A146B76AD002A63CD /* SBBloodGatheringListViewController.xib */,
 				9211774716945B7100D7EF54 /* SBBloodGatheringListViewController3.xib */,
+				390ABBB929C9641A00EE41A8 /* SBBloodGatheringListNewViewController.xib */,
 				92685E9E146B9455002A63CD /* SBBloodGatheringTableViewCell.h */,
 				92685E9F146B9455002A63CD /* SBBloodGatheringTableViewCell.m */,
 				92685EA1146B963D002A63CD /* SBBloodGatheringTableViewCell.xib */,
+				390ABBBB29C9680600EE41A8 /* SBBloodGatheringTableNewViewCell.xib */,
 			);
 			name = gatheringInfo;
 			sourceTree = "<group>";
@@ -1160,6 +1386,7 @@
 				929A649C14681532001F74D7 /* SBInfoViewController.m */,
 				929A649D14681532001F74D7 /* SBInfoViewController.xib */,
 				9211773116944CF400D7EF54 /* SBInfoViewController3.xib */,
+				390ABBB029C949F800EE41A8 /* SBInfoNewViewController.xib */,
 				923B4CD21474D96F00609EB8 /* SBNoticeTableViewCell.h */,
 				923B4CD31474D96F00609EB8 /* SBNoticeTableViewCell.m */,
 				923B4CD51474D98300609EB8 /* SBNoticeTableViewCell.xib */,
@@ -1167,6 +1394,7 @@
 				923B4CD81474EC6100609EB8 /* SBNoticeBodyViewController.m */,
 				923B4CD91474EC6200609EB8 /* SBNoticeBodyViewController.xib */,
 				9211773316944DB700D7EF54 /* SBNoticeBodyViewController3.xib */,
+				390ABBB729C94D7700EE41A8 /* SBNoticeBodyNewViewController.xib */,
 			);
 			name = notice;
 			sourceTree = "<group>";
@@ -1174,6 +1402,7 @@
 		92435EC413EA231900ABADB9 = {
 			isa = PBXGroup;
 			children = (
+				39CADF6529F264F1002EC079 /* Launch Screen.storyboard */,
 				57D0B5F626831F3000FF7ACA /* SmartBIMS-Bridging-Header.h */,
 				92EF5CC018FD16F8006DEB8E /* Images.xcassets */,
 				920D5E891548EC6C009ED883 /* MediaPlayer.framework */,
@@ -1265,19 +1494,30 @@
 				92435EF713EA2D0F00ABADB9 /* SBLoginViewController.m */,
 				92435EF813EA2D0F00ABADB9 /* SBLoginViewController.xib */,
 				92117727169426CD00D7EF54 /* SBLoginViewController3.xib */,
+				390ABBA029C8460E00EE41A8 /* SBLoginNewViewController.xib */,
 				92CC251B13EA97FA003B56C0 /* MainViewController.h */,
 				92CC251C13EA97FA003B56C0 /* MainViewController.m */,
 				92CC251D13EA97FA003B56C0 /* MainViewController.xib */,
 				9211772B1694475D00D7EF54 /* MainViewController3.xib */,
+				390ABC5129D2679100EE41A8 /* MainNewViewController.xib */,
 				92E98CAC14BC33C5007657FF /* SBLoginMgrListViewController.h */,
 				92E98CAD14BC33C5007657FF /* SBLoginMgrListViewController.m */,
 				92E98CAE14BC33C5007657FF /* SBLoginMgrListViewController.xib */,
 				9211772F16944C9300D7EF54 /* SBLoginMgrListViewController3.xib */,
+				390ABBA229C92F5000EE41A8 /* SBLoginMgrListNewViewController.xib */,
 				9211B5BD14CFA83200F6A927 /* SBLoginMgrListViewCell.h */,
 				9211B5BE14CFA83200F6A927 /* SBLoginMgrListViewCell.m */,
 				924F26B314CFB9BC000A96CD /* SBLoginMgrListViewCell.xib */,
+				390ABBA429C9368F00EE41A8 /* SBLoginMgrListNewViewCell.xib */,
 				88A84CF928220006003EEE84 /* SBServerURLContent.h */,
 				88A84CFA28220092003EEE84 /* SBServerURLContent.m */,
+				390ABC6529D2BBE900EE41A8 /* MainMenuOrderChangeViewController.h */,
+				390ABC6629D2BBE900EE41A8 /* MainMenuOrderChangeViewController.m */,
+				390ABC6729D2BBE900EE41A8 /* MainMenuOrderChangeViewController.xib */,
+				395F0BE429DAAA08008EBFA1 /* MenuOrderTableViewCell.h */,
+				395F0BE529DAAA08008EBFA1 /* MenuOrderTableViewCell.m */,
+				395F0BE629DAAA08008EBFA1 /* MenuOrderTableViewCell.xib */,
+				390ABCA729D66A7800EE41A8 /* main_menu.plist */,
 			);
 			name = main;
 			sourceTree = "<group>";
@@ -1320,15 +1560,18 @@
 				9254123F14568589007B8104 /* SBMgrInfoViewController.m */,
 				9254124014568589007B8104 /* SBMgrInfoViewController.xib */,
 				92117735169451C600D7EF54 /* SBMgrInfoViewController3.xib */,
+				390ABBBD29C9772700EE41A8 /* SBMgrInfoNewViewController.xib */,
 				925412431456AD48007B8104 /* SBMgrDetailInfoViewController.h */,
 				925412441456AD48007B8104 /* SBMgrDetailInfoViewController.m */,
 				925412451456AD48007B8104 /* SBMgrDetailInfoViewController.xib */,
+				390ABBBF29C97F4000EE41A8 /* SBMgrDetailInfoNewViewController.xib */,
 				929871F8145F780800442394 /* SBMgrDatePickerViewController.h */,
 				929871F9145F780800442394 /* SBMgrDatePickerViewController.m */,
 				929871FA145F780800442394 /* SBMgrDatePickerViewController.xib */,
 				929A642D1467707C001F74D7 /* SBMgrMemberTableViewCell.h */,
 				929A642E1467707C001F74D7 /* SBMgrMemberTableViewCell.m */,
 				929A643014677090001F74D7 /* SBMgrMemberTableViewCell.xib */,
+				390ABBC329C984EF00EE41A8 /* SBMgrMemberNewTableViewCell.xib */,
 			);
 			name = mgr;
 			sourceTree = "<group>";
@@ -1509,14 +1752,17 @@
 				92888F991533F39D00CB6410 /* SBMultiBloodInfoViewController.m */,
 				92888F9A1533F39D00CB6410 /* SBMultiBloodInfoViewController.xib */,
 				9211773F1694562800D7EF54 /* SBMultiBloodInfoViewController3.xib */,
+				390ABC1229CAEC1200EE41A8 /* SBMultiBloodInfoNewViewController.xib */,
 				927D41FA1537CC90006C095F /* SBMultiFirstMatchingViewController.h */,
 				927D41FB1537CC90006C095F /* SBMultiFirstMatchingViewController.m */,
 				927D41FC1537CC90006C095F /* SBMultiFirstMatchingViewController.xib */,
 				921177411694569F00D7EF54 /* SBMultiFirstMatchingViewController3.xib */,
+				390ABC1429CAF17200EE41A8 /* SBMultiFirstMatchingNewViewController.xib */,
 				92BC0416153EA77200EF17A4 /* SBMultiSecondMatchingViewController.h */,
 				92BC0417153EA77200EF17A4 /* SBMultiSecondMatchingViewController.m */,
 				92BC0418153EA77200EF17A4 /* SBMultiSecondMatchingViewController.xib */,
 				921177431694570400D7EF54 /* SBMultiSecondMatchingViewController3.xib */,
+				390ABC1629CAF70F00EE41A8 /* SBMultiSecondMatchingNewViewController.xib */,
 			);
 			name = multi;
 			sourceTree = "<group>";
@@ -1529,6 +1775,7 @@
 				9278C6E11FDA60DF0015BA1A /* SBPairingBarcodeViewController.h */,
 				9278C6E21FDA60DF0015BA1A /* SBPairingBarcodeViewController.m */,
 				9278C6E31FDA60DF0015BA1A /* SBPairingBarcodeViewController.xib */,
+				390ABBAE29C9476000EE41A8 /* SBPairingBarcodeNewViewController.xib */,
 			);
 			name = utils;
 			sourceTree = "<group>";
@@ -1541,6 +1788,7 @@
 				928DB9A5140F5B4400B5D9D7 /* SBFitnessCheckViewController.m */,
 				928DB9A6140F5B4400B5D9D7 /* SBFitnessCheckViewController.xib */,
 				92117745169459C500D7EF54 /* SBFitnessCheckViewController3.xib */,
+				390ABC3829CD3D0D00EE41A8 /* SBFitnessCheckNewViewController.xib */,
 			);
 			name = "fitness services";
 			sourceTree = "<group>";
@@ -1548,6 +1796,7 @@
 		928DC663142AFB35000903A6 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				390ABBB229C94AE300EE41A8 /* new */,
 				92DF7823230A9C9200E0B8F7 /* takeoverinfo7.png */,
 				92DF7821230A9A7700E0B8F7 /* takeoverinfo6.png */,
 				92DE258522E05D5F00B06CA6 /* pltp_full.png */,
@@ -1573,6 +1822,7 @@
 				928DC65F14298481000903A6 /* SBUnfitnessHistoryViewController.m */,
 				928DC66014298481000903A6 /* SBUnfitnessHistoryViewController.xib */,
 				9211774D169460E800D7EF54 /* SBUnfitnessHistoryViewController3.xib */,
+				390ABC2829CD30EA00EE41A8 /* SBUnfitnessHistoryNewViewController.xib */,
 				928F215E14342B0600C9C731 /* SBUnfitnessHistoryTableCell.h */,
 				928F215F14342B0600C9C731 /* SBUnfitnessHistoryTableCell.m */,
 				928F216214342B3E00C9C731 /* SBUnfitnessHistoryTableCell.xib */,
@@ -1580,21 +1830,27 @@
 				928E4DB814284FF3005F46FC /* SBSpecialDetailViewController.m */,
 				928E4DB914284FF3005F46FC /* SBSpecialDetailViewController.xib */,
 				9211774B16945EC400D7EF54 /* SBSpecialDetailViewController3.xib */,
+				390ABC2C29CD327400EE41A8 /* SBSpecialDetailNewViewController.xib */,
 				928E4DBD14285687005F46FC /* SBSpecialPageViewController.h */,
 				928E4DBE14285688005F46FC /* SBSpecialPageViewController.m */,
 				928E4DBF14285688005F46FC /* SBSpecialPageViewController.xib */,
+				390ABC2E29CD337700EE41A8 /* SBSpecialPageNewViewController.xib */,
 				928E4DAC14272C44005F46FC /* SBSideEffectCheckViewController.h */,
 				928E4DAD14272C44005F46FC /* SBSideEffectCheckViewController.m */,
 				928E4DAE14272C44005F46FC /* SBSideEffectCheckViewController.xib */,
+				390ABC3029CD34FC00EE41A8 /* SBSideEffectCheckNewViewController.xib */,
 				9219CF971A9C516F0076DF45 /* SBSideEffectPageViewController.h */,
 				9219CF981A9C516F0076DF45 /* SBSideEffectPageViewController.m */,
 				9219CF991A9C516F0076DF45 /* SBSideEffectPageViewController.xib */,
+				390ABC3229CD352E00EE41A8 /* SBSideEffectPageNewViewController.xib */,
 				928DB9AC1410DCA200B5D9D7 /* SBPreUnfitnessDetailViewController.h */,
 				928DB9AD1410DCA200B5D9D7 /* SBPreUnfitnessDetailViewController.m */,
 				928DB9AE1410DCA200B5D9D7 /* SBPreUnfitnessDetailViewController.xib */,
+				390ABC3429CD3B7400EE41A8 /* SBPreUnfitnessDetailNewViewController.xib */,
 				928DB9BA1410F09900B5D9D7 /* SBPreUnfitnessPageViewController.h */,
 				928DB9BB1410F09A00B5D9D7 /* SBPreUnfitnessPageViewController.m */,
 				928DB9BC1410F09A00B5D9D7 /* SBPreUnfitnessPageViewController.xib */,
+				390ABC3629CD3BB900EE41A8 /* SBPreUnfitnessPageNewViewController.xib */,
 			);
 			name = "sub views";
 			sourceTree = "<group>";
@@ -1606,9 +1862,11 @@
 				92929B2618FE4DF20010F7DC /* SBEtcSrchStaViewController.m */,
 				92929B2718FE4DF20010F7DC /* SBEtcSrchStaViewController.xib */,
 				9286F35718FF9FE800332BC7 /* SBEtcSrchStaViewController3.xib */,
+				390ABBA629C9396D00EE41A8 /* SBEtcSrchStaNewViewController.xib */,
 				92929B2A18FE6CB10010F7DC /* SBEtcSrchStaTableViewCell.h */,
 				92929B2B18FE6CB10010F7DC /* SBEtcSrchStaTableViewCell.m */,
 				92929B2C18FE6CB10010F7DC /* SBEtcSrchStaTableViewCell.xib */,
+				390ABC4F29D190C400EE41A8 /* SBEtcSrchStaNewTableViewCell.xib */,
 			);
 			name = etcsta;
 			sourceTree = "<group>";
@@ -1756,6 +2014,7 @@
 				929631FF13FBA068009E3312 /* SBBloodInfoViewController.m */,
 				9296320013FBA068009E3312 /* SBBloodInfoViewController.xib */,
 				921177371694539A00D7EF54 /* SBBloodInfoViewController3.xib */,
+				390ABC1829CC09A900EE41A8 /* SBBloodInfoNewViewController.xib */,
 				92FC2C7E13F51F6B0063B4F7 /* SBBldProcPickerViewController.h */,
 				92FC2C7F13F51F6B0063B4F7 /* SBBldProcPickerViewController.m */,
 				92FC2C8013F51F6B0063B4F7 /* SBBldProcPickerViewController.xib */,
@@ -1763,10 +2022,12 @@
 				9296320B13FCDE97009E3312 /* SBFirstMatchingViewController.m */,
 				9296320C13FCDE97009E3312 /* SBFirstMatchingViewController.xib */,
 				921177391694548E00D7EF54 /* SBFirstMatchingViewController3.xib */,
+				390ABC1C29CD222300EE41A8 /* SBFirstMatchingNewViewController.xib */,
 				929529D91A9B1540001B323B /* SBSideEffectsListViewController.h */,
 				929529DA1A9B1540001B323B /* SBSideEffectsListViewController.m */,
 				929529DB1A9B1540001B323B /* SBSideEffectsListViewController.xib */,
 				9219CF9C1A9C6A3E0076DF45 /* SBSideEffectsListViewController3.xib */,
+				390ABC1E29CD23D500EE41A8 /* SBSideEffectsListNewViewController.xib */,
 				9219CF8A1A9C41570076DF45 /* SBSideEffectsTableViewCell.h */,
 				9219CF8B1A9C41570076DF45 /* SBSideEffectsTableViewCell.m */,
 				9219CF8C1A9C41570076DF45 /* SBSideEffectsTableViewCell.xib */,
@@ -1774,14 +2035,17 @@
 				929341121404FC4900670269 /* SBSecondMatchingViewController.m */,
 				929341131404FC4A00670269 /* SBSecondMatchingViewController.xib */,
 				9211773B1694553900D7EF54 /* SBSecondMatchingViewController3.xib */,
+				390ABC2229CD27D900EE41A8 /* SBSecondMatchingNewViewController.xib */,
 				92784B0A140E199C0047D4B0 /* SBBloodEndTimeViewController.h */,
 				92784B0B140E199C0047D4B0 /* SBBloodEndTimeViewController.m */,
 				92784B0C140E199C0047D4B0 /* SBBloodEndTimeViewController.xib */,
 				9211773D169455AA00D7EF54 /* SBBloodEndTimeViewController3.xib */,
+				390ABC2429CD2ACE00EE41A8 /* SBBloodEndTimeNewViewController.xib */,
 				92C2FF7E17F42E8700F868D2 /* SB2ndMatchingFrom1stViewController.h */,
 				92C2FF7F17F42E8700F868D2 /* SB2ndMatchingFrom1stViewController.m */,
 				92C2FF8017F42E8700F868D2 /* SB2ndMatchingFrom1stViewController.xib */,
 				928CBE4B1806964800112E56 /* SB2ndMatchingFrom1stViewController3.xib */,
+				390ABC2629CD2F6200EE41A8 /* SB2ndMatchingFrom1stNewViewController.xib */,
 			);
 			name = "matching services";
 			sourceTree = "<group>";
@@ -1820,6 +2084,7 @@
 				92F4FB13151AECE0005DDB6E /* SBPcResultViewController.m */,
 				92F4FB14151AECE0005DDB6E /* SBPcResultViewController.xib */,
 				9211774F1694613600D7EF54 /* SBPcResultViewController3.xib */,
+				390ABBC529C9885500EE41A8 /* SBPcResultNewViewController.xib */,
 			);
 			name = pcresult;
 			sourceTree = "<group>";
@@ -1850,7 +2115,7 @@
 		92435EC613EA231900ABADB9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1150;
+				LastUpgradeCheck = 1330;
 				TargetAttributes = {
 					92435ECE13EA231900ABADB9 = {
 						LastSwiftMigration = 1200;
@@ -1884,6 +2149,7 @@
 			files = (
 				92435EE713EA231900ABADB9 /* MainWindow.xib in Resources */,
 				92435EED13EA231A00ABADB9 /* Smart_BIMSViewController.xib in Resources */,
+				390ABBC629C9885500EE41A8 /* SBPcResultNewViewController.xib in Resources */,
 				92435EFA13EA2D0F00ABADB9 /* SBLoginViewController.xib in Resources */,
 				92CC251F13EA97FA003B56C0 /* MainViewController.xib in Resources */,
 				92FC2C8213F51F6B0063B4F7 /* SBBldProcPickerViewController.xib in Resources */,
@@ -1894,6 +2160,7 @@
 				92784B0E140E199D0047D4B0 /* SBBloodEndTimeViewController.xib in Resources */,
 				928DB9A8140F5B4400B5D9D7 /* SBFitnessCheckViewController.xib in Resources */,
 				9216D81F1BE879B90078400B /* 내부_박스형_02.jpg in Resources */,
+				390ABBA729C9396D00EE41A8 /* SBEtcSrchStaNewViewController.xib in Resources */,
 				928DB9B01410DCA300B5D9D7 /* SBPreUnfitnessDetailViewController.xib in Resources */,
 				92DE258422E05CC200B06CA6 /* pltp.png in Resources */,
 				928DB9BE1410F09A00B5D9D7 /* SBPreUnfitnessPageViewController.xib in Resources */,
@@ -1920,8 +2187,10 @@
 				9291E94314398428003167F5 /* 4p_이전 헌혈 부적격 버튼_on.png in Resources */,
 				9291E94414398428003167F5 /* 4p_조회버튼_on.png in Resources */,
 				9291E94514398428003167F5 /* 4p_채혈 부작용 버튼_on.png in Resources */,
+				390ABC1329CAEC1200EE41A8 /* SBMultiBloodInfoNewViewController.xib in Resources */,
 				9291E94614398428003167F5 /* 4p_타이틀_bg.png in Resources */,
 				9291E94714398428003167F5 /* 4p_탑_back버튼_on.png in Resources */,
+				39CADF6A2A135D8B002EC079 /* finger.png in Resources */,
 				9291E94814398428003167F5 /* 4p_텍스트_bg1.png in Resources */,
 				9206334C197F719E0049FBAD /* first_donation.png in Resources */,
 				9291E94914398428003167F5 /* 4p_텍스트_bg2.png in Resources */,
@@ -1932,15 +2201,18 @@
 				921FF8AD1F4658FA00E3B94B /* Crystal_Clear_app_aim3.png in Resources */,
 				9291E94E14398428003167F5 /* 9p_1차일치검사_버튼_on.png in Resources */,
 				9291E94F14398428003167F5 /* 9p_bsd_버튼_bg.png in Resources */,
+				395F0C4629DAB89D008EBFA1 /* main_2.png in Resources */,
 				9291E95014398428003167F5 /* 9p_bsd_버튼_on.png in Resources */,
 				9291E95114398428003167F5 /* 9p_home_버튼_on.png in Resources */,
 				9291E95214398428003167F5 /* 9p_검색_버튼_on.png in Resources */,
 				9291E95314398428003167F5 /* 9p_취소_버튼_on.png in Resources */,
+				390ABBA529C9368F00EE41A8 /* SBLoginMgrListNewViewCell.xib in Resources */,
 				9291E95414398428003167F5 /* 9p_텍스트_bg1.png in Resources */,
 				9219CF871A9C10250076DF45 /* sideEffectsPaging02.png in Resources */,
 				9291E95514398428003167F5 /* 9p_텍스트_bg4.png in Resources */,
 				921FF8AC1F4658FA00E3B94B /* Crystal_Clear_app_ark2.png in Resources */,
 				92BBD9E11961057500F81051 /* SFX_02.mp3 in Resources */,
+				390ABBAF29C9476000EE41A8 /* SBPairingBarcodeNewViewController.xib in Resources */,
 				9291E95614398428003167F5 /* 9p_텍스트필드.png in Resources */,
 				9291E95714398428003167F5 /* 9p_헌혈종류_버튼_on.png in Resources */,
 				9291E95814398428003167F5 /* 10_홈_버튼_on.png in Resources */,
@@ -1952,31 +2224,43 @@
 				9291E95D14398428003167F5 /* 12p_텍스트_bg.png in Resources */,
 				9291E95E14398428003167F5 /* 12p_텍스트필드1.png in Resources */,
 				9291E95F14398428003167F5 /* 13p_저장_버튼_on.png in Resources */,
+				390ABC2929CD30EA00EE41A8 /* SBUnfitnessHistoryNewViewController.xib in Resources */,
 				9291E96014398428003167F5 /* 텍스트_bg_라인1.png in Resources */,
 				9291E96114398428003167F5 /* 텍스트_bg_라인2.png in Resources */,
 				9291E96214398428003167F5 /* 텍스트_bg.png in Resources */,
+				390ABBBC29C9680600EE41A8 /* SBBloodGatheringTableNewViewCell.xib in Resources */,
 				9291E9641439ACF1003167F5 /* 스크린샷 2011-10-03 오후 5.41.40.png in Resources */,
+				395F0C4329DAB89D008EBFA1 /* main_7.png in Resources */,
 				9219CF9D1A9C6A3E0076DF45 /* SBSideEffectsListViewController3.xib in Resources */,
 				928FC33D143CB04500BDF1B2 /* 등록헌혈 회원_버튼.png in Resources */,
 				928FC33E143CB04500BDF1B2 /* 로그아웃_버튼.png in Resources */,
 				928FC33F143CB04500BDF1B2 /* 조혈 모세포 기증_버튼.png in Resources */,
+				390ABC5629D283F600EE41A8 /* SBTakeOverActionNewViewController.xib in Resources */,
 				9299541B1441CADA00CAF352 /* beeps_03.mp3 in Resources */,
+				390ABC3529CD3B7400EE41A8 /* SBPreUnfitnessDetailNewViewController.xib in Resources */,
 				9299541D1441CD8500CAF352 /* beeps_03.m4a in Resources */,
+				390ABBA929C93A1D00EE41A8 /* SBBoardNewViewController.xib in Resources */,
 				9254124214568589007B8104 /* SBMgrInfoViewController.xib in Resources */,
 				925412471456AD48007B8104 /* SBMgrDetailInfoViewController.xib in Resources */,
 				929871FC145F780800442394 /* SBMgrDatePickerViewController.xib in Resources */,
 				929A643114677090001F74D7 /* SBMgrMemberTableViewCell.xib in Resources */,
 				929A646A14680D13001F74D7 /* action_viewmag1.png in Resources */,
+				390ABC3129CD34FC00EE41A8 /* SBSideEffectCheckNewViewController.xib in Resources */,
+				390ABBA329C92F5000EE41A8 /* SBLoginMgrListNewViewController.xib in Resources */,
 				929A646B14680D13001F74D7 /* app_kbounce.png in Resources */,
 				929A646C14680D13001F74D7 /* app_xeyes.png in Resources */,
 				929A646D14680D13001F74D7 /* app_kdict.png in Resources */,
+				390ABBC029C97F4000EE41A8 /* SBMgrDetailInfoNewViewController.xib in Resources */,
 				929A646E14680D13001F74D7 /* app_xclock.png in Resources */,
 				929A646F14680D13001F74D7 /* device_pda_blue.png in Resources */,
+				390ABBC829C994BC00EE41A8 /* SBTakeOverNewViewController.xib in Resources */,
 				929A647014680D13001F74D7 /* app_kedit.png in Resources */,
 				929A647114680D13001F74D7 /* app_gnome.png in Resources */,
 				929A647214680D13001F74D7 /* app_Community_Help.png in Resources */,
+				39CADF6629F264F1002EC079 /* Launch Screen.storyboard in Resources */,
 				929A647314680D13001F74D7 /* action_apply.png in Resources */,
 				929A647414680D13001F74D7 /* action_edit_remove.png in Resources */,
+				395F0C4829DAB89D008EBFA1 /* main_6.png in Resources */,
 				929A647514680D13001F74D7 /* action_edit_add.png in Resources */,
 				9219CF891A9C114D0076DF45 /* sideEffectsPaging01.png in Resources */,
 				929A647614680D13001F74D7 /* action_view_text.png in Resources */,
@@ -1984,12 +2268,20 @@
 				9225CFEC18F78633005C451C /* SBBoardViewController.xib in Resources */,
 				9286F35818FF9FE800332BC7 /* SBEtcSrchStaViewController3.xib in Resources */,
 				929A647814680D13001F74D7 /* action_lock-silver.png in Resources */,
+				390ABC5829D2A61B00EE41A8 /* exclamation.png in Resources */,
 				929A647914680D13001F74D7 /* action_lock_-_pink.png in Resources */,
 				929A647A14680D13001F74D7 /* action_lock.png in Resources */,
+				390ABC4529D18EC000EE41A8 /* 2_off.png in Resources */,
+				390ABBB429C94AEF00EE41A8 /* refresh-n.png in Resources */,
+				390ABC4D29D18EC000EE41A8 /* 5_on.png in Resources */,
+				390ABC3729CD3BB900EE41A8 /* SBPreUnfitnessPageNewViewController.xib in Resources */,
+				395F0C4429DAB89D008EBFA1 /* main_4.png in Resources */,
 				929A647B14680D13001F74D7 /* action_up.png in Resources */,
+				390ABC4629D18EC000EE41A8 /* 2_on.png in Resources */,
 				92DF7824230A9C9200E0B8F7 /* takeoverinfo7.png in Resources */,
 				929A647C14680D13001F74D7 /* action_forward.png in Resources */,
 				92DF7822230A9A7700E0B8F7 /* takeoverinfo6.png in Resources */,
+				390ABC2F29CD337700EE41A8 /* SBSpecialPageNewViewController.xib in Resources */,
 				9251AE91196FAEAB005138C6 /* first_donation5.png in Resources */,
 				92B21F971AA6E11A00FB74C7 /* SB1.7_57.png in Resources */,
 				929A647D14680D13001F74D7 /* action_down.png in Resources */,
@@ -1998,17 +2290,21 @@
 				929529D81A9B00E6001B323B /* 헌혈관련증상버튼.png in Resources */,
 				929A647F14680D13001F74D7 /* app_error.png in Resources */,
 				929A648014680D13001F74D7 /* app_clock.png in Resources */,
+				390ABC2329CD27D900EE41A8 /* SBSecondMatchingNewViewController.xib in Resources */,
 				92929B2918FE4DF20010F7DC /* SBEtcSrchStaViewController.xib in Resources */,
 				929A648114680D13001F74D7 /* app_home.png in Resources */,
 				929A648214680D13001F74D7 /* app_Service_Manager.png in Resources */,
 				929A648314680D13001F74D7 /* app_laptop_battery.png in Resources */,
 				929A648414680D14001F74D7 /* app_clean.png in Resources */,
 				929A648514680D14001F74D7 /* restart.png in Resources */,
+				395F0BE829DAAA08008EBFA1 /* MenuOrderTableViewCell.xib in Resources */,
+				390ABC6929D2BBE900EE41A8 /* MainMenuOrderChangeViewController.xib in Resources */,
 				929A648614680D14001F74D7 /* action_player_end.png in Resources */,
 				929A648714680D14001F74D7 /* action_player_play.png in Resources */,
 				929A648814680D14001F74D7 /* action_configure.png in Resources */,
 				92CEF328190F97EA0095F62E /* es_wb.png in Resources */,
 				92DC1A3C1F54F898002D08EC /* takeawayofficer.png in Resources */,
+				390ABC5029D190C400EE41A8 /* SBEtcSrchStaNewTableViewCell.xib in Resources */,
 				92DE258A22E05D5F00B06CA6 /* pltp_plt.png in Resources */,
 				921FF8AB1F4658FA00E3B94B /* Crystal_Clear_app_kdmconfig.png in Resources */,
 				929A648914680D14001F74D7 /* button_cancel.png in Resources */,
@@ -2019,26 +2315,36 @@
 				929A648C14680D14001F74D7 /* bookmark.png in Resources */,
 				921FF8AA1F4658FA00E3B94B /* Crystal_Clear_app_kfouleggs.png in Resources */,
 				929A648D14680D14001F74D7 /* back.png in Resources */,
+				390ABC1F29CD23D500EE41A8 /* SBSideEffectsListNewViewController.xib in Resources */,
 				929A648E14680D14001F74D7 /* apply.png in Resources */,
 				92CEF324190F97EA0095F62E /* es_abo.png in Resources */,
 				929A648F14680D14001F74D7 /* action_2uparrow.png in Resources */,
 				9219CF941A9C4A620076DF45 /* sideEffectsTableViewCell.png in Resources */,
 				92EF5CB918FD0A54006DEB8E /* SBBoardContentViewController3.xib in Resources */,
 				929A649014680D14001F74D7 /* action_2leftarrow.png in Resources */,
+				390ABBCA29CACD2100EE41A8 /* SBTakeOverInfoNewViewController.xib in Resources */,
 				929A649114680D14001F74D7 /* action_2downarrow.png in Resources */,
 				929A649214680D14001F74D7 /* action_1leftarrow.png in Resources */,
 				92DE258822E05D5F00B06CA6 /* pltp_full.png in Resources */,
 				929A649314680D14001F74D7 /* action_1downarrow.png in Resources */,
 				929A649414680D14001F74D7 /* action_1uparrow.png in Resources */,
 				929A649814681322001F74D7 /* action_editpaste.png in Resources */,
+				390ABBC429C984EF00EE41A8 /* SBMgrMemberNewTableViewCell.xib in Resources */,
 				929A649914681322001F74D7 /* action_view_multicolumn.png in Resources */,
+				390ABBA129C8460E00EE41A8 /* SBLoginNewViewController.xib in Resources */,
 				929A649A14681322001F74D7 /* app_kteatime.png in Resources */,
 				929A649F14681532001F74D7 /* SBInfoViewController.xib in Resources */,
 				92685E9C146B76AD002A63CD /* SBBloodGatheringListViewController.xib in Resources */,
 				92685EA2146B963D002A63CD /* SBBloodGatheringTableViewCell.xib in Resources */,
+				390ABC4C29D18EC000EE41A8 /* 5_off.png in Resources */,
 				92685EA4146B993A002A63CD /* app_logout.png in Resources */,
+				390ABC5B29D2B75700EE41A8 /* id.png in Resources */,
+				390ABC1729CAF70F00EE41A8 /* SBMultiSecondMatchingNewViewController.xib in Resources */,
 				92B21F951AA6E11A00FB74C7 /* SB1.7_29.png in Resources */,
+				390ABC2D29CD327400EE41A8 /* SBSpecialDetailNewViewController.xib in Resources */,
+				39CADF6829FA5F4A002EC079 /* lunch_logo.png in Resources */,
 				924055D1147281C70072FD8D /* action_tab_new.png in Resources */,
+				395F0C4529DAB89D008EBFA1 /* main_1.png in Resources */,
 				924055D2147281C70072FD8D /* action_tab_remove.png in Resources */,
 				924055D3147281C70072FD8D /* action_tab.png in Resources */,
 				9216D81E1BE879B90078400B /* 내부_텍스트형_02.jpg in Resources */,
@@ -2048,6 +2354,7 @@
 				923B4CE214761FF600609EB8 /* app_lassist.png in Resources */,
 				929987691476320D00D0070E /* SBDeviceConfirmViewController.xib in Resources */,
 				921FF8A51F45766200E3B94B /* SBTakeOverActionTableViewCell.xib in Resources */,
+				390ABBB129C949F800EE41A8 /* SBInfoNewViewController.xib in Resources */,
 				92E98CB014BC33C5007657FF /* SBLoginMgrListViewController.xib in Resources */,
 				9278E75E1C75615100C72E10 /* Default-568h@2x.png in Resources */,
 				924F26B414CFB9BC000A96CD /* SBLoginMgrListViewCell.xib in Resources */,
@@ -2060,22 +2367,29 @@
 				9270E7511AA91F4700616859 /* SB1.7_180.png in Resources */,
 				92390B991512DF5400E777E9 /* mistery.wav in Resources */,
 				92390B9A1512DF5400E777E9 /* click09.wav in Resources */,
+				395F0C4029DAB89D008EBFA1 /* main_9.png in Resources */,
 				92390B9D151310B400E777E9 /* mistery_appeared.wav in Resources */,
 				928C679C18F688B5002B9FA6 /* app_xchat.png in Resources */,
 				92F4FB16151AECE0005DDB6E /* SBPcResultViewController.xib in Resources */,
+				390ABC1929CC09A900EE41A8 /* SBBloodInfoNewViewController.xib in Resources */,
 				57FEEF18268C35DA001EABB9 /* TakeOverBloodRegisterTableViewCell.xib in Resources */,
 				922088681F4ECC2A00C902A8 /* SBTakeOverViewController.xib in Resources */,
 				92EF5CB518FCD0DF006DEB8E /* SBBoardContentViewController.xib in Resources */,
 				92F4FB18151B0E98005DDB6E /* btn_blue_default.png in Resources */,
+				3970565F2A15B7BE0048775B /* refresh.png in Resources */,
 				92F4FB2E151B0F6A005DDB6E /* 0.png in Resources */,
+				395F0C3D29DAB89D008EBFA1 /* main_10.png in Resources */,
 				92F4FB2F151B0F6A005DDB6E /* 1.png in Resources */,
 				92F4FB30151B0F6A005DDB6E /* 2.png in Resources */,
 				92F4FB31151B0F6A005DDB6E /* 3.png in Resources */,
 				92F4FB32151B0F6A005DDB6E /* 4.png in Resources */,
 				92F4FB33151B0F6A005DDB6E /* 5.png in Resources */,
+				390ABBAD29C942F600EE41A8 /* SBBoardContentNewViewController.xib in Resources */,
 				9270E7541AA920BB00616859 /* SB1.7_29-1.png in Resources */,
+				390ABBBE29C9772700EE41A8 /* SBMgrInfoNewViewController.xib in Resources */,
 				92F4FB34151B0F6A005DDB6E /* 6.png in Resources */,
 				92F4FB35151B0F6A005DDB6E /* 7.png in Resources */,
+				390ABC4829D18EC000EE41A8 /* 4_off.png in Resources */,
 				92F4FB36151B0F6A005DDB6E /* 8.png in Resources */,
 				9225CFF118F78B48005C451C /* SBBoardTableViewCell.xib in Resources */,
 				92F4FB37151B0F6A005DDB6E /* 9.png in Resources */,
@@ -2086,16 +2400,22 @@
 				92F4FB3B151B0F6A005DDB6E /* 13.png in Resources */,
 				92F4FB3C151B0F6A005DDB6E /* 14.png in Resources */,
 				92F4FB3D151B0F6A005DDB6E /* 15.png in Resources */,
+				390ABC5C29D2B75700EE41A8 /* pw.png in Resources */,
+				3970565B2A15AFA10048775B /* back_btn70.png in Resources */,
 				92B21F981AA6E11A00FB74C7 /* SB1.7_60.png in Resources */,
 				92F4FB3E151B0F6A005DDB6E /* 16.png in Resources */,
 				92F4FB3F151B0F6A005DDB6E /* 17.png in Resources */,
 				92F4FB40151B0F6A005DDB6E /* 18.png in Resources */,
 				9270E7551AA920BB00616859 /* SB1.7_57-1.png in Resources */,
 				92F4FB41151B0F6A005DDB6E /* 19.png in Resources */,
+				395F0C3E29DAB89D008EBFA1 /* main_3.png in Resources */,
 				92F4FB42151B0F6A005DDB6E /* 20.png in Resources */,
 				928CFED3151CD7DD00409FC4 /* buttonUp.png in Resources */,
 				92EF5CC118FD16F8006DEB8E /* Images.xcassets in Resources */,
 				928CFED4151CD7DD00409FC4 /* buttonDown.png in Resources */,
+				390ABC1B29CD213900EE41A8 /* logo_in_login.png in Resources */,
+				390ABCA829D66A7800EE41A8 /* main_menu.plist in Resources */,
+				3970565D2A15B4D20048775B /* home_btn.png in Resources */,
 				92888F671533EF0D00CB6410 /* R-2p_텍스트필드.png in Resources */,
 				92888F681533EF0D00CB6410 /* R-4p_HIS 버튼_off.png in Resources */,
 				92888F691533EF0D00CB6410 /* R-4p_HIS 버튼_on.png in Resources */,
@@ -2113,9 +2433,11 @@
 				92E9EC171F97241000C2E207 /* takeoverinfo.png in Resources */,
 				92888F731533EF0D00CB6410 /* R-4p_텍스트_bg2.png in Resources */,
 				92888F741533EF0D00CB6410 /* R-4p_텍스트_bg3.png in Resources */,
+				390ABC5429D281AA00EE41A8 /* main_bg.png in Resources */,
 				92888F751533EF0D00CB6410 /* R-4p_텍스트필드.png in Resources */,
 				92888F761533EF0D00CB6410 /* R-4p_특이사항 버튼_off.png in Resources */,
 				92888F771533EF0D00CB6410 /* R-4p_특이사항 버튼_on.png in Resources */,
+				395F0C4229DAB89D008EBFA1 /* main_8.png in Resources */,
 				92888F781533EF0D00CB6410 /* R-9p_1차일치검사_버튼_off.png in Resources */,
 				9263C6C01C7366E90038584A /* Default@2x.png in Resources */,
 				92888F791533EF0D00CB6410 /* R-9p_1차일치검사_버튼_on.png in Resources */,
@@ -2123,14 +2445,18 @@
 				92888F7B1533EF0D00CB6410 /* R-9p_home_버튼_off.png in Resources */,
 				929529DD1A9B1540001B323B /* SBSideEffectsListViewController.xib in Resources */,
 				92929B2E18FE6CB10010F7DC /* SBEtcSrchStaTableViewCell.xib in Resources */,
+				390ABC3329CD352E00EE41A8 /* SBSideEffectPageNewViewController.xib in Resources */,
 				92888F7C1533EF0D00CB6410 /* R-9p_home_버튼_on.png in Resources */,
 				92DF782022FAB5FD00E0B8F7 /* takeoverinfo3.png in Resources */,
+				390ABC4E29D18EC000EE41A8 /* 1_off.png in Resources */,
 				9278C6E01FDA5FA30015BA1A /* barcode_icon.png in Resources */,
 				92888F7D1533EF0D00CB6410 /* R-9p_검색_버튼_off.png in Resources */,
 				92888F7E1533EF0D00CB6410 /* R-9p_검색_버튼_on.png in Resources */,
 				9220886A1F4F933D00C902A8 /* Crystal_Clear_app_kaddressbook.png in Resources */,
+				390ABC1D29CD222300EE41A8 /* SBFirstMatchingNewViewController.xib in Resources */,
 				92888F7F1533EF0D00CB6410 /* R-9p_취소_버튼_off.png in Resources */,
 				92888F801533EF0D00CB6410 /* R-9p_취소_버튼_on.png in Resources */,
+				390ABBB829C94D7700EE41A8 /* SBNoticeBodyNewViewController.xib in Resources */,
 				92888F811533EF0D00CB6410 /* R-9p_텍스트_bg1.png in Resources */,
 				92888F821533EF0D00CB6410 /* R-9p_텍스트_bg4.png in Resources */,
 				92888F831533EF0D00CB6410 /* R-9p_텍스트필드.png in Resources */,
@@ -2146,19 +2472,24 @@
 				92888F8A1533EF0D00CB6410 /* R-11p_확인_버튼_off.png in Resources */,
 				92888F8B1533EF0D00CB6410 /* R-11p_확인_버튼_on.png in Resources */,
 				92888F8C1533EF0D00CB6410 /* R-12p_채혈시간 입력_버튼_off.png in Resources */,
+				395F0C3F29DAB89D008EBFA1 /* main_11.png in Resources */,
 				92888F8D1533EF0D00CB6410 /* R-12p_채혈시간 입력_버튼_on.png in Resources */,
 				92888F8E1533EF0D00CB6410 /* R-12p_텍스트_bg.png in Resources */,
 				92888F8F1533EF0D00CB6410 /* R-12p_텍스트필드1.png in Resources */,
 				92888F901533EF0D00CB6410 /* R-13p_저장_버튼_off.png in Resources */,
 				92888F911533EF0D00CB6410 /* R-13p_저장_버튼_on.png in Resources */,
+				395F0C4129DAB89D008EBFA1 /* main_12.png in Resources */,
 				92888F921533EF0D00CB6410 /* R-등록헌혈 회원_버튼.png in Resources */,
 				92888F931533EF0D00CB6410 /* R-로그아웃_버튼.png in Resources */,
 				92888F941533EF0D00CB6410 /* R-조혈 모세포 기증_버튼.png in Resources */,
 				921FF89E1F4552D200E3B94B /* SBTakeOverActionViewController.xib in Resources */,
 				92888F951533EF0D00CB6410 /* R-텍스트_bg.png in Resources */,
 				92C2FF8217F42E8700F868D2 /* SB2ndMatchingFrom1stViewController.xib in Resources */,
+				390ABC3929CD3D0D00EE41A8 /* SBFitnessCheckNewViewController.xib in Resources */,
 				92888F9C1533F39D00CB6410 /* SBMultiBloodInfoViewController.xib in Resources */,
 				927D41FE1537CC90006C095F /* SBMultiFirstMatchingViewController.xib in Resources */,
+				390ABC4929D18EC000EE41A8 /* 3_on.png in Resources */,
+				3909109729DC110400A0AA71 /* wide_ic.png in Resources */,
 				92E9EC131F971A9F00C2E207 /* SBTakeOverInfoPageViewController.xib in Resources */,
 				9219CF9B1A9C516F0076DF45 /* SBSideEffectPageViewController.xib in Resources */,
 				927D42301537CEE9006C095F /* Y-2p_텍스트필드.png in Resources */,
@@ -2178,9 +2509,12 @@
 				927D423C1537CEE9006C095F /* Y-4p_텍스트_bg2.png in Resources */,
 				92CE69451F7A1A58002E46B2 /* SBTakeOverInfoViewController.xib in Resources */,
 				927D423D1537CEE9006C095F /* Y-4p_텍스트_bg3.png in Resources */,
+				390ABC2729CD2F6200EE41A8 /* SB2ndMatchingFrom1stNewViewController.xib in Resources */,
+				390ABC4B29D18EC000EE41A8 /* 3_off.png in Resources */,
 				927D423E1537CEE9006C095F /* Y-4p_텍스트필드.png in Resources */,
 				927D423F1537CEE9006C095F /* Y-4p_특이사항 버튼_off.png in Resources */,
 				927D42401537CEE9006C095F /* Y-4p_특이사항 버튼_on.png in Resources */,
+				390ABBCC29CAD64A00EE41A8 /* SBTakeOverInfoPageNewViewController.xib in Resources */,
 				927D42411537CEE9006C095F /* Y-9p_1차일치검사_버튼_off.png in Resources */,
 				927D42421537CEE9006C095F /* Y-9p_1차일치검사_버튼_on.png in Resources */,
 				927D42431537CEE9006C095F /* Y-9p_bsd_버튼_bg.png in Resources */,
@@ -2191,8 +2525,12 @@
 				927D42471537CEE9006C095F /* Y-9p_검색_버튼_on.png in Resources */,
 				927D42481537CEE9006C095F /* Y-9p_취소_버튼_off.png in Resources */,
 				921FF8B11F46590200E3B94B /* Crystal_Clear_app_aim2.png in Resources */,
+				397056592A15AF4A0048775B /* back_btn.png in Resources */,
+				390ABC2529CD2ACE00EE41A8 /* SBBloodEndTimeNewViewController.xib in Resources */,
 				927D42491537CEE9006C095F /* Y-9p_취소_버튼_on.png in Resources */,
+				390ABBBA29C9641A00EE41A8 /* SBBloodGatheringListNewViewController.xib in Resources */,
 				92CEF327190F97EA0095F62E /* es_summary.png in Resources */,
+				390ABC1529CAF17200EE41A8 /* SBMultiFirstMatchingNewViewController.xib in Resources */,
 				927D424A1537CEE9006C095F /* Y-9p_텍스트_bg1.png in Resources */,
 				927D424B1537CEE9006C095F /* Y-9p_텍스트_bg4.png in Resources */,
 				927D424C1537CEE9006C095F /* Y-9p_텍스트필드.png in Resources */,
@@ -2204,8 +2542,10 @@
 				927D42511537CEE9006C095F /* Y-11p_텍스트필드1.png in Resources */,
 				927D42521537CEE9006C095F /* Y-11p_텍스트필드2.png in Resources */,
 				927D42531537CEE9006C095F /* Y-11p_확인_버튼_off.png in Resources */,
+				395F0C4729DAB89D008EBFA1 /* main_5.png in Resources */,
 				39A7709328DC29A8004D40F9 /* 지정헌혈.png in Resources */,
 				927D42541537CEE9006C095F /* Y-11p_확인_버튼_on.png in Resources */,
+				390ABC4A29D18EC000EE41A8 /* 1_on.png in Resources */,
 				927D42551537CEE9006C095F /* Y-12p_채혈시간 입력_버튼_off.png in Resources */,
 				927D42561537CEE9006C095F /* Y-12p_채혈시간 입력_버튼_on.png in Resources */,
 				927D42571537CEE9006C095F /* Y-12p_텍스트_bg.png in Resources */,
@@ -2238,6 +2578,8 @@
 				921177441694570400D7EF54 /* SBMultiSecondMatchingViewController3.xib in Resources */,
 				92117746169459C500D7EF54 /* SBFitnessCheckViewController3.xib in Resources */,
 				9211774816945B7200D7EF54 /* SBBloodGatheringListViewController3.xib in Resources */,
+				390ABC5229D2679100EE41A8 /* MainNewViewController.xib in Resources */,
+				390ABC4729D18EC000EE41A8 /* 4_on.png in Resources */,
 				9211774C16945EC500D7EF54 /* SBSpecialDetailViewController3.xib in Resources */,
 				9211774E169460EA00D7EF54 /* SBUnfitnessHistoryViewController3.xib in Resources */,
 				921177501694613600D7EF54 /* SBPcResultViewController3.xib in Resources */,
@@ -2306,6 +2648,8 @@
 				929871FB145F780800442394 /* SBMgrDatePickerViewController.m in Sources */,
 				929A642F1467707C001F74D7 /* SBMgrMemberTableViewCell.m in Sources */,
 				9225CFEB18F78633005C451C /* SBBoardViewController.m in Sources */,
+				390ABC6829D2BBE900EE41A8 /* MainMenuOrderChangeViewController.m in Sources */,
+				395F0BE729DAAA08008EBFA1 /* MenuOrderTableViewCell.m in Sources */,
 				929A649E14681532001F74D7 /* SBInfoViewController.m in Sources */,
 				572F66A226CBB451008657C4 /* TakeOverChangeBloodLevelConfirmViewController.swift in Sources */,
 				92CE69441F7A1A58002E46B2 /* SBTakeOverInfoViewController.m in Sources */,
@@ -2377,7 +2721,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "";
 				PROVISIONING_PROFILE = "a212f4d0-0b49-4ca1-b5c7-fbd39cb2cded";
@@ -2396,16 +2740,18 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: The Republic of Korea National Red Cross Blood Services";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "";
 				PROVISIONING_PROFILE = "a212f4d0-0b49-4ca1-b5c7-fbd39cb2cded";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "a212f4d0-0b49-4ca1-b5c7-fbd39cb2cded";
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -2426,7 +2772,7 @@
 				GCC_PREFIX_HEADER = "Smart BIMS/SmartBIMS-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Smart BIMS/SmartBIMS-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LOCALIZED_STRING_SWIFTUI_SUPPORT = YES;
 				MARKETING_VERSION = 2.5.3;
@@ -2459,7 +2805,7 @@
 				GCC_PREFIX_HEADER = "Smart BIMS/SmartBIMS-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Smart BIMS/SmartBIMS-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LOCALIZED_STRING_SWIFTUI_SUPPORT = YES;
 				MARKETING_VERSION = 2.5.3;
@@ -2485,11 +2831,12 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: The Republic of Korea National Red Cross Blood Services";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "";
 				PROVISIONING_PROFILE = "f081008d-dafc-4a70-acd9-ba4bb3e08402";
@@ -2515,7 +2862,7 @@
 				GCC_PREFIX_HEADER = "Smart BIMS/SmartBIMS-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Smart BIMS/SmartBIMS-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LOCALIZED_STRING_SWIFTUI_SUPPORT = YES;
 				MARKETING_VERSION = 2.5.3;

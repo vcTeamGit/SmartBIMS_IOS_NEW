@@ -78,7 +78,9 @@
 
 //@synthesize m_strSubViewId;
 
-
+@synthesize m_registerLabel;
+@synthesize m_marrmstLabel;
+@synthesize m_assignLabel;
 
 
 - (void)pageReset:(id)sender
@@ -100,7 +102,11 @@
     self.m_bloodCntLabel.text = @"";
     
     self.m_registerImageView.hidden = YES;
+    self.m_registerLabel.hidden = YES;
+    self.m_assignLabel.hidden = YES;
+    
     self.m_marrmstImageView.hidden = YES;
+    self.m_marrmstLabel.hidden = YES;
     // 2022.09.22 ADD HMWOO 지정헌혈 여부 확인 뷰 추가
     self.m_assignImageView.hidden = YES;
     
@@ -320,24 +326,30 @@
         
         if([m_SBBloodnoInfoVO.registeryn isEqualToString:@"Y"]){
             self.m_registerImageView.hidden = NO;
+            self.m_registerLabel.hidden = NO;
         }else{
             self.m_registerImageView.hidden = YES;
+            self.m_registerLabel.hidden = YES;
         }
         
         if([m_SBBloodnoInfoVO.marrmstyn isEqualToString:@"Y"]){
             self.m_marrmstImageView.hidden = NO;
+            self.m_marrmstLabel.hidden = NO;
         }else{
             self.m_marrmstImageView.hidden = YES;
+            self.m_marrmstLabel.hidden = YES;
         }
         
         // 2022.09.22 ADD HMWOO 지정헌혈 여부 확인 뷰 추가
         if([m_SBBloodnoInfoVO.assignyn isEqualToString:@"Y"])
         {
             self.m_assignImageView.hidden = NO;
+            self.m_assignLabel.hidden = NO;
         }
         else
         {
             self.m_assignImageView.hidden = YES;
+            self.m_assignLabel.hidden = YES;
         }
 
         self.m_heightLabel.text = m_SBBloodnoInfoVO.height;
@@ -1058,6 +1070,10 @@ replacementString:(NSString*)string
     // 2022.09.22 ADD HMWOO 지정헌혈 여부 확인 뷰 추가
     self.m_assignImageView = nil;
     
+    self.m_registerLabel = nil;
+    self.m_marrmstLabel = nil;
+    self.m_assignLabel = nil;
+    
     self.m_heightLabel = nil;
     self.m_weightLabel = nil;
 //    self.m_bsdSwitch = nil;
@@ -1115,7 +1131,10 @@ replacementString:(NSString*)string
     [m_bloodCntLabel release];
     
     [m_registerImageView release];
+    [m_registerLabel release];
+    [m_assignLabel release];
     [m_marrmstImageView release];
+    [m_marrmstLabel release];
     // 2022.09.22 ADD HMWOO 지정헌혈 여부 확인 뷰 추가
     [m_assignImageView release];
     
@@ -1147,6 +1166,11 @@ replacementString:(NSString*)string
 //    [m_strSubViewId release];
     
     [m_gbMal release];
+    [m_registerLabel release];
+    [m_marrmstLabel release];
+    [m_assignLabel release];
+    [m_assignLabel release];
+    [m_assignLabel release];
     [super dealloc];
 }
 

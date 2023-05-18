@@ -9,6 +9,7 @@
 #import "Smart_BIMSAppDelegate.h"
 
 #import "Smart_BIMSViewController.h"
+#import "SBLoginViewController.h"
 
 #import "HttpRequest.h"
 #import "JSON.h"
@@ -125,12 +126,31 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    // 탈옥 폰 방지 / 파일 권한 기반 체크
+    NSError *error;
+    NSString *stringToBeWritten = @"";
+    [stringToBeWritten writeToFile:@"/private/jailbreak.txt" atomically:YES encoding:NSUTF8StringEncoding error:&error];
+
+    if(error == nil) {
+        exit(0);
+    } else {
+        [[NSFileManager defaultManager] removeItemAtPath:@"/private/jailbreak.txt" error:nil];
+    }
+    
+    // 탈옥 폰 방지 / 시디아앱을 이용한 프로토콜 핸들러 체크
+    if([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"cydia://package/com.example.package"]]) {
+        exit(0);
+    }
+    
     // 화면크기 체크
     CGRect frame = [UIScreen mainScreen].bounds;
     // 320.000000, 568.000000
     TRACE(@"단말기 크기 %f, %f", frame.size.width, frame.size.height);
+    NSLog(@"%f", self.window.frame.size.width);
+    NSLog(@"%f", [UIScreen mainScreen].bounds.size.width);
     self.g_viewWidth = [NSNumber numberWithDouble:frame.size.width];
-    self.g_viewHeight = [NSNumber numberWithDouble:(frame.size.height - 20)]; // -20
+    self.g_viewHeight = [NSNumber numberWithDouble:(frame.size.height)]; // -20
     self.g_winHeight = [NSNumber numberWithDouble:frame.size.height];
     
 //    self.g_viewWidth = [NSNumber numberWithDouble:320];
@@ -214,16 +234,13 @@
 //    }
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    
-    TRACE(@"didFinishLauchingWithOptions end");
-    
     return YES;
 }
 
 // iOS7 향...
 - (void)applicationDidChangeStatusBarOrientationNotification:(NSNotification *)notification {
     // handling statusBar (iOS7)
-    self.window.frame = [UIScreen mainScreen].applicationFrame;
+    self.window.frame = [UIScreen mainScreen].bounds;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

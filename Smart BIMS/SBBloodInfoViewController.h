@@ -41,6 +41,10 @@
     // 2022.04.28 ADD HMWOO 헌혈자 헌혈 횟수 추가
     UILabel* m_bloodCntLabel;
     
+    // 2023.04.17 이미지뷰 > 라벨로 변경
+    UILabel *m_registerLabel;
+    UILabel *m_marrmstLabel;
+    UILabel *m_assignLabel;
     UIImageView* m_registerImageView;
     UIImageView* m_marrmstImageView;
     // 2022.09.22 ADD HMWOO 지정헌혈 여부 확인 뷰 추가
@@ -103,6 +107,13 @@
 
 @property (nonatomic, retain) IBOutlet UIImageView* m_registerImageView;
 @property (nonatomic, retain) IBOutlet UIImageView* m_marrmstImageView;
+
+// 2023.04.17 이미지뷰 > 라벨로 변경
+@property (retain, nonatomic) IBOutlet UILabel *m_registerLabel;
+@property (retain, nonatomic) IBOutlet UILabel *m_marrmstLabel;
+@property (retain, nonatomic) IBOutlet UILabel *m_assignLabel;
+
+
 // 2022.09.22 ADD HMWOO 지정헌혈 여부 확인 뷰 추가
 @property (nonatomic, retain) IBOutlet UIImageView* m_assignImageView;
 

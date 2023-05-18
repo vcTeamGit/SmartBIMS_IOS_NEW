@@ -39,6 +39,10 @@
     // 2022.09.22 ADD HMWOO 지정헌혈 여부 확인 뷰 추가
     UIImageView* m_assignImageView;
     
+    UILabel *m_registerLabel;
+    UILabel *m_marrmstLabel;
+    UILabel *m_assignLabel;
+    
     UILabel* m_heightLabel;
     UILabel* m_weightLabel;
     
@@ -83,6 +87,12 @@
 @property (nonatomic, retain) IBOutlet UIImageView* m_marrmstImageView;
 // 2022.09.22 ADD HMWOO 지정헌혈 여부 확인 뷰 추가
 @property (nonatomic, retain) IBOutlet UIImageView* m_assignImageView;
+
+// 2023.04.17 이미지 뷰 라벨로 변경
+@property (retain, nonatomic) IBOutlet UILabel *m_registerLabel;
+@property (retain, nonatomic) IBOutlet UILabel *m_marrmstLabel;
+@property (retain, nonatomic) IBOutlet UILabel *m_assignLabel;
+
 
 @property (nonatomic, retain) IBOutlet UILabel* m_heightLabel;
 @property (nonatomic, retain) IBOutlet UILabel* m_weightLabel;

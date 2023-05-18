@@ -36,7 +36,9 @@
 {
     [super viewDidLoad];
     
-//    CGRect rect = [[UIScreen mainScreen] bounds];
+    //    self.view.backgroundColor = UIColor.blueColor;
+    NSLog(@"%f", self.view.frame.size.width);
+    //    CGRect rect = [[UIScreen mainScreen] bounds];
 //    [self.view setFrame:rect];
 //    
 //    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
@@ -80,28 +82,37 @@
     
     TRACE(@"단말 OS버전 [%f]", [[UIDevice currentDevice].systemVersion floatValue]);
     
+    
     if([delegate.g_winHeight intValue] == kWINDOW_HEIGHT){
-        m_SBLoginViewController = [[SBLoginViewController alloc] initWithNibName:@"SBLoginViewController"
-                                                                          bundle:nil];
+//        m_SBLoginViewController = [[SBLoginViewController alloc] initWithNibName:@"SBLoginViewController"
+//                                                                          bundle:nil];
+        m_SBLoginViewController = [[SBLoginViewController alloc] initWithNibName:@"SBLoginNewViewController"
+                                                                                  bundle:nil];
+        
+//
         
         if([[UIDevice currentDevice].systemVersion floatValue] < 7){
             m_SBLoginViewController.view.frame = CGRectMake(0, 0, [delegate.g_viewWidth intValue], [delegate.g_viewHeight intValue]);
         }else{
-            m_SBLoginViewController.view.frame = CGRectMake(0, 20, [delegate.g_viewWidth intValue], [delegate.g_viewHeight intValue]);
+            m_SBLoginViewController.view.frame = CGRectMake(0, self.view.safeAreaLayoutGuide.layoutFrame.origin.y, [delegate.g_viewWidth intValue], [delegate.g_viewHeight intValue]);
         }
+        
+        
+        
     }else{
-        m_SBLoginViewController = [[SBLoginViewController alloc] initWithNibName:@"SBLoginViewController3"
+//        m_SBLoginViewController = [[SBLoginViewController alloc] initWithNibName:@"SBLoginViewController3"
+//                                                                          bundle:nil];
+        m_SBLoginViewController = [[SBLoginViewController alloc] initWithNibName:@"SBLoginNewViewController"
                                                                           bundle:nil];
         
         if([[UIDevice currentDevice].systemVersion floatValue] < 7){
             m_SBLoginViewController.view.frame = CGRectMake(0, 0, [delegate.g_viewWidth intValue], [delegate.g_viewHeight intValue]);
         }else{
-            m_SBLoginViewController.view.frame = CGRectMake(0, 20, [delegate.g_viewWidth intValue], [delegate.g_viewHeight intValue]);
+            m_SBLoginViewController.view.frame = CGRectMake(0, 0, [delegate.g_viewWidth intValue], [delegate.g_viewHeight intValue]);
         }
     }
     
     [self.view addSubview:m_SBLoginViewController.view];
-    
     return;
 }
 
@@ -137,6 +148,10 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (BOOL)prefersStatusBarHidden{
+    return YES;
 }
 
 @end

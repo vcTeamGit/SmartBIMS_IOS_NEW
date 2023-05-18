@@ -39,6 +39,7 @@
 @class SBTakeOverViewController; // 혈액인계
 @class SBTakeOverInfoViewController;  // 혈액인계정보조회
 @class SBPairingBarcodeViewController;  // 패어링용 바코드 화면
+@class MainMenuOrderChangeViewController;
 
 // For module Test
 @class PictureLibViewController;
@@ -101,6 +102,7 @@
     SBTakeOverActionViewController* m_SBTakeOverActionViewController;
     SBTakeOverViewController* m_SBTakeOverViewController;
     SBTakeOverInfoViewController* m_SBTakeOverInfoViewController;
+    MainMenuOrderChangeViewController *mainMenuOrderChangeViewController;
     
     id m_target;
 	SEL m_selector;
@@ -127,6 +129,9 @@
     
     // 2022.05.23 ADD HMWOO 수거자 등록 대응 혈액 인계 정보 맵 추가
     NSMutableDictionary *takeOverInfoMap;
+    
+    UILabel *noticeTitleLabel;
+    NSTimer * timer;
 }
 
 @property (nonatomic, retain) SBUserInfoVO* m_SBUserInfoVO;
@@ -195,8 +200,11 @@
 
 @property (nonatomic, retain) IBOutlet UIButton* m_pairingBarcodeButton;
 @property (nonatomic, retain) IBOutlet SBPairingBarcodeViewController* m_SBPariingBarcodeViewController;
+@property (nonatomic, retain) IBOutlet MainMenuOrderChangeViewController *mainMenuOrderChangeViewController;
+@property (retain, nonatomic) IBOutlet UIButton *menuOrderBtn;
 
 @property (nonatomic, retain) NSTimer* m_timer;
+@property (retain, nonatomic) IBOutlet UILabel *noticeTitleLabel;
 
 
 - (IBAction)goFitnessCheckView:(id)sender;
@@ -216,6 +224,7 @@
 - (IBAction)goTakeOverActionView:(id)sender;
 - (IBAction)goTakeOverView:(id)sender;
 - (IBAction)goTakeOverInfoView:(id)sender;
+- (IBAction)menuOrderView:(UIButton *)sender;
 
 // 2022.05.19 ADD HMWOO 수거자 등록 다이얼 로그 호출 리스너 추가
 - (IBAction)listener_call_reg_collector_dialog:(id)sender;

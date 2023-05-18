@@ -80,7 +80,7 @@
     
     if(cell == nil){
         
-        NSArray* nib = [[NSBundle mainBundle] loadNibNamed:@"SBLoginMgrListViewCell"
+        NSArray* nib = [[NSBundle mainBundle] loadNibNamed:@"SBLoginMgrListNewViewCell"
 													 owner:self
 												   options:nil];
 		for(id oneObject in nib){

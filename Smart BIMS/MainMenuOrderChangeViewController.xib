@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainMenuOrderChangeViewController" customModule="SmartBIMS">
+            <connections>
+                <outlet property="menuListTableView" destination="gm7-YR-ErY" id="yWM-Vb-HBn"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q8h-r9-zDp">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="finger.png" translatesAutoresizingMaskIntoConstraints="NO" id="2io-fV-jxW">
+                            <rect key="frame" x="28" y="22.5" width="25" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="25" id="JQc-is-XZ1"/>
+                                <constraint firstAttribute="width" constant="25" id="fkK-P1-Jfc"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="설정하신 순서대로 메뉴가 정렬됩니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EEB-rO-OfD">
+                            <rect key="frame" x="58" y="26" width="224" height="18"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                            <color key="textColor" red="0.23529411764705882" green="0.36470588235294116" blue="0.61176470588235299" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="EEB-rO-OfD" firstAttribute="centerX" secondItem="q8h-r9-zDp" secondAttribute="centerX" constant="10" id="7r3-nJ-c8U"/>
+                        <constraint firstItem="2io-fV-jxW" firstAttribute="centerY" secondItem="q8h-r9-zDp" secondAttribute="centerY" id="G3G-5v-R9v"/>
+                        <constraint firstAttribute="height" constant="70" id="IEW-rZ-xOF"/>
+                        <constraint firstItem="EEB-rO-OfD" firstAttribute="leading" secondItem="2io-fV-jxW" secondAttribute="trailing" constant="5" id="R1W-p4-05G"/>
+                        <constraint firstItem="EEB-rO-OfD" firstAttribute="centerY" secondItem="q8h-r9-zDp" secondAttribute="centerY" id="gLU-bk-zJ2"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SEW-Gp-gxm">
+                    <rect key="frame" x="15" y="513" width="290" height="40"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JZh-sq-Rbk">
+                            <rect key="frame" x="0.0" y="0.0" width="133.5" height="40"/>
+                            <color key="backgroundColor" systemColor="systemGray2Color"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="취소">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <integer key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HVl-aP-db2">
+                            <rect key="frame" x="156.5" y="0.0" width="133.5" height="40"/>
+                            <color key="backgroundColor" red="0.23529411759999999" green="0.36470588240000001" blue="0.61568627450000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="확인">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <integer key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="JZh-sq-Rbk" firstAttribute="top" secondItem="SEW-Gp-gxm" secondAttribute="top" id="0FK-0n-lOl"/>
+                        <constraint firstAttribute="trailing" secondItem="HVl-aP-db2" secondAttribute="trailing" id="70z-FN-aL4"/>
+                        <constraint firstItem="HVl-aP-db2" firstAttribute="top" secondItem="SEW-Gp-gxm" secondAttribute="top" id="8b1-a8-xif"/>
+                        <constraint firstAttribute="bottom" secondItem="HVl-aP-db2" secondAttribute="bottom" id="JMm-tU-S0y"/>
+                        <constraint firstItem="JZh-sq-Rbk" firstAttribute="leading" secondItem="SEW-Gp-gxm" secondAttribute="leading" id="MOs-BH-3l9"/>
+                        <constraint firstAttribute="bottom" secondItem="JZh-sq-Rbk" secondAttribute="bottom" id="Q77-EF-iIf"/>
+                        <constraint firstAttribute="height" constant="40" id="hq5-vT-7qG"/>
+                        <constraint firstItem="HVl-aP-db2" firstAttribute="width" secondItem="SEW-Gp-gxm" secondAttribute="width" multiplier="0.46" id="rGb-wU-5xL"/>
+                        <constraint firstItem="JZh-sq-Rbk" firstAttribute="width" secondItem="SEW-Gp-gxm" secondAttribute="width" multiplier="0.46" id="zVa-ik-tYS"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gm7-YR-ErY">
+                    <rect key="frame" x="0.0" y="70" width="320" height="428"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Szt-bC-dOJ"/>
+                        <outlet property="delegate" destination="-1" id="Pp1-mL-VoN"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="gm7-YR-ErY" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="5cQ-Ig-aQV"/>
+                <constraint firstItem="gm7-YR-ErY" firstAttribute="top" secondItem="q8h-r9-zDp" secondAttribute="bottom" id="8S3-HW-Kub"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="gm7-YR-ErY" secondAttribute="trailing" id="F8p-A1-vCB"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="q8h-r9-zDp" secondAttribute="trailing" id="Hjn-EL-urw"/>
+                <constraint firstItem="SEW-Gp-gxm" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="15" id="IUa-g6-sQp"/>
+                <constraint firstItem="q8h-r9-zDp" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="aFz-Fm-U72"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="SEW-Gp-gxm" secondAttribute="trailing" constant="15" id="j4N-hX-KZC"/>
+                <constraint firstItem="q8h-r9-zDp" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="np5-Va-SBP"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="SEW-Gp-gxm" secondAttribute="bottom" constant="15" id="plT-Ub-PWa"/>
+                <constraint firstItem="SEW-Gp-gxm" firstAttribute="top" secondItem="gm7-YR-ErY" secondAttribute="bottom" constant="15" id="sxC-C4-J7b"/>
+            </constraints>
+            <point key="canvasLocation" x="132" y="83"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="finger.png" width="33" height="56"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

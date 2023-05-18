@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SBSpecialDetailViewController">
+            <connections>
+                <outlet property="view" destination="3pv-bb-m75" id="Lye-cr-MMO"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="3pv-bb-m75">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HuT-b4-LHG">
+                    <rect key="frame" x="0.0" y="0.0" width="316" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G9z-Jj-sOt">
+                            <rect key="frame" x="15" y="15" width="13" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="13" id="SkY-fa-exx"/>
+                                <constraint firstAttribute="height" constant="20" id="vUK-8x-pJp"/>
+                            </constraints>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Button" image="back_btn.png"/>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="특이사항" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZgC-Og-9n3">
+                            <rect key="frame" x="119.5" y="11.5" width="77" height="27"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="uK3-RN-CDy">
+                            <rect key="frame" x="281" y="15" width="20" height="20"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="ZgC-Og-9n3" firstAttribute="centerY" secondItem="HuT-b4-LHG" secondAttribute="centerY" id="4SH-aG-qht"/>
+                        <constraint firstItem="ZgC-Og-9n3" firstAttribute="centerX" secondItem="HuT-b4-LHG" secondAttribute="centerX" id="Gjk-cU-Bhf"/>
+                        <constraint firstItem="uK3-RN-CDy" firstAttribute="centerY" secondItem="HuT-b4-LHG" secondAttribute="centerY" id="TbI-1d-jlJ"/>
+                        <constraint firstAttribute="trailing" secondItem="uK3-RN-CDy" secondAttribute="trailing" constant="15" id="TdR-bA-QrA"/>
+                        <constraint firstAttribute="height" constant="50" id="dDg-qa-aDV"/>
+                        <constraint firstItem="G9z-Jj-sOt" firstAttribute="leading" secondItem="HuT-b4-LHG" secondAttribute="leading" constant="15" id="fYZ-yu-kCT"/>
+                        <constraint firstItem="G9z-Jj-sOt" firstAttribute="centerY" secondItem="HuT-b4-LHG" secondAttribute="centerY" id="mhX-Mq-ong"/>
+                    </constraints>
+                </view>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wFQ-2c-4vm">
+                    <rect key="frame" x="0.0" y="50" width="320" height="518"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h4N-Oi-b14">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="518"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="h4N-Oi-b14" firstAttribute="leading" secondItem="wFQ-2c-4vm" secondAttribute="leading" id="3gh-PC-u5m"/>
+                        <constraint firstItem="h4N-Oi-b14" firstAttribute="centerX" secondItem="wFQ-2c-4vm" secondAttribute="centerX" id="824-FL-fPe"/>
+                        <constraint firstItem="h4N-Oi-b14" firstAttribute="top" secondItem="wFQ-2c-4vm" secondAttribute="top" id="DcH-sw-Da2"/>
+                        <constraint firstAttribute="trailing" secondItem="h4N-Oi-b14" secondAttribute="trailing" id="QBM-Lr-dVb"/>
+                        <constraint firstAttribute="bottom" secondItem="h4N-Oi-b14" secondAttribute="bottom" id="abu-T7-1Gy"/>
+                        <constraint firstItem="h4N-Oi-b14" firstAttribute="bottom" secondItem="PLN-NA-RWa" secondAttribute="bottom" id="v1y-7o-T5k"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="OAL-Dn-jNK"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="PLN-NA-RWa"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="1mg-IO-mXk"/>
+                    </connections>
+                </scrollView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="bT7-kl-Ply"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="bT7-kl-Ply" firstAttribute="bottom" secondItem="wFQ-2c-4vm" secondAttribute="bottom" id="IwF-yQ-sU5"/>
+                <constraint firstItem="HuT-b4-LHG" firstAttribute="top" secondItem="bT7-kl-Ply" secondAttribute="top" id="P3A-6b-HZH"/>
+                <constraint firstItem="wFQ-2c-4vm" firstAttribute="top" secondItem="HuT-b4-LHG" secondAttribute="bottom" id="RZq-HD-pE3"/>
+                <constraint firstItem="wFQ-2c-4vm" firstAttribute="leading" secondItem="bT7-kl-Ply" secondAttribute="leading" id="d3w-nG-lXO"/>
+                <constraint firstItem="bT7-kl-Ply" firstAttribute="trailing" secondItem="wFQ-2c-4vm" secondAttribute="trailing" id="mmU-bX-yZK"/>
+                <constraint firstItem="HuT-b4-LHG" firstAttribute="leading" secondItem="bT7-kl-Ply" secondAttribute="leading" id="oiE-t9-WFs"/>
+                <constraint firstItem="bT7-kl-Ply" firstAttribute="trailing" secondItem="HuT-b4-LHG" secondAttribute="trailing" constant="4" id="uS1-r0-YzU"/>
+            </constraints>
+            <point key="canvasLocation" x="907" y="60"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="back_btn.png" width="27" height="41"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
