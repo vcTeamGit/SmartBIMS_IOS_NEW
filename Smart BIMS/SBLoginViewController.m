@@ -358,6 +358,7 @@
 - (void) goMainView
 {
     // 20230517 자동 로그인 체크에 따라 로그인 정보 저장
+    //
     NSUserDefaults *signDefaults = [NSUserDefaults standardUserDefaults];
     if ([keepSignSwitch isOn]) {
         [signDefaults setValue:m_textFieldId.text forKey:@"userIdt"];
