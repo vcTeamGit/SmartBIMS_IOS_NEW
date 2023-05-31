@@ -60,7 +60,8 @@
     [m_httpRequest requestURL:url
                    bodyObject:bodyObject];
     
-    [self.m_activityIndicatorView startAnimating];
+    m_activityIndicatorView.hidden = FALSE;
+    [m_activityIndicatorView startAnimating];
 }
 
 
@@ -81,7 +82,8 @@
     
     TRACE(@"strData := [%@]", strData);
     
-    [self.m_activityIndicatorView stopAnimating];
+    [m_activityIndicatorView stopAnimating];
+    m_activityIndicatorView.hidden = TRUE;
     
     // 응답값 확인
     if([strData isEqualToString:kREQUEST_TIMEOUT_TYPE] == YES){
@@ -144,9 +146,6 @@
 	self.m_selector = selector;
 }
 
-
-
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -164,6 +163,8 @@
     viewWidth = [delegate.g_viewWidth intValue];
     viewHeight = [delegate.g_viewHeight intValue];
     winHeight = [delegate.g_winHeight intValue];
+    
+    m_activityIndicatorView.hidden = TRUE;
     
     m_httpRequest = [[HttpRequest alloc] init];
 }

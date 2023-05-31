@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SBBoardViewController">
             <connections>
+                <outlet property="m_activityIndicatorView" destination="fGg-0n-Msm" id="DzD-Gv-Mf6"/>
                 <outlet property="m_switch" destination="Q9a-fd-53n" id="yNS-GG-OiH"/>
                 <outlet property="m_switchStatusLabel" destination="ZRQ-if-Rdf" id="zVR-2I-L5N"/>
                 <outlet property="m_tableView" destination="q32-b8-CyH" id="diB-YR-dlp"/>
