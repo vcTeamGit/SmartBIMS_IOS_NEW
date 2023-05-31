@@ -38,6 +38,7 @@
 
 -(NSString*)sha256HashForText:(NSString*)text
 {
+    
     const char* utf8chars = [text UTF8String];
     unsigned char result[CC_SHA256_DIGEST_LENGTH];
     CC_SHA256(utf8chars, (CC_LONG)strlen(utf8chars), result);
@@ -51,48 +52,49 @@
 
 - (IBAction)loginButtonPressed:(id)sender
 {
-//    [m_textFieldId resignFirstResponder];
-//    [self goMainView];
-//
-//    return;
     NSString* strId = m_textFieldId.text;
     NSString* strPassword = [self sha256HashForText:m_textFieldPassword.text];
     
     // 2022.06.08 ADD HMWOO 테스트 대응 바코드 생성 URL 실행
     #if TARGET==DEV
-        if([m_textFieldId.text isEqualToString:@"Z999999Z"])
-        {
+        if ( [m_textFieldId.text isEqualToString:@"Z999999Z"] ) {
             NSURL* url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@%@%@%@", @"http://", BLOOD_SERVER, SERVER_TARGET, @"/SBCreateTestBarCode.jsp"]];
             [[UIApplication sharedApplication] openURL:url];
         }
     #endif
     
-    if(strId == nil || [strId isEqualToString:@""]){
-        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"[알 림]"
-                                                            message:@"아이디를 입력하세요"
-                                                           delegate:self
-                                                  cancelButtonTitle:@"확인"
-                                                  otherButtonTitles: nil];
+    if (strId == nil || [strId isEqualToString:@""]) {
+        UIAlertController* alert = [UIAlertController
+                        alertControllerWithTitle:@"[알 림]"
+                                         message:@"아이디를 입력하세요"
+                                  preferredStyle:UIAlertControllerStyleAlert];
         
-        alertView.tag = 0;
-        
-        [alertView show];
-        [alertView release];
+        UIAlertAction* yesButton = [UIAlertAction
+                            actionWithTitle:@"확인"
+                                      style:UIAlertActionStyleDefault
+                                    handler:^(UIAlertAction * action) {
+                                        //Handle your yes please button action here
+                                    }];
+        [alert addAction:yesButton];
+        [self presentViewController:alert animated:YES completion:nil];
         
         return;
     }
     
-    if(strPassword == nil || [strPassword isEqualToString:@""]){
-        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"[알 림]"
-                                                            message:@"비밀번호를 입력하세요"
-                                                           delegate:self
-                                                  cancelButtonTitle:@"확인"
-                                                  otherButtonTitles: nil];
+    if (m_textFieldPassword.text == nil || [m_textFieldPassword.text isEqualToString:@""]) {
+        UIAlertController* alert = [UIAlertController
+                        alertControllerWithTitle:@"[알 림]"
+                                         message:@"비밀번호를 입력하세요"
+                                  preferredStyle:UIAlertControllerStyleAlert];
         
-        alertView.tag = 0;
-        
-        [alertView show];
-        [alertView release];
+        UIAlertAction* yesButton = [UIAlertAction
+                            actionWithTitle:@"확인"
+                                      style:UIAlertActionStyleDefault
+                                    handler:^(UIAlertAction * action) {
+                                        //Handle your yes please button action here
+                                    }];
+        [alert addAction:yesButton];
+        [self presentViewController:alert animated:YES completion:nil];
         
         return;
     }
@@ -132,7 +134,6 @@
 - (void) didReceiveResponse:(id)result
 {
     NSString* strRetVal = @"";
-//    NSString* strAlertMsg = @"";
     NSString* string = (NSString*)result;
     
     // For test
@@ -380,7 +381,7 @@
     if(winHeight == kWINDOW_HEIGHT){
         m_MainViewController = [[MainViewController alloc] initWithNibName:@"MainNewViewController"
                                                                     bundle:nil];
-    }else{
+    } else {
         m_MainViewController = [[MainViewController alloc] initWithNibName:@"MainNewViewController"
                                                                     bundle:nil];
     }

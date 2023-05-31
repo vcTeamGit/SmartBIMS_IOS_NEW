@@ -40,8 +40,7 @@
     
     NSString* m_strVersion;
     UISwitch* keepSignSwitch;
-    
-//    NSDictionary* m_dictionary;
+
     int viewWidth;
     int viewHeight;
     int winHeight;
@@ -63,7 +62,6 @@
 
 @property (nonatomic, retain) NSString* m_strVersion;
 
-//@property (nonatomic, retain) NSDictionary* m_dictionary;
 @property (retain, nonatomic) IBOutlet UISwitch *keepSignSwitch;
 
 - (IBAction)loginButtonPressed:(id)sender;

@@ -14,8 +14,8 @@
             filePath = "Smart BIMS/MainViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1605"
-            endingLineNumber = "1605"
+            startingLineNumber = "1613"
+            endingLineNumber = "1613"
             landmarkName = "-registTakerOverCollector:"
             landmarkType = "7">
          </BreakpointContent>
@@ -34,6 +34,246 @@
             endingLineNumber = "86"
             landmarkName = "-viewDidLoad"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "31FA4F6B-EEB6-4B28-B7E2-A81A4E601B61"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Smart BIMS/MainViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1036"
+            endingLineNumber = "1036"
+            landmarkName = "-showOrgTalk:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "31FA4F6B-EEB6-4B28-B7E2-A81A4E601B61 - 91651e96656388ce"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[MainViewController showOrgTalk:]"
+                  moduleName = "SmartBIMS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hmwoo/App/Ws/XCode/Smart%20BIMS/Smart%20BIMS/MainViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1037"
+                  endingLineNumber = "1037"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "31FA4F6B-EEB6-4B28-B7E2-A81A4E601B61 - 91651e96656388ef"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[MainViewController showOrgTalk:]"
+                  moduleName = "SmartBIMS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hmwoo/App/Ws/XCode/Smart%20BIMS/Smart%20BIMS/MainViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1036"
+                  endingLineNumber = "1036"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6AD6D369-A297-4645-9C46-11553DBA6A45"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Smart BIMS/MainViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "472"
+            endingLineNumber = "472"
+            landmarkName = "-goEtcSrchStaView:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6AD6D369-A297-4645-9C46-11553DBA6A45 - fe4fc26c92135697"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[MainViewController goEtcSrchStaView:]"
+                  moduleName = "SmartBIMS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hmwoo/App/Ws/XCode/Smart%20BIMS/Smart%20BIMS/MainViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "473"
+                  endingLineNumber = "473"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "6AD6D369-A297-4645-9C46-11553DBA6A45 - fe4fc26c921356f6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[MainViewController goEtcSrchStaView:]"
+                  moduleName = "SmartBIMS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hmwoo/App/Ws/XCode/Smart%20BIMS/Smart%20BIMS/MainViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "472"
+                  endingLineNumber = "472"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2EA82FDB-50E1-483E-AFFA-36BCD65B7C7C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Smart BIMS/MainViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "586"
+            endingLineNumber = "586"
+            landmarkName = "-goTakeOverInfoView:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2EA82FDB-50E1-483E-AFFA-36BCD65B7C7C - ad7bf26bd9fdbee3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[MainViewController goTakeOverInfoView:]"
+                  moduleName = "SmartBIMS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hmwoo/App/Ws/XCode/Smart%20BIMS/Smart%20BIMS/MainViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "584"
+                  endingLineNumber = "584"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "2EA82FDB-50E1-483E-AFFA-36BCD65B7C7C - ad7bf26bd9fdbd21"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[MainViewController goTakeOverInfoView:]"
+                  moduleName = "SmartBIMS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hmwoo/App/Ws/XCode/Smart%20BIMS/Smart%20BIMS/MainViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "582"
+                  endingLineNumber = "582"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C57B290F-ACA6-4A06-94FA-86C266E03D98"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Smart BIMS/SBBoardViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "198"
+            endingLineNumber = "198"
+            landmarkName = "-goToBoardContentView:indexID:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C57B290F-ACA6-4A06-94FA-86C266E03D98 - 99e14ae7ed3fb690"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[SBBoardViewController goToBoardContentView:]"
+                  moduleName = "SmartBIMS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hmwoo/App/Ws/XCode/Smart%20BIMS/Smart%20BIMS/SBBoardViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "198"
+                  endingLineNumber = "198"
+                  offsetFromSymbolStart = "56">
+               </Location>
+               <Location
+                  uuid = "C57B290F-ACA6-4A06-94FA-86C266E03D98 - ce5883aacd8091d2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[SBBoardViewController goToBoardContentView:indexID:]"
+                  moduleName = "SmartBIMS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hmwoo/App/Ws/XCode/Smart%20BIMS/Smart%20BIMS/SBBoardViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "201"
+                  endingLineNumber = "201"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "73D2BEA0-0761-4873-973B-AD05A42FAF98"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Smart BIMS/SBBoardViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "334"
+            endingLineNumber = "334"
+            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "73D2BEA0-0761-4873-973B-AD05A42FAF98 - 3a4180817346ccdf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[SBBoardViewController tableView:didSelectRowAtIndexPath:]"
+                  moduleName = "SmartBIMS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hmwoo/App/Ws/XCode/Smart%20BIMS/Smart%20BIMS/SBBoardViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "333"
+                  endingLineNumber = "333"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  uuid = "73D2BEA0-0761-4873-973B-AD05A42FAF98 - 3a4180817346ccdf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[SBBoardViewController tableView:didSelectRowAtIndexPath:]"
+                  moduleName = "SmartBIMS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hmwoo/App/Ws/XCode/Smart%20BIMS/Smart%20BIMS/SBBoardViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "333"
+                  endingLineNumber = "333"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

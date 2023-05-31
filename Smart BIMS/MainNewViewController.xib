@@ -24,7 +24,6 @@
                 <outlet property="m_validTermPLTLabel" destination="16X-L6-Si1" id="iEH-Aw-xQ5"/>
                 <outlet property="m_validTermWBLabel" destination="xvD-v9-HAo" id="uNQ-7b-7um"/>
                 <outlet property="m_versionLabel" destination="m4F-bi-Kvq" id="VLW-Ib-GNJ"/>
-                <outlet property="noticeTitleLabel" destination="6w5-Tj-has" id="RQB-v5-BFM"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Q9y-hh-aH5"/>
             </connections>
         </placeholder>
@@ -736,36 +735,33 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="공지사항 리스트 바로가기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6w5-Tj-has">
-                            <rect key="frame" x="124" y="16" width="216" height="18"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bgr-kv-Gqz">
+                            <rect key="frame" x="102" y="10" width="151" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="공지사항 리스트 바로가기">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="goBoardView:" destination="-1" eventType="touchUpInside" id="IBA-3B-Opr"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="tRZ-tf-rvG" firstAttribute="leading" secondItem="8LB-Xo-rfA" secondAttribute="leading" constant="8" id="2GO-qL-fYG"/>
-                        <constraint firstAttribute="trailing" secondItem="6w5-Tj-has" secondAttribute="trailing" constant="15" id="5qY-be-8dk"/>
                         <constraint firstItem="tRZ-tf-rvG" firstAttribute="top" secondItem="8LB-Xo-rfA" secondAttribute="top" constant="1" id="QUe-gR-Kww"/>
                         <constraint firstAttribute="height" constant="50" id="TjX-oZ-EQh"/>
                         <constraint firstItem="ugO-uw-h6N" firstAttribute="top" secondItem="tRZ-tf-rvG" secondAttribute="bottom" constant="-5" id="VmF-uy-fIS"/>
                         <constraint firstItem="ugO-uw-h6N" firstAttribute="centerX" secondItem="tRZ-tf-rvG" secondAttribute="centerX" id="g8H-Qw-P0L"/>
-                        <constraint firstItem="6w5-Tj-has" firstAttribute="leading" secondItem="tRZ-tf-rvG" secondAttribute="trailing" constant="46" id="ieq-WN-CHT"/>
-                        <constraint firstItem="6w5-Tj-has" firstAttribute="centerY" secondItem="8LB-Xo-rfA" secondAttribute="centerY" id="tdI-oR-AvG"/>
+                        <constraint firstItem="Bgr-kv-Gqz" firstAttribute="centerX" secondItem="8LB-Xo-rfA" secondAttribute="centerX" id="nhI-Pd-ChT"/>
+                        <constraint firstItem="Bgr-kv-Gqz" firstAttribute="centerY" secondItem="8LB-Xo-rfA" secondAttribute="centerY" id="ymj-3Z-2Bl"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                             <integer key="value" value="5"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
-                </view>
-                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zt0-Qd-nh1" customClass="UIControl">
-                    <rect key="frame" x="0.0" y="650" width="375" height="812"/>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <connections>
-                        <action selector="listener_dialog_back:" destination="-1" eventType="valueChanged" id="But-bc-Ln0"/>
-                    </connections>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kdX-mP-qFN">
                     <rect key="frame" x="57.666666666666657" y="2050" width="260" height="230"/>
@@ -982,6 +978,13 @@
                         <constraint firstItem="xLX-uc-LlC" firstAttribute="top" secondItem="sxh-k9-BqJ" secondAttribute="bottom" constant="10" id="y8I-w8-iZF"/>
                     </constraints>
                 </view>
+                <view alpha="0.0" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zt0-Qd-nh1" customClass="UIControl">
+                    <rect key="frame" x="16" y="648" width="375" height="812"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <action selector="listener_dialog_back:" destination="-1" eventType="valueChanged" id="But-bc-Ln0"/>
+                    </connections>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="AJA-vb-mUB"/>
             <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
@@ -1014,7 +1017,7 @@
                 <constraint firstItem="kdX-mP-qFN" firstAttribute="top" secondItem="AJA-vb-mUB" secondAttribute="top" constant="2000" id="vjW-Gp-5uW"/>
                 <constraint firstItem="kdX-mP-qFN" firstAttribute="centerX" secondItem="AJA-vb-mUB" secondAttribute="centerX" id="w1z-0H-086"/>
             </constraints>
-            <point key="canvasLocation" x="130.37383177570092" y="79.697624190064801"/>
+            <point key="canvasLocation" x="128.80000000000001" y="79.064039408867004"/>
         </view>
     </objects>
     <resources>

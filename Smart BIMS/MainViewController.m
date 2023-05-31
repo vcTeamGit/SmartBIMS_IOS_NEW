@@ -440,7 +440,7 @@
             m_SBBoardViewController = [[SBBoardViewController alloc] initWithNibName:@"SBBoardViewController"
                                                                               bundle:nil];
         }else{
-            m_SBBoardViewController = [[SBBoardViewController alloc] initWithNibName:@"SBBoardViewController3"
+            m_SBBoardViewController = [[SBBoardViewController alloc] initWithNibName:@"SBBoardNewViewController"
                                                                               bundle:nil];
         }
     }
@@ -519,10 +519,13 @@
                                                                                     bundle:nil];
             
         }else{
+            m_SBTakeOverViewController = [[SBTakeOverViewController alloc] initWithNibName:@"SBTakeOverNewViewController"
+                                                                                    bundle:nil];
             // Not to do...
             //            m_SBEtcSrchStaViewController = [[SBEtcSrchStaViewController alloc] initWithNibName:@"SBEtcSrchStaViewController3"
             //                                                                                        bundle:nil];
             // 예전 아이폰 화면사이즈 지원불가
+            /*
             UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"[알 림]"
                                                                 message:@"이 버전의 아이폰은 지원하지 않습니다"
                                                                delegate:self
@@ -534,6 +537,7 @@
             [alertView release];
             
             return;
+             */
         }
     }
     
@@ -585,10 +589,13 @@
                                                                                     bundle:nil];
             
         }else{
+            m_SBTakeOverInfoViewController = [[SBTakeOverInfoViewController alloc] initWithNibName:@"SBTakeOverInfoNewViewController"
+                                                                                    bundle:nil];
             // Not to do...
             //            m_SBTakeOverInfoViewController = [[SBTakeOverInfoViewController alloc] initWithNibName:@"SBTakeOverInfoViewController3"
             //                                                                                        bundle:nil];
             // 예전 아이폰 화면사이즈 지원불가
+            /*
             UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"[알 림]"
                                                                 message:@"이 버전의 아이폰은 지원하지 않습니다"
                                                                delegate:self
@@ -600,6 +607,7 @@
             [alertView release];
             
             return;
+             */
         }
     }
     

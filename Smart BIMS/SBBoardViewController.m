@@ -192,10 +192,11 @@
 }
 
 
-- (void)goToBoardContentView:(NSDictionary*)obj
+//- (void)goToBoardContentView:(NSDictionary*)obj
+- (void)goToBoardContentView:(NSString*)tempSeqNo indexID:(NSString*)tempIndexId
 {
-    NSString* tempSeqNo = [obj valueForKey:@"seqno"];
-    NSString* tempIndexId = [obj valueForKey:@"indexId"];
+    //NSString* tempSeqNo = [obj valueForKey:@"seqno"];
+    //NSString* tempIndexId = [obj valueForKey:@"indexId"];
     
     int nRowIndex = [tempIndexId intValue];
     
@@ -207,7 +208,7 @@
             m_boardContentViewController = [[SBBoardContentViewController alloc] initWithNibName:@"SBBoardContentViewController"
                                                                                           bundle:nil];
         }else{
-            m_boardContentViewController = [[SBBoardContentViewController alloc] initWithNibName:@"SBBoardContentViewController3"
+            m_boardContentViewController = [[SBBoardContentViewController alloc] initWithNibName:@"SBBoardContentNewViewController"
                                                                                           bundle:nil];
         }
     }
@@ -270,7 +271,8 @@
 #pragma mark UITableDelegate
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return nil;
+    return indexPath;
+    //return nil;
 }
 
 #pragma mark -
@@ -289,7 +291,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     static NSString* cellid = @"SBBoardTableViewCellId";
     SBBoardTableViewCell* cell = (SBBoardTableViewCell*)[tableView dequeueReusableCellWithIdentifier:cellid];
 	
@@ -298,12 +299,12 @@
         NSArray* nib = [[NSBundle mainBundle] loadNibNamed:@"SBBoardTableViewCell"
 													 owner:self
 												   options:nil];
-		for(id oneObject in nib){
+        for(id oneObject in nib){
 			if([oneObject isKindOfClass:[SBBoardTableViewCell class]]){
 				cell = (SBBoardTableViewCell*)oneObject;
 			}
 		}
-	}
+    }
     
     int nRow = (int)indexPath.row;
     
@@ -319,6 +320,8 @@
     
     cell.m_indexId = [NSString stringWithFormat:@"%d", nRow];
     
+    //cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    
     [cell setDelegate:self selector:@selector(goToBoardContentView:)];
 	
     return cell;
@@ -330,6 +333,8 @@
 {
     int nRow = (int)indexPath.row;
     TRACE(@"seqno=[%@]", [[m_mDataArray objectAtIndex:nRow] objectForKey:@"seqno"]);
+    
+    [self goToBoardContentView:[[m_mDataArray objectAtIndex:nRow] objectForKey:@"seqno"] indexID:[[m_mDataArray objectAtIndex:nRow] objectForKey:@"indexId"]];
 }
 
 //- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

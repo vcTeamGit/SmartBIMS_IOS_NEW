@@ -62,4 +62,6 @@
 - (IBAction)onToHomeBtnTab:(id)sender;
 - (IBAction)backgroundTab:(id)sender;
 
+- (void)goToBoardContentView:(NSString*)tempSeqNo indexID:(NSString*)tempIndexId;
+
 @end
