@@ -327,37 +327,14 @@
     return cell;
 }
 
-
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     int nRow = (int)indexPath.row;
     TRACE(@"seqno=[%@]", [[m_mDataArray objectAtIndex:nRow] objectForKey:@"seqno"]);
+    TRACE(@"indexId=[%d]", nRow);
     
-    [self goToBoardContentView:[[m_mDataArray objectAtIndex:nRow] objectForKey:@"seqno"] indexID:[[m_mDataArray objectAtIndex:nRow] objectForKey:@"indexId"]];
+    [self goToBoardContentView:[[m_mDataArray objectAtIndex:nRow] objectForKey:@"seqno"] indexID:[@(nRow) stringValue]];
 }
-
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    // Navigation logic may go here. Create and push another view controller.
-//	// AnotherViewController *anotherViewController = [[AnotherViewController alloc] initWithNibName:@"AnotherView" bundle:nil];
-//	// [self.navigationController pushViewController:anotherViewController];
-//	// [anotherViewController release];
-//	
-//	ImageViewController* controller;
-//	
-//	controller = [[ImageViewController alloc] initWithNibName:@"ImageViewController"
-//													   bundle:nil];
-//	
-//	//controller.m_selected = [m_detailArray objectAtIndex:indexPath.row];
-//	controller.m_index = indexPath.row;
-//	[self.navigationController pushViewController:controller
-//										 animated:YES];
-//	
-//	[controller release];
-//}
-
-
-
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
