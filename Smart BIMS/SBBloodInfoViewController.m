@@ -415,7 +415,7 @@
             m_SBSideEffectsListViewController = [[SBSideEffectsListViewController alloc] initWithNibName:@"SBSideEffectsListViewController"
                                                                                                   bundle:nil];
         }else{
-            m_SBSideEffectsListViewController = [[SBSideEffectsListViewController alloc] initWithNibName:@"SBSideEffectsListViewController3"
+            m_SBSideEffectsListViewController = [[SBSideEffectsListViewController alloc] initWithNibName:@"SBSideEffectsListNewViewController"
                                                                                                   bundle:nil];
         }
     }
@@ -672,13 +672,11 @@
         // TO DO - 1차 일치검사로...
         if(m_firstMatchingViewController == nil){
             if(winHeight == kWINDOW_HEIGHT){
-                m_firstMatchingViewController = [[SBFirstMatchingViewController alloc] initWithNibName:@"SBFirstMatchingViewController"
-                                                                                                bundle:nil];
+                m_firstMatchingViewController = [[SBFirstMatchingViewController alloc] initWithNibName:@"SBFirstMatchingViewController" bundle:nil];
             }else{
+                //SBFirstMatchingViewController3
                 m_firstMatchingViewController = [[SBFirstMatchingViewController alloc]
-                    initWithNibName:@"SBFirstMatchingViewController3"
-                
-                                                                                                bundle:nil];
+                    initWithNibName:@"SBFirstMatchingNewViewController" bundle:nil];
             }
         }
         
@@ -1166,11 +1164,11 @@ replacementString:(NSString*)string
 //    [m_strSubViewId release];
     
     [m_gbMal release];
-    [m_registerLabel release];
-    [m_marrmstLabel release];
-    [m_assignLabel release];
-    [m_assignLabel release];
-    [m_assignLabel release];
+    //[m_registerLabel release];
+    //[m_marrmstLabel release];
+    //[m_assignLabel release];
+    //[m_assignLabel release];
+    //[m_assignLabel release];
     [super dealloc];
 }
 

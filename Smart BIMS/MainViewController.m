@@ -193,7 +193,7 @@
 {
     if(m_SBBloodInfoViewController == nil){
         if(winHeight == kWINDOW_HEIGHT){
-            m_SBBloodInfoViewController = [[SBBloodInfoViewController alloc] initWithNibName:@"SBBloodInfoNewViewController"
+            m_SBBloodInfoViewController = [[SBBloodInfoViewController alloc] initWithNibName:@"SBBloodInfoViewController"
                                                                                       bundle:nil];
         }else{
             m_SBBloodInfoViewController = [[SBBloodInfoViewController alloc] initWithNibName:@"SBBloodInfoNewViewController"
@@ -204,7 +204,7 @@
         m_SBBloodInfoViewController = nil;
         
         if(winHeight == kWINDOW_HEIGHT){
-            m_SBBloodInfoViewController = [[SBBloodInfoViewController alloc] initWithNibName:@"SBBloodInfoNewViewController"
+            m_SBBloodInfoViewController = [[SBBloodInfoViewController alloc] initWithNibName:@"SBBloodInfoViewController"
                                                                                       bundle:nil];
         }else{
             m_SBBloodInfoViewController = [[SBBloodInfoViewController alloc] initWithNibName:@"SBBloodInfoNewViewController"
@@ -236,7 +236,7 @@
 {
     if(m_SBSecondMatchingViewController == nil){
         if(winHeight == kWINDOW_HEIGHT){
-            m_SBSecondMatchingViewController = [[SBSecondMatchingViewController alloc] initWithNibName:@"SBSecondMatchingNewViewController"
+            m_SBSecondMatchingViewController = [[SBSecondMatchingViewController alloc] initWithNibName:@"SBSecondMatchingViewController"
                                                                                                 bundle:nil];
         }else{
             m_SBSecondMatchingViewController = [[SBSecondMatchingViewController alloc] initWithNibName:@"SBSecondMatchingNewViewController"
@@ -247,7 +247,7 @@
         m_SBSecondMatchingViewController = nil;
         
         if(winHeight == kWINDOW_HEIGHT){
-            m_SBSecondMatchingViewController = [[SBSecondMatchingViewController alloc] initWithNibName:@"SBSecondMatchingNewViewController"
+            m_SBSecondMatchingViewController = [[SBSecondMatchingViewController alloc] initWithNibName:@"SBSecondMatchingViewController"
                                                                                                 bundle:nil];
         }else{
             m_SBSecondMatchingViewController = [[SBSecondMatchingViewController alloc] initWithNibName:@"SBSecondMatchingNewViewController"

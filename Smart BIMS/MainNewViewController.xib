@@ -979,7 +979,7 @@
                     </constraints>
                 </view>
                 <view alpha="0.0" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zt0-Qd-nh1" customClass="UIControl">
-                    <rect key="frame" x="16" y="648" width="375" height="812"/>
+                    <rect key="frame" x="57" y="713" width="375" height="812"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
                         <action selector="listener_dialog_back:" destination="-1" eventType="valueChanged" id="But-bc-Ln0"/>
@@ -1017,7 +1017,7 @@
                 <constraint firstItem="kdX-mP-qFN" firstAttribute="top" secondItem="AJA-vb-mUB" secondAttribute="top" constant="2000" id="vjW-Gp-5uW"/>
                 <constraint firstItem="kdX-mP-qFN" firstAttribute="centerX" secondItem="AJA-vb-mUB" secondAttribute="centerX" id="w1z-0H-086"/>
             </constraints>
-            <point key="canvasLocation" x="128.80000000000001" y="79.064039408867004"/>
+            <point key="canvasLocation" x="282" y="154"/>
         </view>
     </objects>
     <resources>
