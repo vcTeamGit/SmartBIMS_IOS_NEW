@@ -277,7 +277,7 @@
 {
     if(m_SBBloodEndTimeViewController == nil){
         if(winHeight == kWINDOW_HEIGHT){
-            m_SBBloodEndTimeViewController = [[SBBloodEndTimeViewController alloc] initWithNibName:@"SBBloodEndTimeNewViewController"
+            m_SBBloodEndTimeViewController = [[SBBloodEndTimeViewController alloc] initWithNibName:@"SBBloodEndTimeViewController"
                                                                                             bundle:nil];
         }else{
             m_SBBloodEndTimeViewController = [[SBBloodEndTimeViewController alloc] initWithNibName:@"SBBloodEndTimeNewViewController"
