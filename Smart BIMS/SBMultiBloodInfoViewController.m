@@ -156,7 +156,7 @@
             m_multiFirstMatchingViewController = [[SBMultiFirstMatchingViewController alloc] initWithNibName:@"SBMultiFirstMatchingViewController"
                                                                                                       bundle:nil];
         }else{
-            m_multiFirstMatchingViewController = [[SBMultiFirstMatchingViewController alloc] initWithNibName:@"SBMultiFirstMatchingViewController3"
+            m_multiFirstMatchingViewController = [[SBMultiFirstMatchingViewController alloc] initWithNibName:@"SBMultiFirstMatchingNewViewController"
                                                                                                       bundle:nil];
         }
     }
@@ -190,7 +190,7 @@
             m_SBSideEffectsListViewController = [[SBSideEffectsListViewController alloc] initWithNibName:@"SBSideEffectsListViewController"
                                                                                                   bundle:nil];
         }else{
-            m_SBSideEffectsListViewController = [[SBSideEffectsListViewController alloc] initWithNibName:@"SBSideEffectsListViewController3"
+            m_SBSideEffectsListViewController = [[SBSideEffectsListViewController alloc] initWithNibName:@"SBSideEffectsListNewViewController"
                                                                                                   bundle:nil];
         }
     }

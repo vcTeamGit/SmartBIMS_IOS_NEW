@@ -543,7 +543,7 @@
                 m_SBMultiSecondMatchingViewController = [[SBMultiSecondMatchingViewController alloc] initWithNibName:@"SBMultiSecondMatchingViewController"
                                                                                                               bundle:nil];
             }else{
-                m_SBMultiSecondMatchingViewController = [[SBMultiSecondMatchingViewController alloc] initWithNibName:@"SBMultiSecondMatchingViewController3"
+                m_SBMultiSecondMatchingViewController = [[SBMultiSecondMatchingViewController alloc] initWithNibName:@"SBMultiSecondMatchingNewViewController"
                                                                                                               bundle:nil];
             }
         }

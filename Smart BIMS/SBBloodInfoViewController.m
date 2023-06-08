@@ -537,7 +537,7 @@
                 m_multiBloodInfoViewController = [[SBMultiBloodInfoViewController alloc] initWithNibName:@"SBMultiBloodInfoViewController"
                                                                                                   bundle:nil];
             }else{
-                m_multiBloodInfoViewController = [[SBMultiBloodInfoViewController alloc] initWithNibName:@"SBMultiBloodInfoViewController3"
+                m_multiBloodInfoViewController = [[SBMultiBloodInfoViewController alloc] initWithNibName:@"SBMultiBloodInfoNewViewController"
                                                                                             bundle:nil];
             }
         }

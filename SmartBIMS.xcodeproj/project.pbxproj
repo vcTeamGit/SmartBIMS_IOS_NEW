@@ -2775,7 +2775,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LOCALIZED_STRING_SWIFTUI_SUPPORT = YES;
 				MARKETING_VERSION = 2.5.3;
-				PRODUCT_BUNDLE_IDENTIFIER = net.bloodinfo.SmartBIMS;
+				PRODUCT_BUNDLE_IDENTIFIER = net.bloodinfo.SmartBIMSTest;
 				PRODUCT_NAME = SmartBIMS;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -2807,7 +2807,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LOCALIZED_STRING_SWIFTUI_SUPPORT = YES;
 				MARKETING_VERSION = 2.5.3;
-				PRODUCT_BUNDLE_IDENTIFIER = net.bloodinfo.SmartBIMS;
+				PRODUCT_BUNDLE_IDENTIFIER = net.bloodinfo.SmartBIMSTest;
 				PRODUCT_NAME = SmartBIMS;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -2863,7 +2863,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LOCALIZED_STRING_SWIFTUI_SUPPORT = YES;
 				MARKETING_VERSION = 2.5.3;
-				PRODUCT_BUNDLE_IDENTIFIER = net.bloodinfo.SmartBIMS;
+				PRODUCT_BUNDLE_IDENTIFIER = net.bloodinfo.SmartBIMSTest;
 				PRODUCT_NAME = SmartBIMS;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
