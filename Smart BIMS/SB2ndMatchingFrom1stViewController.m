@@ -180,8 +180,7 @@
     }else if(m_strBarcodeBldBagcode.length == 0 || [m_strBarcodeBldBagcode isEqualToString:@""]){
         [mstrAlertMsg setString:@"백종류바코드를 입력하세요"];
         [m_barcodeBldBagcode becomeFirstResponder];
-    }
-    else if(m_strBarcodeSample1.length == 0 || [m_strBarcodeSample1 isEqualToString:@""]){
+    }else if(m_strBarcodeSample1.length == 0 || [m_strBarcodeSample1 isEqualToString:@""]){
         [mstrAlertMsg setString:@"검체바코드1을 입력하세요"];
         [m_barcodeSample1 becomeFirstResponder];
     }else if(m_strBarcodeSample2.length == 0 || [m_strBarcodeSample2 isEqualToString:@""]){
@@ -196,8 +195,7 @@
     }else if(m_strBarcodeSample5.length == 0 || [m_strBarcodeSample5 isEqualToString:@""]){
         [mstrAlertMsg setString:@"검체바코드5를 입력하세요"];
         [m_barcodeSample5 becomeFirstResponder];
-    }
-    else{
+    }else{
         NSString* strTitleMsg = @"2차 일치검사를 수행하시겠습니까?";
         
         // iOS7부터는 actionSheet를 쓰지 않는다. statusBar와 함께 쓰면 화면이 잘리더라구...
