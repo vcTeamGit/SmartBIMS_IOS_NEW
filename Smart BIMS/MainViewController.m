@@ -193,7 +193,7 @@
 {
     if(m_SBBloodInfoViewController == nil){
         if(winHeight == kWINDOW_HEIGHT){
-            m_SBBloodInfoViewController = [[SBBloodInfoViewController alloc] initWithNibName:@"SBBloodInfoViewController"
+            m_SBBloodInfoViewController = [[SBBloodInfoViewController alloc] initWithNibName:@"SBBloodInfoNewViewController"
                                                                                       bundle:nil];
         }else{
             m_SBBloodInfoViewController = [[SBBloodInfoViewController alloc] initWithNibName:@"SBBloodInfoNewViewController"
@@ -204,7 +204,7 @@
         m_SBBloodInfoViewController = nil;
         
         if(winHeight == kWINDOW_HEIGHT){
-            m_SBBloodInfoViewController = [[SBBloodInfoViewController alloc] initWithNibName:@"SBBloodInfoViewController"
+            m_SBBloodInfoViewController = [[SBBloodInfoViewController alloc] initWithNibName:@"SBBloodInfoNewViewController"
                                                                                       bundle:nil];
         }else{
             m_SBBloodInfoViewController = [[SBBloodInfoViewController alloc] initWithNibName:@"SBBloodInfoNewViewController"
@@ -236,7 +236,7 @@
 {
     if(m_SBSecondMatchingViewController == nil){
         if(winHeight == kWINDOW_HEIGHT){
-            m_SBSecondMatchingViewController = [[SBSecondMatchingViewController alloc] initWithNibName:@"SBSecondMatchingViewController"
+            m_SBSecondMatchingViewController = [[SBSecondMatchingViewController alloc] initWithNibName:@"SBSecondMatchingNewViewController"
                                                                                                 bundle:nil];
         }else{
             m_SBSecondMatchingViewController = [[SBSecondMatchingViewController alloc] initWithNibName:@"SBSecondMatchingNewViewController"
@@ -247,7 +247,7 @@
         m_SBSecondMatchingViewController = nil;
         
         if(winHeight == kWINDOW_HEIGHT){
-            m_SBSecondMatchingViewController = [[SBSecondMatchingViewController alloc] initWithNibName:@"SBSecondMatchingViewController"
+            m_SBSecondMatchingViewController = [[SBSecondMatchingViewController alloc] initWithNibName:@"SBSecondMatchingNewViewController"
                                                                                                 bundle:nil];
         }else{
             m_SBSecondMatchingViewController = [[SBSecondMatchingViewController alloc] initWithNibName:@"SBSecondMatchingNewViewController"
@@ -277,7 +277,7 @@
 {
     if(m_SBBloodEndTimeViewController == nil){
         if(winHeight == kWINDOW_HEIGHT){
-            m_SBBloodEndTimeViewController = [[SBBloodEndTimeViewController alloc] initWithNibName:@"SBBloodEndTimeViewController"
+            m_SBBloodEndTimeViewController = [[SBBloodEndTimeViewController alloc] initWithNibName:@"SBBloodEndTimeNewViewController"
                                                                                             bundle:nil];
         }else{
             m_SBBloodEndTimeViewController = [[SBBloodEndTimeViewController alloc] initWithNibName:@"SBBloodEndTimeNewViewController"
@@ -471,11 +471,11 @@
 {
     if(m_SBEtcSrchStaViewController == nil){
         if(winHeight == kWINDOW_HEIGHT){
-            m_SBEtcSrchStaViewController = [[SBEtcSrchStaViewController alloc] initWithNibName:@"SBEtcSrchStaViewController"
+            m_SBEtcSrchStaViewController = [[SBEtcSrchStaViewController alloc] initWithNibName:@"SBEtcSrchStaNewViewController"
                                                                                         bundle:nil];
 
         }else{
-            m_SBEtcSrchStaViewController = [[SBEtcSrchStaViewController alloc] initWithNibName:@"SBEtcSrchStaViewController3"
+            m_SBEtcSrchStaViewController = [[SBEtcSrchStaViewController alloc] initWithNibName:@"SBEtcSrchStaNewViewController"
                                                                                         bundle:nil];
 
         }

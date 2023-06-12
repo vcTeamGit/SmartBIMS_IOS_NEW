@@ -540,13 +540,13 @@
         [self.view addSubview:m_view1];
         m_view1.frame = CGRectMake(0, 44, 320, 455);
         [self.view addSubview:m_view0];
-        m_view0.frame = CGRectMake(0, 44, 320, 455);
+        m_view0.frame = CGRectMake(0, 164, viewWidth, 455);
         TRACE(@"************************** iPhone5 *****************************");
     }else{
         [self.view addSubview:m_view1];
         m_view1.frame = CGRectMake(0, 44, 320, 367);
         [self.view addSubview:m_view0];
-        m_view0.frame = CGRectMake(0, 44, 320, 367);
+        m_view0.frame = CGRectMake(0, 164, viewWidth, 367);
         TRACE(@"************************** iPhone4 *****************************");
     }
 
