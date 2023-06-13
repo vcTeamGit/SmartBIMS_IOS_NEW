@@ -13,6 +13,8 @@
             <connections>
                 <outlet property="m_activityIndicatorView" destination="zc3-4S-KdX" id="gdV-5P-USD"/>
                 <outlet property="m_bloodNoTextField" destination="UQR-HB-gal" id="WAy-LS-4w1"/>
+                <outlet property="m_noDataLabel" destination="BXE-SF-23G" id="Nol-X8-vey"/>
+                <outlet property="m_rowCntLabel" destination="AiD-Q7-4Rn" id="f1f-E0-f07"/>
                 <outlet property="m_searchBtn" destination="0Ql-qj-8Wn" id="ps9-Kb-hlp"/>
                 <outlet property="m_searchConditionLabel" destination="nwa-IN-Ipq" id="23g-CK-Mu9"/>
                 <outlet property="m_searchConditionSwitch" destination="sYO-Yy-1CF" id="swo-Jd-WGW"/>
@@ -130,7 +132,7 @@
                             <color key="textColor" red="0.23529411759999999" green="0.36470588240000001" blue="0.61568627450000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AiD-Q7-4Rn">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AiD-Q7-4Rn">
                             <rect key="frame" x="218" y="41" width="100" height="15"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="15" id="1VA-h2-iwv"/>

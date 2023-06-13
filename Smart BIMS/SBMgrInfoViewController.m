@@ -164,7 +164,8 @@
 //            self.m_strCarNameLabel.text = strCarName;
             
 //            SBMgrDetailInfoViewController* controller = [[[SBMgrDetailInfoViewController alloc] init] autorelease];
-            SBMgrDetailInfoViewController* controller = [[SBMgrDetailInfoViewController alloc] init];
+            //SBMgrDetailInfoViewController* controller = [[SBMgrDetailInfoViewController alloc] init];
+            SBMgrDetailInfoViewController* controller = [[SBMgrDetailInfoViewController alloc] initWithNibName:@"SBMgrDetailInfoNewViewController" bundle:nil];
             
             CGRect tempFrame = CGRectMake(frame.origin.x, 0, frame.size.width, frame.size.height);
             controller.view.frame = tempFrame;

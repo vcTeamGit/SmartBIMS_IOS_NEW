@@ -93,9 +93,9 @@
     m_remarkTextView.text = m_strRemark;
     
     if([strEnv isEqualToString:@"센터"]){
-        m_carNameTitleLabel.text = @"센터명";
+        m_carNameTitleLabel.text = @"- 센터명";
     }else{
-        m_carNameTitleLabel.text = @"차량명";
+        m_carNameTitleLabel.text = @"- 차량명";
     }
     
     m_remarkTabBtn.enabled = NO;
